@@ -1,6 +1,7 @@
 /*Authentication*/
 #authentication-part{
-    background:#fafafa; 
+    /*background:#fafafa; */
+    background:#ffffff; 
 }
 #authentication-part .container{
     padding:20px 20px;  
@@ -8,7 +9,7 @@
 #authentication-part .authentication-content{
     padding:5px 20px;
 }
-#authentication-part .form-control,
+/*#authentication-part .form-control,
 #authentication-part .form-control:focus{
     height:36px;
     padding:10px;
@@ -16,8 +17,8 @@
     border-radius:5px;
     box-sizing:border-box;
     border: 1px solid #979797;
-}
-#authentication-part .Abtn, 
+}*/
+/*#authentication-part .Abtn, 
 #authentication-part .Abtn:focus,
 #authentication-part .Abtn:active{
     height:40px; 
@@ -30,11 +31,11 @@
     color:#ffffff;
     background:#5c98bd;  
     border: 1px solid #5c98bd;    
-}
+}*/
 
 /*Start Project Part*/
 #startproject-part{
-    background:#fafafa; 
+    background:#ffffff;
 }
 #startproject-part .container{
     padding:20px 20px;  
@@ -333,7 +334,7 @@
     text-align:left;          
     padding:5px 5px;
 }
-#addressModal .checkout-content .form-control{
+/*#addressModal .checkout-content .form-control{
     height:30px; 
 }
 #addressModal .checkout-content .Abtn, 
@@ -341,7 +342,7 @@
 #addressModal .checkout-content .Abtn:not(:disabled):not(.disabled).active, 
 #addressModal .checkout-content .Abtn:not(:disabled):not(.disabled):active{
     padding:2px 0px; 
-}
+}*/
 /*End Summary Part*/
 /*************************/
 
@@ -369,7 +370,7 @@
     margin:30px 0px;         
 }
 #describe-design-part .project-detail-content .form-control{
-    margin:10px 0px;         
+    margin:10px 0px; 
 }
 #describe-design-part .project-detail-content h4{
     color:#5c98bd;
@@ -522,7 +523,7 @@
 }
 
 /*Account Part*/
-.account-content{
+.account-part .account-content{
     background:#fff;
     padding:10px 15px; 
 }
@@ -543,10 +544,13 @@
 }
 .manufacturing-content .order-header h4{
     color:#ffffff;
-    font-size:12px; 
+    font-size:14px;
+    font-weight:500; 
     background:#5c98bd;
     padding:10px 10px;      
     margin-bottom:0px; 
+    letter-spacing:0.2px; 
+    font-family:'Roboto', sans-serif;
 }
 .manufacturing-content .order-header a{
     width: auto;
@@ -562,16 +566,16 @@
     text-align: center;
     background:#fcfcfc; 
     border-right: 1px solid #dcdcdc;
-    border-bottom: 1px solid #dcdcdc;
     border-left: 1px solid #dcdcdc;
 }
 .manufacturing-content .order-body h4{
     color:#505050;
     font-size:14px;
-    letter-spacing:1px;  
+    font-weight:500;
+    letter-spacing:1px;
+    font-family:'Roboto', sans-serif;
 }
 .manufacturing-content .order-body .manu-design{
-    font-family:HelveticaNeue-Thin;
     text-align:left; 
 }
 .manufacturing-content .order-body p{
@@ -582,6 +586,24 @@
 }
 .manufacturing-content .message-span{
     color:#98c1ed;  
+}
+.manufacturing-content .design-footer{
+    padding: 5px 10px;
+    text-align: center;
+    background:#fcfcfc;
+    border: 1px solid #dcdcdc;
+}
+.manufacturing-content .design-footer h4{
+    color:#111111;
+    font-size:15px;
+    font-weight:500; 
+    letter-spacing:0.2px;
+    margin:0px 0px;  
+    font-family:'Roboto', sans-serif; 
+}
+.manufacturing-content .design-footer h4 span{
+    color:#a9a9a9;
+    font-size:14px;
 }
 
 /*Design Part*/
@@ -600,10 +622,13 @@
 }
 .design-part .design-header h4{
     color:#ffffff;
-    font-size:12px; 
+    font-size:14px;
+    font-weight:500; 
     background:#5c98bd;
     padding:10px 10px;      
     margin-bottom:0px; 
+    letter-spacing:0.2px; 
+    font-family:'Roboto', sans-serif; 
 }
 .design-part .design-header a{
     width: auto;
@@ -619,16 +644,17 @@
     text-align: center;
     background:#fcfcfc; 
     border-right: 1px solid #dcdcdc;
-    border-bottom: 1px solid #dcdcdc;
+    /*border-bottom: 1px solid #dcdcdc;*/
     border-left: 1px solid #dcdcdc;
 }
 .design-part .design-body h4{
     color:#505050; 
     font-size:14px;
-    letter-spacing:1px;  
+    font-weight:500; 
+    letter-spacing:1px; 
+    font-family:'Roboto', sans-serif;  
 }
 .design-part .design-body .manu-design{
-    font-family:HelveticaNeue-Thin;
     text-align:left; 
 }
 .design-part .design-body p{
@@ -640,9 +666,27 @@
 .design-part .message-span{
     color:#98c1ed;  
 }
+.design-part .design-footer{
+    padding: 5px 10px;
+    text-align: center;
+    background:#fcfcfc;
+    border: 1px solid #dcdcdc;
+}
+.design-part .design-footer h4{
+    color:#111111;
+    font-size:15px;
+    font-weight:500; 
+    letter-spacing:0.2px;
+    margin:0px 0px;  
+    font-family:'Roboto', sans-serif; 
+}
+.design-part .design-footer h4 span{
+    color:#a9a9a9;
+    font-size:14px;
+}
 
 /*Setting Part*/
-.setting-content{
+.setting-part .setting-content{
     background:#fff;
     padding:10px 15px;    
 }

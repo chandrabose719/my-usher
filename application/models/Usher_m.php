@@ -1,7 +1,7 @@
 <?php
 	class Usher_m extends MY_Model{
 		
-		protected $_table = 'users_details';	
+		protected $_table = 'user_details';	
 		protected $_id = 'user_id';	
 
 	    function __construct() {

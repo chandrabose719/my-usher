@@ -6,14 +6,19 @@ class Home extends MY_Controller {
 		parent::__construct();
 		
 		// Language
-		$this->lang->load('home');
-		$this->lang->load('about');
-		$this->lang->load('resources');
-		$this->lang->load('faq');
-		$this->lang->load('contact');
+		$this->lang->load('home/index');
+		$this->lang->load('home/about');
+		$this->lang->load('home/faq');
+		$this->lang->load('home/contact');
+		$this->lang->load('home/project');
 		
 		// Model
 		// $this->load->model('');
+	
+		$this->data["usher_id"] = $this->session->userdata('usher_id');
+		$this->data["usher_email"] = $this->session->userdata('usher_email');
+		$this->data["usher_name"] = $this->session->userdata('usher_name');
+		
 	}
 
 	// Home Page
@@ -25,21 +30,21 @@ class Home extends MY_Controller {
 		$this->load->view("main_layout",$this->data);
 	}
 
+	// Start Project
+	public function start_project(){
+		$this->data['title'] = $this->lang->line('project_title');
+		$this->data['description'] = $this->lang->line('project_description');
+		$this->data['keyword'] = $this->lang->line('project_keyword');
+		$this->data['body'] = 'home/start_project';
+		$this->load->view("main_layout",$this->data);
+	}
+
 	// About Us Page
 	public function about_us(){
 		$this->data['title'] = $this->lang->line('about_title');
 		$this->data['description'] = $this->lang->line('about_description');
 		$this->data['keyword'] = $this->lang->line('about_keyword');
 		$this->data['body'] = 'home/about_us';
-		$this->load->view("main_layout",$this->data);
-	}
-
-	// Resources Page
-	public function resources(){
-		$this->data['title'] = $this->lang->line('resources_title');
-		$this->data['description'] = $this->lang->line('resources_description');
-		$this->data['keyword'] = $this->lang->line('resources_keyword');
-		$this->data['body'] = 'home/resources';
 		$this->load->view("main_layout",$this->data);
 	}
 

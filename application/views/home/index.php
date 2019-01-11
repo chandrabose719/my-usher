@@ -11,7 +11,7 @@
                     		<h4>Start your project in less than 3 clicks</h4>
                             <div class="row">
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-xs-12">    
-                                    <a class="btn btn-primary Pbtn Pbtn-one" href="start-project.php">START PROJECT</a>
+                                    <a class="btn btn-primary Pbtn Pbtn-one" href="<?= base_url('start-project'); ?>">START PROJECT</a>
                                 </div>
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-xs-12">    
                                     <div class="page-scroll">            
@@ -35,7 +35,7 @@
                 <div class="row">
                     <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-12 col-xs-12">
                         <div class="how-it-work-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/design.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/design.png'); ?>">
                             <h4>Design Services</h4>
                             <p></p>
                             <div class="page-scroll">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="how-it-work-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/manufacture.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/manufacture.png'); ?>">
                             <h4>Manufacturing Services</h4>
                             <p></p>
                             <div class="page-scroll">
@@ -71,21 +71,21 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/Design-Step1.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step1.png'); ?>">
                             <h4>Step 1</h4>
                             <p>Choose the industry that best describes your project</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/Design-Step2.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step2.png'); ?>">
                             <h4>Step 2</h4>
                             <p>Tell us about your project</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/Design-Step3.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step3.png'); ?>">
                             <h4>Step 3</h4>
                             <p>Review and submit</p>
                         </div>
@@ -93,7 +93,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
-                        <a class="btn btn-primary Pbtn" href="describe-project.php">DESCRIBE PROJECT</a>
+                        <a class="btn btn-primary Pbtn" href="<?= base_url('describe-project'); ?>">DESCRIBE PROJECT</a>
                     </div>
                 </div>    
             </div>
@@ -111,21 +111,21 @@
                 <div class="row">
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-manufacture-flow-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/Manufacturing-Step1.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Manufacturing-Step1.png'); ?>">
                             <h4>Step 1</h4>
                             <p>Upload your file</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-manufacture-flow-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/Manufacturing-Step2.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Manufacturing-Step2.png'); ?>">
                             <h4>Step 2</h4>
                             <p>When possible, tell us the material and technology you’d like for your project</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-manufacture-flow-content">
-                            <img class="img-fluid" src="assets/images/how-it-work/Manufacturing-Step3.png">
+                            <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Manufacturing-Step3.png'); ?>">
                             <h4>Step 3</h4>
                             <p>Complete shipping and payment information</p>
                         </div>
@@ -133,7 +133,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
-                        <a class="btn btn-primary Pbtn" href="manufacture.php">UPLOAD FILES</a>
+                        <a class="btn btn-primary Pbtn" href="<?= base_url('manufacture'); ?>">UPLOAD FILES</a>
                     </div>
                 </div>    
             </div>

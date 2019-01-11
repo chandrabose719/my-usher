@@ -13,17 +13,21 @@ html{
 body {
     width:100%;
     height:100%;
-    font-size:12px;
-    font-weight:600;
+    font-size:14px;
+    font-weight:500;
     font-style:normal;
-    letter-spacing:1.6px;
+    letter-spacing:1.2px;
     background:#fafafa;
-    font-family:HelveticaNeue-Thin;
+    font-family:'Roboto', sans-serif;
 }
-a, a:hover{
-    color:#000000; 
-    text-decoration:none; 
-    font-family:HelveticaNeue-Thin;
+a{
+    color:#000000;
+    font-size:16px;
+    font-weight:500;
+    letter-spacing:0.2px;
+}
+a:hover{
+    text-decoration:none;
 }
 .form-control:focus{
     border-color:none;
@@ -50,10 +54,10 @@ input:-webkit-autofill:active {
 }
 #header-part .navbar-custom .nav-item .nav-link{
     color:#000000; 
-    font-size:12px;
-    font-weight:600;
+    font-size:14px;
+    font-weight:500;
     font-style:normal;
-    letter-spacing:1.6px; 
+    letter-spacing:1.4px; 
     padding:14px 10px; 
 }
 #header-part .navbar-custom .nav-item .nav-link:hover{
@@ -61,8 +65,7 @@ input:-webkit-autofill:active {
 }
 #header-part .navbar-custom .user-nav-link{
     height:50px; 
-    padding:3px 20px;
-    margin:0px 10px 0px 0px;
+    margin:-20px 10px 0px 0px;
 }
 #header-part .navbar-custom .user-nav-link span{
 	font-size:10px;
@@ -83,6 +86,8 @@ footer .footer-content li{
     padding:8px 5px;  
 }
 footer .footer-content a{
+    font-size:14px;
+    letter-spacing:0.2px; 
     padding:5px 0px;  
 }
 footer .footer-content a:hover{
@@ -202,7 +207,7 @@ h4{
 }
 p{
     font-style: normal;
-    line-height: 24px;
+    line-height:24px;
     font-size:16px;
     font-weight:100; 
     letter-spacing:1.2px;
@@ -224,33 +229,32 @@ p{
 }
 .form-control,
 .form-control:focus{
-    padding:0px 10px;
     color:#000;
+    font-size:15px;
+    font-weight:500;
+    padding:10px 10px; 
     border-radius:5px;
     box-sizing:border-box;
     border: 1px solid #979797;
-}
-.custom-input{
-    height:36px; 
 }
 .Pbtn, .Pbtn:active, .Pbtn:focus, 
 .Pbtn:visited, .Pbtn:focus-within,
 .Pbtn:not(:disabled):not(.disabled).active, 
 .Pbtn:not(:disabled):not(.disabled):active{
     width:100%;
-    color:#ffffff;
-    padding-top:10px;
-    padding-bottom:10px;
-    border-radius:10px;
     font-size:14px;
-    font-weight:600;
+    font-weight:500;
     font-style:normal;
-    letter-spacing:1.8px;
+    padding:10px 10px;
+    border-radius:5px;
+    letter-spacing:0.4px;
+    color:#ffffff;
     border-color:#5c98bd;
     background-color:#5c98bd;
 }
 .Pbtn:hover{
     color:#5c98bd;
+    border-color:#5c98bd;
     background: transparent;
 }
 .Abtn, .Abtn:focus, .Abtn:active
@@ -258,20 +262,26 @@ p{
 .Abtn:not(:disabled):not(.disabled).active, 
 .Abtn:not(:disabled):not(.disabled):active{
     width:100%;
-    height:40px;
-    color:#5c98bd;
-    padding:5px 5px; 
-    font-size:16px;
-    font-weight:600;
+    font-size:14px;
+    font-weight:500;
     font-style:normal;
-    font-family:HelveticaNeue-Thin;
-    letter-spacing:1.8px;
+    letter-spacing:0.4px;
+    padding:10px 10px;
+    border-radius:5px;
+    color:#5c98bd;
     background:transparent;  
     border: 1px solid #5c98bd;
 }
 .Abtn:hover{
     color:#ffffff;
     background:#5c98bd;    
+    border: 1px solid #5c98bd;
+}
+.google-btn,
+.google-btn:hover{
+    color:#ffffff;
+    background:#DB4437 !important;    
+    border: 1px solid #DB4437 !important;
 }
 .vr-divider{
     top:0;

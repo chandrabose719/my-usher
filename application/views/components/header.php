@@ -2,7 +2,7 @@
 	<div id="header-part">
     	<nav class="navbar navbar-dark navbar-custom navbar-expand-md fixed-top" id="mainNav">
 	      	<div class="container">
-	        	<a class="navbar-brand" href="https://3dusher.com/"><img src="<?= base_url('assets/images/3dusher-logo.png'); ?>"  class="img-fluid" alt="3D Usher - 3D Design and Manufacturing"></a>
+	        	<a class="navbar-brand" href="<?= base_url(); ?>"><img src="<?= base_url('assets/images/3dusher-logo.png'); ?>"  class="img-fluid" alt="3D Usher - 3D Design and Manufacturing"></a>
 	        	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 	          		<i class="fas fa-bars"></i>
 	        	</button>
@@ -11,7 +11,7 @@
 		            	<li class="nav-item">
 		              		<?php
 		              			if(current_url() != base_url()){
-		              				echo '<a class="nav-link" href="https://3dusher.com/#how-it-work">HOW IT WORKS</a>';
+		              				echo '<a class="nav-link" href="https://3dusher.com#how-it-work">HOW IT WORKS</a>';
 		              			}	
 		              		?>
 		              	</li>
@@ -26,7 +26,7 @@
                 				}
 						?>
 			        		<li class="nav-item dropdown">
-						    	<a class="nav-link user-nav-link" href="#" id="navbardrop" data-toggle="dropdown">
+						    	<a class="nav-link user-nav-link dropdown-tog" href="#" id="navbardrop" data-toggle="dropdown">
 						        	<span>Hello,</span><br/>
 						        	<?= strtoupper($trunk_user_name); ?>
 						      		<i class="fa fa-caret-down"></i>

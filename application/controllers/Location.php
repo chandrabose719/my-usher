@@ -6,8 +6,8 @@ class Location extends MY_Controller {
 		parent::__construct();
 		
 		// Language
-		$this->lang->load('location');
-		$this->lang->load('locationIndia');
+		$this->lang->load('location/index');
+		$this->lang->load('location/locationIndia');
 		
 		// Model
 		// $this->load->model('');

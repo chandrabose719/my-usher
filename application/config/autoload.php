@@ -58,7 +58,7 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('session', 'database', 'email', 'form_validation', 'pagination');
+$autoload['libraries'] = array('session', 'database', 'email', 'form_validation', 'pagination', 'google');
 
 /*
 | -------------------------------------------------------------------
@@ -135,7 +135,7 @@ $autoload['language'] = array();
 $autoload['model'] = array(
 	// Login
 	'Login_m',
-
+	'Google_m',
 	// Usher DB
 	'Usher_m',
 	'Country_m',

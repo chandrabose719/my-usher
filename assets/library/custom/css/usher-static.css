@@ -257,8 +257,10 @@ h4{
 /*Resource*/
 #resource{
     width: 100%;
-    opacity:0.7; 
-    background:url(../../../../assets/images/bg-resource.png);
+    opacity:0.7;
+}
+#resource.resource-home{
+    background:url(../../../../assets/images/resource/bg-resource.png);
     background-size: cover;
 }
 #resource .container{
@@ -267,7 +269,7 @@ h4{
 #resource .resource-content{
     text-align:left;
     padding-left:50px;
-    padding-bottom:170px; 
+    padding-bottom:140px; 
 }
 #resource .resource-content h1{
     text-align:left;
@@ -275,19 +277,18 @@ h4{
     padding-top:30px; 
     padding-bottom:30px;
 }
-
-/*Resource Item*/
-#resource-item{
+/*Resource Group*/
+#resource-group{
     width:100%;
     background:#ffffff; 
 }
-#resource-item .container{
+#resource-group .container{
     padding:20px 20px;  
 }
-#resource-item .container h3{
+#resource-group .container h3{
     text-align:left;   
 }
-#resource-item .resource-item-content{
+#resource-group .resource-group-content{
     height:280px;
     margin:10px 0px; 
     padding:10px 10px;
@@ -295,25 +296,26 @@ h4{
     border-radius:3px;
     box-shadow:0px 0px 4px 0px rgba(0,0,0,.1);              
 }
-#resource-item .resource-item-content .content-body{
+#resource-group .resource-group-content .content-body{
     height:210px;             
 }
-#resource-item .resource-item-content h4{
+#resource-group .resource-group-content h4{
+    color:#5c98bd; 
     text-align:left; 
     padding:5px 0px;   
 }
-#resource-item .resource-item-content .hr-divider{
+#resource-group .resource-group-content .hr-divider{
     margin:10px 0px; 
     border-top: 1px solid rgba(0,0,0,.1);
 }
-#resource-item .resource-item-content a p{
+#resource-group .resource-group-content a p{
     color:#5c98bd;             
 }
 /*Info*/
 #resource-info{
     width:100%;
     height:100%; 
-    background:url(../../../../assets/images/bg-info.png);
+    background:url(../../../../assets/images/resource/bg-info.png);
     background-size: cover; 
 }
 #resource-info .container{
@@ -333,6 +335,57 @@ h4{
     color:#ffffff;
     border:1px solid #5c98bd;
     background:#5c98bd;  
+}
+
+#resource-item-head{
+    width: 100%;
+    opacity:0.7;
+}
+#resource-item-head.resource-item{
+    background:url(../../../../assets/images/resource/bg-resource-item.png);
+    background-size: cover;
+}
+#resource-item-head .container{
+    padding:20px 0px;
+}
+#resource-item-head .item-head-content{
+    text-align:left;
+    padding-left:50px;
+    padding-bottom:40px; 
+}
+#resource-item-head .item-head-content h1{
+    text-align:left;
+    color:#ffffff;  
+    padding-top:30px; 
+    padding-bottom:30px;
+}
+/*Resource Block*/
+#resource-item-block{
+    width: 100%;    
+    background:#fff;
+}
+#resource-item-block .container{
+    padding:20px 20px;
+}
+#resource-item-block .item-block-content{
+    text-align:center; 
+}
+#resource-item-block .item-block-content h4{
+    color:#5c98bd; 
+    text-align:left; 
+    padding: 20px 0px;
+}
+#resource-item-block .item-block-content p{
+    padding: 10px 0px;
+}
+#resource-item-block .item-block-content .center-align{
+    text-align:center; 
+}
+#resource-item-block .item-block-image{
+    text-align:center; 
+}
+#resource-item-block .item-block-image img{
+    text-align:center; 
 }
 /*End Resource Part*/
 /****************/

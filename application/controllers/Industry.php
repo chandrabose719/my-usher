@@ -6,15 +6,15 @@ class Industry extends MY_Controller {
 		parent::__construct();
 		
 		// Language
-		$this->lang->load('industry');
-		$this->lang->load('industryAerospace');
-		$this->lang->load('industryArchitecture');
-		$this->lang->load('industryAutomotive');
-		$this->lang->load('industryEducation');
-		$this->lang->load('industryGifting');
-		$this->lang->load('industryManufacturing');
-		$this->lang->load('industryMedtech');
-		$this->lang->load('industryProductdesign');
+		$this->lang->load('industry/index');
+		$this->lang->load('industry/industryAerospace');
+		$this->lang->load('industry/industryArchitecture');
+		$this->lang->load('industry/industryAutomotive');
+		$this->lang->load('industry/industryEducation');
+		$this->lang->load('industry/industryGifting');
+		$this->lang->load('industry/industryManufacturing');
+		$this->lang->load('industry/industryMedtech');
+		$this->lang->load('industry/industryProductdesign');
 		
 		// Model
 		// $this->load->model('');

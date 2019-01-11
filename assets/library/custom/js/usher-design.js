@@ -1,5 +1,8 @@
 // ********************
 // Design Project Page
+
+var resourceFileArray = [];
+
 function materialCustom(){
 	var design_material = $('#design_material').val();
 	if (design_material == '1') {
@@ -44,7 +47,7 @@ function designProjectSubmit(){
 			return false;	
 		}
 	}else{
-		var design_material_custom = 'NULL';
+		var design_material_custom = '';
 	}
 	
 	if (design_finishing_custom != undefined) {
@@ -58,7 +61,7 @@ function designProjectSubmit(){
 			return false;	
 		}
 	}else{
-		var design_finishing_custom = 'NULL';
+		var design_finishing_custom = '';
 	}
 	
 	if (design_name == '' || design_name == 'undefined' || design_name == null) {	
@@ -142,10 +145,10 @@ function designProjectSubmit(){
 			}
 		}else{
 			formdata.append('design_resource[]', '');
-		}	
+		}
 		$.ajax({
-	       	url : 'projectDetailsAjax.php',
-	       	type : 'POST',
+			url: baseUrl+'design-store-session',
+			type : 'POST',
 	       	data : formdata,
 	       	processData: false, 
        		contentType: false,
@@ -159,7 +162,7 @@ function designProjectSubmit(){
 	        	data = $.trim(data);
 	        	console.log(data);
 	        	if (data == 'success') {
-	        		window.location.href = "design-order-overview.php";	
+	        		window.location.href = baseUrl+"design-order-overview";	
 	        	}else{
 	        		$('#validation-message').html(
 						`<div class="alert alert-warning alert-dismissible fade show">
@@ -191,18 +194,20 @@ function designResource(){
 	    	   	return false;
 	       	}
 	       	var fileName = resourceFile.files[i].name;
-        	for(var iName in resourceFileArray){
-			    if(resourceFileArray[iName]['name'] == fileName){
-			    	var alert = `
-		    	   		<div class="alert alert-danger alert-dismissible">
-							<button type="button" class="close" data-dismiss="alert">&times;</button>
-							<strong> Warning! </strong> You cannot upload two files with same name.
-						</div>
-		    	   	`;
-		    	   	$('#validation-message').html(alert);
-		    	   	return false;    
-			    }
-			}
+	        if(resourceFileArray != ''){
+	        	for(var iName in resourceFileArray){
+				    if(resourceFileArray[iName]['name'] == fileName){
+				    	var alert = `
+			    	   		<div class="alert alert-danger alert-dismissible">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong> Warning! </strong> You cannot upload two files with same name.
+							</div>
+			    	   	`;
+			    	   	$('#validation-message').html(alert);
+			    	   	return false;    
+				    }
+				}
+			}	
         	var fileSize = resourceFile.files[i].size / 1024 / 1024;
         	if (fileSize > 10) {
 	       		var alert = `

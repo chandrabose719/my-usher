@@ -26,7 +26,8 @@
 	<link href="<?= base_url('assets/library/custom/css/usher-dynamic.css'); ?>" rel="stylesheet" type="text/css">
 	<link href="<?= base_url('assets/library/custom/css/usher-static.css'); ?>" rel="stylesheet" type="text/css">
 	<link href="<?= base_url('assets/library/custom/css/usher-responsive.css'); ?>" rel="stylesheet" type="text/css">
-	
+	<!-- Usher Blog CSS -->
+	<link href="<?= base_url('assets/library/custom/css/blog-static.css'); ?>" rel="stylesheet" type="text/css">
 	<!-- Usher Location CSS -->
 	<link href="<?= base_url('assets/library/custom/css/location-static.css'); ?>" rel="stylesheet" type="text/css">
 
@@ -104,9 +105,9 @@
     <script src="<?= base_url('assets/library/easing/js/easing.min.js'); ?>" type="text/javascript"></script>
 
 	<!-- Custom JS -->
-    <script src="<?= base_url('assets/library/custom/js/usher-common.js'); ?>"></script>
-    <script src="<?= base_url('assets/library/custom/js/usher-manufacture.js'); ?>"></script>
-    <script src="<?= base_url('assets/library/custom/js/usher-design.js'); ?>"></script>
+    <script src="<?= base_url('assets/library/custom/js/usher-common.js'); ?>" type="text/javascript"></script>
+    <script src="<?= base_url('assets/library/custom/js/usher-manufacture.js'); ?>" type="text/javascript"></script>
+    <script src="<?= base_url('assets/library/custom/js/usher-design.js'); ?>" type="text/javascript"></script>
 
     <!-- Start of HubSpot Embed Code -->
 	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4831911.js"></script>
