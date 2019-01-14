@@ -19,15 +19,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['google-authentication'] = 'authentication/google_auth';
 	$route['login'] = 'authentication/login';
 	$route['forgot-password'] = 'authentication/forgot_password';
-	$route['change-password/(:any)'] = 'authentication/change_password';
+	$route['change-password/(:any)/(:any)'] = 'authentication/change_password';
 	$route['signout'] = 'authentication/logout';
 
 	// Dashboard
 	$route['account'] = 'dashboard/account';
 	$route['manufacturing-orders'] = 'dashboard/manufacture_complete';
-	// $route['manufacturing-incomplete-orders'] = 'dashboard/account';
+	$route['manufacturing-incomplete-orders'] = 'dashboard/manufacture_incomplete';
 	$route['designing-orders'] = 'dashboard/design_complete';
 	$route['account-settings'] = 'dashboard/setting';
+	$route['need-help/(:any)/(:num)'] = 'dashboard/need_help';
 
 	// Design
 	$route['describe-project'] = 'design/describe_project';

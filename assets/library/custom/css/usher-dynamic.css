@@ -533,6 +533,9 @@
     background:#fff;
     padding:10px 15px;    
 }
+.manufacturing-content h3{
+    margin:5px 0px;    
+}
 .manufacturing-content .order-content{
     margin:10px 0px;
 }
@@ -552,7 +555,8 @@
     letter-spacing:0.2px; 
     font-family:'Roboto', sans-serif;
 }
-.manufacturing-content .order-header a{
+.manufacturing-content .order-header a,
+.manufacturing-content .order-header a:active{
     width: auto;
     height: auto;
     color:#a9a9a9; 
@@ -565,6 +569,7 @@
     padding: 10px 5px;
     text-align: center;
     background:#fcfcfc; 
+    border-bottom: 1px solid #dcdcdc;
     border-right: 1px solid #dcdcdc;
     border-left: 1px solid #dcdcdc;
 }
@@ -584,16 +589,15 @@
     letter-spacing:0px; 
     color:#a9a9a9; 
 }
-.manufacturing-content .message-span{
-    color:#98c1ed;  
-}
-.manufacturing-content .design-footer{
+.manufacturing-content .order-footer{
     padding: 5px 10px;
     text-align: center;
     background:#fcfcfc;
-    border: 1px solid #dcdcdc;
+    border-bottom: 1px solid #dcdcdc;
+    border-right: 1px solid #dcdcdc;
+    border-left: 1px solid #dcdcdc;
 }
-.manufacturing-content .design-footer h4{
+.manufacturing-content .order-footer h4{
     color:#111111;
     font-size:15px;
     font-weight:500; 
@@ -601,9 +605,12 @@
     margin:0px 0px;  
     font-family:'Roboto', sans-serif; 
 }
-.manufacturing-content .design-footer h4 span{
+.manufacturing-content .order-footer h4 span{
     color:#a9a9a9;
     font-size:14px;
+}
+.manufacturing-content .message-span{
+    color:#98c1ed;  
 }
 
 /*Design Part*/
@@ -663,9 +670,6 @@
     letter-spacing:0px; 
     color:#a9a9a9;
 }
-.design-part .message-span{
-    color:#98c1ed;  
-}
 .design-part .design-footer{
     padding: 5px 10px;
     text-align: center;
@@ -683,6 +687,9 @@
 .design-part .design-footer h4 span{
     color:#a9a9a9;
     font-size:14px;
+}
+.design-part .message-span{
+    color:#98c1ed;  
 }
 
 /*Setting Part*/

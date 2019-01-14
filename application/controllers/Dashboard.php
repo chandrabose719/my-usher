@@ -15,9 +15,10 @@ class Dashboard extends MY_Controller {
 		// Dashboard
 		$this->lang->load('dashboard/account');
 		$this->lang->load('dashboard/manufactureComplete');
-		// $this->lang->load('dashboard/manufactureIncomplete');
+		$this->lang->load('dashboard/manufactureIncomplete');
 		$this->lang->load('dashboard/designComplete');
 		$this->lang->load('dashboard/setting');
+		$this->lang->load('dashboard/needhelp');
 
 		// Session ID
 		$this->data["usher_id"] = $this->session->userdata('usher_id');
@@ -48,8 +49,13 @@ class Dashboard extends MY_Controller {
 		$this->load->view("dashboard_layout",$this->data);
 	}
 
-	// Setting Page
+	// Incomplete Page
 	public function manufacture_incomplete(){
+		$user_id = $this->session->userdata('usher_id');
+		$file_array['user_id'] = $user_id;
+		$file_array['file_status'] = '';
+		$file_result = $this->Manufacture_m->get($file_array);
+		$this->data['file_result'] = $file_result;
 		$this->data['title'] = $this->lang->line('incomplete_title');
 		$this->data['description'] = $this->lang->line('incomplete_description');
 		$this->data['keyword'] = $this->lang->line('incomplete_keyword');
@@ -116,6 +122,36 @@ class Dashboard extends MY_Controller {
 		$this->data['keyword'] = $this->lang->line('setting_keyword');
 		$this->data['body'] = 'dashboard/setting';
 		$this->load->view("dashboard_layout",$this->data);
+	}
+
+	public function need_help(){
+		$type = $this->uri->segment(2);
+		$order_id = $this->uri->segment(3);
+		if (isset($_POST['support-submit'])) {
+			$user_id = $this->session->userdata('usher_id');
+			$order_type = $this->input->post('type');
+			$order_id = $this->input->post('order_id');
+			$support_query = $this->input->post('support_query');
+			$array['user_id'] = $user_id;
+        	$array['order_id'] = $order_id;
+        	$array['order_type'] = $order_type;
+        	$array['support_query'] = $support_query;
+        	$array['status'] = 'active';
+        	$array['date'] = time();
+        	if ($this->Needhelp_m->insert($array)) {
+				$this->session->set_flashdata('success','We will get in touch with you shortly.');
+				redirect(base_url('account'));
+			}else{
+				$this->session->set_flashdata('error','Error occured, Try again!');
+			}
+		}
+		$this->data['type'] = $type;
+		$this->data['order_id'] = $order_id;
+		$this->data['title'] = $this->lang->line('needhelp_title');
+		$this->data['description'] = $this->lang->line('needhelp_description');
+		$this->data['keyword'] = $this->lang->line('needhelp_keyword');
+		$this->data['body'] = 'dashboard/need_help';
+		$this->load->view("main_layout",$this->data);
 	}
 
 }

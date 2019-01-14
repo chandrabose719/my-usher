@@ -196,6 +196,7 @@ class Design extends MY_Controller {
                 }
 			}
 			$this->session->set_flashdata('success','Order Placed Successfully!');
+			// $this->designOrderEmail($order_id, $design_name);
 			$this->session->unset_userdata('design_data');
 			$this->session->unset_userdata('design_file_data');
 			$this->data['title'] = $this->lang->line('confirm_title');

@@ -215,6 +215,10 @@ p{
     text-align:justify;
     font-family:'Roboto', sans-serif;
 }
+table th{
+    font-size:16px;
+    font-weight:500;  
+}
 
 /*Buttons*/
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active, 

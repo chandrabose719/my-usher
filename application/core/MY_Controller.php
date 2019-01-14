@@ -37,7 +37,7 @@ class MY_Controller extends CI_Controller {
     }
 
 	// Forgot Password
-    function forgotPasswordEmail($partner_id, $partner_name, $partner_email, $company_name){    
+    function forgotPasswordEmail($user_id, $user_name, $user_email){    
         // Admin Detail
         $admin_email = 'info@3dusher.com';
         $admin_name = 'Team 3D Usher';
@@ -46,31 +46,66 @@ class MY_Controller extends CI_Controller {
         $subject = '3D Usher Password Reset';
         
         // User Detail
-        $partner_id = $partner_id; 
-        $partner_name = $partner_name; 
-        $partner_email = $partner_email;
+        $user_id = $user_id; 
+        $user_name = $user_name; 
+        $user_email = $user_email;
 
         // Token
-        $token = $partner_id.'cp'.rand();
+        $token = $user_id.'cp'.rand();
         
         // User Template
-        $partner_template = '
-                Dear '.$partner_name.',
+        $user_template = '
+                Dear '.$user_name.',
             <br/><br/>
-                Someone has requested a link to change your 3D Usher account password of '.$company_name.'. You can do this through
+                Someone has requested a link to change your 3D Usher account password. You can do this through
                 the link below.
             <br/><br/>
                 <a href="'.base_url('change-password/change/'.$token).'">
-                    Change my 3D Usher partner account password
+                    Change my 3D Usher account password
                 </a>
-            <br/><br/> 
+            <br/><br/>
                 If you didn`t request this, please ignore this email. Your password won`t change until you access the link above and create a new one.
             <br/><br/>
                 Thanks,
             <br/>
                 Team 3D Usher.
         ';
-        $this->elastic_mail($admin_email, $admin_name, $subject, $partner_email, $partner_template);
+
+        $this->elastic_mail($admin_email, $admin_name, $subject, $user_email, $user_template);
+    }
+
+    // Design Order Confirm
+    function designOrderEmail($order_id, $design_name){
+            
+        // Admin Detail
+        $admin_email = 'info@3dusher.com';
+        $admin_name = 'Team 3D Usher';
+
+        // Subject
+        $subject = 'Order Successfully Placed';
+        
+        // User Detail
+        $user_name = $_SESSION['user_name'];
+        $user_email = $_SESSION['user_email'];
+        
+        // User Template
+        $user_template = '
+                Dear '.$user_name.',
+            <br/><br/>
+                Your design order has been successfully placed with 3D Usher.
+            <br/><br/>
+                Name of the Project – '.$design_name.'
+            <br/><br/>
+                Order Number – '.$order_id.'
+            <br/><br/>
+                We will get in touch with you within next 24 hours. If you have any questions, you can contact us at info@3dusher.com with your order ID.
+            <br/><br/>
+                Let`s get innovating,
+            <br/>
+                Team 3D Usher
+        ';
+        // Elastic Email
+        $this->elastic_mail($admin_email, $admin_name, $subject, $user_email, $user_template);
     }
 
 	// Elastic Mail

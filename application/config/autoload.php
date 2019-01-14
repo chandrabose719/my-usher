@@ -139,6 +139,7 @@ $autoload['model'] = array(
 	// Usher DB
 	'Usher_m',
 	'Country_m',
+	'Needhelp_m',
 	'Manufacture_m', 
 	'Order_m',
 	'Ordersupport_m',

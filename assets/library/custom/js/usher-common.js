@@ -156,3 +156,19 @@ function check_email(email){
 }
 // End Register Page
 // ********************
+
+
+// ********************
+// Dashboard Part
+function disableProceed(){
+	if ($('#file_id').not(':checked').length == 0) {
+        $('.proceed-btn-content').html(
+        	'<a href="" class="btn btn-primary Pbtn" id="proceed-btn">PROCEED</a>'
+        );
+    } else {
+        $('.proceed-btn-content').html('');
+    }
+}
+
+// End Dashboard Part
+// ********************

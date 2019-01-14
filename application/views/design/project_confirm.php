@@ -21,7 +21,7 @@
                                 <a class="form-control btn btn-primary Abtn" href="<?= base_url(); ?>"><?= $this->lang->line('confirm_btn_one'); ?></a>
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">    
-                                <a class="form-control btn btn-primary Abtn" href="<?= base_url('design-orders'); ?>"><?= $this->lang->line('confirm_btn_two'); ?></a>
+                                <a class="form-control btn btn-primary Abtn" href="<?= base_url('designing-orders'); ?>"><?= $this->lang->line('confirm_btn_two'); ?></a>
                             </div>
                         </div>    
                     </div>

@@ -18,7 +18,7 @@
 						<img src="<?= base_url('assets/images/manufacturing_icon.png'); ?>" class="img-fluid" />
 						&nbsp;Manufacturing Orders
 					</a>
-					<a class="list-group-item" href="<?= base_url('incomplete-orders'); ?>">
+					<a class="list-group-item" href="<?= base_url('manufacturing-incomplete-orders'); ?>">
 						<img src="<?= base_url('assets/images/manufacturing_icon.png'); ?>" class="img-fluid" />
 						&nbsp;Incomplete Orders
 					</a>

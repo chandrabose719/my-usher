@@ -1,8 +1,12 @@
     <div class="design-part">    
-        <h3>Design Orders</h3>
+        <h3><?= $this->lang->line('design_header'); ?></h3>
         <?php
             if (!empty($design_result)) {
                 foreach ($design_result as $design_data) {
+                    // Short Name
+                    $width = 10;
+                    $short_name = $design_data->design_name;
+                    $short_name = preg_replace ("~^(.{{$width}})(.+)~", '\\1…', $short_name);
                     // Industry Name
                     $ind_array['industry_id'] = $design_data->industry_id;  
                     $ind_data = $this->Industry_m->get($ind_array, TRUE);
@@ -12,12 +16,12 @@
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
                         <div class="btn-group float-left float-xs-none">
-                            <h4>ORDER ID : <?= $design_data->order_id; ?></h4>    
+                            <h4><?= $this->lang->line('order_id'); ?>: <?= $design_data->order_id; ?></h4>    
                         </div>
                     </div>
                     <div class="col-xl-4 offset-xl-5 col-lg-4 offset-lg-5 col-md-4 offset-md-5 col-sm-4 offset-sm-5 col-xs-12">
                         <div class="btn-group float-right float-xs-none">    
-                            <a class="btn btn-primary Pbtn" href="need-help/design/<?= $design_data->design_id; ?>">Need Help?</a>        
+                            <a class="btn btn-primary Pbtn" href="need-help/design/<?= $design_data->design_id; ?>"><?= $this->lang->line('need_help'); ?></a>        
                         </div>
                     </div>
                 </div>
@@ -25,12 +29,12 @@
             <div class="design-body">  
                 <div class="row">
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <h4 class="pl-2 manu-design">PROJECT DETAILS</h4>
-                        <p class="pl-2"> Project Name: <?= $design_data->design_name; ?> <p>    
-                        <p class="pl-2"> Industry: <?= $ind_data->industry_name; ?> </p>    
+                        <h4 class="pl-2 manu-design"><?= $this->lang->line('project_details'); ?></h4>
+                        <p class="pl-2"> <?= $this->lang->line('project_name'); ?>: <?= $short_name; ?> <p>    
+                        <p class="pl-2"> <?= $this->lang->line('industry'); ?>: <?= $ind_data->industry_name; ?> </p>    
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <h4 class="manu-design"> END USAGE </h4>
+                        <h4 class="manu-design"> <?= $this->lang->line('end_usage'); ?> </h4>
                         <?php
                             // Design Temperature
                             $temp_array['temperature_id'] = $design_data->design_temperature;  
@@ -44,7 +48,7 @@
                         <p><?= $ass_data->assembly_name; ?></p>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <h4 class="manu-design"> PREFERENCES </h4>
+                        <h4 class="manu-design"> <?= $this->lang->line('preferences'); ?> </h4>
                         <?php
                             // Design Material
                             if ($design_data->design_material != '1') {
@@ -67,12 +71,12 @@
                                 $finishing_name = $design_data->design_finishing_custom;
                             }            
                         ?>
-                        <p>Material: <?= $material_name; ?> </p>
-                        <p>Precision: <?= $precision_name; ?> </p>
-                        <p>Finishing: <?= $finishing_name; ?> </p>
+                        <p><?= $this->lang->line('material'); ?>: <?= $material_name; ?> </p>
+                        <p><?= $this->lang->line('precision'); ?>: <?= $precision_name; ?> </p>
+                        <p><?= $this->lang->line('finishing'); ?>: <?= $finishing_name; ?> </p>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
-                        <h4> STATUS </h4>
+                        <h4> <?= $this->lang->line('status'); ?> </h4>
                         <h4 class="message-span"><?= $design_data->order_status; ?></h4>
                     </div>
                 </div>        
@@ -85,7 +89,7 @@
                                 $timestamp = $design_data->design_date;
                                 $design_date = date('d M \'y', $timestamp);
                             ?>
-                            <h4><span>Ordered On </span><?= $design_date; ?></h4>
+                            <h4><span><?= $this->lang->line('design_date'); ?> </span><?= $design_date; ?></h4>
                         </div>
                     </div>
                     <div class="col-xl-4 offset-xl-5 col-lg-4 offset-lg-5 col-md-4 offset-md-5 col-sm-4 offset-sm-5 col-xs-12">
@@ -101,8 +105,8 @@
             }else{
                 echo '
                     <div class="design-content">
-                        <h4><span class="message-span">NO PENDING PROJECTS</span></h4>
-                        <h4>Explain your design requirement to our 3D designers</h4> 
+                        <h4><span class="message-span">'.$this->lang->line("design_msg_header").'</span></h4>
+                        <p class="text-center">'.$this->lang->line("design_msg_content").'</p> 
                         <br/>
                         <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-12">    
                             <a class="btn btn-primary Pbtn" href="'.base_url("describe-project").'">DESCRIBE PROJECT</a>
