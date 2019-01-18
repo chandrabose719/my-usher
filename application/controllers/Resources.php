@@ -43,5 +43,41 @@ class Resources extends MY_Controller {
 		$this->load->view("main_layout",$this->data);
 	}
 
+	// FRP page
+	public function frp(){
+		$this->data['title'] = $this->lang->line('frp_title');
+		$this->data['description'] = $this->lang->line('frp_description');
+		$this->data['keyword'] = $this->lang->line('frp_keyword');
+		$this->data['body'] = 'resources/frp';
+		$this->load->view("main_layout",$this->data);
+	}
+
+	// DMLS page
+	public function dmls(){
+		$this->data['title'] = $this->lang->line('dmls_title');
+		$this->data['description'] = $this->lang->line('dmls_description');
+		$this->data['keyword'] = $this->lang->line('dmls_keyword');
+		$this->data['body'] = 'resources/dmls';
+		$this->load->view("main_layout",$this->data);
+	}
+
+	// SLA page
+	public function sla(){
+		$this->data['title'] = $this->lang->line('sla_title');
+		$this->data['description'] = $this->lang->line('sla_description');
+		$this->data['keyword'] = $this->lang->line('sla_keyword');
+		$this->data['body'] = 'resources/sla';
+		$this->load->view("main_layout",$this->data);
+	}
+
+	// VC page
+	public function vc(){
+		$this->data['title'] = $this->lang->line('vc_title');
+		$this->data['description'] = $this->lang->line('vc_description');
+		$this->data['keyword'] = $this->lang->line('vc_keyword');
+		$this->data['body'] = 'resources/vc';
+		$this->load->view("main_layout",$this->data);
+	}
+
 }
 

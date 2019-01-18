@@ -12,6 +12,9 @@ $(document).ready(function(){
     // Dropdown
     $('.dropdown-tog').dropdown();
 
+    // Select Dropdown
+    $('.card-header select').extendSelect();
+
     // Easy Scroll
 	$(function(){
           $('.page-scroll a').bind('click', function(event) {

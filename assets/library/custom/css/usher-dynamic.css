@@ -1,6 +1,5 @@
 /*Authentication*/
 #authentication-part{
-    /*background:#fafafa; */
     background:#ffffff; 
 }
 #authentication-part .container{
@@ -9,29 +8,6 @@
 #authentication-part .authentication-content{
     padding:5px 20px;
 }
-/*#authentication-part .form-control,
-#authentication-part .form-control:focus{
-    height:36px;
-    padding:10px;
-    color:#BCBCBC;
-    border-radius:5px;
-    box-sizing:border-box;
-    border: 1px solid #979797;
-}*/
-/*#authentication-part .Abtn, 
-#authentication-part .Abtn:focus,
-#authentication-part .Abtn:active{
-    height:40px; 
-    color:#5c98bd;
-    padding:5px 5px;
-    background:transparent;  
-    border:1px solid #5c98bd;
-}
-#authentication-part .Abtn:hover{
-    color:#ffffff;
-    background:#5c98bd;  
-    border: 1px solid #5c98bd;    
-}*/
 
 /*Start Project Part*/
 #startproject-part{
@@ -71,7 +47,6 @@
 
 /*Upload Part*/
 #upload-part{
-    width:100%;
     background:#ffffff;  
 }
 #upload-part .container{
@@ -149,11 +124,25 @@
     font-size:12px;
     letter-spacing:0.5px; 
 }
+#upload-part .upload-msg-block{
+    margin:10px 0px; 
+}
+#upload-part .upload-msg-content{
+    padding:20px 0px;
+    text-align:center; 
+}
+#upload-part .vr-divider{
+    top:0px;
+    right:0;
+    bottom:0;
+    width:1px;
+    position:absolute;
+    background:#979797;
+}
 
 /*************************/
 /*Cart Part*/
 #cart-part{
-    width:100%;
     background:#ffffff;  
 }
 #cart-part .container{
@@ -237,7 +226,6 @@
     text-align:left;          
     padding:5px 5px;
 }
-
 
 /*Checkout Part*/
 #checkout-part{

@@ -61,15 +61,7 @@ class Design extends MY_Controller {
 		$design_finishing_custom = $this->input->post('design_finishing_custom');
 		$design_resource = $this->input->post('design_resource');
 
-		// Getting Order Details  
-        $getdesign_count = $this->Design_m->get_order_id();
-        $design_no = intval($getdesign_count) + 100;
-        $year = substr(date('y'), -1);
-        $order_id = 'DO'.date('m').$year.$design_no;
-        $order_status = 'PROCESSING';
-        $status = 'active';
-        $design_date = time();
-        // Check Files
+		// Check Files
         if (!empty($_FILES['design_resource'])) {
             for($i = 0; $i < count($_FILES['design_resource']['name']); $i++) {
                 $img = $_FILES['design_resource']['name'][$i];
@@ -114,11 +106,7 @@ class Design extends MY_Controller {
             'design_material_custom' => $design_material_custom,
             'design_precision' => $design_precision,
             'design_finishing' => $design_finishing,
-            'design_finishing_custom' => $design_finishing_custom,
-            'order_id' => $order_id,
-            'order_status' => $order_status,
-            'status' => $status,
-            'design_date' => $design_date,
+            'design_finishing_custom' => $design_finishing_custom
         );
         $this->session->set_userdata('design_data', $design_data);
         $data = 'success';
@@ -158,10 +146,15 @@ class Design extends MY_Controller {
             $design_precision = $design_data['design_precision'];
             $design_finishing = $design_data['design_finishing'];
             $design_finishing_custom = $design_data['design_finishing_custom'];
-            $order_id = $design_data['order_id'];
-            $order_status = $design_data['order_status'];
-            $status = $design_data['status'];
-            $design_date = $design_data['design_date'];
+            // Getting Order Details  
+	        $getdesign_count = $this->Design_m->get_order_id();
+	        $design_no = intval($getdesign_count) + 100;
+	        $year = substr(date('y'), -1);
+	        $order_id = 'DO'.date('m').$year.$design_no;
+	        $order_status = 'PROCESSING';
+	        $status = 'active';
+	        $design_date = time();
+
 			$design_array['user_id'] = $user_id;
 			$design_array['industry_id'] = $industry_id;
 			$design_array['design_name'] = $design_name;

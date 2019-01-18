@@ -45,11 +45,20 @@
                                 <input type="submit" class="form-control btn btn-primary Abtn" name="login-submit" onclick="return loginValidation()" value="<?= $this->lang->line('login_btn'); ?>">
                             </div>
                             <div class="form-group">
-                                <a href="<?= $google_login_url; ?>"class="form-control btn btn-primary Pbtn google-btn"><i class="fab fa-google"></i> GOOGLE LOGIN</a>
-                            </div>
-                            <div class="form-group">
                                 <p><?= $this->lang->line('forgot_password'); ?> <a class="text-info" href="<?= base_url('forgot-password'); ?>"><?= $this->lang->line('click'); ?></a></p>
-                            </div>    
+                            </div>
+                            <div class="row">
+                                <div class="col-6 col-xs-12">
+                                    <div class="form-group">
+                                        <a href="<?= $google_login_url; ?>"class="form-control btn btn-primary Pbtn google-btn"><i class="fab fa-google"></i> GOOGLE LOGIN</a>
+                                    </div>        
+                                </div>
+                                <div class="col-6 col-xs-12">    
+                                    <div class="form-group">
+                                        <a href="<?= $this->facebook->login_url(); ?>"class="form-control btn btn-primary Pbtn fb-btn disabled"><i class="fab fa-facebook"></i> FACEBOOK LOGIN</a>
+                                    </div>
+                                </div>    
+                            </div>
                         </div>        
                     </form>        
                 </div>

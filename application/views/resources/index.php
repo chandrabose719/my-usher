@@ -12,7 +12,7 @@
     </section>    	
     <section id="resource-group">
         <div class="container">
-            <h3>For your manufacturing needs</h3>
+            <h3>Technology</h3>
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="resource-group-content">
@@ -49,13 +49,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="resource-group-content">
                         <div class="content-body">
-                            <h4>Fused Deposition Modeling</h4>
-                            <p>Fused Deposition Modeling or FDM technology extrudes a heated thermoplastic filament through a nozzle.</p>
+                            <h4>FRP Moulding</h4>
+                            <p>Fibre reinforced plastic is a composite material consisting of high-performance fibers embedded into a plastic mold. FRP is generated from the polymer matrix secured with fibers.</p>
                         </div>
                         <div class="hr-divider"></div>
                         <div class="row">
                             <div class="col-6 col-xs-12">        
-                                <a href="">
+                                <a href="<?= base_url('resources/frp-moulding'); ?>">
                                     <p class="ml-1">learn more</p>
                                 </a>
                             </div>
@@ -65,13 +65,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="resource-group-content">
                         <div class="content-body">
-                            <h4>Fused Deposition Modeling</h4>
-                            <p>Fused Deposition Modeling or FDM technology extrudes a heated thermoplastic filament through a nozzle, building the part layer-by-layer from the bottom up.</p>
+                            <h4>Direct Metal Laser Sintering</h4>
+                            <p>Direct Metal Laser Sintering, a component of additive manufacturing technology that helps in accomplishing metal parts creation from 3D CAD data not requiring any tools.</p>
                         </div>
                         <div class="hr-divider"></div>
                         <div class="row">
                             <div class="col-6 col-xs-12">        
-                                <a href="">
+                                <a href="<?= base_url('resources/direct-metal-laser-sintering'); ?>">
                                     <p class="ml-1">learn more</p>
                                 </a>
                             </div>
@@ -81,13 +81,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="resource-group-content">
                         <div class="content-body">
-                            <h4>Fused Deposition Modeling</h4>
-                            <p>Fused Deposition Modeling or FDM technology extrudes a heated thermoplastic filament through a nozzle, building the part layer-by-layer from the bottom up heated thermoplastic filament through a nozzle.</p>
+                            <h4>Vacuum Casting</h4>
+                            <p>Vacuum casting is a process used for casting elastomers. Under this, the liquid material is drawn into the mold with the help of a vacuum.</p>
                         </div>
                         <div class="hr-divider"></div>
                         <div class="row">
                             <div class="col-6 col-xs-12">        
-                                <a href="">
+                                <a href="<?= base_url('resources/vacuum-casting'); ?>">
                                     <p class="ml-1">learn more</p>
                                 </a>
                             </div>
@@ -97,13 +97,13 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="resource-group-content">
                         <div class="content-body">
-                            <h4>Fused Deposition Modeling</h4>
-                            <p>Fused Deposition Modeling or FDM technology extrudes a heated thermoplastic filament through a nozzle.</p>
+                            <h4>STEREOLITHOGRAPHY(SLA)</h4>
+                            <p>What is the technology that can provide you a printed part delivered in the shortest possible time? Stereolithography is what we call it.</p>
                         </div>
                         <div class="hr-divider"></div>
                         <div class="row">
                             <div class="col-6 col-xs-12">        
-                                <a href="">
+                                <a href="<?= base_url('resources/stereolithography'); ?>">
                                     <p class="ml-1">learn more</p>
                                 </a>
                             </div>
@@ -125,7 +125,7 @@
             </div>    
         </div>
     </section>
-    <section id="resource-group">
+<!--    <section id="resource-group">
         <div class="container">
             <h3>For your manufacturing needs</h3>
             <div class="row">
@@ -224,7 +224,7 @@
                             </div>
                         </div>    
                     </div>
-                </div>
+                </div> -->
             </div>    
         </div>
     </section>

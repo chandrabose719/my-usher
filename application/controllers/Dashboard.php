@@ -135,7 +135,7 @@ class Dashboard extends MY_Controller {
 			$array['user_id'] = $user_id;
         	$array['order_id'] = $order_id;
         	$array['order_type'] = $order_type;
-        	$array['support_query'] = $support_query;
+        	$array['help_message'] = $support_query;
         	$array['status'] = 'active';
         	$array['date'] = time();
         	if ($this->Needhelp_m->insert($array)) {

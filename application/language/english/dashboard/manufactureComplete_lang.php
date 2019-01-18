@@ -18,6 +18,7 @@
 	$lang['material'] = 'Material';
 	$lang['status'] = 'Status';
 	$lang['order_date'] = 'Ordered On';
+	$lang['order_amount'] = 'Payed Amount';
 	$lang['complete_msg_header'] = 'NO ORDERS';
 	$lang['complete_msg_content'] = 'Upload your 3D design now and get instant quote.';
 

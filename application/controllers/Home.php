@@ -59,6 +59,19 @@ class Home extends MY_Controller {
 
 	// Contact Us Page
 	public function contact_us(){
+		if (isset($_POST['contact-submit'])) {
+			$contact_name = $this->input->post('contact_name');
+	        $contact_email = $this->input->post('contact_email');
+	        $contact_mobile = $this->input->post('contact_mobile');
+	        $contact_query = $this->input->post('contact_query');
+	        if ($contact_name != '' && $contact_email != '' && $contact_mobile != '' && $contact_query != '') {
+	            $this->contactEmail($contact_name, $contact_email, $contact_mobile, $contact_query);
+	        	$this->session->set_flashdata('success','Thank you for your query. We will get in touch with you shortly.');
+				redirect(base_url('contact-us'));
+			}else{
+				$this->session->set_flashdata('error','Please fill all field!');
+			}
+	    }        
 		$this->data['title'] = $this->lang->line('contact_title');
 		$this->data['description'] = $this->lang->line('contact_description');
 		$this->data['keyword'] = $this->lang->line('contact_keyword');

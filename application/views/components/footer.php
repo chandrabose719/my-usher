@@ -12,13 +12,14 @@
                                     <li><a href="https://3dusher.com/index.php#how-it-work">How it Works</a></li>
                                     <li><a href="<?= base_url('about-us'); ?>">About Us</a></li>
                                     <li><a href="<?= base_url('resources'); ?>">Resources</a></li>
-                                    <li><a href="<?= base_url('faq'); ?>">FAQs</a></li>
+                                    <li><a href="<?= base_url('blog'); ?>">Blog</a></li>
                                 </ul>
                             </div>
                         </div>
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                             <div class="footer-content">
                                 <ul class="list-unstyled">
+                                    <li><a href="<?= base_url('faq'); ?>">FAQs</a></li>
                                     <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
                                 </ul>
                             </div>    

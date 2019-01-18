@@ -1,8 +1,9 @@
 <?php
 	class Usher_m extends MY_Model{
 		
-		protected $_table = 'user_details';	
-		protected $_id = 'user_id';	
+		protected $_TABLE = 'user_details';	
+		protected $_ID = 'user_id';	
+		protected $_ORDER = 'desc';
 
 	    function __construct() {
 	        parent::__construct();

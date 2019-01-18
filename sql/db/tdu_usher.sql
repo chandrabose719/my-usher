@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Jan 13, 2019 at 10:17 PM
--- Server version: 5.6.41-84.1
--- PHP Version: 5.6.30
+-- Host: 127.0.0.1
+-- Generation Time: Jan 18, 2019 at 11:11 AM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 5.6.39
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `usher_partnerdb`
+-- Database: `tdu_usher`
 --
 
 -- --------------------------------------------------------
@@ -41,9 +41,9 @@ CREATE TABLE `assembly_details` (
 --
 
 INSERT INTO `assembly_details` (`assembly_id`, `assembly_name`, `image_path`, `status`, `date`) VALUES
-(1, 'Single Part', 'assets/images/design/3DUsher-DescribeProject-Assembly-1.png', 'active', '16-11-2018'),
-(2, 'Multiple Parts (Non Assembly)', 'assets/images/design/3DUsher-DescribeProject-Assembly-2.png', 'active', '16-11-2018'),
-(3, 'Multiple Parts (Assembled)', 'assets/images/design/3DUsher-DescribeProject-Assembly-3.png', 'active', '16-11-2018');
+(1, 'Single Part', 'assets/images/design/3DUsher-DescribeProject-Assembly-1.png', 'active', '1547618339'),
+(2, 'Multiple Parts (Non Assembly)', 'assets/images/design/3DUsher-DescribeProject-Assembly-2.png', 'active', '1547618339'),
+(3, 'Multiple Parts (Assembled)', 'assets/images/design/3DUsher-DescribeProject-Assembly-3.png', 'active', '1547618339');
 
 -- --------------------------------------------------------
 
@@ -52,8 +52,7 @@ INSERT INTO `assembly_details` (`assembly_id`, `assembly_name`, `image_path`, `s
 --
 
 CREATE TABLE `color_details` (
-  `color_id` int(11) NOT NULL,
-  `technology_id` int(11) NOT NULL,
+  `color_id` int(100) NOT NULL,
   `material_id` varchar(100) NOT NULL,
   `color_name` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
@@ -64,46 +63,46 @@ CREATE TABLE `color_details` (
 -- Dumping data for table `color_details`
 --
 
-INSERT INTO `color_details` (`color_id`, `technology_id`, `material_id`, `color_name`, `status`, `date`) VALUES
-(1, 1, '1', 'WHITE', 'active', '9-11-2018'),
-(2, 1, '1', 'RED', 'active', '9-11-2018'),
-(3, 1, '1', 'GREEN', 'active', '9-11-2018'),
-(4, 1, '2', 'WHITE', 'active', '9-11-2018'),
-(5, 1, '2', 'RED', 'active', '9-11-2018'),
-(6, 1, '2', 'GREEN', 'active', '9-11-2018'),
-(7, 1, '3', 'WHITE', 'active', '9-11-2018'),
-(8, 1, '3', 'RED', 'active', '9-11-2018'),
-(9, 1, '3', 'GREEN', 'active', '9-11-2018'),
-(10, 1, '4', 'WHITE', 'active', '9-11-2018'),
-(11, 1, '4', 'RED', 'active', '9-11-2018'),
-(12, 1, '4', 'GREEN', 'active', '9-11-2018'),
-(13, 2, '5', 'WHITE', 'active', '9-11-2018'),
-(14, 2, '5', 'BLACK', 'active', '9-11-2018'),
-(15, 2, '6', 'WHITE', 'active', '9-11-2018'),
-(16, 2, '6', 'BLACK', 'active', '9-11-2018'),
-(17, 3, '7', 'WHITE', 'active', '9-11-2018'),
-(18, 3, '7', 'BLACK', 'active', '9-11-2018'),
-(19, 3, '8', 'NATURAL', 'active', '9-11-2018'),
-(20, 3, '9', 'NATURAL', 'active', '9-11-2018');
+INSERT INTO `color_details` (`color_id`, `material_id`, `color_name`, `status`, `date`) VALUES
+(1, '1', 'WHITE', 'inactive', '1547711802'),
+(2, '1', 'RED', 'inactive', '1547711802'),
+(3, '1', 'GREEN', 'inactive', '1547711802'),
+(4, '2', 'WHITE', 'inactive', '1547711802'),
+(5, '2', 'RED', 'inactive', '1547711802'),
+(6, '2', 'GREEN', 'inactive', '1547711802'),
+(7, '3', 'WHITE', 'inactive', '1547711802'),
+(8, '3', 'RED', 'inactive', '1547711802'),
+(9, '3', 'GREEN', 'inactive', '1547711802'),
+(10, '4', 'WHITE', 'inactive', '1547711802'),
+(11, '4', 'RED', 'inactive', '1547711802'),
+(12, '4', 'GREEN', 'inactive', '1547711802'),
+(13, '5', 'WHITE', 'inactive', '1547711802'),
+(14, '5', 'BLACK', 'inactive', '1547711802'),
+(15, '6', 'WHITE', 'inactive', '1547711802'),
+(16, '6', 'BLACK', 'inactive', '1547711802'),
+(17, '7', 'WHITE', 'inactive', '1547711802'),
+(18, '7', 'BLACK', 'inactive', '1547711802'),
+(19, '8', 'NATURAL', 'inactive', '1547711802'),
+(20, '9', 'NATURAL', 'inactive', '1547711802');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `countries`
+-- Table structure for table `country_details`
 --
 
-CREATE TABLE `countries` (
-  `id` int(11) NOT NULL,
-  `country_code` varchar(2) NOT NULL DEFAULT '',
-  `country_name` varchar(100) NOT NULL DEFAULT '',
+CREATE TABLE `country_details` (
+  `country_id` int(100) NOT NULL,
+  `country_code` varchar(2) NOT NULL,
+  `country_name` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `countries`
+-- Dumping data for table `country_details`
 --
 
-INSERT INTO `countries` (`id`, `country_code`, `country_name`, `status`) VALUES
+INSERT INTO `country_details` (`country_id`, `country_code`, `country_name`, `status`) VALUES
 (1, 'AF', 'Afghanistan', 'inactive'),
 (2, 'AL', 'Albania', 'inactive'),
 (3, 'DZ', 'Algeria', 'inactive'),
@@ -382,9 +381,8 @@ CREATE TABLE `design_details` (
 --
 
 INSERT INTO `design_details` (`design_id`, `user_id`, `industry_id`, `design_name`, `design_description`, `design_usage`, `design_temperature`, `design_assembly`, `design_material`, `design_material_custom`, `design_precision`, `design_finishing`, `design_finishing_custom`, `order_id`, `order_status`, `status`, `design_date`) VALUES
-(1, '1', '1', 'Test One', '', 'Aerospace', '5', '3', '4', '', '3', '1', 'Custom Fin', 'DO019100', 'PROCESSING', 'active', '1547194033'),
-(2, '1', '5', 'Test Two', 'Optional', 'Gifting', '2', '2', '1', 'Custom Mat', '1', '4', '', 'DO019101', 'PROCESSING', 'active', '1547194336'),
-(3, '1', '6', 'Test Three', 'Optional Manufacture', 'Manufacture', '1', '2', '5', '', '2', '4', '', 'DO019102', 'PROCESSING', 'active', '1547196133');
+(1, '1', '1', 'Test One', 'Optional One', 'Manufacture', '4', '3', '1', 'Custom Mat', '3', '3', '', 'DO019100', 'PROCESSING', 'active', '1547618852'),
+(2, '1', '1', 'Test Two', '', 'Gifting', '6', '2', '2', '', '2', '1', 'Custom Fin', 'DO019101', 'PROCESSING', 'active', '1547621409');
 
 -- --------------------------------------------------------
 
@@ -404,15 +402,15 @@ CREATE TABLE `design_material_details` (
 --
 
 INSERT INTO `design_material_details` (`design_material_id`, `design_material_name`, `status`, `date`) VALUES
-(1, 'None of the Above', 'active', '16-11-2018'),
-(2, 'Biomaterial', 'active', '16-11-2018'),
-(3, 'Ceramic\n', 'active', '16-11-2018'),
-(4, 'Sandstone', 'active', '16-11-2018'),
-(5, 'Acrylic', 'active', '16-11-2018'),
-(6, 'Metal', 'active', '16-11-2018'),
-(7, 'Plastic', 'active', '16-11-2018'),
-(8, 'Wood', 'active', '16-11-2018'),
-(9, 'Castable Material', 'active', '16-11-2018');
+(1, 'None of the Above', 'active', '1547618366'),
+(2, 'Biomaterial', 'active', '1547618366'),
+(3, 'Ceramic\n', 'active', '1547618366'),
+(4, 'Sandstone', 'active', '1547618366'),
+(5, 'Acrylic', 'active', '1547618366'),
+(6, 'Metal', 'active', '1547618366'),
+(7, 'Plastic', 'active', '1547618366'),
+(8, 'Wood', 'active', '1547618366'),
+(9, 'Castable Material', 'active', '1547618366');
 
 -- --------------------------------------------------------
 
@@ -435,10 +433,22 @@ CREATE TABLE `design_resource_details` (
 --
 
 INSERT INTO `design_resource_details` (`design_resource_id`, `design_id`, `design_resource_name`, `design_resource_path`, `design_resource_size`, `status`, `design_resource_date`) VALUES
-(1, 1, 'DBmenuTest.png', 'assets/images/design_file/1547194033_DBmenuTest.png', '1547194033', 'active', '1547194033'),
-(2, 2, 'Design-Orders.jpg', 'assets/images/design_file/1547194336_Design-Orders.jpg', '79016', 'active', '1547194336'),
-(3, 2, 'Partner_OngoingJobs.jpg', 'assets/images/design_file/1547194336_Partner_OngoingJobs.jpg', '106283', 'active', '1547194336'),
-(4, 3, 'Design-Orders.jpg', 'assets/images/design_file/1547196133_Design-Orders.jpg', '79016', 'active', '1547196133');
+(1, 1, 'DBmenuTest.png', 'assets/images/design_file/1547618834_DBmenuTest.png', '122881', 'active', '1547618834');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `facebook_details`
+--
+
+CREATE TABLE `facebook_details` (
+  `facebook_id` int(100) NOT NULL,
+  `facebook_auth_id` varchar(100) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `user_email` varchar(100) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `date` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -447,138 +457,36 @@ INSERT INTO `design_resource_details` (`design_resource_id`, `design_id`, `desig
 --
 
 CREATE TABLE `file_details` (
-  `file_id` int(11) NOT NULL,
-  `user_id` int(11) NOT NULL,
+  `file_id` int(100) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
   `file_name` varchar(100) NOT NULL,
   `file_path` varchar(100) NOT NULL,
   `file_size` bigint(100) NOT NULL,
   `cad_result` varchar(1000) NOT NULL,
-  `product_qty` varchar(100) NOT NULL,
-  `product_amount` varchar(100) NOT NULL,
+  `file_qty` varchar(100) NOT NULL,
+  `file_amount` varchar(100) NOT NULL,
+  `file_unit` varchar(100) NOT NULL,
+  `material_id` varchar(100) NOT NULL,
+  `layer_height_id` varchar(100) NOT NULL,
+  `color_id` varchar(100) NOT NULL,
+  `post_process_id` varchar(100) NOT NULL,
+  `file_instruction` varchar(100) NOT NULL,
   `delivery_type` varchar(100) NOT NULL,
   `delivery_amount` varchar(100) NOT NULL,
-  `technology_id` varchar(100) NOT NULL,
-  `material_id` varchar(100) NOT NULL,
-  `color_id` varchar(100) NOT NULL,
-  `layer_height_id` varchar(100) NOT NULL,
-  `post_process_id` varchar(100) NOT NULL,
-  `payment_id` varchar(100) NOT NULL,
-  `payment_status` varchar(100) NOT NULL,
   `order_id` varchar(100) NOT NULL,
   `file_status` varchar(100) NOT NULL,
-  `cur_date` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL
+  `status` varchar(100) NOT NULL,
+  `cur_date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `file_details`
 --
 
-INSERT INTO `file_details` (`file_id`, `user_id`, `file_name`, `file_path`, `file_size`, `cad_result`, `product_qty`, `product_amount`, `delivery_type`, `delivery_amount`, `technology_id`, `material_id`, `color_id`, `layer_height_id`, `post_process_id`, `payment_id`, `payment_status`, `order_id`, `file_status`, `cur_date`, `status`) VALUES
-(1, 1, 'igs.igs', 'assets/images/cad_file/1542364911_file9.stp', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '10', 'Normal', '50', '1', '1', '1', '1', '1', 'ch_1DWdSkCSoKzHcIqlyCfJxIw7', 'succeeded', '1', 'ONGOING', '15-11-2018', 'active'),
-(2, 1, 'stp.stp', 'assets/images/cad_file/1542259351_stp.stp', 1134138, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/stp.stp.html\",\"DimensionX\":46.5900315509107,\"DimensionY\":46.5900315509107,\"DimensionZ\":55.0266267409692,\"SurfaceArea\":30.1271684511792,\"Volume\":2296.453}', '1', '10.93653946246', 'Normal', '50', '2', '3', '7', '7', 'NULL', 'ch_1DWdSkCSoKzHcIqlyCfJxIw7', 'succeeded', '1', 'ONGOING', '15-11-2018', 'active'),
-(3, 2, 'igs.igs', 'assets/images/cad_file/1542268430_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '10.9614999648', 'Normal', '50', '3', '5', '11', '9', 'NULL', 'ch_1DWfjrCSoKzHcIqlJnzYec3g', 'succeeded', '2', 'PROCESSING', '15-11-2018', 'active'),
-(4, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1542275946_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/20mm_calibration_cube.stl.html\",\"DimensionX\":20.0010006043579,\"DimensionY\":20.0009996506836,\"DimensionZ\":20.0010002000475,\"SurfaceArea\":25.616209248265,\"Volume\":7796.068}', '1', '15.39527050176', 'Normal', '50', '3', '6', '13', '12', 'NULL', 'ch_1DWiAwCSoKzHcIql1Y4Itlkf', 'succeeded', '3', 'PROCESSING', '15-11-2018', 'active'),
-(5, 2, '20mm_calibration_cube.stl', 'assets/images/cad_file/1542354845_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/20mm_calibration_cube.stl.html\",\"DimensionX\":20.0010006043579,\"DimensionY\":20.0009996506836,\"DimensionZ\":20.0010002000475,\"SurfaceArea\":25.616209248265,\"Volume\":7796.068}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '16-11-2018', 'active'),
-(6, 0, 'stp.stp', 'assets/images/cad_file/1542774810_stp.stp', 1134138, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/stp.stp.html\",\"DimensionX\":46.5900315509107,\"DimensionY\":46.5900315509107,\"DimensionZ\":55.0266267409692,\"SurfaceArea\":30.1271684511792,\"Volume\":2296.453}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '21-11-2018', 'active'),
-(7, 1, 'stp.stp', 'assets/images/cad_file/1542774877_stp.stp', 1134138, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/stp.stp.html\",\"DimensionX\":46.5900315509107,\"DimensionY\":46.5900315509107,\"DimensionZ\":55.0266267409692,\"SurfaceArea\":30.1271684511792,\"Volume\":2296.453}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '21-11-2018', 'active'),
-(8, 1, 'igs.igs', 'assets/images/cad_file/1542776485_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '21-11-2018', 'active'),
-(9, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1542780805_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/20mm_calibration_cube.stl.html\",\"DimensionX\":20.0010006043579,\"DimensionY\":20.0009996506836,\"DimensionZ\":20.0010002000475,\"SurfaceArea\":25.616209248265,\"Volume\":7796.068}', '1', '13.17939245176', 'Normal', '50', '2', '3', '7', '7', 'NULL', 'ch_1DYpVNCSoKzHcIqlJ6U4yRrW', 'succeeded', '4', 'PROCESSING', '21-11-2018', 'active'),
-(10, 1, 'igs.igs', 'assets/images/cad_file/1542786309_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '21-11-2018', 'active'),
-(11, 1, 'igs.igs', 'assets/images/cad_file/1542787525_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '21-11-2018', 'active'),
-(12, 1, 'igs.igs', 'assets/images/cad_file/1542790197_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '8.8212835152', 'Normal', '50', '3', '5', '11', '10', 'NULL', 'ch_1DYsykCSoKzHcIqlDoXcjtcS', 'succeeded', '5', 'PROCESSING', '21-11-2018', 'active'),
-(13, 1, 'igs.igs', 'assets/images/cad_file/1542878952_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '22-11-2018', 'active'),
-(14, 1, 'igs.igs', 'assets/images/cad_file/1542880863_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '22-11-2018', 'active'),
-(15, 1, 'igs.igs', 'assets/images/cad_file/1542881801_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '22-11-2018', 'active'),
-(16, 1, 'igs.igs', 'assets/images/cad_file/1542882565_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '10.9751547148', 'Normal', '50', '2', '3', '7', '7', 'NULL', 'ch_1DZFTZCSoKzHcIqlezcOQxI5', 'succeeded', '6', 'PROCESSING', '22-11-2018', 'active'),
-(17, 1, 'igs.igs', 'assets/images/cad_file/1542951501_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '23-11-2018', 'active'),
-(18, 1, 'igs.igs', 'assets/images/cad_file/1542953454_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '2', '8.8212835152', 'Normal', '50', '3', '5', '11', '10', 'NULL', 'ch_1DZYirCSoKzHcIqlP5VwnB3o', 'succeeded', '7', 'PROCESSING', '23-11-2018', 'active'),
-(19, 1, 'stp.stp', 'assets/images/cad_file/1542958529_stp.stp', 1134138, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/stp.stp.html\",\"DimensionX\":46.5900315509107,\"DimensionY\":46.5900315509107,\"DimensionZ\":55.0266267409692,\"SurfaceArea\":30.1271684511792,\"Volume\":2296.453}', '2', '8.74916232104', 'Express', '100', '3', '5', '11', '10', 'NULL', 'ch_1DZZHaCSoKzHcIqlGoeMtknj', 'succeeded', '8', 'PROCESSING', '23-11-2018', 'active'),
-(20, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1542959200_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/20mm_calibration_cube.stl.html\",\"DimensionX\":20.0010006043579,\"DimensionY\":20.0009996506836,\"DimensionZ\":20.0010002000475,\"SurfaceArea\":25.616209248265,\"Volume\":7796.068}', '2', '15.39527050176', 'Express', '100', '3', '5', '11', '9', 'NULL', 'ch_1DZZO5CSoKzHcIql5cORvNSJ', 'succeeded', '9', 'PROCESSING', '23-11-2018', 'active'),
-(21, 1, 'igs.igs', 'assets/images/cad_file/1542961130_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '27.1662293716', 'Normal', '50', '2', '4', '9', '8', 'NULL', 'ch_1DZZy3CSoKzHcIqlYhNeCGoC', 'succeeded', '10', 'PROCESSING', '23-11-2018', 'active'),
-(22, 1, 'igs.igs', 'assets/images/cad_file/1543054916_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '10.9751547148', 'Normal', '50', '2', '3', '7', '7', 'NULL', 'ch_1DZyIOCSoKzHcIqlK58Wob23', 'succeeded', '11', 'PROCESSING', '24-11-2018', 'active'),
-(23, 1, 'igs.igs', 'assets/images/cad_file/1543379733_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '28-11-2018', 'active'),
-(24, 1, 'igs.igs', 'assets/images/cad_file/1543397318_igs.igs', 1206548, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '1', '8.8212835152', 'Normal', '10', '3', '5', '11', '10', 'NULL', 'ch_1DbPOECSoKzHcIqlzj3zMotN', 'succeeded', '12', 'ONGOING', '28-11-2018', 'active'),
-(25, 1, 'stp.stp', 'assets/images/cad_file/1543398072_stp.stp', 1134138, '{\"HtmlFile\":\"http://148.72.207.238:8080/Assets/ProcessPreview/stp.stp.html\",\"DimensionX\":46.5900315509107,\"DimensionY\":46.5900315509107,\"DimensionZ\":55.0266267409692,\"SurfaceArea\":30.1271684511792,\"Volume\":2296.453}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '28-11-2018', 'active'),
-(26, 1, 'igs.igs', 'assets/images/cad_file/1543399918_igs.igs', 1206548, '{\"HtmlFile\":\"http://3dusher.in:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '28-11-2018', 'active'),
-(27, 1, 'igs.igs', 'assets/images/cad_file/1543813110_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '03-12-2018', 'active'),
-(28, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1543813149_20mm_calibration_cube.stl', 6884, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '03-12-2018', 'active'),
-(29, 1, 'stp.stp', 'assets/images/cad_file/1543813162_stp.stp', 1134138, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '03-12-2018', 'active'),
-(30, 1, 'igs.igs', 'assets/images/cad_file/1543997973_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '05-12-2018', 'active'),
-(31, 1, 'igs.igs', 'assets/images/cad_file/1543998150_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '', '05-12-2018', 'active'),
-(32, 0, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544157754_20mm_calibration_cube.stl', 6884, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '07-12-2018', 'active'),
-(33, 0, '', 'assets/images/cad_file/1544599792_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"assets/images/cad_file/1544599792_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(34, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544600886_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"assets/images/cad_file/1544600886_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(35, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544600961_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"assets/images/cad_file/1544600961_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(36, 1, 'Array', 'assets/images/cad_file/1544601094_Array', 0, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(37, 1, 'Array', 'assets/images/cad_file/1544601095_Array', 0, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(38, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544601094_20mm_calibration_cube.stl', 6884, '{\"HtmlFile\":\"assets/images/cad_file/1544601094_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(39, 1, 'Array', 'assets/images/cad_file/1544601216_Array', 0, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(40, 1, 'igs.igs', 'assets/images/cad_file/1544601511_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(41, 1, 'igs.igs', 'assets/images/cad_file/1544601643_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(42, 1, 'igs.igs', 'assets/images/cad_file/1544601643_20mm_calibration_cube.stl', 1206548, '{\"HtmlFile\":\"assets/images/cad_file/1544601643_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(43, 1, 'stp.stp', 'assets/images/cad_file/1544602471_stp.stp', 1134138, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(44, 1, 'stp.stp', 'assets/images/cad_file/1544602471_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544602471_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(45, 1, 'stp.stp', 'assets/images/cad_file/1544602504_stp.stp', 1134138, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(46, 1, 'stp.stp', 'assets/images/cad_file/1544602504_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544602504_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(47, 1, 'stp.stp', 'assets/images/cad_file/1544602809_stp.stp', 1134138, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(48, 1, 'stp.stp', 'assets/images/cad_file/1544602808_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544602808_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(49, 1, 'igs.igs', 'assets/images/cad_file/1544603981_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(50, 1, 'igs.igs', 'assets/images/cad_file/1544604210_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(51, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544604210_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544604210_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(52, 1, 'igs.igs', 'assets/images/cad_file/1544606151_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(53, 1, 'igs.igs', 'assets/images/cad_file/1544606154_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(54, 1, 'igs.igs', 'assets/images/cad_file/1544606156_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(55, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544606672_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544606672_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(56, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544606836_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544606836_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(57, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607031_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607031_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(58, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607502_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607502_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(59, 1, 'igs.igs', 'assets/images/cad_file/1544607561_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(60, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607923_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607923_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(61, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607969_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607969_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(62, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607978_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607978_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(63, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607981_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607981_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(64, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607982_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607982_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(65, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607982_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607982_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(66, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607982_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607982_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(67, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607983_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607983_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(68, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607984_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607984_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(69, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607984_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607984_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(70, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544607984_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544607984_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(71, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544608617_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544608617_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(72, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544608678_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544608678_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(73, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544608693_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544608693_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(74, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544608708_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544608708_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(75, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544608718_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544608718_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(76, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544608757_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544608757_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(77, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544609074_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544609074_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(78, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544609224_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544609224_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(79, 1, 'igs.igs', 'assets/images/cad_file/1544609246_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(80, 1, 'igs.igs', 'assets/images/cad_file/1544609245_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544609245_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(81, 1, 'igs.igs', 'assets/images/cad_file/1544609735_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(82, 1, 'igs.igs', 'assets/images/cad_file/1544609735_20mm_calibration_cube.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544609735_20mm_calibration_cube.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(83, 1, '20mm.stl', 'assets/images/cad_file/1544609789_20mm.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544609789_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(84, 1, 'igs.igs', 'assets/images/cad_file/1544609825_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(85, 1, 'stp.stp', 'assets/images/cad_file/1544609854_stp.stp', 0, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(86, 1, 'igs.igs', 'assets/images/cad_file/1544609856_igs.igs', 0, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(87, 1, '20mm.stl', 'assets/images/cad_file/1544609879_20mm.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544609879_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(88, 1, 'igs.igs', 'assets/images/cad_file/1544610426_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(89, 1, 'igs.igs', 'assets/images/cad_file/1544610426_20mm.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544610426_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(90, 1, 'igs.igs', 'assets/images/cad_file/1544611994_igs.igs', 0, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(91, 1, 'igs.igs', 'assets/images/cad_file/1544612490_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(92, 1, 'igs.igs', 'assets/images/cad_file/1544612490_20mm.stl', 0, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544612490_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(93, 1, 'igs.igs', 'assets/images/cad_file/1544612605_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(94, 1, 'igs.igs', 'assets/images/cad_file/1544612604_20mm.stl', 1206548, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544612604_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(95, 1, 'igs.igs', 'assets/images/cad_file/1544612716_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(96, 1, 'igs.igs', 'assets/images/cad_file/1544612716_20mm.stl', 1206548, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544612716_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(97, 1, '20mm.stl', 'assets/images/cad_file/1544612883_20mm.stl', 6884, '{\"HtmlFile\":\"https://3dusher.com/assets/images/cad_file/1544612883_20mm.stl.html\",\"DimensionX\":20.00100040435791,\"DimensionY\":20.000999450683594,\"DimensionZ\":20.001000000047497,\"SurfaceArea\":2561.6209248264954,\"Volume\":7796.068134798697}', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(98, 1, '20mm.stl', 'assets/images/cad_file/1544613324_20mm.stl', 6884, 'undefined', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(99, 1, '20mm.stl', 'assets/images/cad_file/1544613393_20mm.stl', 6884, 'undefined', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(100, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544613467_20mm_calibration_cube.stl', 6884, 'undefined', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(101, 1, '20mm.stl', 'assets/images/cad_file/1544613487_20mm.stl', 6884, 'undefined', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(102, 1, '20mm_calibration_cube.stl', 'assets/images/cad_file/1544613546_20mm_calibration_cube.stl', 6884, 'undefined', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(103, 1, '20mm.stl', 'assets/images/cad_file/1544613670_20mm.stl', 6884, 'undefined', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '12-12-2018', 'active'),
-(104, 1, 'igs.igs', 'assets/images/cad_file/1545638294_igs.igs', 1206548, '', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', '24-12-2018', 'active');
+INSERT INTO `file_details` (`file_id`, `user_id`, `file_name`, `file_path`, `file_size`, `cad_result`, `file_qty`, `file_amount`, `file_unit`, `material_id`, `layer_height_id`, `color_id`, `post_process_id`, `file_instruction`, `delivery_type`, `delivery_amount`, `order_id`, `file_status`, `status`, `cur_date`) VALUES
+(1, '1', 'igs.igs', 'assets/images/cad_file/1547713116_igs.igs', 1206548, '{\"HtmlFile\":\"https://3dusher.online:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '', '', '', '', '', '', '', '', '', '', '', 'INCOMPLETE', 'active', '1547713116'),
+(2, '1', 'igs.igs', 'assets/images/cad_file/1547713526_igs.igs', 1206548, '{\"HtmlFile\":\"https://3dusher.online:8080/Assets/ProcessPreview/igs.igs.html\",\"DimensionX\":34.0000002,\"DimensionY\":34.0000002,\"DimensionZ\":45.2379301999999,\"SurfaceArea\":31.1506304201015,\"Volume\":2391.14}', '', '', '', '', '', '', '', '', '', '', '', 'INCOMPLETE', 'active', '1547713526'),
+(3, '1', 'stp.stp', 'assets/images/cad_file/1547797873_stp.stp', 1134138, '{\"HtmlFile\":\"https://3dusher.online:8080/Assets/ProcessPreview/stp.stp.html\",\"DimensionX\":46.5900315509107,\"DimensionY\":46.5900315509107,\"DimensionZ\":55.0266267409692,\"SurfaceArea\":30.1271684511792,\"Volume\":2296.453}', '1', '4.88382632496', 'in', '9', '21', '', '', 'Optional', 'Normal', '10', '1', 'PROCESSING', 'active', '1547797873');
 
 -- --------------------------------------------------------
 
@@ -598,10 +506,10 @@ CREATE TABLE `finishing_details` (
 --
 
 INSERT INTO `finishing_details` (`finishing_id`, `finishing_name`, `status`, `date`) VALUES
-(1, 'None of the Above', 'active', '16-11-2018'),
-(2, 'No Requirement', 'active', '16-11-2018'),
-(3, 'Matte Finish', 'active', '16-11-2018'),
-(4, 'Glossy Finish', 'active', '16-11-2018');
+(1, 'None of the Above', 'active', '1547618388'),
+(2, 'No Requirement', 'active', '1547618388'),
+(3, 'Matte Finish', 'active', '1547618388'),
+(4, 'Glossy Finish', 'active', '1547618388');
 
 -- --------------------------------------------------------
 
@@ -610,7 +518,7 @@ INSERT INTO `finishing_details` (`finishing_id`, `finishing_name`, `status`, `da
 --
 
 CREATE TABLE `google_details` (
-  `google_id` int(11) NOT NULL,
+  `google_id` int(100) NOT NULL,
   `google_auth_id` varchar(100) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `user_email` varchar(100) NOT NULL,
@@ -623,7 +531,7 @@ CREATE TABLE `google_details` (
 --
 
 INSERT INTO `google_details` (`google_id`, `google_auth_id`, `user_name`, `user_email`, `status`, `date`) VALUES
-(1, '114156121863219191187', 'CHANDRA BOSE.K.V', 'chandrabose719.songs@gmail.com', 'active', '1547192387');
+(1, '114156121863219191187', 'CHANDRA BOSE.K.V', 'chandrabose719.songs@gmail.com', 'active', '1547618195');
 
 -- --------------------------------------------------------
 
@@ -643,14 +551,14 @@ CREATE TABLE `industry_details` (
 --
 
 INSERT INTO `industry_details` (`industry_id`, `industry_name`, `status`, `date`) VALUES
-(1, 'Aerospace', 'active', '16-11-2018'),
-(2, 'Architecture', 'active', '16-11-2018'),
-(3, 'Automotive', 'active', '16-11-2018'),
-(4, 'Education', 'active', '16-11-2018'),
-(5, 'Gifting', 'active', '16-11-2018'),
-(6, 'Manufacturing', 'active', '16-11-2018'),
-(7, 'Med-Tech', 'active', '16-11-2018'),
-(8, 'Other', 'active', '16-11-2018');
+(1, 'Aerospace', 'active', '1547618407'),
+(2, 'Architecture', 'active', '1547618407'),
+(3, 'Automotive', 'active', '1547618407'),
+(4, 'Education', 'active', '1547618407'),
+(5, 'Gifting', 'active', '1547618407'),
+(6, 'Manufacturing', 'active', '1547618407'),
+(7, 'Med-Tech', 'active', '1547618407'),
+(8, 'Other', 'active', '1547618407');
 
 -- --------------------------------------------------------
 
@@ -659,8 +567,7 @@ INSERT INTO `industry_details` (`industry_id`, `industry_name`, `status`, `date`
 --
 
 CREATE TABLE `layer_height_details` (
-  `layer_height_id` int(11) NOT NULL,
-  `technology_id` int(11) NOT NULL,
+  `layer_height_id` int(100) NOT NULL,
   `material_id` varchar(100) NOT NULL,
   `layer_height_name` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
@@ -671,30 +578,30 @@ CREATE TABLE `layer_height_details` (
 -- Dumping data for table `layer_height_details`
 --
 
-INSERT INTO `layer_height_details` (`layer_height_id`, `technology_id`, `material_id`, `layer_height_name`, `status`, `date`) VALUES
-(1, 1, '1', '100', 'active', '9-11-2018'),
-(2, 1, '1', '200', 'active', '9-11-2018'),
-(3, 1, '1', '300', 'active', '9-11-2018'),
-(4, 1, '2', '100', 'active', '9-11-2018'),
-(5, 1, '2', '200', 'active', '9-11-2018'),
-(6, 1, '2', '300', 'active', '9-11-2018'),
-(7, 1, '3', '100', 'active', '9-11-2018'),
-(8, 1, '3', '200', 'active', '9-11-2018'),
-(9, 1, '3', '300', 'active', '9-11-2018'),
-(10, 1, '4', '100', 'active', '9-11-2018'),
-(11, 1, '4', '200', 'active', '9-11-2018'),
-(12, 1, '4', '300', 'active', '9-11-2018'),
-(13, 2, '5', '100', 'active', '9-11-2018'),
-(14, 2, '6', '100', 'active', '9-11-2018'),
-(15, 3, '7', '25', 'active', '9-11-2018'),
-(16, 3, '7', '50', 'active', '9-11-2018'),
-(17, 3, '7', '100', 'active', '9-11-2018'),
-(18, 3, '8', '25', 'active', '9-11-2018'),
-(19, 3, '8', '50', 'active', '9-11-2018'),
-(20, 3, '8', '100', 'active', '9-11-2018'),
-(21, 3, '9', '25', 'active', '9-11-2018'),
-(22, 3, '9', '50', 'active', '9-11-2018'),
-(23, 3, '9', '100', 'active', '9-11-2018');
+INSERT INTO `layer_height_details` (`layer_height_id`, `material_id`, `layer_height_name`, `status`, `date`) VALUES
+(1, '1', '100', 'active', '1547635573'),
+(2, '1', '200', 'inactive', '1547635573'),
+(3, '1', '300', 'inactive', '1547635573'),
+(4, '2', '100', 'active', '1547635573'),
+(5, '2', '200', 'inactive', '1547635573'),
+(6, '2', '300', 'inactive', '1547635573'),
+(7, '3', '100', 'active', '1547635573'),
+(8, '3', '200', 'inactive', '1547635573'),
+(9, '3', '300', 'inactive', '1547635573'),
+(10, '4', '100', 'active', '1547635573'),
+(11, '4', '200', 'inactive', '1547635573'),
+(12, '4', '300', 'inactive', '1547635573'),
+(13, '5', '100', 'active', '1547635573'),
+(14, '6', '100', 'active', '1547635573'),
+(15, '7', '25', 'active', '1547635573'),
+(16, '7', '50', 'active', '1547635573'),
+(17, '7', '100', 'active', '1547635573'),
+(18, '8', '25', 'active', '1547635573'),
+(19, '8', '50', 'active', '1547635573'),
+(20, '8', '100', 'active', '1547635573'),
+(21, '9', '25', 'active', '1547635573'),
+(22, '9', '50', 'active', '1547635573'),
+(23, '9', '100', 'active', '1547635573');
 
 -- --------------------------------------------------------
 
@@ -703,9 +610,11 @@ INSERT INTO `layer_height_details` (`layer_height_id`, `technology_id`, `materia
 --
 
 CREATE TABLE `material_details` (
-  `material_id` int(11) NOT NULL,
-  `technology_id` int(11) NOT NULL,
+  `material_id` int(100) NOT NULL,
   `material_name` varchar(100) NOT NULL,
+  `technology_name` varchar(100) NOT NULL,
+  `min_volume` varchar(100) NOT NULL,
+  `max_volume` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
   `date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -714,16 +623,39 @@ CREATE TABLE `material_details` (
 -- Dumping data for table `material_details`
 --
 
-INSERT INTO `material_details` (`material_id`, `technology_id`, `material_name`, `status`, `date`) VALUES
-(1, 1, 'PLA', 'active', '9-11-2018'),
-(2, 1, 'ABS', 'active', '9-11-2018'),
-(3, 1, 'PETG', 'active', '9-11-2018'),
-(4, 1, 'PEEK', 'active', '9-11-2018'),
-(5, 2, 'Standard Nylon', 'active', '9-11-2018'),
-(6, 2, 'Standard TPU', 'active', '9-11-2018'),
-(7, 3, 'Standard Resin', 'active', '9-11-2018'),
-(8, 3, 'Clear Resin', 'active', '9-11-2018'),
-(9, 3, 'Tough Resin', 'active', '9-11-2018');
+INSERT INTO `material_details` (`material_id`, `material_name`, `technology_name`, `min_volume`, `max_volume`, `status`, `date`) VALUES
+(1, 'PLA', 'FDM', '8', '125000000', 'active', '1547635536'),
+(2, 'ABS', 'FDM', '8', '125000000', 'active', '1547635536'),
+(3, 'PETG', 'FDM', '8', '125000000', 'active', '1547635536'),
+(4, 'PEEK', 'FDM', '8', '125000000', 'active', '1547635536'),
+(5, 'Standard Nylon', 'SLS', '2', '27000000', 'active', '1547635536'),
+(6, 'Standard TPU', 'SLS', '2', '27000000', 'active', '1547635536'),
+(7, 'Standard Resin', 'SLA', '2', '562500000', 'active', '1547635536'),
+(8, 'Clear Resin', 'SLA', '2', '562500000', 'active', '1547635536'),
+(9, 'Tough Resin', 'SLA', '2', '562500000', 'active', '1547635536');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `needhelp_details`
+--
+
+CREATE TABLE `needhelp_details` (
+  `needhelp_id` int(100) NOT NULL,
+  `user_id` varchar(100) NOT NULL,
+  `order_id` varchar(100) NOT NULL,
+  `order_type` varchar(100) NOT NULL,
+  `help_message` varchar(1000) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `date` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `needhelp_details`
+--
+
+INSERT INTO `needhelp_details` (`needhelp_id`, `user_id`, `order_id`, `order_type`, `help_message`, `status`, `date`) VALUES
+(1, '1', '1', 'design', 'Need Help Test One', 'active', '1547619631');
 
 -- --------------------------------------------------------
 
@@ -734,8 +666,11 @@ INSERT INTO `material_details` (`material_id`, `technology_id`, `material_name`,
 CREATE TABLE `order_details` (
   `order_id` int(100) NOT NULL,
   `user_id` varchar(100) NOT NULL,
+  `payment_id` varchar(100) NOT NULL,
   `order` varchar(100) NOT NULL,
+  `payment_amount` varchar(100) NOT NULL,
   `order_status` varchar(100) NOT NULL,
+  `payment_status` varchar(100) NOT NULL,
   `order_date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -743,19 +678,8 @@ CREATE TABLE `order_details` (
 -- Dumping data for table `order_details`
 --
 
-INSERT INTO `order_details` (`order_id`, `user_id`, `order`, `order_status`, `order_date`) VALUES
-(1, '1', 'MO11100', 'PROCESSING', '2018-11-15'),
-(2, '2', 'MO11101', 'PROCESSING', '2018-11-15'),
-(3, '1', 'MO11102', 'PROCESSING', '2018-11-15'),
-(4, '1', 'MO11103', 'ONGOING', '2018-11-21'),
-(5, '1', 'MO11104', 'PROCESSING', '2018-11-21'),
-(6, '1', 'MO11105', 'PROCESSING', '2018-11-22'),
-(7, '1', 'MO11106', 'PROCESSING', '2018-11-23'),
-(8, '1', 'MO11107', 'PROCESSING', '2018-11-23'),
-(9, '1', 'MO11108', 'PROCESSING', '2018-11-23'),
-(10, '1', 'MO11109', 'ONGOING', '2018-11-23'),
-(11, '1', 'MO11110', 'ONGOING', '2018-11-24'),
-(12, '1', 'MO11111', 'ONGOING', '2018-11-28');
+INSERT INTO `order_details` (`order_id`, `user_id`, `payment_id`, `order`, `payment_amount`, `order_status`, `payment_status`, `order_date`) VALUES
+(1, '1', 'ch_1DttewCSoKzHcIqlvH4xWLgB', 'MO019100', '1488', 'PROCESSING', 'succeeded', '1547803749');
 
 -- --------------------------------------------------------
 
@@ -764,8 +688,7 @@ INSERT INTO `order_details` (`order_id`, `user_id`, `order`, `order_status`, `or
 --
 
 CREATE TABLE `post_process_details` (
-  `post_process_id` int(11) NOT NULL,
-  `technology_id` int(11) NOT NULL,
+  `post_process_id` int(100) NOT NULL,
   `material_id` varchar(100) NOT NULL,
   `post_process_name` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
@@ -776,10 +699,10 @@ CREATE TABLE `post_process_details` (
 -- Dumping data for table `post_process_details`
 --
 
-INSERT INTO `post_process_details` (`post_process_id`, `technology_id`, `material_id`, `post_process_name`, `status`, `date`) VALUES
-(1, 1, '1', 'Sanding', 'active', '9-11-2018'),
-(2, 1, '2', 'Sanding', 'active', '9-11-2018'),
-(3, 1, '2', 'Glossy', 'active', '9-11-2018');
+INSERT INTO `post_process_details` (`post_process_id`, `material_id`, `post_process_name`, `status`, `date`) VALUES
+(1, '1', 'Sanding', 'inactive', '1547635606'),
+(2, '2', 'Sanding', 'inactive', '1547635606'),
+(3, '2', 'Glossy', 'inactive', '1547635606');
 
 -- --------------------------------------------------------
 
@@ -800,9 +723,9 @@ CREATE TABLE `precision_details` (
 --
 
 INSERT INTO `precision_details` (`precision_id`, `precision_name`, `precision_image`, `status`, `date`) VALUES
-(1, 'Low', 'assets/images/design/3DUsher-Detailing-Low.png', 'active', '16-11-2018'),
-(2, 'Medium', 'assets/images/design/3DUsher-Detailing-Medium.png', 'active', '16-11-2018'),
-(3, 'High', 'assets/images/design/3DUsher-Detailing-High.png', 'active', '16-11-2018');
+(1, 'Low', 'assets/images/design/3DUsher-Detailing-Low.png', 'active', '1547618463'),
+(2, 'Medium', 'assets/images/design/3DUsher-Detailing-Medium.png', 'active', '1547618463'),
+(3, 'High', 'assets/images/design/3DUsher-Detailing-High.png', 'active', '1547618463');
 
 -- --------------------------------------------------------
 
@@ -826,93 +749,29 @@ CREATE TABLE `price_details` (
 --
 
 INSERT INTO `price_details` (`price_id`, `material_rate`, `layer_height_rate`, `density`, `material_name`, `layer_height_name`, `status`, `date`) VALUES
-(1, '0.3300000000', '1', '0.00125', 'PLA', '100', 'active', '13-11-2018'),
-(2, '0.5000000000', '1', '0.00125', 'PLA', '200', 'active', '13-11-2018'),
-(3, '0.5000000000', '1', '0.00125', 'PLA', '300', 'active', '13-11-2018'),
-(4, '0.4100000000', '1', '0.00105', 'ABS', '100', 'active', '13-11-2018'),
-(5, '0.6000000000', '1', '0.00105', 'ABS', '200', 'active', '13-11-2018'),
-(6, '0.6000000000', '1', '0.00105', 'ABS', '300', 'active', '13-11-2018'),
-(7, '0.4100000000', '1', '0.00127', 'PETG', '100', 'active', '13-11-2018'),
-(8, '0.4100000000', '1', '0.00127', 'PETG', '200', 'active', '13-11-2018'),
-(9, '0.4100000000', '1', '0.00127', 'PETG', '300', 'active', '13-11-2018'),
-(10, '5.0000000000', '1', '0.00132', 'PEEK', '100', 'active', '13-11-2018'),
-(11, '5.0000000000', '1', '0.00132', 'PEEK', '200', 'active', '13-11-2018'),
-(12, '5.0000000000', '1', '0.00132', 'PEEK', '300', 'active', '13-11-2018'),
-(13, '0.0004078200', '10', 'NULL', 'Standard Nylon', '100', 'active', '13-11-2018'),
-(14, '0.0009059400', '25', 'NULL', 'Standard TPU', '100', 'active', '13-11-2018'),
-(15, '0.0006445100', '5', 'NULL', 'Standard Resin', '100', 'active', '13-11-2018'),
-(16, '0.0007616800', '7', 'NULL', 'Standard Resin', '50', 'active', '13-11-2018'),
-(17, '0.0008203200', '9', 'NULL', 'Standard Resin', '25', 'active', '13-11-2018'),
-(18, '0.0006825500', '5', 'NULL', 'Clear Resin', '100', 'active', '13-11-2018'),
-(19, '0.0007616800', '7', 'NULL', 'Clear Resin', '50', 'active', '13-11-2018'),
-(20, '0.0008203200', '9', 'NULL', 'Clear Resin', '25', 'active', '13-11-2018'),
-(21, '0.0006445100', '3', 'NULL', 'Tough Resin', '100', 'active', '13-11-2018'),
-(22, '0.0007616800', '5', 'NULL', 'Tough Resin', '50', 'active', '13-11-2018'),
-(23, '0.0008203200', '3', 'NULL', 'Tough Resin', '25', 'active', '13-11-2018');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `states`
---
-
-CREATE TABLE `states` (
-  `state_id` int(11) NOT NULL,
-  `state_name` varchar(100) NOT NULL,
-  `country_code` varchar(100) NOT NULL,
-  `date` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `states`
---
-
-INSERT INTO `states` (`state_id`, `state_name`, `country_code`, `date`, `status`) VALUES
-(1, 'Karnataka', 'IN', '08-11-18', 'active'),
-(2, 'Andhra Pradesh', 'IN', '08-11-18', 'active'),
-(3, 'Tamilnadu', 'IN', '08-11-18', 'active'),
-(4, 'Kerala', 'IN', '08-11-18', 'active'),
-(5, 'New York', 'US', '08-11-18', 'active'),
-(6, 'CA', 'US', '08-11-18', 'active');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `support_details`
---
-
-CREATE TABLE `support_details` (
-  `support_id` int(100) NOT NULL,
-  `user_id` int(100) NOT NULL,
-  `order_id` varchar(100) NOT NULL,
-  `order_type` varchar(100) NOT NULL,
-  `support_query` varchar(1000) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `date` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `technology_details`
---
-
-CREATE TABLE `technology_details` (
-  `technology_id` int(11) NOT NULL,
-  `technology_name` varchar(100) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `date` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `technology_details`
---
-
-INSERT INTO `technology_details` (`technology_id`, `technology_name`, `status`, `date`) VALUES
-(1, 'FDM', 'active', '9-11-2018'),
-(2, 'SLS', 'active', '9-11-2018'),
-(3, 'SLA', 'active', '9-11-2018');
+(1, '0.3300000000', '1', '0.00125', 'PLA', '100', 'active', '1547707193'),
+(2, '0.5000000000', '1', '0.00125', 'PLA', '200', 'active', '1547707193'),
+(3, '0.5000000000', '1', '0.00125', 'PLA', '300', 'active', '1547707193'),
+(4, '0.4100000000', '1', '0.00105', 'ABS', '100', 'active', '1547707193'),
+(5, '0.6000000000', '1', '0.00105', 'ABS', '200', 'active', '1547707193'),
+(6, '0.6000000000', '1', '0.00105', 'ABS', '300', 'active', '1547707193'),
+(7, '0.4100000000', '1', '0.00127', 'PETG', '100', 'active', '1547707193'),
+(8, '0.4100000000', '1', '0.00127', 'PETG', '200', 'active', '1547707193'),
+(9, '0.4100000000', '1', '0.00127', 'PETG', '300', 'active', '1547707193'),
+(10, '5.0000000000', '1', '0.00132', 'PEEK', '100', 'active', '1547707193'),
+(11, '5.0000000000', '1', '0.00132', 'PEEK', '200', 'active', '1547707193'),
+(12, '5.0000000000', '1', '0.00132', 'PEEK', '300', 'active', '1547707193'),
+(13, '0.0004078200', '10', 'NULL', 'Standard Nylon', '100', 'active', '1547707193'),
+(14, '0.0009059400', '25', 'NULL', 'Standard TPU', '100', 'active', '1547707193'),
+(15, '0.0006445100', '5', 'NULL', 'Standard Resin', '100', 'active', '1547707193'),
+(16, '0.0007616800', '7', 'NULL', 'Standard Resin', '50', 'active', '1547707193'),
+(17, '0.0008203200', '9', 'NULL', 'Standard Resin', '25', 'active', '1547707193'),
+(18, '0.0006825500', '5', 'NULL', 'Clear Resin', '100', 'active', '1547707193'),
+(19, '0.0007616800', '7', 'NULL', 'Clear Resin', '50', 'active', '1547707193'),
+(20, '0.0008203200', '9', 'NULL', 'Clear Resin', '25', 'active', '1547707193'),
+(21, '0.0006445100', '3', 'NULL', 'Tough Resin', '100', 'active', '1547707193'),
+(22, '0.0007616800', '5', 'NULL', 'Tough Resin', '50', 'active', '1547707193'),
+(23, '0.0008203200', '3', 'NULL', 'Tough Resin', '25', 'active', '1547707193');
 
 -- --------------------------------------------------------
 
@@ -932,51 +791,12 @@ CREATE TABLE `temperature_details` (
 --
 
 INSERT INTO `temperature_details` (`temperature_id`, `temperature_name`, `status`, `date`) VALUES
-(1, '< 0 C or 32 F', 'active', '16-11-2018'),
-(2, '1 C to 15 C or 32 F to 59 F', 'active', '16-11-2018'),
-(3, '16 C to 40 C or 59 F to 104 F', 'active', '16-11-2018'),
-(4, '41 C to 50 C or 104 F to 122 F', 'active', '16-11-2018'),
-(5, '> 50 C or 122 F', 'active', '16-11-2018'),
-(6, 'Not Sure', 'active', '16-11-18');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `users_details`
---
-
-CREATE TABLE `users_details` (
-  `user_id` int(11) NOT NULL,
-  `user_name` varchar(100) NOT NULL,
-  `user_email` varchar(100) NOT NULL,
-  `user_password` varchar(100) NOT NULL,
-  `user_mobile` varchar(100) NOT NULL,
-  `billing_address` varchar(500) NOT NULL,
-  `billing_address1` varchar(500) NOT NULL,
-  `billing_city` varchar(500) NOT NULL,
-  `billing_state` varchar(500) NOT NULL,
-  `billing_country` varchar(500) NOT NULL,
-  `billing_zipcode` varchar(500) NOT NULL,
-  `shipping_address` varchar(500) NOT NULL,
-  `shipping_address1` varchar(500) NOT NULL,
-  `city` varchar(500) NOT NULL,
-  `state` varchar(500) NOT NULL,
-  `country` varchar(500) NOT NULL,
-  `pin_code` varchar(500) NOT NULL,
-  `status` varchar(100) NOT NULL,
-  `date` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `users_details`
---
-
-INSERT INTO `users_details` (`user_id`, `user_name`, `user_email`, `user_password`, `user_mobile`, `billing_address`, `billing_address1`, `billing_city`, `billing_state`, `billing_country`, `billing_zipcode`, `shipping_address`, `shipping_address1`, `city`, `state`, `country`, `pin_code`, `status`, `date`) VALUES
-(1, 'Chandrabose', 'info@3dusher.com', 'ushers', '9988776655', '', 'Madurai', 'Madurai', 'Tamilnadu', 'IN', '624306', 'Thirupparangundram', 'Madurai', 'Madurai', 'Tamilnadu', 'IN', '624306', 'active', '17-10-2018'),
-(2, 'Chandra Bose', 'chandrabose719@gmail.com', '3dusher', '7708573343', 'NGO', 'Dindigul', 'Dindigul', 'Tamilnadu', 'IN', '624306', 'NGO', 'Dindigul', 'Dindigul', 'Tamilnadu', 'AF', '624306', 'active', '15-11-2018'),
-(4, 'Chandra', 'chandrabose719.songs@gmail.com', '223942200', '9988776655', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'NULL', 'active', '22-11-2018'),
-(5, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'active', '08-01-2019'),
-(7, 'Bose', 'kumar@3dusher.com', 'kumar123', '9988775565', '', '', '', '', '', '', '', '', '', '', '', '', 'active', '08-01-2019');
+(1, '< 0 C or 32 F', 'inactive', '1547618586'),
+(2, '32 F to 59 F', 'active', '1547618586'),
+(3, '59 F to 104 F', 'active', '1547618586'),
+(4, '104 F to 122 F', 'active', '1547618586'),
+(5, 'Greater than 122 F', 'active', '1547618586'),
+(6, 'Not Sure', 'active', '1547618586');
 
 -- --------------------------------------------------------
 
@@ -985,7 +805,7 @@ INSERT INTO `users_details` (`user_id`, `user_name`, `user_email`, `user_passwor
 --
 
 CREATE TABLE `user_details` (
-  `user_id` int(11) NOT NULL,
+  `user_id` int(100) NOT NULL,
   `user_name` varchar(100) NOT NULL,
   `user_email` varchar(100) NOT NULL,
   `user_password` varchar(100) NOT NULL,
@@ -1003,6 +823,7 @@ CREATE TABLE `user_details` (
   `country` varchar(500) NOT NULL,
   `pin_code` varchar(500) NOT NULL,
   `google_auth_id` varchar(100) NOT NULL,
+  `facebook_auth_id` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL,
   `date` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -1011,9 +832,9 @@ CREATE TABLE `user_details` (
 -- Dumping data for table `user_details`
 --
 
-INSERT INTO `user_details` (`user_id`, `user_name`, `user_email`, `user_password`, `user_mobile`, `billing_address`, `billing_address1`, `billing_city`, `billing_state`, `billing_country`, `billing_zipcode`, `shipping_address`, `shipping_address1`, `city`, `state`, `country`, `pin_code`, `google_auth_id`, `status`, `date`) VALUES
-(1, 'Bose', 'info@3dusher.com', 'ushers', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'active', '1547192224'),
-(2, 'CHANDRA BOSE.K.V', 'chandrabose719.songs@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '114156121863219191187', 'active', '1547192387');
+INSERT INTO `user_details` (`user_id`, `user_name`, `user_email`, `user_password`, `user_mobile`, `billing_address`, `billing_address1`, `billing_city`, `billing_state`, `billing_country`, `billing_zipcode`, `shipping_address`, `shipping_address1`, `city`, `state`, `country`, `pin_code`, `google_auth_id`, `facebook_auth_id`, `status`, `date`) VALUES
+(1, 'Bose', 'info@3dusher.com', 'ushers', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'active', '1547616858'),
+(2, 'CHANDRA BOSE.K.V', 'chandrabose719.songs@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '114156121863219191187', '', 'active', '1547616858');
 
 --
 -- Indexes for dumped tables
@@ -1032,10 +853,10 @@ ALTER TABLE `color_details`
   ADD PRIMARY KEY (`color_id`);
 
 --
--- Indexes for table `countries`
+-- Indexes for table `country_details`
 --
-ALTER TABLE `countries`
-  ADD PRIMARY KEY (`id`);
+ALTER TABLE `country_details`
+  ADD PRIMARY KEY (`country_id`);
 
 --
 -- Indexes for table `design_details`
@@ -1054,6 +875,12 @@ ALTER TABLE `design_material_details`
 --
 ALTER TABLE `design_resource_details`
   ADD PRIMARY KEY (`design_resource_id`);
+
+--
+-- Indexes for table `facebook_details`
+--
+ALTER TABLE `facebook_details`
+  ADD PRIMARY KEY (`facebook_id`);
 
 --
 -- Indexes for table `file_details`
@@ -1092,6 +919,12 @@ ALTER TABLE `material_details`
   ADD PRIMARY KEY (`material_id`);
 
 --
+-- Indexes for table `needhelp_details`
+--
+ALTER TABLE `needhelp_details`
+  ADD PRIMARY KEY (`needhelp_id`);
+
+--
 -- Indexes for table `order_details`
 --
 ALTER TABLE `order_details`
@@ -1116,28 +949,10 @@ ALTER TABLE `price_details`
   ADD PRIMARY KEY (`price_id`);
 
 --
--- Indexes for table `support_details`
---
-ALTER TABLE `support_details`
-  ADD PRIMARY KEY (`support_id`);
-
---
--- Indexes for table `technology_details`
---
-ALTER TABLE `technology_details`
-  ADD PRIMARY KEY (`technology_id`);
-
---
 -- Indexes for table `temperature_details`
 --
 ALTER TABLE `temperature_details`
   ADD PRIMARY KEY (`temperature_id`);
-
---
--- Indexes for table `users_details`
---
-ALTER TABLE `users_details`
-  ADD PRIMARY KEY (`user_id`);
 
 --
 -- Indexes for table `user_details`
@@ -1159,19 +974,19 @@ ALTER TABLE `assembly_details`
 -- AUTO_INCREMENT for table `color_details`
 --
 ALTER TABLE `color_details`
-  MODIFY `color_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `color_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
--- AUTO_INCREMENT for table `countries`
+-- AUTO_INCREMENT for table `country_details`
 --
-ALTER TABLE `countries`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
+ALTER TABLE `country_details`
+  MODIFY `country_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
 -- AUTO_INCREMENT for table `design_details`
 --
 ALTER TABLE `design_details`
-  MODIFY `design_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `design_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `design_material_details`
@@ -1183,13 +998,19 @@ ALTER TABLE `design_material_details`
 -- AUTO_INCREMENT for table `design_resource_details`
 --
 ALTER TABLE `design_resource_details`
-  MODIFY `design_resource_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `design_resource_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `facebook_details`
+--
+ALTER TABLE `facebook_details`
+  MODIFY `facebook_id` int(100) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `file_details`
 --
 ALTER TABLE `file_details`
-  MODIFY `file_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
+  MODIFY `file_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `finishing_details`
@@ -1201,7 +1022,7 @@ ALTER TABLE `finishing_details`
 -- AUTO_INCREMENT for table `google_details`
 --
 ALTER TABLE `google_details`
-  MODIFY `google_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `google_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `industry_details`
@@ -1213,19 +1034,31 @@ ALTER TABLE `industry_details`
 -- AUTO_INCREMENT for table `layer_height_details`
 --
 ALTER TABLE `layer_height_details`
-  MODIFY `layer_height_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `layer_height_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `material_details`
 --
 ALTER TABLE `material_details`
-  MODIFY `material_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `material_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `needhelp_details`
+--
+ALTER TABLE `needhelp_details`
+  MODIFY `needhelp_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `order_details`
+--
+ALTER TABLE `order_details`
+  MODIFY `order_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `post_process_details`
 --
 ALTER TABLE `post_process_details`
-  MODIFY `post_process_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `post_process_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `precision_details`
@@ -1240,34 +1073,16 @@ ALTER TABLE `price_details`
   MODIFY `price_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
--- AUTO_INCREMENT for table `support_details`
---
-ALTER TABLE `support_details`
-  MODIFY `support_id` int(100) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `technology_details`
---
-ALTER TABLE `technology_details`
-  MODIFY `technology_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
---
 -- AUTO_INCREMENT for table `temperature_details`
 --
 ALTER TABLE `temperature_details`
   MODIFY `temperature_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `users_details`
---
-ALTER TABLE `users_details`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
 -- AUTO_INCREMENT for table `user_details`
 --
 ALTER TABLE `user_details`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `user_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

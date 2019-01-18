@@ -24,7 +24,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>With 3D printing technology, you can print almost anything you want just by coming up with a design for it. You can design portable stands for smartphones, card holders, whistles, miniatures and many other neat designs where the possibilities are endless. The below pictures show how a person has design 3D printed custom keychains with the design of his/her interest.</p>
+                        <p>With 3D printing technology, you can print almost anything you want just by coming up with a design for it. You can design portable stands for smartphones, card holders, whistles, miniatures and many other neat designs where the possibilities are endless. The pictures below demonstrate the kind of custom keychains designs users can print.</p>
                     </div>    
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
@@ -37,7 +37,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Want to have one of your custom keychains but don’t know how? Well, our company 3D Usher provides users with enhanced 3D printing technology to custom make their products for almost any industry such as automotive, med-tech, architecture, gifting, manufacturing and many others. So, we act as a medium to allow you to design your product and get it delivered as quickly as possible just with the click of a button. Our expertise and resources in product design and on-demand services will allow you to get a 3D printed keychain made simply by visiting the website, letting us know what kind of design you have in mind, getting a quotation, and finally having it shipped to your doorstep. So, getting a 3D printed keychain made is just an order away!</p>
+                        <p>Want to have one of your custom keychains but don’t know how? Well, our company 3D Usher provides users with enhanced 3D printing technology to custom make their products for almost any industry such as automotive, med-tech, architecture, gifting, manufacturing and many others. So, we act as a medium to allow you to design your product and get it delivered as quickly as possible just with the click of a button. Our expertise and resources in product design and on-demand services will allow you to get a 3D printed keychain made simply by visiting the website, letting us know what kind of design you have in mind, getting a quotation, and finally having it shipped to your doorstep. So, getting a 3D printed keychain made is just 3 clicks away!</p>
                     </div>    
                 </div>
             </div>

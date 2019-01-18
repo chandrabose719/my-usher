@@ -215,6 +215,10 @@ p{
     text-align:justify;
     font-family:'Roboto', sans-serif;
 }
+small{
+    font-size: 14px;
+    letter-spacing:0.2px; 
+}
 table th{
     font-size:16px;
     font-weight:500;  
@@ -281,11 +285,25 @@ table th{
     background:#5c98bd;    
     border: 1px solid #5c98bd;
 }
-.google-btn,
+.google-btn{
+    color:#DB4437 !important;
+    background:transparent; !important;    
+    border: 1px solid #DB4437 !important;
+}
 .google-btn:hover{
-    color:#ffffff;
+    color:#ffffff !important;
     background:#DB4437 !important;    
     border: 1px solid #DB4437 !important;
+}
+.fb-btn{
+    color:#3c5a99 !important;
+    background:transparent !important;    
+    border: 1px solid #3c5a99 !important;
+}
+.fb-btn:hover{
+    color:#ffffff !important;
+    background:#3c5a99 !important;    
+    border: 1px solid #3c5a99 !important;
 }
 .vr-divider{
     top:0;

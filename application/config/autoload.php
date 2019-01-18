@@ -58,7 +58,15 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('user_agent' => 'ua');
 */
-$autoload['libraries'] = array('session', 'database', 'email', 'form_validation', 'pagination', 'google');
+$autoload['libraries'] = array(
+	'session', 
+	'database', 
+	'email', 
+	'form_validation', 
+	'pagination',
+	'google',
+	'facebook'
+);
 
 /*
 | -------------------------------------------------------------------
@@ -103,7 +111,7 @@ $autoload['helper'] = array('url', 'form');
 | config files.  Otherwise, leave it blank.
 |
 */
-$autoload['config'] = array();
+$autoload['config'] = array('stripe_config');
 
 /*
 | -------------------------------------------------------------------
@@ -134,16 +142,14 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array(
 	// Login
-	'Login_m',
 	'Google_m',
+	'Facebook_m',
 	// Usher DB
 	'Usher_m',
 	'Country_m',
 	'Needhelp_m',
 	'Manufacture_m', 
 	'Order_m',
-	'Ordersupport_m',
-	'Technology_m',
 	'Material_m',
 	'Color_m',
 	'LayerHeight_m',
@@ -156,13 +162,5 @@ $autoload['model'] = array(
 	'Temperature_m',
 	'Precision_m',
 	'Finishing_m',
-	'Assembly_m',
-
-	// Partner DB
-	'Admin_m',
-	'Partner_m',
-	'Machine_m',
-	'MJob_m',
-	'DJob_m',
-	'Support_m',
+	'Assembly_m'
 );

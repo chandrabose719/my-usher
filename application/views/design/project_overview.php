@@ -126,7 +126,7 @@
                             <a href="#" class="text-primary float-left" data-toggle="modal" data-dismiss="modal" data-backdrop="static" data-target="#registerModal"><?= $this->lang->line('register_header'); ?></a>
                         </div>
                         <div class="col-sm">    
-                            <a href="forgot-password.php" class="text-primary float-right"><?= $this->lang->line('forgot_password'); ?></a>
+                            <a href="<?= base_url('forgot-password'); ?>" class="text-primary float-right"><?= $this->lang->line('forgot_password'); ?></a>
                         </div>
                     </div>
                 </form>

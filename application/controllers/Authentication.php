@@ -27,37 +27,6 @@ class Authentication extends MY_Controller {
 		$this->load->view("main_layout",$this->data);
 	}
 
-	public function google_auth(){
-		$google_data = $this->google->validate();
-		$id_array['google_auth_id'] = $google_data['auth_id'];
-		$google_array['google_auth_id'] = $google_data['auth_id'];
-		$google_array['user_name'] = $google_data['user_name'];
-		$google_array['user_email'] = $google_data['user_email'];
-		$google_array['status'] = 'active';
-		$google_array['date'] = time();
-		$check_email['user_email'] = $google_data['user_email'];
-		$check_user_data = $this->Usher_m->count($check_email);
-		if($check_user_data == 0){
-			$check_email_data = $this->Google_m->count($check_email);
-			if($check_email_data == 0){
-				$this->Google_m->insert($google_array);
-				$this->Usher_m->insert($google_array);
-			}else{
-				$this->Google_m->update($google_array, $id_array);
-				$this->Usher_m->update($google_array, $id_array);
-			}
-			$user_data = $this->Usher_m->get($id_array, TRUE);
-			$this->session->set_userdata('usher_id', $user_data->user_id);
-			$this->session->set_userdata('usher_name', $user_data->user_name);
-			$this->session->set_userdata('usher_email', $user_data->user_email);
-			$this->session->set_flashdata('success','Loggedin Successfully!');
-			redirect(base_url('start-project'));
-		}else{
-			$this->session->set_flashdata('error','Email already exists, Use normal login instead!');
-			redirect(base_url('register'));
-		}
-	}
-
 	// Register Operation
 	public function registeration(){
 		if(isset($_POST['register-submit'])){
@@ -78,7 +47,7 @@ class Authentication extends MY_Controller {
 					$array['date'] = time();
 					if ($this->Usher_m->insert($array)) {
 						$login_data = $this->Usher_m->get($array, TRUE);
-						// registerMail($login_data->user_name, $login_data->user_email);
+						$this->registerEmail($login_data->user_name, $login_data->user_email);
 						$this->session->set_userdata('usher_id', $login_data->user_id);
 						$this->session->set_userdata('usher_name', $login_data->user_name);
 						$this->session->set_userdata('usher_email', $login_data->user_email);
@@ -112,19 +81,23 @@ class Authentication extends MY_Controller {
 				$user_count = $this->Usher_m->count($user_array);
 				if ($user_count == 1) {
 					$user_data = $this->Usher_m->get($user_array, TRUE);
-					if($user_data->user_email == $user_email && empty($user_data->google_auth_id)){
-						if($user_data->user_email == $user_email && 
-							$user_data->user_password == $user_password){
-							$this->session->set_userdata('usher_id', $user_data->user_id);
-							$this->session->set_userdata('usher_name', $user_data->user_name);
-							$this->session->set_userdata('usher_email', $user_data->user_email);
-							$this->session->set_flashdata('success','Loggedin Successfully!');
-							redirect(base_url($redirect_login));	
+					if(empty($user_data->google_auth_id)){
+						if(empty($user_data->facebook_auth_id)){
+							if($user_data->user_email == $user_email && 
+								$user_data->user_password == $user_password){
+								$this->session->set_userdata('usher_id', $user_data->user_id);
+								$this->session->set_userdata('usher_name', $user_data->user_name);
+								$this->session->set_userdata('usher_email', $user_data->user_email);
+								$this->session->set_flashdata('success','Loggedin Successfully!');
+								redirect(base_url($redirect_login));	
+							}else{
+								$this->session->set_flashdata('error','Wrong E-mail ID or Password, Try Again!');
+							}
 						}else{
-							$this->session->set_flashdata('error','Wrong E-mail ID or Password, Try Again!');
-						}
+							$this->session->set_flashdata('error','Email already exists, Login through facebook!');
+						}		
 					}else{
-						$this->session->set_flashdata('error','Email already exists, Login through Google!');
+						$this->session->set_flashdata('error','Email already exists, Login through google!');
 					}	
 				}else{
 					$this->session->set_flashdata('error','E-mail ID and Password does not exist, Try different!');
@@ -208,6 +181,56 @@ class Authentication extends MY_Controller {
 		$this->data['keyword'] = $this->lang->line('change_keyword');
 		$this->data['body'] = 'authentication/change_password';
 		$this->load->view("main_layout",$this->data);
+	}
+
+	// Google Authentication
+	public function google_auth(){
+		$google_data = $this->google->validate();
+		$id_array['google_auth_id'] = $google_data['auth_id'];
+		$google_array['google_auth_id'] = $google_data['auth_id'];
+		$google_array['user_name'] = $google_data['user_name'];
+		$google_array['user_email'] = $google_data['user_email'];
+		$google_array['status'] = 'active';
+		$google_array['date'] = time();
+		$check_email['user_email'] = $google_data['user_email'];
+		$check_user_data = $this->Usher_m->count($check_email);
+		if($check_user_data == 0){
+			$check_email_data = $this->Google_m->count($check_email);
+			if($check_email_data == 0){
+				$this->Google_m->insert($google_array);
+				$this->Usher_m->insert($google_array);
+			}else{
+				$this->Google_m->update($google_array, $id_array);
+				$this->Usher_m->update($google_array, $id_array);
+			}
+			$user_data = $this->Usher_m->get($id_array, TRUE);
+			$this->session->set_userdata('usher_id', $user_data->user_id);
+			$this->session->set_userdata('usher_name', $user_data->user_name);
+			$this->session->set_userdata('usher_email', $user_data->user_email);
+			$this->session->set_flashdata('success','Loggedin Successfully!');
+			redirect(base_url('start-project'));
+		}else{
+			$this->session->set_flashdata('error','Email already exists, Use normal login instead!');
+			redirect(base_url('register'));
+		}
+	}
+
+	// FB Authentication
+	public function fb_auth(){
+		$this->facebook->is_authenticated();
+		$user = $this->facebook->request('get', '/me?fields=id,name,email');
+		if (!isset($user['error'])){
+			print_r($user);
+		}else{
+			$this->session->set_flashdata('error','Error occured, Try again!');
+			redirect(base_url('register'));
+		}
+	}
+
+	// FB Logout
+	public function fb_logout(){
+		$this->facebook->destroy_session();
+		redirect(base_url('fb-authentication'));
 	}
 
 	// Logout

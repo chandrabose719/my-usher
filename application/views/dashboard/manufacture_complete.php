@@ -41,8 +41,8 @@
                             <p class="pl-2"> <?= $this->lang->line('file_name');?>: <?= $short_name; ?></p>    
                             <p class="pl-2">
                                 <?= $this->lang->line('qty_price');?>: 
-                                <?= $file_data->product_qty;?> /   
-                                &dollar;<?= number_format($file_data->product_amount);  ?> 
+                                <?= $file_data->file_qty;?> /   
+                                &dollar;<?= number_format($file_data->file_amount);  ?> 
                             </p>    
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -62,14 +62,11 @@
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <h4 class="manu-design"> <?= $this->lang->line('manufacturing');?> </h4>
                             <?php
-                                // Technology ID
-                                $tech_array['technology_id'] = $file_data->technology_id;  
-                                $tech_data = $this->Technology_m->get($tech_array, TRUE);
                                 // Material ID
                                 $mat_array['material_id'] = $file_data->material_id;
                                 $mat_data = $this->Material_m->get($mat_array, TRUE);        
                             ?>
-                            <p><?= $this->lang->line('technology');?>: <?= $tech_data->technology_name; ?> </p>
+                            <p><?= $this->lang->line('technology');?>: <?= $mat_data->technology_name; ?> </p>
                             <p><?= $this->lang->line('material');?>: <?= $mat_data->material_name; ?> </p>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
@@ -85,16 +82,16 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <div class="btn-group float-left float-xs-none">
-                                <!-- <?php
+                                <?php
                                     $timestamp = $order_data->order_date;
                                     $file_order_date = date('d M \'y', $timestamp);
-                                ?> -->
-                                <h4><span><?= $this->lang->line('order_date');?> </span></h4>
+                                ?>
+                                <h4><span><?= $this->lang->line('order_date');?></span> <?= $file_order_date; ?></h4>
                             </div>
                         </div>
                         <div class="col-xl-4 offset-xl-5 col-lg-4 offset-lg-5 col-md-4 offset-md-5 col-sm-4 offset-sm-5 col-xs-12">
-                            <div class="btn-group float-right float-xs-none">    
-                            
+                            <div class="btn-group float-right float-xs-none pr-3">    
+                                <h4><span><?= $this->lang->line('order_amount');?></span> &dollar;<?= number_format($order_data->payment_amount, 2); ?></h4>
                             </div>
                         </div>
                     </div>

@@ -109,8 +109,8 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="<?= base_url('industry-block-content">
-                        <a href="education'); ?>">
+                    <div class="industry-block-content">
+                        <a href="<?= base_url('education'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-education-black.png'); ?>">
                             <p class="center-align">Education &amp; Research</p>
                         </a>

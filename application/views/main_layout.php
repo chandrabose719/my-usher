@@ -17,6 +17,8 @@
 	
     <!-- Nice Scroll Content	 -->
 	<link href="<?= base_url('assets/library/scrollbar/css/mCustomScrollbar.min.css'); ?>" rel="stylesheet" type="text/css">
+	<!-- Select Dropdown -->
+	<link href="<?= base_url('assets/library/select-dropdown/css/select.min.css'); ?>" rel="stylesheet" type="text/css">
 
 	<!-- Font Family -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -31,25 +33,44 @@
 	<!-- Usher Location CSS -->
 	<link href="<?= base_url('assets/library/custom/css/location-static.css'); ?>" rel="stylesheet" type="text/css">
 
+	<!-- Google Tag Manager -->
+	<!-- <script>(function(w,d,s,l,i){
+		w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0], j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-PXH5KWS');
+	</script> -->
+
+	<!-- End Google Tag Manager -->
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-121242770-1"></script>
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-121242770-1"></script>
 	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
   		gtag('js', new Date());
   		gtag('config', 'UA-121242770-1');
-	</script>
+	</script> -->
 	<!-- End Google Analytics -->
 
 </head>
 <body>
 	
+	<!-- Google Tag Manager (noscript) -->
+	<!-- <noscript>
+		<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PXH5KWS" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+	</noscript> -->
+	<!-- End Google Tag Manager (noscript) -->
+
 	<!-- Header Part -->
 	<?php $this->load->view('components/header'); ?>
 	<!-- End Header Part -->
 
 	<!-- Wrapper -->
 	<div id="wrapper">
+		<!-- Loading Animation -->
+		<div id="loading-part">
+		    <div class="loading-content"></div>
+		</div>
+		<!-- End Loading Animation -->
 		<!-- Alert Content -->
 		<div id="alert-message">
 			<?php 
@@ -93,8 +114,16 @@
 
 	<!-- Bootstrap Core JS -->
 	<script src="<?= base_url('assets/library/bootstrap-four/js/jquery.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/library/bootstrap-four/js/popper.min.js'); ?>"></script>
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.min.js'); ?>"></script>
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.bundle.min.js'); ?>"></script>
+
+    <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.7.1/angular-local-storage.min.js"></script>
+    <!-- <script src="<?= base_url('assets/angular/'); ?>"></script> -->
+
+    <!-- End Angular JS -->
 
 	<!-- JQuery Plugin -->
 	<!-- WOW Content Left Right Animation	 -->
@@ -103,14 +132,16 @@
     <script src="<?= base_url('assets/library/scrollbar/js/mCustomScrollbar.min.js'); ?>"></script>
     <!-- Easing Scroll Content   -->
     <script src="<?= base_url('assets/library/easing/js/easing.min.js'); ?>" type="text/javascript"></script>
-
+    <!-- Select Dropdown Content   -->
+    <script src="<?= base_url('assets/library/select-dropdown/js/select.min.js'); ?>" type="text/javascript"></script>
+	
 	<!-- Custom JS -->
     <script src="<?= base_url('assets/library/custom/js/usher-common.js'); ?>" type="text/javascript"></script>
     <script src="<?= base_url('assets/library/custom/js/usher-manufacture.js'); ?>" type="text/javascript"></script>
     <script src="<?= base_url('assets/library/custom/js/usher-design.js'); ?>" type="text/javascript"></script>
 
     <!-- Start of HubSpot Embed Code -->
-	<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4831911.js"></script>
+	<!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4831911.js"></script> -->
 	<!-- End of HubSpot Embed Code -->
     
 </body>

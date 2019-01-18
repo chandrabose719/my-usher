@@ -15,4 +15,23 @@
 	$lang['sls_description'] = "3Dusher is online 3D Design &amp; 3D Printing Service Company for rapid prototyping & Commercial 3d printing services. We aim to shorten your manufacturing lead time.";
 	$lang['sls_keyword'] = "Online 3D Printing service, 3D design Printing Service Company";
 
+	// FRP
+	$lang['frp_title'] = "FRP Moulding ";
+	$lang['frp_description'] = " ";
+	$lang['frp_keyword'] = " ";
+
+	// DMLS
+	$lang['dmls_title'] = "Direct Metal Laser Sintering";
+	$lang['dmls_description'] = " ";
+	$lang['dmls_keyword'] = " ";
+
+	// SLA
+	$lang['sla_title'] = "STEREOLITHOGRAPHY(SLA) ";
+	$lang['sla_description'] = " ";
+	$lang['sla_keyword'] = " ";
+
+	// VC
+	$lang['vc_title'] = "Vacuum Casting ";
+	$lang['vc_description'] = " ";
+	$lang['vc_keyword'] = " ";
 ?>

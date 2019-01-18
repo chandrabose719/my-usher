@@ -1,8 +1,9 @@
 <?php
 	class DMaterial_m extends MY_Model{
 		
-		protected $_table = 'design_material_details';	
-		protected $_id = 'design_material_id';	
+		protected $_TABLE = 'design_material_details';	
+		protected $_ID = 'design_material_id';	
+		protected $_ORDER = 'desc';	
 
 	    function __construct() {
 	        parent::__construct();
