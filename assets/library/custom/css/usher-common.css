@@ -39,6 +39,12 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
     transition:background-color 5000s ease-in-out 0s;
 }
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    margin: 0 !important;
+    -webkit-appearance: none !important;
+    -moz-appearance:textfield !important;
+}
 
 /*Header Part*/
 #header-part .navbar-custom{
@@ -83,12 +89,12 @@ footer .container h4{
     text-align:left;
 }
 footer .footer-content li{
-    padding:8px 5px;  
+    padding:8px 0px;  
 }
 footer .footer-content a{
     font-size:14px;
     letter-spacing:0.2px; 
-    padding:5px 0px;  
+    padding:0px 0px;  
 }
 footer .footer-content a:hover{
     color:#747474;  
@@ -109,6 +115,36 @@ footer .copyright-content p{
     color:#747474;
     font-size:14px;
 }
+
+/*Privacy*/
+#privacy-part{
+    width:100%;      
+}
+/*Resource*/
+#privacy{
+    background:#ffffff;
+}
+#privacy .container{
+    padding:20px 0px;
+}
+#privacy .privacy-content{
+    padding:10px 0px;
+}
+#privacy .privacy-content h3{
+    text-align:left;  
+}
+#privacy .privacy-content h4{
+    color:#5c98bd;
+    font-weight:bolder; 
+    text-align:left;  
+}
+#privacy .privacy-content p{
+    text-align:justify;  
+}
+#privacy .privacy-content ul{
+    padding-left: 15px;   
+}
+/*End Privacy*/
 
 /*Alert*/
 #alert{
@@ -231,6 +267,13 @@ table th{
     box-shadow: none!important;
     outline: 0;
 }
+.btn-primary.disabled, 
+.btn-primary:disabled,
+.btn-primary:disabled:hover{
+    color:#ffffff;
+    border-color:#5c98bd;
+    background-color:#5c98bd;
+}
 .page-link, .page-link:focus{
     box-shadow: none!important;
     outline: 0;
@@ -313,14 +356,18 @@ table th{
     position:absolute;
     background:#979797;
 }
+.hr-divider{
+    border: 1px solid #979797;
+}
 
 /*Modal Part*/
 .modal .modal-content{
     margin:0px 30px;
     padding:0px 10px;          
 }
-.modal h3{
-    margin:0px 0px;
+.modal .register-content,
+.modal .login-content{
+    background:#fafafa; 
 }
 #registerModal{
     overflow:auto;

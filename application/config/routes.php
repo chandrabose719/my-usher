@@ -13,10 +13,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['faq'] = 'home/faq';
 	$route['contact-us'] = 'home/contact_us';
 
+	// Privacy
+	$route['privacy-policy'] = 'privacy/privacy_policy';
+	$route['terms-of-use'] = 'privacy/terms_of_use';
+
 	// Authentication
-	$route['register'] = 'authentication';
-	$route['registeration'] = 'authentication/registeration';
-	$route['login'] = 'authentication/login';
+	$route['register'] = 'authentication/register';
+	$route['log-in'] = 'authentication/login';
+	$route['register-operation'] = 'authentication/register_operation';
+	$route['login-operation'] = 'authentication/login_operation';
 	$route['forgot-password'] = 'authentication/forgot_password';
 	$route['change-password/(:any)/(:any)'] = 'authentication/change_password';
 	$route['signout'] = 'authentication/logout';
@@ -37,6 +42,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['manufacture'] = 'manufacture/index';
 	$route['manufacture-store-session'] = 'manufacture/store_session';
 	$route['manufacture-details'] = 'manufacture/manufacture_details';
+	$route['manufacture-delete/(:num)'] = 'manufacture/manufacture_delete';
 	$route['manufacture-overview'] = 'manufacture/manufacture_overview';
 	$route['manufacture-payment'] = 'manufacture/manufacture_payment';
 	$route['manufacture-confirmation'] = 'manufacture/manufacture_confirm';
@@ -81,6 +87,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['blog/automotive-car-parts-and-3D-printing'] = 'blog/automotive_car';
 	$route['blog/rapid-prototyping-for-architecture-models'] = 'blog/rapid_prototyping';
 	$route['blog/silicon-mold'] = 'blog/silicon_mold';
+
+	$route['blog/3d-printing-a-drone-and-drone-parts'] = 'blog/drone_parts';
+	$route['blog/3d-printing-prosthetic-limbs-like-a-cyborg'] = 'blog/prosthetic_cyborg';
+	$route['blog/3d-printing-test-dummies-for-car-safety'] = 'blog/car_safety';
+	$route['blog/3d-printing-medical-models-for-hospitals-and-research'] = 'blog/hospitals_research';
+	$route['blog/3d-printing-light-weight-custom-wheels'] = 'blog/custom_wheels';
+	$route['blog/3d-printing-a-selfie-or-a-photo-as-lithophane'] = 'blog/photo_lithophane';
+	$route['blog/3d-printing-harry-potter-as-a-modern-muggle'] = 'blog/modern_muggle';
+	$route['blog/3d-printing-personalized-gifts-like-engraved-ring-on-valentine-day'] = 'blog/valentine_day';
+	$route['blog/3d-printing-a-personalized-smartphone-cover'] = 'blog/smartphone_cover';
+	$route['blog/3d-printed-smash-bros-action-figures'] = 'blog/action_figures';
 
 	// Location
 	$route['location/india'] = 'location/india';

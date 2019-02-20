@@ -7,7 +7,7 @@
 
     // Header
     $lang['confirm_header'] = 'Thank You';
-    $lang['confirm_msg'] = 'Your order details was submitted successfully.';
+    $lang['confirm_msg'] = 'Your order details were submitted successfully.';
     $lang['confirm_content'] = 'An order confirmation with order details and order ID has been sent to your registered email. Alternatively, you can visit <span class="text-primary">"My Account" > "Design Orders"</span> to check the status of the order.';
     $lang['confirm_btn_one'] = 'CONTINUE BROWSING';
     $lang['confirm_btn_two'] = 'VIEW DESIGN ORDERS';

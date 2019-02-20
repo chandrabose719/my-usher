@@ -49,6 +49,26 @@
 	</script> -->
 	<!-- End Google Analytics -->
 
+	<!-- Facebook Pixel Code -->
+	<!-- <script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window,document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '139040806725112');
+	fbq('track', 'PageView');
+	</script>
+	<noscript>
+	<img height="1" width="1" 
+	src="https://www.facebook.com/tr?id=139040806725112&ev=PageView
+	https://www.facebook.com/tr?id=139040806725112&ev=PageView&noscript=1"/>
+	</noscript> -->
+	<!-- End Facebook Pixel Code -->	
+
 </head>
 <body>
 	
@@ -99,13 +119,13 @@
 	        <div class="container-fluid">
 	            <div class="row">
 	                <!-- Sidebar in Dashboard -->
-	                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">    
+	                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12 col-xs-12">    
 	                    <div class="sidebar-content">
 	                    	<?php $this->load->view('components/account-sidebar'); ?>
 	                    </div>    
 	                </div>
 	                <!-- Main Content in Dashboard -->
-	                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12">
+	                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-12 col-xs-12">
 	                    <div class="user-dashboard-content">
 	                        <?php $this->load->view($body);?>
 	                    </div>

@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="col-xl-4 offset-xl-5 col-lg-4 offset-lg-5 col-md-4 offset-md-5 col-sm-4 offset-sm-5 col-xs-12">
-                        <div class="btn-group float-right float-xs-none">    
+                        <div class="btn-group float-sm-right float-xs-none need-help">    
                             <a class="btn btn-primary Pbtn" href="need-help/design/<?= $design_data->design_id; ?>"><?= $this->lang->line('need_help'); ?></a>        
                         </div>
                     </div>
@@ -37,14 +37,19 @@
                         <h4 class="manu-design"> <?= $this->lang->line('end_usage'); ?> </h4>
                         <?php
                             // Design Temperature
-                            $temp_array['temperature_id'] = $design_data->design_temperature;  
-                            $temp_data = $this->Temperature_m->get($temp_array, TRUE);
+                            if ($design_data->design_temperature != '1') {
+                                $temp_array['temperature_id'] = $design_data->design_temperature;  
+                                $temp_data = $this->Temperature_m->get($temp_array, TRUE);
+                                $temp_name = $temp_data->temperature_name;
+                            }else{
+                                $temp_name = $design_data->design_temperature_custom;;
+                            }
                             // Design Assembly
                             $ass_array['assembly_id'] = $design_data->design_assembly;
                             $ass_data = $this->Assembly_m->get($ass_array, TRUE);        
                         ?>
                         <p><?= $design_data->design_usage; ?></p>
-                        <p><?= $temp_data->temperature_name; ?></p>
+                        <p><?= $temp_name; ?></p>
                         <p><?= $ass_data->assembly_name; ?></p>
                     </div>
                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">

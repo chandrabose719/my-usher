@@ -1,4 +1,4 @@
-<div id="industry-part" class="mx-5">    
+<div id="industry-part" class="px-5 wrapper-body-padding">    
     <section id="industry-head" class="med-tech">
         <div class="container">
             <div class="row">
@@ -23,7 +23,7 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
                     	<h4>Benefits in the Medical Industry:</h4>
                         <ul class="industry-block-list">
@@ -45,7 +45,7 @@
                         </ul>
                     </div>    
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
                     <div class="industry-block-image">
                         <img class="img-fluid mt-4" src="<?= base_url('assets/images/static-industry/static-med-tech.png'); ?>">
                     </div>    
@@ -61,36 +61,62 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                    <div class="industry-block-content">
-                        <h4 class="center-align">Tell Us What You're Making</h4>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="project-intro-content">
+                        <h4 class="text-center">Tell Us What You're Making</h4>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-xs-12">
-                    <div class="industry-block-content">
-                        <a href="<?= base_url('describe-project'); ?>">
-                            <img src="<?= base_url('assets/images/static-industry/design-services.png'); ?>" class="img-fluid">
-                            <p class="center-align">I will need Design Services</p>
-                        </a>   
+                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <p class="text-center">Have a design or project in mind? <br>Design with 3D Usher</p>
+                        <div class="row"> 
+                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">
+                                <a href="<?= base_url('describe-project'); ?>" class="btn btn-primary Pbtn">DESCRIBE PROJECT</a>
+                            </div>   
+                        </div>      
                     </div>
                 </div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-12">
-                    <div class="vr-divider"></div>                  
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12">    
+                    <span class="d-md-block vr-divider"></span>
+                </div>    
+                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <p class="text-center">Looking for manufacturing solutions?<br> Upload your 3D Design and get instant quote</p>
+                        <div class="row"> 
+                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">    
+                                <a href="<?= base_url('manufacture'); ?>" class="btn btn-primary Pbtn">UPLOAD FILES</a>
+                            </div>
+                        </div>               
+                    </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="industry-block-content">
-                        <a href="<?= base_url('manufacture'); ?>">
-                            <img src="<?= base_url('assets/images/static-industry/manufacturing-services.png'); ?>" class="img-fluid">
-                            <p class="center-align">I have 3D Design</p>
-                        </a>        
+            </div>
+            <div class="row">    
+                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="row my-3">
+                        <div class="col">
+                            <hr class="hr-divider">
+                        </div>
+                        <div class="col-auto m-auto">
+                            OR
+                        </div>
+                        <div class="col">
+                            <hr class="hr-divider">
+                        </div>
+                    </div>
+                </div>    
+            </div>         
+            <div class="row">
+                <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <a href="<?= base_url('contact-us'); ?>" class="btn btn-primary Abtn">CONTACT SALES</a>
                     </div>
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-12">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="industry-block-content">
                         <h4 class="center-align">Design and Manufacturing Solutions for Every Industry</h4>
                     </div>
@@ -98,64 +124,64 @@
             </div>            
             <div class="row">
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="industry-block-content">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('aerospace'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-aerospace-black.png'); ?>">
-                            <p class="center-align">Aerospace</p>
+                            <p class="mt-4 center-align">Aerospace</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="industry-block-content">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('architecture'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-architecture-black.png'); ?>">
-                            <p class="center-align">Architecture</p>
+                            <p class="mt-4 center-align">Architecture</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                    <div class="industry-block-content">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('automotive'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-automotive-black.png'); ?>">
-                            <p class="center-align">Automotive</p>
+                            <p class="mt-4 center-align">Automotive</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="industry-block-content mt-4">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('education'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-education-black.png'); ?>">
-                            <p class="center-align">Education &amp; Research</p>
+                            <p class="mt-4 center-align">Education &amp; Research</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="industry-block-content mt-4">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('gifting'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-gifting-black.png'); ?>">
-                            <p class="center-align">Gifting</p>
+                            <p class="mt-4 center-align">Gifting</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="industry-block-content mt-4">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('manufacturing'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-manufacturing-black.png'); ?>">
-                            <p class="center-align">Manufacturing</p>
+                            <p class="mt-4 center-align">Manufacturing</p>
                         </a>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
-                    <div class="industry-block-content mt-4">
+                    <div class="industry-block-icon mt-4">
                         <a href="<?= base_url('product-design-research'); ?>">
                             <img class="img-fluid" src="<?= base_url('assets/images/static-industry/3DUsher-other-industry-black.png'); ?>">
-                            <p class="center-align">Product Design</p>
+                            <p class="mt-4 center-align">Product Design</p>
                         </a>
                     </div>
                 </div>    
             </div>
             <?php
-                if (!empty($usher_id)) {
+                if (empty($usher_id)) {
             ?>
             <hr>
             <div class="row">

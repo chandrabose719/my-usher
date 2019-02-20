@@ -106,7 +106,7 @@
                             <p class="text-center">'.$this->lang->line('complete_msg_content').'</p>
                             <br>
                             <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-12">    
-                                <a class="btn btn-primary Pbtn" href="'.base_url('manufacture').'">UPLOAD 3D DESIGN</a>
+                                <a class="btn btn-primary Pbtn" href="'.base_url('manufacture-details').'">UPLOAD 3D DESIGN</a>
                             </div>
                         </div>
                     ';    

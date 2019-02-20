@@ -7,9 +7,10 @@ CREATE TABLE `assembly_details` (
 );
 
 INSERT INTO `assembly_details` (`assembly_id`, `assembly_name`, `image_path`, `status`, `date`) VALUES
-(1, 'Single Part', 'assets/images/design/3DUsher-DescribeProject-Assembly-1.png', 'active', unix_timestamp()),
-(2, 'Multiple Parts (Non Assembly)', 'assets/images/design/3DUsher-DescribeProject-Assembly-2.png', 'active', unix_timestamp()),
-(3, 'Multiple Parts (Assembled)', 'assets/images/design/3DUsher-DescribeProject-Assembly-3.png', 'active', unix_timestamp());
+(1, 'I am Not Sure', 'assets/images/design/3DUsher-DescribeProject-Assembly-1.png', 'active', unix_timestamp()),
+(2, 'Multiple Parts (Assembled)', 'assets/images/design/3DUsher-DescribeProject-Assembly-2.png', 'active', unix_timestamp()),
+(3, 'Multiple Parts (Non Assembly)', 'assets/images/design/3DUsher-DescribeProject-Assembly-3.png', 'active', unix_timestamp()),
+(4, 'Single Part', 'assets/images/design/3DUsher-DescribeProject-Assembly-4.png', 'active', unix_timestamp());
 
 ALTER TABLE `assembly_details`
   ADD PRIMARY KEY (`assembly_id`);

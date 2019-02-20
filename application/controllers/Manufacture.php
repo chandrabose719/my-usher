@@ -24,11 +24,14 @@ class Manufacture extends MY_Controller {
 
 	// Manufacture Page
 	public function index(){
-		$this->data['title'] = $this->lang->line('index_title');
-		$this->data['description'] = $this->lang->line('index_description');
-		$this->data['keyword'] = $this->lang->line('index_keyword');
-		$this->data['body'] = 'manufacture/index';
-		$this->load->view("main_layout",$this->data);
+		// $this->session->unset_userdata('file_data');
+  		// $this->session->unset_userdata('order_data');
+		// $this->data['title'] = $this->lang->line('index_title');
+		// $this->data['description'] = $this->lang->line('index_description');
+		// $this->data['keyword'] = $this->lang->line('index_keyword');
+		// $this->data['body'] = 'manufacture/index';
+		// $this->load->view("main_layout",$this->data);
+		redirect(base_url('manufacture-details'));		
 	}
 
 	// Project Detail Page
@@ -38,78 +41,88 @@ class Manufacture extends MY_Controller {
 		$order_data = $this->session->userdata('order_data');
 		if (isset($_POST['cart-submit'])){
 			foreach($file_data as $checkkey => $checkvalue){
-				if ($file_data[$checkkey]['material_id'] == '' || $file_data[$checkkey]['layer_height_id'] == ''){
-					$error = false;
-					foreach($file_data as $cadkey => $cadvalue){
-						$cadfile_id = $file_data[$cadkey]['file_id'];
-						$cadapidata = json_decode($file_data[$cadkey]['cad_result']);
-						$volume = $cadapidata->Volume;
-						if (isset($_POST[$cadfile_id.'_material_id'])  && isset($_POST[$cadfile_id.'_layer_height_id'])) {
-							if (isset($_POST[$cadfile_id.'_material_id'])) {
-								$material_id = $this->input->post($cadfile_id.'_material_id');
-								$file_data[$cadkey]['material_id'] = $material_id;
-							}
-							if (isset($_POST[$cadfile_id.'_layer_height_id'])) {
-								$layer_height_id = $this->input->post($cadfile_id.'_layer_height_id');
-								$file_data[$cadkey]['layer_height_id'] = $layer_height_id;	
-							}
-							if (isset($_POST[$cadfile_id.'_color_id'])) {
-								$color_id = $this->input->post($cadfile_id.'_color_id');
-								$file_data[$cadkey]['color_id'] = $color_id;
-							}
-							if (isset($_POST[$cadfile_id.'_post_process_id'])) {
-								$post_process_id = $this->input->post($cadfile_id.'_post_process_id');
-								$file_data[$cadkey]['post_process_id'] = $post_process_id;
-							}
-							$file_instruction = $this->input->post($cadfile_id.'_file_instruction');
-							$file_data[$cadkey]['file_instruction'] = $file_instruction;
-							// Material Details
-							$mat_query['material_id'] = $material_id;
-							$mat_data = $this->Material_m->get($mat_query, TRUE);	
-							$material_name = $mat_data->material_name;
-							// Layer Height Details
-							$layer_height_query['layer_height_id'] = $layer_height_id;
-							$layer_height_data = $this->LayerHeight_m->get($layer_height_query, TRUE);
-							$layer_height_name = $layer_height_data->layer_height_name;
-							// Price Details
-							$price_query['material_name'] = $material_name;
-							$price_query['layer_height_name'] = $layer_height_name;
-							$price_data = $this->Price_m->get($price_query, TRUE);
-							if (!empty($price_data)) {
-								if ($price_data->density == 'NULL') {
-									$file_amount = ($price_data->layer_height_rate + $volume * $price_data->material_rate);	
-								}else{
-									$file_amount = $volume * $price_data->density * $price_data->material_rate * $price_data->layer_height_rate;	
-								}
-							}else{
-								$file_amount = 10;
-							}
-							$file_data[$cadkey]['file_amount'] = $file_amount;
-						}else{
-							$error = true;
-							$this->session->set_flashdata('error','Please fill all fields!');
+				$error = false;
+				foreach($file_data as $cadkey => $cadvalue){
+					$cadfile_id = $file_data[$cadkey]['file_id'];
+					$cadapidata = json_decode($file_data[$cadkey]['cad_result']);
+					$volume = $cadapidata->Volume;
+					if (isset($_POST[$cadfile_id.'_material_id'])  && isset($_POST[$cadfile_id.'_layer_height_id'])) {
+						if (isset($_POST[$cadfile_id.'_material_id'])) {
+							$material_id = $this->input->post($cadfile_id.'_material_id');
+							$file_data[$cadkey]['material_id'] = $material_id;
 						}
+						if (isset($_POST[$cadfile_id.'_layer_height_id'])) {
+							$layer_height_id = $this->input->post($cadfile_id.'_layer_height_id');
+							$file_data[$cadkey]['layer_height_id'] = $layer_height_id;	
+						}
+						if (isset($_POST[$cadfile_id.'_color_id'])) {
+							$color_id = $this->input->post($cadfile_id.'_color_id');
+							$file_data[$cadkey]['color_id'] = $color_id;
+						}
+						if (isset($_POST[$cadfile_id.'_post_process_id'])) {
+							$post_process_id = $this->input->post($cadfile_id.'_post_process_id');
+							$file_data[$cadkey]['post_process_id'] = $post_process_id;
+						}
+						$file_instruction = $this->input->post($cadfile_id.'_file_instruction');
+						$file_data[$cadkey]['file_instruction'] = $file_instruction;
+						// Material Details
+						$mat_query['material_id'] = $material_id;
+						$mat_data = $this->Material_m->get($mat_query, TRUE);	
+						$material_name = $mat_data->material_name;
+						// Layer Height Details
+						$layer_height_query['layer_height_id'] = $layer_height_id;
+						$layer_height_data = $this->LayerHeight_m->get($layer_height_query, TRUE);
+						$layer_height_name = $layer_height_data->layer_height_name;
+						// Price Details
+						$price_query['material_name'] = $material_name;
+						$price_query['layer_height_name'] = $layer_height_name;
+						$price_data = $this->Price_m->get($price_query, TRUE);
+						if (!empty($price_data)) {
+							if ($price_data->density == 'NULL') {
+								$file_amount = ($price_data->layer_height_rate + $volume * $price_data->material_rate);	
+							}else{
+								$file_amount = $volume * $price_data->density * $price_data->material_rate * $price_data->layer_height_rate;	
+							}
+						}else{
+							$file_amount = 10;
+						}
+						$file_data[$cadkey]['file_amount'] = $file_amount;
+					}else{
+						$error = true;
+						$this->session->set_flashdata('error','Please fill all fields!');		
 					}
-					if ($error != true) {	
-						$this->session->set_userdata('file_data', $file_data);
-						redirect(base_url('manufacture-overview'));
-					}
-				}else{
-					redirect(base_url('manufacture-overview'));	
+				}
+				if ($error != true) {	
+					$this->session->set_userdata('file_data', $file_data);
+					redirect(base_url('manufacture-overview'));
 				}
 			}	
 		}
-		if (!empty($user_id) && !empty($file_data)) {
-			$this->data['title'] = $this->lang->line('detail_title');
-			$this->data['description'] = $this->lang->line('detail_description');
-			$this->data['keyword'] = $this->lang->line('detail_keyword');
-			$this->data['file_data_result'] = $file_data;
-			$this->data['order_data_result'] = $order_data;
-			$this->data['body'] = 'manufacture/manufacture_details';
-			$this->load->view("main_layout",$this->data);		
-		}else{
-			redirect(base_url('manufacture'));
-		}		
+		$this->data['title'] = $this->lang->line('detail_title');
+		$this->data['description'] = $this->lang->line('detail_description');
+		$this->data['keyword'] = $this->lang->line('detail_keyword');
+		$this->data['file_data_result'] = $file_data;
+		$this->data['order_data_result'] = $order_data;
+		$this->data['body'] = 'manufacture/manufacture_details';
+		$this->load->view("main_layout",$this->data);		
+	}
+
+	public function manufacture_delete(){
+		$file_id = $this->uri->segment(2);
+		$file_data = $this->session->userdata('file_data');
+		foreach($file_data as $cadkey => $cadvalue){
+			if($cadvalue['file_id'] == $file_id){
+				unset($file_data[$cadkey]);
+				if (empty($file_data)) {
+					$this->session->unset_userdata('file_data');			
+					$this->session->unset_userdata('order_data');			
+					
+				}else{
+					$this->session->set_userdata('file_data', $file_data);
+				}
+				redirect(base_url('manufacture-details'));
+			}
+		}	
 	}
 
 	// Overview Page
@@ -118,6 +131,57 @@ class Manufacture extends MY_Controller {
 		$file_data = $this->session->userdata('file_data');
 		$order_data = $this->session->userdata('order_data');
 		if (!empty($user_id) && !empty($file_data)) {
+			if (isset($_POST['checkout-submit'])) {
+				$user_mobile = $this->input->post('user_mobile');		
+				$billing_address = $this->input->post('billing_address');		
+				$billing_address1 = $this->input->post('billing_address1');		
+				$billing_city = $this->input->post('billing_city');		
+				$billing_state = $this->input->post('billing_state');		
+				$billing_country = $this->input->post('billing_country');		
+				$billing_zipcode = $this->input->post('billing_zipcode');		
+				if (isset($_POST['same_address'])) {
+					$shipping_address = $this->input->post('billing_address');		
+					$shipping_address1 = $this->input->post('billing_address1');		
+					$city = $this->input->post('billing_city');		
+					$state = $this->input->post('billing_state');	
+					$country = $this->input->post('billing_country');		
+					$pin_code = $this->input->post('billing_zipcode');
+				}else{
+					$shipping_address = $this->input->post('shipping_address');		
+					$shipping_address1 = $this->input->post('shipping_address1');		
+					$city = $this->input->post('city');		
+					$state = $this->input->post('state');		
+					$country = $this->input->post('country');		
+					$pin_code = $this->input->post('pin_code');
+				}
+				$update_data['user_mobile'] = $user_mobile;
+				$update_data['billing_address'] = $billing_address;
+				$update_data['billing_address1'] = $billing_address1;
+				$update_data['billing_city'] = $billing_city;
+				$update_data['billing_state'] = $billing_state;
+				$update_data['billing_country'] = $billing_country;
+				$update_data['billing_zipcode'] = $billing_zipcode;
+
+				$update_data['shipping_address'] = $shipping_address;
+				$update_data['shipping_address1'] = $shipping_address1;
+				$update_data['city'] = $city;
+				$update_data['state'] = $state;
+				$update_data['country'] = $country;
+				$update_data['pin_code'] = $pin_code;
+				$update_id['user_id'] = $user_id;
+				if ($this->Usher_m->update($update_data, $update_id)) {
+					$this->session->set_flashdata('success','Address details updated successfully!');
+					redirect(base_url('manufacture-overview'));
+				}else{
+					$this->session->set_flashdata('error','Error occured, Try again!');
+				}
+			}
+			foreach($file_data as $checkkey => $checkvalue){
+				if ($file_data[$checkkey]['material_id'] == '' || $file_data[$checkkey]['layer_height_id'] == ''){
+					$this->session->set_flashdata('error','Please fill all fields!');
+					redirect(base_url('manufacture-details'));
+				}
+			}	
 			$this->data['title'] = $this->lang->line('detail_title');
 			$this->data['description'] = $this->lang->line('detail_description');
 			$this->data['keyword'] = $this->lang->line('detail_keyword');
@@ -197,7 +261,7 @@ class Manufacture extends MY_Controller {
 			$order_query['payment_status'] = $payment_status; 
 			$order_query['order_date'] = $order_date; 
 			$this->Order_m->insert($order_query);
-			// $this->manufactureOrderEmail($o_id, $o_amount);
+			$this->manufactureOrderEmail($o_id, $o_amount);
 			$this->session->unset_userdata('file_data');
 			$this->session->unset_userdata('order_data');
 			$this->session->set_flashdata('success','You order has been successfully placed. Order details has been sent on your registered email.');
@@ -495,14 +559,133 @@ class Manufacture extends MY_Controller {
 		redirect(base_url('manufacture-overview'));
 	}
 
+	// public function delivery_type(){
+	// 	$type = $this->uri->segment(3);
+	// 	$amount = $this->uri->segment(4);
+	// 	$order_data = $this->session->userdata('order_data');
+	// 	$order_data['delivery_type'] = $type;
+	// 	$order_data['delivery_amount'] = $amount;		
+	// 	$this->session->set_userdata('order_data', $order_data);
+	// 	redirect(base_url('manufacture-overview'));
+	// }
+
+	public function unit_data(){
+		$file_data = $this->session->userdata('file_data');
+		if(!empty($file_data)){
+			foreach($file_data as $cadkey => $cadvalue){
+				$apidata = json_decode($file_data[$cadkey]['cad_result']);
+				$array = array(
+					array(
+						'file_id' => $file_data[$cadkey]['file_id'],
+						'DimensionX' => $apidata->DimensionX,
+						'DimensionY' => $apidata->DimensionY,
+						'DimensionZ' => $apidata->DimensionZ,
+						'file_unit' => $file_data[$cadkey]['file_unit']
+					)	
+				);
+				if (empty($file_array)) {
+	        		$file_array = $array;			
+	        	}else{
+	        		$file_array = array_merge($file_array, $array);
+	        	}
+			}
+			echo json_encode($file_array);
+		}else{
+			echo '';
+		}	
+	}
+
+	public function product_count(){
+		$file_data = $this->session->userdata('file_data');
+		foreach($file_data as $cadkey => $cadvalue){
+			$apidata = json_decode($file_data[$cadkey]['cad_result']);
+			$array = array(
+				array(
+					'file_id' => $file_data[$cadkey]['file_id'],
+					'file_qty' => $file_data[$cadkey]['file_qty'],
+					'file_amount' => $file_data[$cadkey]['file_amount']
+				)	
+			);
+			if (empty($file_array)) {
+        		$file_array = $array;			
+        	}else{
+        		$file_array = array_merge($file_array, $array);
+        	}
+		}
+		echo json_encode($file_array);	
+	}
+
+	public function change_count(){
+		$file_id = $this->input->post('file_id');
+		$type = $this->input->post('type');
+		$file_data = $this->session->userdata('file_data');
+		if ($type == 'inc') {
+			foreach($file_data as $cadkey => $cadvalue){
+				if($file_data[$cadkey]['file_id'] == $file_id){
+					$file_data[$cadkey]['file_qty'] += 1;				
+				}		
+			}	
+		}
+		if ($type == 'dec') {
+			foreach($file_data as $cadkey => $cadvalue){
+				if($file_data[$cadkey]['file_id'] == $file_id){
+					$file_data[$cadkey]['file_qty'] -= 1;
+				}	
+			}
+		}
+		$this->session->set_userdata('file_data', $file_data);
+		echo 'success';
+	}	
+
+	public function product_total(){
+		$file_data = $this->session->userdata('file_data');
+		if(!empty($file_data)){
+			foreach($file_data as $cadkey => $cadvalue){
+				$apidata = json_decode($file_data[$cadkey]['cad_result']);
+				$array = array(
+					array(
+						'file_id' => $file_data[$cadkey]['file_id'],
+						'file_amount' => $file_data[$cadkey]['file_amount'],
+						'file_qty' => $file_data[$cadkey]['file_qty']
+					)	
+				);
+				if (empty($file_array)) {
+	        		$file_array = $array;			
+	        	}else{
+	        		$file_array = array_merge($file_array, $array);
+	        	}
+			}
+			echo json_encode($file_array);
+		}else{
+			echo '';
+		}	
+	}
+
 	public function delivery_type(){
-		$type = $this->uri->segment(3);
-		$amount = $this->uri->segment(4);
+		$type = $this->input->post('type');
+		$amount = $this->input->post('amount');
 		$order_data = $this->session->userdata('order_data');
 		$order_data['delivery_type'] = $type;
 		$order_data['delivery_amount'] = $amount;		
 		$this->session->set_userdata('order_data', $order_data);
-		redirect(base_url('manufacture-overview'));
+		$order_array = array(
+			'delivery_type' => $order_data['delivery_type'],
+			'delivery_amount' => $order_data['delivery_amount']
+		);
+		echo json_encode($order_array);
+	}
+
+	public function payable_amount(){
+		$total_file_amount = 0;
+		$file_data = $this->session->userdata('file_data');
+		$order_data = $this->session->userdata('order_data');
+		foreach ($file_data as $ckey => $cvalue) {
+			$file_amount = $cvalue['file_amount'] * $cvalue['file_qty'];
+			$total_file_amount += $file_amount;
+		}
+		$delivery_amount = $order_data['delivery_amount'];
+		$payable_amount = $total_file_amount + $delivery_amount;
+		echo json_encode($payable_amount);
 	}
 
 }

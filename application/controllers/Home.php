@@ -12,9 +12,6 @@ class Home extends MY_Controller {
 		$this->lang->load('home/contact');
 		$this->lang->load('home/project');
 		
-		// Model
-		// $this->load->model('');
-	
 		$this->data["usher_id"] = $this->session->userdata('usher_id');
 		$this->data["usher_email"] = $this->session->userdata('usher_email');
 		$this->data["usher_name"] = $this->session->userdata('usher_name');
@@ -77,6 +74,24 @@ class Home extends MY_Controller {
 		$this->data['keyword'] = $this->lang->line('contact_keyword');
 		$this->data['body'] = 'home/contact_us';
 		$this->load->view("main_layout",$this->data);
+	}
+
+	// Subscription Form
+	public function subscription(){
+		if (isset($_POST['subscription-submit'])) {
+			$subscription_email = $this->input->post('subscription_email');
+			$current_page = $this->input->post('current_page');
+	        $array['subscription_email'] = $subscription_email;
+	        $array['status'] = 'active';
+	        $array['date'] = time();
+	        if ($this->Subscription_m->insert($array)){
+	            $this->subscriptionEmail($subscription_email);
+	        	$this->session->set_flashdata('success','Thank You');
+				redirect($current_page);
+			}else{
+				$this->session->set_flashdata('error','Error occured, Try again!');
+			}
+	    }
 	}
 
 }

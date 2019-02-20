@@ -1,4 +1,4 @@
-<div id="blog-part" class="px-5">
+<div id="blog-part" class="px-5 wrapper-body-padding">
     <section id="blog-item-head" class="blog-item">
         <div class="container">
             <div class="row">
@@ -46,35 +46,61 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                    <div class="item-block-content">
-                        <h4 class="center-align">Tell Us What You're Making</h4>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="project-intro-content">
+                        <h4 class="text-center">Tell Us What You're Making</h4>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-xs-12">
-                    <div class="item-block-content">
-                        <a href="<?= base_url('describe-project'); ?>">
-                            <img src="<?= base_url('assets/images/blog/design-services.png'); ?>" class="img-fluid">
-                            <p class="center-align">I will need Design Services</p>
-                        </a>   
+                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <p class="text-center">Have a design or project in mind? <br>Design with 3D Usher</p>
+                        <div class="row"> 
+                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">
+                                <a href="<?= base_url('describe-project'); ?>" class="btn btn-primary Pbtn">DESCRIBE PROJECT</a>
+                            </div>   
+                        </div>      
                     </div>
                 </div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-12">
-                    <div class="vr-divider"></div>                  
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12">    
+                    <span class="d-md-block vr-divider"></span>
+                </div>    
+                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <p class="text-center">Looking for manufacturing solutions?<br> Upload your 3D Design and get instant quote</p>
+                        <div class="row"> 
+                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">    
+                                <a href="<?= base_url('manufacture'); ?>" class="btn btn-primary Pbtn">UPLOAD FILES</a>
+                            </div>
+                        </div>               
+                    </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="item-block-content">
-                        <a href="<?= base_url('manufacture'); ?>">
-                            <img src="<?= base_url('assets/images/blog/manufacturing-services.png'); ?>" class="img-fluid">
-                            <p class="center-align">I have 3D Design</p>
-                        </a>        
+            </div>
+            <div class="row">    
+                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="row my-3">
+                        <div class="col">
+                            <hr class="hr-divider">
+                        </div>
+                        <div class="col-auto m-auto">
+                            OR
+                        </div>
+                        <div class="col">
+                            <hr class="hr-divider">
+                        </div>
+                    </div>
+                </div>    
+            </div>         
+            <div class="row">
+                <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <a href="<?= base_url('contact-us'); ?>" class="btn btn-primary Abtn">CONTACT SALES</a>
                     </div>
                 </div>
             </div>
             <?php
-                if (!empty($usher_id)) {
+                if (empty($usher_id)) {
             ?>
             <hr>
             <div class="row">

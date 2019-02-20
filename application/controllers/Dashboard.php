@@ -53,7 +53,7 @@ class Dashboard extends MY_Controller {
 	public function manufacture_incomplete(){
 		$user_id = $this->session->userdata('usher_id');
 		$file_array['user_id'] = $user_id;
-		$file_array['file_status'] = '';
+		$file_array['file_status'] = 'INCOMPLETE';
 		$file_result = $this->Manufacture_m->get($file_array);
 		$this->data['file_result'] = $file_result;
 		$this->data['title'] = $this->lang->line('incomplete_title');
@@ -88,7 +88,7 @@ class Dashboard extends MY_Controller {
 	        $billing_state = $this->input->post('billing_state');
 	        $billing_country = $this->input->post('billing_country');
 	        $billing_zipcode = $this->input->post('billing_zipcode');
-	        if (!empty($user_name) && !empty($user_mobile) && !empty($billing_address) && !empty($billing_address1) && !empty($billing_city) && !empty($billing_state) && !empty($billing_country) && !empty($billing_zipcode)) {
+	        if (!empty($user_name) && !empty($user_mobile) && !empty($billing_address) && !empty($billing_city) && !empty($billing_state) && !empty($billing_country) && !empty($billing_zipcode)) {
 	            if (!preg_match('/^\d{10}$/', $user_mobile)) {
 	                $this->session->set_flashdata('error','Phone number should be 10 digit only!');
 	            }elseif (!preg_match('/^\d{6}$/', $billing_zipcode)){
@@ -152,6 +152,35 @@ class Dashboard extends MY_Controller {
 		$this->data['keyword'] = $this->lang->line('needhelp_keyword');
 		$this->data['body'] = 'dashboard/need_help';
 		$this->load->view("main_layout",$this->data);
+	}
+
+	public function change_status(){
+		$type = $this->uri->segment(3);
+		$status = $this->uri->segment(4);
+		$user_id = $this->session->userdata('usher_id');	
+		$id_array['user_id'] = $user_id;
+		if($type == 'promotion'){
+			$array['status'] = $status;
+			$this->Promotion_m->update($array, $id_array);
+		}
+		if($type == 'technical'){
+			$array['status'] = $status;
+			$this->Technical_m->update($array, $id_array);
+		}
+		if($type == 'event'){
+			$array['status'] = $status;
+			$this->Event_m->update($array, $id_array);
+		}
+		if($type == 'newfeature'){
+			$array['status'] = $status;
+			$this->Newfeature_m->update($array, $id_array);
+		}
+		if($type == 'blogupdate'){
+			$array['status'] = $status;
+			$this->Blogupdate_m->update($array, $id_array);
+		}
+		$this->session->set_flashdata('success','Status changed.');
+		redirect(base_url('account-settings'));
 	}
 
 }

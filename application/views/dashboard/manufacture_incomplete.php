@@ -2,7 +2,7 @@
         <div class="manufacturing-content">    
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
-                    <h3>Manufacturing incompleted orders</h3>        
+                    <h3><?= $this->lang->line('incomplete_header'); ?></h3>        
                 </div>
                 <div class="col-xl-3 offset-xl-3 col-lg-3 offset-lg-3 col-md-3 offset-md-3 col-sm-3 offset-sm-3 col-xs-12">
                     <div class="proceed-btn-content">
@@ -66,7 +66,7 @@
                             <p class="text-center">'.$this->lang->line('incomplete_msg_content').'</p>
                             <br>
                             <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-12">    
-                                <a class="btn btn-primary Pbtn" href="'.base_url('manufacture').'">UPLOAD 3D DESIGN</a>
+                                <a class="btn btn-primary Pbtn" href="'.base_url('manufacture-details').'">UPLOAD 3D DESIGN</a>
                             </div>
                         </div>
                     ';    

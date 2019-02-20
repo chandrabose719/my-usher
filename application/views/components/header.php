@@ -11,7 +11,7 @@
 		            	<li class="nav-item">
 		              		<?php
 		              			if(current_url() != base_url()){
-		              				echo '<a class="nav-link" href="https://3dusher.com#how-it-work">HOW IT WORKS</a>';
+		              				echo '<a class="nav-link" href="https://3dusher.com/#how-it-works">HOW IT WORKS</a>';
 		              			}	
 		              		?>
 		              	</li>
@@ -25,7 +25,7 @@
 									$trunk_user_name = mb_strimwidth($usher_name, 0, 10, "...");
                 				}
 						?>
-			        		<li class="nav-item dropdown">
+			        		<li class="nav-item dropdown mb-2">
 						    	<a class="nav-link user-nav-link dropdown-tog" href="#" id="navbardrop" data-toggle="dropdown">
 						        	<span>Hello,</span><br/>
 						        	<?= strtoupper($trunk_user_name); ?>
@@ -38,11 +38,15 @@
 						    </li>
 			        	<?php } else { ?>
 							<li class="nav-item">
-	                            <a class="nav-link" href="<?= base_url('register'); ?>">SIGN IN</a>
+	                            <?php if(current_url('design-order-overview') == base_url('design-order-overview')){ ?>		
+	                            	<a class="nav-link" href="#" data-toggle="modal" data-backdrop="static" data-target="#loginModal">SIGN IN</a>
+	                        	<?php }else{ ?>
+	                        		<a class="nav-link" href="<?= base_url('log-in'); ?>">SIGN IN</a>
+	                        	<?php } ?>
 	                        </li>
 						<?php } ?>                    
                     	<li class="nav-item">
-                       		<a class="btn btn-primary Pbtn" href="<?= base_url('start-project'); ?>">START PROJECT</a>
+                       		<a class="btn btn-primary Pbtn" href="<?= base_url('start-project'); ?>">START PROJECT&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a>
                     	</li>
 			        </ul>
 		        </div>

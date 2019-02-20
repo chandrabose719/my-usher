@@ -144,7 +144,9 @@ $autoload['model'] = array(
 	// Login
 	'Google_m',
 	'Facebook_m',
+	'ChangePassword_m',
 	// Usher DB
+	'Subscription_m',
 	'Usher_m',
 	'Country_m',
 	'Needhelp_m',
@@ -162,5 +164,12 @@ $autoload['model'] = array(
 	'Temperature_m',
 	'Precision_m',
 	'Finishing_m',
-	'Assembly_m'
+	'Assembly_m',
+	// Notifications
+	'Notifications/Promotion_m',
+	'Notifications/Technical_m',
+	'Notifications/Event_m',
+	'Notifications/Newfeature_m',
+	'Notifications/Blogupdate_m',
+
 );

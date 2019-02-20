@@ -69,7 +69,7 @@ class MY_Controller extends CI_Controller {
     }
 
 	// Forgot Password
-    function forgotPasswordEmail($user_id, $user_name, $user_email){    
+    function forgotPasswordEmail($user_id, $user_name, $user_email, $token){    
         // Admin Detail
         $admin_email = 'info@3dusher.com';
         $admin_name = 'Team 3D Usher';
@@ -83,7 +83,7 @@ class MY_Controller extends CI_Controller {
         $user_email = $user_email;
 
         // Token
-        $token = $user_id.'cp'.rand();
+        $token = $token;
         
         // User Template
         $user_template = '
@@ -91,6 +91,8 @@ class MY_Controller extends CI_Controller {
             <br/><br/>
                 Someone has requested a link to change your 3D Usher account password. You can do this through
                 the link below.
+            <br/>
+                This password reset is only valid for the next 24 hours.
             <br/><br/>
                 <a href="'.base_url('change-password/change/'.$token).'">
                     Change my 3D Usher account password
@@ -108,13 +110,16 @@ class MY_Controller extends CI_Controller {
 
     // Contact Email
     function contactEmail($name, $email, $mobile, $query){
+        
+        $formID = '72e2b09b-5b9c-4b7c-a0b3-54053038b1a0';
+
         // Hubspot Email
         $hubspotutk      = $_COOKIE['hubspotutk']; //grab the cookie from the visitors browser.
         $ip_addr         = $_SERVER['REMOTE_ADDR']; //IP address too.
         $hs_context      = array(
             'hutk' => $hubspotutk,
             'ipAddress' => $ip_addr,
-            'pageUrl' => 'http://www.3dusher.com/contact-us.php',
+            'pageUrl' => 'http://www.3dusher.com/contact-us',
             'pageName' => 'Contact Us'
         );
         $hs_context_json = json_encode($hs_context);
@@ -123,7 +128,7 @@ class MY_Controller extends CI_Controller {
             . "&email=" . urlencode($email) 
             . "&phone=" . urlencode($mobile) 
             . "&hs_context=" . urlencode($hs_context_json);
-        $this->hubspot_email($str_post);    
+        $this->hubspot_email($str_post, $formID);    
         
         // Email Sending
         // Admin Detail
@@ -148,6 +153,28 @@ class MY_Controller extends CI_Controller {
         ';
         // Elastic Email
         $this->elastic_mail($user_email, $user_name, $subject, $admin_email, $user_template);        
+    }
+
+    // Subscription Email
+    function subscriptionEmail($email){
+        
+        $formID = 'eec02615-b94e-4afc-9bac-88d156f3ff3b';
+
+        // Hubspot Email
+        $hubspotutk      = $_COOKIE['hubspotutk'];
+        $ip_addr         = $_SERVER['REMOTE_ADDR'];
+        $hs_context      = array(
+            'hutk' => $hubspotutk,
+            'ipAddress' => $ip_addr,
+            'pageUrl' => 'http://www.3dusher.com',
+            'pageName' => 'Subscription'
+        );
+        $hs_context_json = json_encode($hs_context);
+
+        $str_post = "email=" . urlencode($email) 
+            . "&hs_context=" . urlencode($hs_context_json);
+        
+        $this->hubspot_email($str_post, $formID);
     } 
 
     function manufactureOrderEmail($o_id, $o_amount){
@@ -156,7 +183,7 @@ class MY_Controller extends CI_Controller {
         $admin_name = 'Team 3D Usher';
 
         // Subject
-        $subject = 'Order Successfully Placed';
+        $subject = 'Your order '.$o_id.' has been successfully placed.';
         
         // User Detail
         $user_name = $this->session->userdata('usher_name');
@@ -189,7 +216,7 @@ class MY_Controller extends CI_Controller {
         $admin_name = 'Team 3D Usher';
 
         // Subject
-        $subject = 'Order Successfully Placed';
+        $subject = 'Your order '.$order_id.' has been successfully placed.';
         
         // User Detail
         $user_name = $this->session->userdata('usher_name');
@@ -246,10 +273,10 @@ class MY_Controller extends CI_Controller {
         }   
     }
 
-    function hubspot_email($str_post){
+    function hubspot_email($str_post, $formID){
+        
         // Hubspat API
         $portalID = '4831911';
-        $formID = 'd41f9de0-4af9-4312-8b71-24645d55a458';
 
         $endpoint = 'https://forms.hubspot.com/uploads/form/v2/'.$portalID.'/'.$formID;
 

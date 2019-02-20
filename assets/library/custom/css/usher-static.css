@@ -22,6 +22,7 @@ h4{
     height:495px; 
     background:url(../../../../assets/images/bg-home-old.jpg);
     background-size: cover;
+    background-position: center;
 }
 #home-old .container{
     padding:20px 0px;
@@ -105,6 +106,7 @@ h4{
     height:550px; 
     background:url(../../../../assets/images/bg-home.png);
     background-size: cover;
+    background-position: center;
 }
 #home .container{
     padding:20px 0px;
@@ -146,38 +148,38 @@ h4{
     border:1px solid #5c98bd; 
 }
 /*How It Work*/
-#how-it-work{
+#how-it-works{
     width:100%; 
     background:#5c98bd;
 }
-#how-it-work .container{
+#how-it-works .container{
     padding:70px 20px;
 }
-#how-it-work .container h3{
+#how-it-works .container h3{
     color:#ffffff;
     padding:0px 0px;   
     text-align:center;
 }
-#how-it-work .container p{
+#how-it-works .container p{
     color:#ffffff;
     padding:10px 0px;
     text-align:center;   
 }
-#how-it-work .how-it-work-content{
+#how-it-works .how-it-work-content{
     padding:10px 0px;
     text-align:center;            
 }
-#how-it-work .how-it-work-content h4{
+#how-it-works .how-it-work-content h4{
     color:#ffffff; 
     padding:10px 0px;
     text-align:center;              
 }
-#how-it-work .how-it-work-content .btn-light{
+#how-it-works .how-it-work-content .btn-light{
     color:#ffffff;
     background:transparent;               
     border:none;
 }
-#how-it-work .how-it-work-content .btn-light:hover{
+#how-it-works .how-it-work-content .btn-light:hover{
     color:#111111;
 }
 /*Home Design Flow*/
@@ -194,12 +196,12 @@ h4{
 }
 #home-design-flow .container h3{
     padding:0px 0px;   
-    text-align:left;
+    text-align:center;
     line-height:34px; 
 }
 #home-manufacture-flow .container h3{
     padding:0px 0px;   
-    text-align:right;
+    text-align:center;
     line-height:34px;
 }
 #home-design-flow .container h4,
@@ -236,6 +238,7 @@ h4{
     height:100%; 
     background:url(../../../../assets/images/bg-info.png);
     background-size: cover; 
+    background-position: center;
 }
 #home-info .container{
     padding:20px 20px;
@@ -248,6 +251,23 @@ h4{
 /*End Index*/
 /****************/
 
+/****************/
+/*Project Intro*/
+.project-intro-content{
+    text-align:center; 
+    margin:5px; 
+}
+.project-intro-content h4{
+    color:#5c98bd; 
+    text-align:left; 
+    padding: 20px 0px;
+}
+.project-intro-content p{
+    height:100px; 
+    padding: 10px 0px;
+}
+/*End Project Intro*/
+/****************/
 
 /****************/
 /*Resorce Part*/
@@ -262,6 +282,7 @@ h4{
 #resource.resource-home{
     background:url(../../../../assets/images/resource/bg-resource.png);
     background-size: cover;
+    background-position: center;
 }
 #resource .container{
     padding:20px 0px;
@@ -294,7 +315,14 @@ h4{
     padding:10px 10px;
     text-align:center;
     border-radius:3px;
+    transition:1s; 
     box-shadow:0px 0px 4px 0px rgba(0,0,0,.1);              
+}
+#resource-group .resource-group-content:hover{
+    box-shadow: 1px 1px 10px #B6B5B5;
+}
+#resource-group .resource-group-content:hover h4{
+    color: #17a2b8;
 }
 #resource-group .resource-group-content .content-body{
     height:210px;             
@@ -304,19 +332,14 @@ h4{
     text-align:left; 
     padding:5px 0px;   
 }
-#resource-group .resource-group-content .hr-divider{
-    margin:10px 0px; 
-    border-top: 1px solid rgba(0,0,0,.1);
-}
-#resource-group .resource-group-content a p{
-    color:#5c98bd;             
-}
+
 /*Info*/
 #resource-info{
     width:100%;
     height:100%; 
     background:url(../../../../assets/images/resource/bg-info.png);
     background-size: cover; 
+    background-position: center;
 }
 #resource-info .container{
     padding:20px 20px;
@@ -344,6 +367,7 @@ h4{
 #resource-item-head.resource-item{
     background:url(../../../../assets/images/resource/bg-resource-item.png);
     background-size: cover;
+    background-position: center;
 }
 #resource-item-head .container{
     padding:20px 0px;
@@ -402,6 +426,7 @@ h4{
     opacity:0.7; 
     background:url(../../../../assets/images/bg-about.png);
     background-size: cover;
+    background-position: center;
 }
 #about .container{
     padding:20px 0px;
@@ -514,6 +539,7 @@ h4{
     opacity:0.7; 
     background:url(../../../../assets/images/bg-contact.jpeg);
     background-size: cover;
+    background-position: center;
 }
 #contact .container{
     padding:20px 0px;
@@ -575,6 +601,7 @@ h4{
     opacity:0.7; 
     background:url(../../../../assets/images/bg-faq.png);
     background-size: cover;
+    background-position: center;
 }
 #faq .container{
     padding:20px 0px;
@@ -643,34 +670,42 @@ h4{
 #industry-head.aerospace{
     background:url(../../../../assets/images/static-industry/On-Demand-Aerospace-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.architecture{
     background:url(../../../../assets/images/static-industry/On-Demand-Architecture-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.automotive{
     background:url(../../../../assets/images/static-industry/On-Demand-Automotive-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.education{
     background:url(../../../../assets/images/static-industry/On-Demand-Education-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.gifting{
     background:url(../../../../assets/images/static-industry/On-Demand-Gifting-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.manufacturing{
     background:url(../../../../assets/images/static-industry/On-Demand-Manufacturing-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.med-tech{
     background:url(../../../../assets/images/static-industry/On-Demand-Medical-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head.product-design{
     background:url(../../../../assets/images/static-industry/On-Demand-ProductDesign-3DUsher.png);
     background-size: cover;
+    background-position: center;
 }
 #industry-head .container{
     padding:20px 0px;
@@ -694,6 +729,9 @@ h4{
 #industry-block .container{
     padding:20px 20px;
 }
+#industry-block .center-align{
+    text-align:center !important; 
+}
 #industry-block .industry-block-content{
     text-align:center; 
 }
@@ -705,8 +743,26 @@ h4{
 #industry-block .industry-block-content p{
     padding: 10px 0px;
 }
-#industry-block .industry-block-content .center-align{
-    text-align:center; 
+#industry-block .industry-block-icon{
+    border: 2px solid #d8d9d9;
+    width:160px;
+    height:200px;
+    padding-top:30px;
+    margin:0px auto;
+    text-align:center;
+    transition: all 0.3s ease;
+}
+#industry-block .industry-block-icon:hover{
+    box-shadow: 1px 1px 10px #B6B5B5;
+}
+#industry-block .industry-block-icon img, p{
+    transition: all 0.3s ease;
+}
+#industry-block .industry-block-icon:hover img{
+    transform: scale(1.2);
+}
+#industry-block .industry-block-icon:hover p{
+    color: #5c98bd;
 }
 #industry-block .industry-block-image{
     text-align:center; 
@@ -716,3 +772,5 @@ h4{
 }
 /*End Static Industry Page*/
 /****************/
+
+

@@ -1,13 +1,13 @@
-    <section id="upload-part" class="mx-5">
+    <section id="upload-part" class="mx-5 wrapper-body-margin">
         <div class="container">
             <div class="row">
-                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 offset-sm-1 col-xs-12"> 
+                <div class="col-xl-10 col-lg-10 col-md-10 col-sm-12 col-xs-12 offset-xl-1 offset-lg-1 offset-md-1 offset-sm-0 offset-xs-0"> 
                     <h3>Upload Files</h3>
                     <?php if (!empty($usher_id)) { ?>
                         <div class="upload-content">
                             <div class="form-group upload-btn">
                                 <input id='upload' name="upload[]" type="file" multiple="multiple" onchange="displayUploadFile()" class="form-control hide" />
-                                <label for="upload" class="btn btn-large"> Choose File </label>
+                                <label for="upload" class="btn btn-large mb-2"> Choose File </label>
                                 <small class="form-text text-muted">
                                     We currently support .stl, .stp (.step) and .iges (.igs) files up to 100MB
                                     <i class="fa fa-info-circle" data-toggle="tooltip" title="Upload up to 20 files at once"></i>
@@ -56,7 +56,7 @@
     <div class="modal fade" id="loginModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form method="post" id="design-login" name="design-login" action="<?= base_url('login'); ?>">
+                <form method="post" id="design-login" name="design-login" action="<?= base_url('login-operation'); ?>">
                     <div class="modal-header">
                         <h3 class="modal-title"> <?= $this->lang->line('login_header'); ?> </h3>
                         <input type="button" class="btn btn-outline-secondary" data-dismiss="modal" value="X">
@@ -97,7 +97,7 @@
     <div class="modal fade" id="registerModal">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <form method="post" id="design-register" name="design-register" action="<?= base_url('registeration'); ?>">
+                <form method="post" id="design-register" name="design-register" action="<?= base_url('register-operation'); ?>">
                     <div class="modal-header">
                         <h3 class="modal-title"> <?= $this->lang->line('register_header'); ?> </h3>
                         <input type="button" class="btn btn-outline-secondary " data-dismiss="modal" value="X">

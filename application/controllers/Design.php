@@ -52,13 +52,14 @@ class Design extends MY_Controller {
 		$design_name = $this->input->post('design_name');
 		$design_description = $this->input->post('design_description');
 		$design_usage = $this->input->post('design_usage');
-		$design_temperature = $this->input->post('design_temperature');
 		$design_assembly = $this->input->post('design_assembly');
-		$design_material = $this->input->post('design_material');
-		$design_material_custom = $this->input->post('design_material_custom');
 		$design_precision = $this->input->post('design_precision');
 		$design_finishing = $this->input->post('design_finishing');
 		$design_finishing_custom = $this->input->post('design_finishing_custom');
+		$design_material = $this->input->post('design_material');
+		$design_material_custom = $this->input->post('design_material_custom');
+		$design_temperature = $this->input->post('design_temperature');
+		$design_temperature_custom = $this->input->post('design_temperature_custom');
 		$design_resource = $this->input->post('design_resource');
 
 		// Check Files
@@ -100,13 +101,14 @@ class Design extends MY_Controller {
             'design_name' => $design_name,
             'design_description' => $design_description,
             'design_usage' => $design_usage,
-            'design_temperature' => $design_temperature,
+            'design_precision' => $design_precision,
             'design_assembly' => $design_assembly,
+            'design_finishing' => $design_finishing,
+            'design_finishing_custom' => $design_finishing_custom,
             'design_material' => $design_material,
             'design_material_custom' => $design_material_custom,
-            'design_precision' => $design_precision,
-            'design_finishing' => $design_finishing,
-            'design_finishing_custom' => $design_finishing_custom
+            'design_temperature' => $design_temperature,
+            'design_temperature_custom' => $design_temperature_custom
         );
         $this->session->set_userdata('design_data', $design_data);
         $data = 'success';
@@ -139,13 +141,14 @@ class Design extends MY_Controller {
             $design_name = $design_data['design_name'];
             $design_description = $design_data['design_description'];
             $design_usage = $design_data['design_usage'];
-            $design_temperature = $design_data['design_temperature'];
             $design_assembly = $design_data['design_assembly'];
-            $design_material = $design_data['design_material'];
-            $design_material_custom = $design_data['design_material_custom'];
             $design_precision = $design_data['design_precision'];
             $design_finishing = $design_data['design_finishing'];
             $design_finishing_custom = $design_data['design_finishing_custom'];
+            $design_material = $design_data['design_material'];
+            $design_material_custom = $design_data['design_material_custom'];
+            $design_temperature = $design_data['design_temperature'];
+            $design_temperature_custom = $design_data['design_temperature_custom'];
             // Getting Order Details  
 	        $getdesign_count = $this->Design_m->get_order_id();
 	        $design_no = intval($getdesign_count) + 100;
@@ -160,13 +163,14 @@ class Design extends MY_Controller {
 			$design_array['design_name'] = $design_name;
 			$design_array['design_description'] = $design_description;
 			$design_array['design_usage'] = $design_usage;
-			$design_array['design_temperature'] = $design_temperature;
 			$design_array['design_assembly'] = $design_assembly;
-			$design_array['design_material'] = $design_material;
-			$design_array['design_material_custom'] = $design_material_custom;
 			$design_array['design_precision'] = $design_precision;
 			$design_array['design_finishing'] = $design_finishing;
 			$design_array['design_finishing_custom'] = $design_finishing_custom;
+			$design_array['design_material'] = $design_material;
+			$design_array['design_material_custom'] = $design_material_custom;
+			$design_array['design_temperature'] = $design_temperature;
+			$design_array['design_temperature_custom'] = $design_temperature_custom;
 			$design_array['order_id'] = $order_id;
 			$design_array['order_status'] = $order_status;
 			$design_array['status'] = $status;
@@ -189,7 +193,7 @@ class Design extends MY_Controller {
                 }
 			}
 			$this->session->set_flashdata('success','Order Placed Successfully!');
-			// $this->designOrderEmail($order_id, $design_name);
+			$this->designOrderEmail($order_id, $design_name);
 			$this->session->unset_userdata('design_data');
 			$this->session->unset_userdata('design_file_data');
 			$this->data['title'] = $this->lang->line('confirm_title');

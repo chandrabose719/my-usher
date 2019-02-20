@@ -6,21 +6,35 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <h4>COMPANY</h4>
                     <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                             <div class="footer-content">
                                 <ul class="list-unstyled">
-                                    <li><a href="https://3dusher.com/index.php#how-it-work">How it Works</a></li>
+                                    <?php
+                                        if(current_url() == base_url()){
+                                            echo '
+                                                <li>
+                                                    <div class="page-scroll">
+                                                        <a class="nav-link" href="#how-it-works">How it Works</a>
+                                                    </div>    
+                                                </li>
+                                            ';
+                                        }else{
+                                            echo '<li><a href="https://3dusher.com/#how-it-works">How it Works</a></li>';    
+                                        }   
+                                    ?>  
                                     <li><a href="<?= base_url('about-us'); ?>">About Us</a></li>
                                     <li><a href="<?= base_url('resources'); ?>">Resources</a></li>
                                     <li><a href="<?= base_url('blog'); ?>">Blog</a></li>
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6"> 
                             <div class="footer-content">
                                 <ul class="list-unstyled">
                                     <li><a href="<?= base_url('faq'); ?>">FAQs</a></li>
                                     <li><a href="<?= base_url('contact-us'); ?>">Contact Us</a></li>
+                                    <li><a href="<?= base_url('privacy-policy'); ?>">Privacy</a></li>
+                                    <li><a href="<?= base_url('terms-of-use'); ?>">Terms</a></li>
                                 </ul>
                             </div>    
                         </div>
@@ -29,7 +43,7 @@
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                      <h4>INDUSTRIES</h4>
                      <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                             <div class="footer-content">
                                 <ul class="list-unstyled">
                                     <li><a href="<?= base_url('aerospace'); ?>">Aerospace</a></li>
@@ -39,7 +53,7 @@
                                 </ul>    
                             </div>
                         </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
                             <div class="footer-content">
                                 <ul class="list-unstyled">
                                     <li><a href="<?= base_url('gifting'); ?>">Gifting</a></li>
@@ -51,10 +65,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                   	<div class="mt-4 footer-start-make">
-    	               <a href="<?= base_url('start-project'); ?>" class="form-control btn btn-primary Pbtn">START PROJECT</a>
-    	           </div>
+                        <form method="post" action="<?= base_url('home/subscription'); ?>">
+                            <input type="hidden" name="current_page" value="<?= current_url(); ?>">
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control bg-transparent" name="subscription_email" placeholder="Stay Updated" required>
+                                <div class="input-group-append">
+                                    <input type="submit" class="btn btn-primary Pbtn" name="subscription-submit" value="SUBMIT">
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <hr>

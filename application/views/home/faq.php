@@ -1,4 +1,4 @@
-<div id="faq-part" class="px-5">    
+<div id="faq-part" class="px-5 wrapper-body-padding">    
     <section id="faq">
         <div class="container">
             <div class="row">
@@ -18,12 +18,12 @@
                     <div class="card">
                         <a class="collapsed card-link" data-toggle="collapse" href="#confidentiality">    
                             <div class="card-header">
-                                <p>What about confidentiality of my design and intellectual property?</p>
+                                <p>What about confidentiality of my 3D design and intellectual property?</p>
                             </div>
                         </a>
                         <div id="confidentiality" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>We at 3D Usher understand the seriousness of intellectual property and we do know the efforts behind developing designs and prototypes. Files that you upload to our website or send to us through emails are stored safely in secure servers and are not available for public to download. We may use the images of manufactured parts in our portfolio but not without your permission.</p>
+                                <p>Files that are uploaded to 3D Usher website or sent via emails are stored safely in secure servers and are not available for public to download.</p>
                             </div>
                         </div>
                     </div>
@@ -35,7 +35,7 @@
                         </a>
                         <div id="IP" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>We follow a strict mutual non-disclosure with our customers. The rights for your design files remains yours throughout. We do not use the files for anything else than for manufacturing of the same.</p>
+                                <p>We follow a strict mutual non-disclosure with our customers. The rights of your 3D design files remain yours throughout. We do not use the files for anything else than their manufacturing.</p>
                             </div>
                         </div>
                     </div>
@@ -47,7 +47,7 @@
                         </a>
                         <div id="3rd_Part" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>3D Usher has tie-ups with multiple manufacturers to provide you with best service in best possible time-frame. We have contractual agreements with our manufacturing partners and we also have dedicated manager for handling manufacturing partners who closely monitors the projects making sure the intellectual property of your design is safe and secure.</p>
+                                <p>3D Usher has tie-ups with multiple manufacturers to provide you with the most optimum service in best possible time-frame. We have non-disclosure agreements with our manufacturing partners and they are not allowed to share these designs with any third party.</p>
                             </div>
                         </div>
                     </div>
@@ -59,7 +59,7 @@
                         </a>
                         <div id="NDA" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>We’re open to getting into Non-Disclosure Agreements with our customers. Please connect with us through email at <span class="text-info">info@3dusher.com</span></p>
+                                <p>We’re open to getting into Non-Disclosure Agreements with our customers. Please connect with us through email at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></p></a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                         </a>
                         <div id="Not_Safe" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>We understand your concern, please write us at <span class="text-info">info@3dusher.com</span> and one of our executives will get in touch with you to discuss this further with you.</p>
+                                <p>We understand your concern, please write us at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a> and one of our executives will get in touch with you to discuss this further.</p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         </a>
                         <div id="Other_Way" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>You can email us the design at <span class="text-info">info@3dusher.com</span>. We will review and send you the quotation with payment link.</p>
+                                <p>You can email us the 3D design at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a>. We will review and send the quotation and the payment link.</p>
                             </div>
                         </div>
                     </div>
@@ -103,7 +103,7 @@
                         </a>
                         <div id="Upload_File" class="collapse" data-parent="#order-accordion">
                             <div class="card-body">
-                                <p>Once you have the design file ready, save it in your local system in STL, STEP, or IGES formats. Once you have done that, visit this link and upload the file by selecting <span class="text-info">“Upload 3D Model” </span> option.</p>
+                                <p>Once you have the design file ready, save it in your local system in STL, STEP, or IGES formats. Once you have done that, visit this link and upload the file by selecting <a href="https://3dusher.com/manufacture"><span class="text-info">“Upload 3D Model” </span></a> option.</p>
                             </div>
                         </div>
                     </div>
@@ -159,7 +159,7 @@
                         </a>
                         <div id="Quality_Check" class="collapse" data-parent="#quality-accordion">
                             <div class="card-body">
-                                <p>Firstly, we onboard manufacturing units as our partners only after conducting thorough checks. We make sure we check the machines, certifications, materials used and processing units only then do we sign the manufacturers as our partners. Secondly, once your order is confirmed, our quality team checks the file for manufacturing feasibility and to plan the process. It is then forwarded to the manufacturing unit which will have its own quality checks post manufacturing.</p>
+                                <p>Firstly, we onboard manufacturing units as our partners only after conducting thorough quality checks. We check manufacturers for machines, certifications and materials during the vendor on-boarding process. The manufacturing partners have to perform quality checks before shipping these files to you.</p>
                             </div>
                         </div>
                     </div>
@@ -183,7 +183,7 @@
                         </a>
                         <div id="My_Work" class="collapse" data-parent="#quality-accordion">
                             <div class="card-body">
-                                <p>We have tie-ups with multiple manufacturers all with industrial standard machines. We will analyse the design file shared by you and then choose the right manufacturer for your work based on your requirement.</p>
+                                <p>We have tie-ups with multiple manufacturers with various standard machines. 3D Usher analyses the 3D design file shared by you and chooses the right manufacturer based on your requirement.</p>
                             </div>
                         </div>
                     </div>
@@ -203,7 +203,7 @@
                         </a>
                         <div id="Track_Order" class="collapse" data-parent="#shipment-accordion">
                             <div class="card-body">
-                                <p>Once we pack and dispatch your order, we will notify you about the same through email. The email would contain the link for tracking along with tracking ID and other details.</p>
+                                <p>Once your order is packed and dispatched, you will receive an e-mail with tracking details.</p>
                             </div>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
                         </a>
                         <div id="Shipping_Time" class="collapse" data-parent="#shipment-accordion">
                             <div class="card-body">
-                                <p>It depends on what product you’re ordering and where you stay. We usually let you know about the delivery dates as soon as you place the order.</p>
+                                <p>It depends on your geographical location and product complexity. We usually let you know about the delivery dates as soon as you place the order.</p>
                             </div>
                         </div>
                     </div>
@@ -227,7 +227,7 @@
                         </a>
                         <div id="Shipping_Charge" class="collapse" data-parent="#shipment-accordion">
                             <div class="card-body">
-                                <p>Shipping charges depends on your shipping address. The charges are levied on actuals.</p>
+                                <p>Shipping charges depend on your shipping address. The charges are directly given to us by our logistics partners and 3D Usher does not charge extra for shipping to it's customers.</p>
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                         </a>
                         <div id="Get_Touch" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>You can reach out to us through email <span class="text-info">info@3dusher.com</span> or provide your contact details through contact form and we will get back to you.</p>
+                                <p>You can reach out to us through email <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a> or provide your contact details through contact form and we will get back to you.</p>
                             </div>
                         </div>
                     </div>
@@ -283,7 +283,7 @@
                         </a>
                         <div id="Upload_Problem" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>We accept files in STL, STP and IGES formats. Please open it in your local CAD software, save the file again in one of these formats and try re-uploading the files. If the same problem persists, please email your file to us at <span class="text-info"> info@3dusher.com</span></p>
+                                <p>We accept files in STL, STP and IGES formats. Please open it in your local CAD software, save the file again in one of these formats and try re-uploading the files. If the same problem persists, please email your file to us at <a href="mailto:info@3dusher.com"><span class="text-info"> info@3dusher.com</span></a></p>
                             </div>
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                         </a>
                         <div id="Payment_Issue" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>We currently accept payments through debit and credit cards. If you’re receiving any kind of errors, please take a screenshot of the same and email us at <span class="text-info">info@3dusher.com</span>. We’ll resolve it soon.</p>
+                                <p>We currently accept payments through debit and credit cards. If you’re receiving any kind of errors, please take a screenshot of the same and email us at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a>. We’ll resolve it soon.</p>
                             </div>
                         </div>
                     </div>
@@ -307,7 +307,7 @@
                         </a>
                         <div id="Not_Place" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>Please check if you’re receiving any error message or if you have missed any necessary fields before placing the order. Material, color specification along with billing and shipping address are to be filled before proceeding with the order.</p>
+                                <p>Please check if you’re receiving any error message or if you have missed any necessary fields before placing the order.</p>
                             </div>
                         </div>
                     </div>
@@ -319,7 +319,7 @@
                         </a>
                         <div id="Order_Issue" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>If you have placed the order already, in the confirmation email received by you, you would have received the contact details of the 3D Usher executive for any kind of support query. You can call or email your dedicated manager directly. If you have lost the email details, you can email us at <span class="text-info"> info@3dusher.com</span>. Please make sure that you mention your order ID in the email.</p>
+                                <p>Please email us at <a href="mailto:info@3dusher.com"><span class="text-info"> info@3dusher.com</span></a> and mention your order ID in the email and we will make sure our support executives get in touch with you at the earliest.</p>
                             </div>
                         </div>
                     </div>

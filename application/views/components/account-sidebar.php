@@ -11,8 +11,9 @@
 					    </div>
 					</div>
         		</a>
-      		</div>
-			<div class="mt-3 user-menu">
+      			<i class="fas fa-bars user-panel-mobile mobileShowUserMenu d-xl-none d-lg-none d-md-none d-sm-none d-xs-block" data-toggle="collapse" data-target="#demo"></i>
+			</div>
+			<div class="mt-3 user-menu d-xs-none d-sm-block d-md-block d-lg-block d-xl-block collapse" id="demo">
 				<div class="list-group list-group-flush">
 					<a class="list-group-item" href="<?= base_url('manufacturing-orders'); ?>">
 						<img src="<?= base_url('assets/images/manufacturing_icon.png'); ?>" class="img-fluid" />
@@ -20,7 +21,7 @@
 					</a>
 					<a class="list-group-item" href="<?= base_url('manufacturing-incomplete-orders'); ?>">
 						<img src="<?= base_url('assets/images/manufacturing_icon.png'); ?>" class="img-fluid" />
-						&nbsp;Incomplete Orders
+						&nbsp;Cart
 					</a>
 					<a class="list-group-item" href="<?= base_url('designing-orders'); ?>">
 						<img src="<?= base_url('assets/images/design_icon.png'); ?>" class="img-fluid" />

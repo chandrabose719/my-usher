@@ -1,8 +1,27 @@
 // ********************
 // Design Project Page
+$(document).ready(function(){
+	
+});
+
 
 var resourceFileArray = [];
 
+function designDescriptionCount() {
+  	var descLength = $('#design_description').val().length;
+  	$('#design_description_count').text(descLength+'/5000');
+};
+
+function finishingCustom(){
+	var design_finishing = $('#design_finishing').val();
+	if (design_finishing == '1') {
+		$('#finishing-custom').html(
+			`<input type="text" class="form-control" name="design_finishing_custom" id="design_finishing_custom" placeholder="Please specify finishing requirement*">`
+		);
+	}else{
+		$('#finishing-custom').html('');
+	}
+};
 function materialCustom(){
 	var design_material = $('#design_material').val();
 	if (design_material == '1') {
@@ -13,14 +32,14 @@ function materialCustom(){
 		$('#material-custom').html('');
 	}
 };
-function finishingCustom(){
-	var design_finishing = $('#design_finishing').val();
-	if (design_finishing == '1') {
-		$('#finishing-custom').html(
-			`<input type="text" class="form-control" name="design_finishing_custom" id="design_finishing_custom" placeholder="Please specify finishing requirement*">`
+function temperatureCustom(){
+	var design_temperature = $('#design_temperature').val();
+	if (design_temperature == '1') {
+		$('#temperature-custom').html(
+			`<input type="text" class="form-control" name="design_temperature_custom" id="design_temperature_custom" placeholder="Please specify the temperature*">`
 		);
 	}else{
-		$('#finishing-custom').html('');
+		$('#temperature-custom').html('');
 	}
 };
 function designProjectSubmit(){
@@ -34,22 +53,9 @@ function designProjectSubmit(){
 	var design_material = $('#design_material').val();
 	var design_material_custom = $('#design_material_custom').val();
 	var design_temperature = $('#design_temperature').val();
+	var design_temperature_custom = $('#design_temperature_custom').val();
 	var industry_id = $('#industry_id').val();
-	
-	if (design_material_custom != undefined) {
-		if (design_material_custom == '') {
-			$('#validation-message').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong></strong> Please specify material needed.
-				</div>`
-			);
-			return false;	
-		}
-	}else{
-		var design_material_custom = '';
-	}
-	
+
 	if (design_finishing_custom != undefined) {
 		if (design_finishing_custom == '') {
 			$('#validation-message').html(
@@ -63,8 +69,36 @@ function designProjectSubmit(){
 	}else{
 		var design_finishing_custom = '';
 	}
+
+	if (design_material_custom != undefined) {
+		if (design_material_custom == '') {
+			$('#validation-message').html(
+				`<div class="alert alert-warning alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong></strong> Please specify material needed.
+				</div>`
+			);
+			return false;	
+		}
+	}else{
+		var design_material_custom = '';
+	}
+
+	if (design_temperature_custom != undefined) {
+		if (design_temperature_custom == '') {
+			$('#validation-message').html(
+				`<div class="alert alert-warning alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong></strong> Please specify the temperature.
+				</div>`
+			);
+			return false;	
+		}
+	}else{
+		var design_temperature_custom = '';
+	}
 	
-	if (design_name == '' || design_name == 'undefined' || design_name == null) {	
+	if (design_name == '' || design_name == undefined || design_name == null) {	
 		$('#validation-message').html(
 			`<div class="alert alert-warning alert-dismissible fade show">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -72,7 +106,15 @@ function designProjectSubmit(){
 			</div>`
 		);
 		return false;
-	}else if (design_usage == '' || design_usage == 'undefined' || design_usage == null) {	
+	}else if (design_description == '' || design_description == undefined || design_description == null) {	
+		$('#validation-message').html(
+			`<div class="alert alert-warning alert-dismissible fade show">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong></strong> Please specify project description!
+			</div>`
+		);
+		return false;
+	}else if (design_usage == '' || design_usage == undefined || design_usage == null) {	
 		$('#validation-message').html(
 			`<div class="alert alert-warning alert-dismissible fade show">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
@@ -80,16 +122,7 @@ function designProjectSubmit(){
 			</div>`
 		);
 		return false;
-	}else if (design_temperature == '' || design_temperature == 'undefined' || design_temperature == null
-		|| design_temperature == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select temperature preference for your project!
-			</div>`
-		);
-		return false;
-	}else if (design_assembly == '' || design_assembly == 'undefined' || design_assembly == null
+	}else if (design_assembly == '' || design_assembly == undefined || design_assembly == null
 		|| design_assembly == '0') {	
 		$('#validation-message').html(
 			`<div class="alert alert-warning alert-dismissible fade show">
@@ -98,16 +131,7 @@ function designProjectSubmit(){
 			</div>`
 		);
 		return false;
-	}else if (design_material == '' || design_material == 'undefined' || design_material == null
-		|| design_material == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select material preference for your project!
-			</div>`
-		);
-		return false;
-	}else if (design_precision == '' || design_precision == 'undefined' || design_precision == null
+	}else if (design_precision == '' || design_precision == undefined || design_precision == null
 		|| design_precision == '0') {	
 		$('#validation-message').html(
 			`<div class="alert alert-warning alert-dismissible fade show">
@@ -116,7 +140,7 @@ function designProjectSubmit(){
 			</div>`
 		);
 		return false;
-	}else if (design_finishing == '' || design_finishing == 'undefined' || design_finishing == null
+	}else if (design_finishing == '' || design_finishing == undefined || design_finishing == null
 		|| design_finishing == '0') {	
 		$('#validation-message').html(
 			`<div class="alert alert-warning alert-dismissible fade show">
@@ -125,18 +149,37 @@ function designProjectSubmit(){
 			</div>`
 		);
 		return false;
+	}else if (design_material == '' || design_material == undefined || design_material == null
+		|| design_material == '0') {	
+		$('#validation-message').html(
+			`<div class="alert alert-warning alert-dismissible fade show">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong></strong> Please select material preference for your project!
+			</div>`
+		);
+		return false;
+	}else if (design_temperature == '' || design_temperature == undefined || design_temperature == null
+		|| design_temperature == '0') {	
+		$('#validation-message').html(
+			`<div class="alert alert-warning alert-dismissible fade show">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong></strong> Please select environment temperature for your project!
+			</div>`
+		);
+		return false;
 	}else{
 		var formdata = new FormData();
 		formdata.append('design_name', design_name);
 		formdata.append('design_description', design_description);
 		formdata.append('design_usage', design_usage);
-		formdata.append('design_temperature', design_temperature);
 		formdata.append('design_assembly', design_assembly);
-		formdata.append('design_material', design_material);
-		formdata.append('design_material_custom', design_material_custom);
 		formdata.append('design_precision', design_precision);
 		formdata.append('design_finishing', design_finishing);
 		formdata.append('design_finishing_custom', design_finishing_custom);
+		formdata.append('design_material', design_material);
+		formdata.append('design_material_custom', design_material_custom);
+		formdata.append('design_temperature', design_temperature);
+		formdata.append('design_temperature_custom', design_temperature_custom);
 		formdata.append('industry_id', industry_id);
 		formdata.append('type', 'design-detail');
 		if (resourceFileArray.length > 0 ) {
@@ -182,7 +225,7 @@ function designResource(){
 	if (resourceFile.files.length > 0) {
         for (var i = 0; i <= resourceFile.files.length - 1; i++) {
     		var fileValue = resourceFile.value;
-    		var reg = /(.*?)\.(pdf|docx|zip|jpeg|jpg|JPEG|JPG|png)$/;
+    		var reg = /(.*?)\.(pdf|docx|zip|jpeg|jpg|JPEG|JPG|png|stl|STL|stp|step|igs|iges)$/;
 	       	if(!fileValue.match(reg)){
 	    	   	var alert = `
 	    	   		<div class="alert alert-danger alert-dismissible">

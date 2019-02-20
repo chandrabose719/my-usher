@@ -1,10 +1,10 @@
-<div id="resource-part" class="px-5">
+<div id="resource-part" class="px-5 wrapper-body-padding">
     <section id="resource-item-head" class="resource-item">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-head-content">
-                        <h1>STEREOLITHOGRAPHY(SLA)</h1>
+                        <h1>STEREOLITHO GRAPHY (SLA)</h1>
                     </div>    
                 </div>
             </div>
@@ -15,21 +15,21 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>What is the technology that can provide you a printed part delivered in the shortest possible time? Stereolithography is what we call it. This technology helps to produce fabulous models with impeccable surface quality in no time, and the detailing is so extreme that it is four times finer than the hair. Stereolithography (SL) is one of the techniques used to create 3D printed objects. It is a process where a uniquely designed 3D printing machine, called Stereo lithograph apparatus (SLA) formulates liquid plastic into solid objects. Stereolithography machines let you build and ship products in less than a day.</p>
+                        <p>SLA technology helps to produce high quality models with good surface finish in quick turnaround time. SLA formulates thermoplastic resins into solid objects.</p>
                     </div>    
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <h4>How does it work?</h4>
+                        <h4>How it works?</h4>
                         <ul class="item-block-list">
                             <li>
                                 <p>The SLA process begins when CAD data is sliced into thin cross-sections or layers, typically about six-thousandths of an inch thick. </p>
                             </li>
                             <li>
-                                <p>This data is then transferred to an SLA additive manufacturing system containing a vat of UV-curable photopolymer. </p>
+                                <p>This data is then transferred to an SLA containing a vat of UV-curable photopolymer. </p>
                             </li>
                             <li>
                                 <p>The machine begins to build the part one layer at a time.</p>
@@ -48,16 +48,16 @@
                             </li>
                             <li>
                                 <p>
-                                    The laser continues to trace and form each layer at the top of previous layer building from the bottom up.
+                                    The laser continues to trace and form each layer at the top of previous layer.
                                 </p>
                             </li>
                             <li>
-                                <p>After completion, the parts are removed from the liquid and separated from the platform. Afterward, the excess resin dipping is removed by dipping the parts into rubbing alcohol.</p>
+                                <p>After completion, the parts are removed from the liquid and separated from the platform. Afterwards, the excess resin dipping is removed by dipping the parts into liquid.</p>
                             </li>
                         </ul>
                     </div>    
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-12"> 
                     <div class="item-block-image">
                         <img class="img-fluid mt-4" src="<?= base_url('assets/images/resource/fdm.png'); ?>">
                     </div>    
@@ -65,30 +65,56 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-6 col-xs-12">
-                    <div class="item-block-content">
-                        <h4 class="center-align">Tell Us What You're Making</h4>
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="project-intro-content">
+                        <h4 class="text-center">Tell Us What You're Making</h4>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-4 offset-sm-1 col-xs-12">
-                    <div class="item-block-content">
-                        <a href="<?= base_url('describe-project'); ?>">
-                            <img src="<?= base_url('assets/images/resource/design-services.png'); ?>" class="img-fluid">
-                            <p class="center-align">I will need Design Services</p>
-                        </a>   
+                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <p class="text-center">Have a design or project in mind? <br>Design with 3D Usher</p>
+                        <div class="row"> 
+                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">
+                                <a href="<?= base_url('describe-project'); ?>" class="btn btn-primary Pbtn">DESCRIBE PROJECT</a>
+                            </div>   
+                        </div>      
                     </div>
                 </div>
-                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-xs-12">
-                    <div class="vr-divider"></div>                  
+                <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12">    
+                    <span class="d-md-block vr-divider"></span>
+                </div>    
+                <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <p class="text-center">Looking for manufacturing solutions?<br> Upload your 3D Design and get instant quote</p>
+                        <div class="row"> 
+                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">    
+                                <a href="<?= base_url('manufacture'); ?>" class="btn btn-primary Pbtn">UPLOAD FILES</a>
+                            </div>
+                        </div>               
+                    </div>
                 </div>
-                <div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                    <div class="item-block-content">
-                        <a href="<?= base_url('manufacture'); ?>">
-                            <img src="<?= base_url('assets/images/resource/manufacturing-services.png'); ?>" class="img-fluid">
-                            <p class="center-align">I have 3D Design</p>
-                        </a>        
+            </div>
+            <div class="row">    
+                <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="row my-3">
+                        <div class="col">
+                            <hr class="hr-divider">
+                        </div>
+                        <div class="col-auto m-auto">
+                            OR
+                        </div>
+                        <div class="col">
+                            <hr class="hr-divider">
+                        </div>
+                    </div>
+                </div>    
+            </div>         
+            <div class="row">
+                <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 offset-sm-0 col-12 offset-0">
+                    <div class="project-intro-content">
+                        <a href="<?= base_url('contact-us'); ?>" class="btn btn-primary Abtn">CONTACT SALES</a>
                     </div>
                 </div>
             </div>

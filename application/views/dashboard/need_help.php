@@ -1,4 +1,4 @@
-    <div id="faq-part" class="px-5">    
+    <div id="faq-part" class="px-5 wrapper-body-padding">    
         <section id="faq">
             <div class="container">
                 <div class="row">

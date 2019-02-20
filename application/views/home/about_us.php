@@ -1,4 +1,4 @@
-<div id="about-part" class="px-5">    
+<div id="about-part" class="px-5 wrapper-body-padding">    
     <section id="about">
         <div class="container">
             <div class="row">
@@ -17,6 +17,7 @@
                     <div class="mission-content">
                         <h3>Our Mission</h3>
                         <p>We focus on setting up a medium that anchors upon providing you with the apt technology for your needs to ensure that the time between the initiation and the completion of your manufacturing process is cut down.</p>
+                        <p>Our goal is to help you optimize 3D designing, materials and manufacturing processes. The right key for your lock.</p>
                     </div>    
                 </div>
             </div>
@@ -32,15 +33,15 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="we-do-content">
                         <h4>Instant Quote Generation</h4>
-                        <p>By giving you an instant feedback with the right pricing, you have an opportunity to rework with the design and to reduce the pricing. Your design is entirely customized and you are given more design freedom.</p>
+                        <p>With a 3D design file, instant quoting gives you transparency in what the manufacturing cost will be, & allows you flexibility in altering 3D design, process & material selection.</p>
                     </div>
                 </div>
             </div>        
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-                    <div class="we-do-content">    
-                        <h4>Effortless Order Placing Experience</h4>
-                        <p>Once you have created your design with the correct specifications, select the apt technology for the product to be manufactured and place an order with us while sitting in your workspace and fixate your work on what you’re best at and leave the rest for us to work on.</p>
+                    <div class="we-do-content">
+                        <h4>Easy Order Placement</h4>
+                        <p>Once all the manufacturing details are complete, you can place your order directly on 3D Usher.</p>    
                     </div>
                 </div>
             </div>
@@ -48,7 +49,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="we-do-content">
                         <h4>Quick Turnaround Time</h4>
-                        <p>While you concentrate on your work, we make sure that the work you have assigned us with is completed within a given time frame and delivered to you. Alongside, we will ensure that we run proper quality checks on the product before it is delivered to you.</p>
+                        <p>You'll get email updates on your order status in real time, while we complete the order and run quality control checks on your product before sending it to you.</p>
                     </div>    
                 </div>
             </div>
@@ -61,7 +62,7 @@
         <div class="container">
             <h3>Team</h3>
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="https://www.linkedin.com/in/gopalkrishna/" target="_blank">
@@ -75,7 +76,7 @@
                         <p>CEO</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="https://www.linkedin.com/in/fznmehdi/" target="_blank">
@@ -89,7 +90,7 @@
                         <p>COO</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="https://www.linkedin.com/in/thea-vinereanu-278498134/" target="_blank">
@@ -103,7 +104,7 @@
                         <p>CMO</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <!-- <div class="img-custom"> -->
                             <!-- <a href="" target="_blank"> -->
@@ -117,7 +118,7 @@
                         <p>Advisor/Early Investor</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="http://www.linkedin.com/in/dhiraj-nayak" target="_blank">
@@ -128,10 +129,10 @@
                             </a>    
                         </div>
                         <h4>Dhiraj Nayak</h4>
-                        <p>Head, Growth</p>
+                        <p>Product Lead</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="https://www.linkedin.com/in/meghan-casey-1bb070156/" target="_blank">
@@ -145,7 +146,7 @@
                         <p>Marketing Associate</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="https://www.linkedin.com/in/yashwant-rahul-reddy-02298398/" target="_blank">
@@ -159,7 +160,7 @@
                         <p>Marketing Strategist</p>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <div class="img-custom">
                             <a href="https://www.linkedin.com/in/chandrabose719/" target="_blank">
@@ -179,43 +180,43 @@
             </div>
             <h3>Advisors</h3>
             <div class="row">
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/NasirAli_3DUsher.jpg'); ?>">
                         <h4>Nasir Ali</h4>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/ChuckStormon_3DUsher.jpg'); ?>">
                         <h4>Chuck Stormon</h4>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/JamesShomar_3DUsher.jpg'); ?>">
                         <h4>James Shomar</h4>
                     </div>    
                 </div>
-                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/JamesJoseph_3DUsher.jpg'); ?>">
                         <h4>Jim Joseph</h4>
                     </div>    
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/RandyWolken_3DUsher.jpg'); ?>">
                         <h4>Randy Wolken</h4>
                     </div>    
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/LauraMiller_3DUsher.jpg'); ?>">
                         <h4>Laura Miller</h4>
                     </div>    
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid rounded-circle" src="<?= base_url('assets/images/about/DayaprasadKulkarni_3DUsher.jpg'); ?>">
                         <h4>Dr. Dayaprasad Kulkarni</h4>
@@ -254,7 +255,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="our-location-content">
-                        <p>We ensure you that your product is manufactured within a given time frame and the quality of the product is well examined before it is delivered to you.</p>
+                        <p>We ensure you that your product is manufactured within the best possible time frame and the quality of the product is well examined before it is delivered to you.</p>
                     </div>
                 </div>
             </div>

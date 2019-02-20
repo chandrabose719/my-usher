@@ -1,8 +1,8 @@
-	<section id="summary-part" class="mx-5">
+	<section id="summary-part" class="mx-5 wrapper-body-margin">
 		<div class="container">
 			<h3>Overview</h3>
 			<div class="row">
-				<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-12">
+				<div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-xs-12">
 					<div class="summary-content summary-header">
 						<div class="row">
 							<div class="col-xl col-lg col-md col-sm col-xs">
@@ -49,42 +49,40 @@
 						</div>
 						<div class="row">
 							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
-								<p>Technology: <?= $material_name; ?></p>
-								<p>Color: <?= $color_name; ?></p>
-								<p>Post Process: <?= $post_process_name; ?></p>
+								<p>Technology: <?= $technology_name; ?></p>
+								<p>Layer Height: <?= $layer_height_name; ?></p>	
+								<!-- <p>Color: <?= $color_name; ?></p> -->
+								<!-- <p>Post Process: <?= $post_process_name; ?></p> -->
 							</div>
 							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<p>Material: <?= $material_name; ?></p>
-								<p>Layer Height: <?= $layer_height_name; ?></p>
 							</div>
 							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<div class="cad-quantity">
 									<ul class="pagination pagination-sm">
 							    		<li class="page-item">
-							      		<?php if ($cadvalue['file_qty'] == 1) {?>
-							      			<a class="page-link rounded-circle" href="<?= base_url('manufacture/file_qty/decreament/'.$cadvalue['file_id']); ?>" onclick="return false;" style="cursor:default;">
-							      		<?php }else{?>
-							      			<a class="page-link rounded-circle" href="<?= base_url('manufacture/file_qty/decreament/'.$cadvalue['file_id']); ?>">
-							      		<?php }?>		
+							    			<a class="page-link rounded-circle" id="dec-btn" href="javascript:;" onclick="changeCount('dec',<?= $cadvalue['file_id']; ?>)">
 							      				<i class="fas fa-minus"></i>
 							      			</a>
 							    		</li>
 							    		<li class="page-item disabled">
-							    			<a class="page-link page-link-none" href="#">
-							    				<?= $cadvalue['file_qty']; ?>	
+							    			<input type="hidden" id="<?= $cadvalue['file_id']; ?>_hidden_file_qty">
+							    			<a class="page-link page-link-none" href="javascript:;">
+							    				<span id="<?= $cadvalue['file_id'] ?>-product-count-content">
+							    					<?= $cadvalue['file_qty']; ?>
+							    				</span>
 							    			</a>
 							    		</li>
 							    		<li class="page-item">
-							    			<a class="page-link rounded-circle" href="<?= base_url('manufacture/file_qty/increament/'.$cadvalue['file_id']); ?>">
+							    			<a class="page-link rounded-circle" href="javascript:;" onclick="changeCount('inc',<?= $cadvalue['file_id']; ?>)">
 							    				<i class="fas fa-plus"></i>
 							    			</a>
 							    		</li>
 							  		</ul>
 							  	</div>	
-								<?php
-									$file_amount = $cadvalue['file_amount'] * $cadvalue['file_qty'];
-								?>
-								<h4>&dollar; <?= number_format($file_amount, 2); ?></h4>	
+								<h4 id="<?= $cadvalue['file_id'] ?>-product-amount-content">
+									&dollar; <?= number_format($cadvalue['file_qty'] * $cadvalue['file_amount'], 2); ?>
+								</h4>	
 							</div>
 						</div>	
 					</div>
@@ -102,8 +100,8 @@
 							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-xs-12">
 								<h4>Shipping Address</h4>
 							</div>
-							<!-- <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">	
-								<a class="btn btn-outline-dark rounded-circle" href="#" data-id="<?= $user_data->user_id;?>" data-toggle="modal" data-backdrop="static" data-target="#addressModal">
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">	
+								<button type="button" class="btn btn-outline-dark rounded-circle" data-toggle="modal" data-backdrop="static" data-target="#addressModal">
 								<?php
 									if ($spg_addr == true) {
 										echo '
@@ -115,8 +113,8 @@
 										';	
 									}
 								?>
-								</a>
-							</div> -->
+								</button>
+							</div>
 						</div>
 					</div>
 					<?php
@@ -146,7 +144,7 @@
 						}
 					?>
 				</div>		
-				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+				<div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-12">
 					<div class="sticky-top sticky-offset">	
 						<div class="price-content">
 							<div class="price-header">
@@ -166,10 +164,14 @@
 							<div class="price-body">
 								<div class="row">
 									<div class="col-sm-7">
-										<h4>Price (<?= $total_file_count; ?> Part)</h4>
+										<span id="total-count-content">
+											<h4>Price (<?= $total_file_count; ?> Part)</h4>	
+										</span>
 									</div>
 									<div class="col-sm-5">
-										<h4>&dollar; <?= number_format($total_file_amount, 2); ?></h4>
+										<span id="total-amount-content">
+											<h4>&dollar; <?= number_format($total_file_amount, 2); ?></h4>
+										</span>
 									</div>		
 								</div>
 								<div class="row">
@@ -177,7 +179,10 @@
 										<h4>Shipping: </h4>
 									</div>
 									<div class="col-sm-5">
-										<h4>&#36; <?= number_format($delivery_amount, 2); ?></h4>
+										<h4 id="delivery_amount_content">
+											&#36; 
+											<?= number_format($delivery_amount, 2); ?>
+										</h4>
 									</div>
 								</div>
 								<div class="row">
@@ -202,7 +207,9 @@
 										<?php
 											$payable_amount = $total_file_amount + $delivery_amount;
 										?>
-										<h4>&dollar; <?= number_format($payable_amount, 2); ?></h4>
+										<h4 id="payable_amount_content">
+											&dollar; <?= number_format($payable_amount, 2); ?>
+										</h4>
 									</div>		
 								</div>
 								<div class="row">
@@ -212,21 +219,8 @@
 										$total_stripe_amount = $total_stripe_amount * 100;
 										if (empty($user_data->shipping_address) || empty($user_data->city) || empty($user_data->billing_address) || empty($user_data->billing_city)) {	
 									?>
-									<div class="col-sm">	
-										<form method="POST" action="<?= base_url('manufacture-payment'); ?>">
-											<input type="hidden" name="stripe_amount" value="<?= $total_stripe_amount; ?>">
-											<script
-										    	src="https://checkout.stripe.com/checkout.js" 
-										    	class="stripe-button"
-										    	data-key="<?= $this->config->item('publishableKey'); ?>"
-										    	data-amount="<?= $total_stripe_amount; ?>"
-										    	data-name="<?= 'Welcome '.$user_data->user_name; ?>"
-										    	data-description=""
-										    	data-image="<?= base_url('assets/images/favicon.png'); ?>"
-										    	data-locale="auto">
-										  	</script>
-										</form>
-										<!-- <a class="btn btn-primary Abtn" href="#" data-id="<?= $user_data->user_id;?>" data-toggle="modal" data-backdrop="static" data-target="#addressModal">ADD SHIPPING ADDRESS</a> -->
+									<div class="col-sm-12">	
+										<button type="button" class="btn btn-primary Abtn" data-toggle="modal" data-backdrop="static" data-target="#addressModal">ADD SHIPPING ADDRESS</button>
 									</div>	
 									<?php
 										}else{
@@ -234,22 +228,21 @@
 											$total_stripe_amount = number_format($total_stripe_amount, 2);
 											$total_stripe_amount = $total_stripe_amount * 100;
 									?>
-									<div class="col-sm">
+									<div class="col-sm-12">
 										<form method="POST" action="<?= base_url('manufacture-payment'); ?>">
-											<input type="hidden" name="stripe_amount" value="<?= $total_stripe_amount; ?>">
+											<input type="hidden" id="stripe_amount" name="stripe_amount" value="<?= $total_stripe_amount; ?>">
 											<script
 										    	src="https://checkout.stripe.com/checkout.js" 
 										    	class="stripe-button"
 										    	data-key="<?= $this->config->item('publishableKey'); ?>"
-										    	data-amount="<?= $total_stripe_amount; ?>"
 										    	data-name="<?= 'Welcome '.$user_data->user_name; ?>"
 										    	data-description=""
-										    	data-image="<?= base_url('assets/images/favicon.png'); ?>"
+										    	data-image="https://3dusher.com/assets/images/favicon.png"
 										    	data-locale="auto">
 										  	</script>
 										</form>
 									</div>
-									<div class="col-4 offset-4">
+									<div class="col-4 offset-4 my-2">
 										<div class="stripe-logo">
 											<img class="img-fluid" src="<?= base_url('assets/images/stripe-logo.png'); ?>">	
 										</div>
@@ -260,11 +253,151 @@
 								</div>	
 							</div>
 						</div>
-						<small class="form-text text-muted" style="font-style:italic;">
+						<small class="form-text text-muted font-italic">
 				    		Order confirmation will be sent to <?= $user_data->user_email; ?>
 				    	</small>
 				    </div>
 				</div>	
 			</div>
+			<!-- Address Modal -->
+			<div class="modal fade" id="addressModal">
+			    <div class="modal-dialog modal-lg modal-dialog-centered">
+			      	<div class="modal-content">
+				      	<form method="post">
+							<div class="modal-header">
+					        	<h3 class="modal-title"></h3>
+					        	<input type="button" class="btn btn-outline-secondary" data-dismiss="modal" value="X">
+					        </div>
+					        <div class="modal-body">
+								<div class="checkout-content">
+									<div class="row">
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
+											<h4>BILLING ADDRESS:</h4>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
+											<div id="billing-msg">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="Address Line 1" name="billing_address" id="billing_address" value="<?= $user_data->billing_address; ?>">
+											</div>
+										</div>
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">				
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="Address Line 2" name="billing_address1" id="billing_address1" value="<?= $user_data->billing_address1; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-xs-12">				
+											<div class="form-group">
+											<?php
+					                            $cnt_array['status'] = 'active';
+					                            $country_data = $this->Country_m->get($cnt_array);
+					                            foreach ($country_data as $country) {
+					                                $array[$country->country_code] = $country->country_name;
+					                            }
+					                            echo form_dropdown("billing_country", $array, set_value("billing_country", $user_data->billing_country), "id='billing_country' class='form-control'");
+					                        ?>		
+											</div>
+										</div>
+										<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">				
+											<div class="form-group">
+												<!-- <div id="billing-display-state"></div> -->
+												<input type="text" class="form-control" placeholder="State" id="billing_state" name="billing_state" value="<?= $user_data->billing_state; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-xs-12">
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="City" name="billing_city" id="billing_city" value="<?= $user_data->billing_city; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">				
+											<div class="form-group">
+												<input type="number" class="form-control" placeholder="Postal/Zip Code" name="billing_zipcode" id="billing_zipcode" value="<?= $user_data->billing_zipcode; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-xs-12">				
+											<div class="form-group">
+												<input type="number" class="form-control" placeholder="Mobile Number" name="user_mobile" id="user_mobile" value="<?= $user_data->user_mobile; ?>">
+											</div>
+										</div>	
+									</div>
+								</div><br/>
+								<div class="checkout-content" id="shipping-content">
+									<div class="row">
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
+											<h4>SHIPPING ADDRESS:</h4>
+											<div class="text-left m-2">
+												<label class="checkbox-inline">
+													<input type="checkbox" name="same_address" id="same_address" onclick="sameAddress()"> Same as Billing Address
+												</label>
+											</div>
+										</div>	
+									</div>
+									<div class="row">
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
+											<div id="shipping-msg">
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">				
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="Address Line 1" name="shipping_address" id="shipping_address" value="<?= $user_data->shipping_address; ?>">
+											</div>
+										</div>
+										<div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">				
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="Address Line 2" name="shipping_address1" id="shipping_address1" value="<?= $user_data->shipping_address1; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-xs-12">				
+											<div class="form-group">
+											<?php
+					                            $cnt_array['status'] = 'active';
+					                            $country_data = $this->Country_m->get($cnt_array);
+					                            foreach ($country_data as $country) {
+					                                $array[$country->country_code] = $country->country_name;
+					                            }
+					                            echo form_dropdown("country", $array, set_value("country", $user_data->country), "id='country' class='form-control'");
+					                        ?>
+											</div>
+										</div>
+										<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">				
+											<div class="form-group">
+												<!-- <div id="shipping-display-state"></div> -->
+												<input type="text" class="form-control" placeholder="State" id="state" name="state" value="<?= $user_data->state; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 offset-xl-1 col-lg-5 offset-lg-1 col-md-5 offset-md-1 col-sm-5 offset-sm-1 col-xs-12">
+											<div class="form-group">
+												<input type="text" class="form-control" placeholder="City" name="city" id="city" value="<?= $user_data->city; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 col-lg-5 col-md-5 col-sm-5 col-xs-12">				
+											<div class="form-group">
+												<input type="number" class="form-control" placeholder="Postal/Zip Code" name="pin_code" id="pin_code" value="<?= $user_data->pin_code; ?>">
+											</div>
+										</div>
+										<div class="col-xl-5 offset-xl-6 col-lg-5 offset-lg-6 col-md-5 offset-md-6 col-sm-5 offset-sm-6 col-xs-12">				
+											<div class="form-group">
+												<input type="submit" class="form-control btn btn-primary Abtn" name="checkout-submit" onclick="return checkoutValidation()" value="Submit">
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+					        <div class="modal-footer">
+							    
+					        </div>	
+						</form>
+			        </div>
+			    </div>
+			</div>
+			<!-- End Address Modal -->
 		</div>
 	</section>
+		
+

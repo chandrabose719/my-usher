@@ -1,8 +1,8 @@
-    <div id="design-confirmation-part" class="mx-5">    
+    <div id="design-confirmation-part" class="mx-5 wrapper-body-margin">    
         <div class="container">
             <h1>Thank You</h1>
             <div class="row">
-                <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-8 offset-sm-2 col-xs-12">
+                <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-md-12 offset-md-0 col-sm-12 offset-sm-0 col-xs-12">
                     <div class="design-confirmation-block">
                         <div class="design-confirmation-content">
                             <div class="row">

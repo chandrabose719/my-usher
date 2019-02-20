@@ -1,8 +1,8 @@
-    <div id="startproject-part" class="mx-5">   
+    <div id="startproject-part" class="mx-5 wrapper-body-margin">   
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
-                    <h3>Tell us what you are making</h3>
+                    <h3>Start Your Project</h3>
                 </div>
             </div>  
             <div class="row">
@@ -10,7 +10,7 @@
                     <div class="startproject-content">
                         <a href="<?= base_url('describe-project'); ?>">
                             <img src="<?= base_url('assets/images/step_1_1.png'); ?>" class="img-fluid">
-                            <p><span>I will need Design Services</span></p>
+                            <p><span>I will need 3D Design Services</span></p>
                         </a>   
                     </div>
                 </div>

@@ -17,8 +17,6 @@
 	
     <!-- Nice Scroll Content	 -->
 	<link href="<?= base_url('assets/library/scrollbar/css/mCustomScrollbar.min.css'); ?>" rel="stylesheet" type="text/css">
-	<!-- Select Dropdown -->
-	<link href="<?= base_url('assets/library/select-dropdown/css/select.min.css'); ?>" rel="stylesheet" type="text/css">
 
 	<!-- Font Family -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -50,6 +48,26 @@
   		gtag('config', 'UA-121242770-1');
 	</script> -->
 	<!-- End Google Analytics -->
+
+	<!-- Facebook Pixel Code -->
+	<!-- <script>
+	!function(f,b,e,v,n,t,s)
+	{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+	n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+	if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+	n.queue=[];t=b.createElement(e);t.async=!0;
+	t.src=v;s=b.getElementsByTagName(e)[0];
+	s.parentNode.insertBefore(t,s)}(window,document,'script',
+	'https://connect.facebook.net/en_US/fbevents.js');
+	fbq('init', '139040806725112');
+	fbq('track', 'PageView');
+	</script>
+	<noscript>
+	<img height="1" width="1" 
+	src="https://www.facebook.com/tr?id=139040806725112&ev=PageView
+	https://www.facebook.com/tr?id=139040806725112&ev=PageView&noscript=1"/>
+	</noscript> -->
+	<!-- End Facebook Pixel Code -->
 
 </head>
 <body>
@@ -118,13 +136,6 @@
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.min.js'); ?>"></script>
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.bundle.min.js'); ?>"></script>
 
-    <!-- Angular JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-local-storage/0.7.1/angular-local-storage.min.js"></script>
-    <!-- <script src="<?= base_url('assets/angular/'); ?>"></script> -->
-
-    <!-- End Angular JS -->
-
 	<!-- JQuery Plugin -->
 	<!-- WOW Content Left Right Animation	 -->
     <script src="<?= base_url('assets/library/wow/js/wow.min.js'); ?>"></script>	
@@ -132,8 +143,6 @@
     <script src="<?= base_url('assets/library/scrollbar/js/mCustomScrollbar.min.js'); ?>"></script>
     <!-- Easing Scroll Content   -->
     <script src="<?= base_url('assets/library/easing/js/easing.min.js'); ?>" type="text/javascript"></script>
-    <!-- Select Dropdown Content   -->
-    <script src="<?= base_url('assets/library/select-dropdown/js/select.min.js'); ?>" type="text/javascript"></script>
 	
 	<!-- Custom JS -->
     <script src="<?= base_url('assets/library/custom/js/usher-common.js'); ?>" type="text/javascript"></script>
@@ -141,7 +150,7 @@
     <script src="<?= base_url('assets/library/custom/js/usher-design.js'); ?>" type="text/javascript"></script>
 
     <!-- Start of HubSpot Embed Code -->
-	<!-- <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4831911.js"></script> -->
+	 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4831911.js"></script> 
 	<!-- End of HubSpot Embed Code -->
     
 </body>

@@ -7,9 +7,6 @@ CREATE TABLE `google_details` (
   `date` varchar(100) NOT NULL
 );
 
-INSERT INTO `google_details` (`google_id`, `google_auth_id`, `user_name`, `user_email`, `status`, `date`) VALUES
-(1, '114156121863219191187', 'CHANDRA BOSE.K.V', 'chandrabose719.songs@gmail.com', 'active', unix_timestamp());
-
 ALTER TABLE `google_details`
   ADD PRIMARY KEY (`google_id`);
 

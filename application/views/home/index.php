@@ -1,6 +1,6 @@
     <div id="home-part">    
         <section id="home">
-            <div class="container">
+            <div class="container p-0">
                 <div class="row">
                 	<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-xs-12">	
                         <div class="home-content">
@@ -9,13 +9,13 @@
                                 and Manufacturing
                             </h1>
                     		<h4>Start your project in less than 3 clicks</h4>
-                            <div class="row">
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-xs-12">    
-                                    <a class="btn btn-primary Pbtn Pbtn-one" href="<?= base_url('start-project'); ?>">START PROJECT</a>
+                            <div class="row pb-4">
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">    
+                                    <a class="btn btn-primary Pbtn Pbtn-one m-1" href="<?= base_url('start-project'); ?>">START PROJECT&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a>
                                 </div>
-                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-10 col-xs-12">    
+                                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">    
                                     <div class="page-scroll">            
-                                        <a class="btn btn-primary Pbtn Pbtn-two" href="#how-it-work">HOW IT WORKS</a>
+                                        <a class="btn btn-primary Pbtn Pbtn-two m-1" href="#how-it-works">HOW IT WORKS</a>
                                     </div>
                                 </div>
                             </div>
@@ -24,7 +24,7 @@
                 </div>
             </div>
         </section>    	
-        <section id="how-it-work">
+        <section id="how-it-works">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-8 offset-xl-2 col-lg-8 offset-lg-2 col-md-8 offset-md-2 col-sm-12 col-xs-12">
@@ -63,9 +63,9 @@
         <section id="home-design-flow">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                        <h3>DESCRIBE YOUR PROJECT &amp; GET LIVE<br/>
-                            UPDATES ON ITS PROGRESS</h3>
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                        <h3>GET YOUR PRODUCT 3D DESIGNED<br/>
+                            BY DESCRIBING YOUR IDEA</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -73,21 +73,21 @@
                         <div class="home-design-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step1.png'); ?>">
                             <h4>Step 1</h4>
-                            <p>Choose the industry that best describes your project</p>
+                            <p>Choose the industry that best describes your requirement</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step2.png'); ?>">
                             <h4>Step 2</h4>
-                            <p>Tell us about your project</p>
+                            <p>Answer a few basic questions to explain your requirement</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step3.png'); ?>">
                             <h4>Step 3</h4>
-                            <p>Review and submit</p>
+                            <p>Review your response and place the order</p>
                         </div>
                     </div>
                 </div>
@@ -101,7 +101,7 @@
         <section id="home-manufacture-flow">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-6 offset-xl-6 col-lg-6 offset-lg-6 col-md-6 offset-md-6 col-sm-12 col-xs-12">
+                    <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <h3>
                             UPLOAD YOUR 3D DESIGN &amp; GET<br/> 
                             AN INSTANT QUOTE
@@ -120,14 +120,14 @@
                         <div class="home-manufacture-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Manufacturing-Step2.png'); ?>">
                             <h4>Step 2</h4>
-                            <p>When possible, tell us the material and technology you’d like for your project</p>
+                            <p>Answer a few basic questions about your requirement</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-manufacture-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Manufacturing-Step3.png'); ?>">
                             <h4>Step 3</h4>
-                            <p>Complete shipping and payment information</p>
+                            <p>Get instant quote and place order</p>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@
                 </div>    
             </div>
         </section>
-        <section id="home-info">
+        <!-- <section id="home-info">
             <div class="container">
                 <div class="row">
                     <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12 col-xs-12">
@@ -146,5 +146,5 @@
                     </div>
                 </div>    
             </div>
-        </section>
+        </section> -->
     </div>

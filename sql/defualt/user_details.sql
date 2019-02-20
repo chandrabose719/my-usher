@@ -22,10 +22,6 @@ CREATE TABLE `user_details` (
   `date` varchar(100) NOT NULL
 );
 
-INSERT INTO `user_details` (`user_id`, `user_name`, `user_email`, `user_password`, `user_mobile`, `billing_address`, `billing_address1`, `billing_city`, `billing_state`, `billing_country`, `billing_zipcode`, `shipping_address`, `shipping_address1`, `city`, `state`, `country`, `pin_code`, `google_auth_id`, `facebook_auth_id`, `status`, `date`) VALUES
-(1, 'Bose', 'info@3dusher.com', 'ushers', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 'active', unix_timestamp()),
-(2, 'CHANDRA BOSE.K.V', 'chandrabose719.songs@gmail.com', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '114156121863219191187', '', 'active', unix_timestamp());
-
 ALTER TABLE `user_details`
   ADD PRIMARY KEY (`user_id`);
 

@@ -3,6 +3,8 @@ $(document).ready(function(){
 	// Display Stripe Button on Overview Page
     var path = window.location.pathname;
 	var urlFileName = path.substr(path.lastIndexOf("/") + 1);
+
+    // Pay Button Designs
     if (urlFileName == 'manufacture-overview') {
 	    $(".stripe-button-el").find("span").remove();
 		$(".stripe-button-el").attr('id', 'stripe-button');
@@ -10,7 +12,16 @@ $(document).ready(function(){
 		$("#stripe-button").html("PAY NOW");
 	}
 
+	// Product Count
+	if(urlFileName == 'manufacture-overview'){
+		window.onload = onLoadStripeAmount;
+	}
 });
+
+function onLoadStripeAmount(){
+	var hidden_file_qty = $('#stripe_amount').val();
+	$('.stripe-button').attr('data-amount', hidden_file_qty);	
+}
 
 var fileDataArray = [];
 var displayFile = '';
@@ -69,6 +80,103 @@ function displayUploadFile(){
 	    </div>`;
         $('.display-file').html(displayFile);
         $('.form-group-content').html(formGroup);
+    }
+};
+
+function dragUploadFile(event){
+	event.preventDefault();
+	var uploadFile = event.dataTransfer;
+	if (uploadFile.files.length > 0) {
+        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+    		var fileValue = uploadFile.files[i].name;
+    		var reg = /(.*?)\.(stl|STL|stp|iges|igs|step)$/;
+	       	if(!fileValue.match(reg)){
+	    	   	var alert = `
+	    	   		<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Wrong file! </strong> Uploads available only for igs, iges, step, stp or stl files.
+					</div>
+	    	   	`;
+	    	   	$('#validation-message').html(alert);
+	    	   	return false;
+	       	}
+	       	var fileName = uploadFile.files[i].name;
+        	for(var i in fileDataArray){
+			    if(fileDataArray[i]['name'] == fileName){
+			    	var alert = `
+		    	   		<div class="alert alert-danger alert-dismissible">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong> Warning! </strong> File Already Uploaded.
+						</div>
+		    	   	`;
+		    	   	$('#validation-message').html(alert);
+		    	   	return false;    
+			    }
+			}
+        	var fileSize = uploadFile.files[i].size / 1024 / 1024;
+        	if (fileSize > 100) {
+	       		var alert = `
+	    	   		<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Warning! </strong> File Size More Than 100 MB.
+					</div>
+	    	   	`;
+	    	   	$('#validation-message').html(alert);
+	    	   	return false;	
+	       	}
+	    }
+        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+        	fileDataArray.push(uploadFile.files.item(i));
+        }
+        saveFile();
+    }
+}
+
+function additionalUploadFile(){
+	var uploadFile = document.getElementById('upload');
+	if (uploadFile.files.length > 0) {
+        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+    		var fileValue = uploadFile.value;
+    		var reg = /(.*?)\.(stl|STL|stp|iges|igs|step)$/;
+	       	if(!fileValue.match(reg)){
+	    	   	var alert = `
+	    	   		<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Wrong file! </strong> Uploads available only for igs, iges, step, stp or stl files.
+					</div>
+	    	   	`;
+	    	   	$('#validation-message').html(alert);
+	    	   	return false;
+	       	}
+	       	var fileName = uploadFile.files[i].name;
+        	for(var i in fileDataArray){
+			    if(fileDataArray[i]['name'] == fileName){
+			    	var alert = `
+		    	   		<div class="alert alert-danger alert-dismissible">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong> Warning! </strong> File Already Uploaded.
+						</div>
+		    	   	`;
+		    	   	$('#validation-message').html(alert);
+		    	   	return false;    
+			    }
+			}
+        	var fileSize = uploadFile.files[i].size / 1024 / 1024;
+        	if (fileSize > 100) {
+	       		var alert = `
+	    	   		<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Warning! </strong> File Size More Than 100 MB.
+					</div>
+	    	   	`;
+	    	   	$('#validation-message').html(alert);
+	    	   	return false;	
+	       	}
+	    }
+        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+        	fileDataArray.push(uploadFile.files.item(i));
+        }
+        saveFile();
     }
 };
 
@@ -210,11 +318,45 @@ function costCalculation(file_id){
 		$('#'+file_id+'-color-layer-process-content').html('');
 	}	
 };
+
+function deleteManufacture(){
+	var msg = confirm("Are you sure you want to delete this file and information permanently?");
+    if(msg != true){
+        return false;
+    }
+};
 // End Cart Page
 // ********************
 
 // ********************
-// Checkout Page
+// Manufacture Details Page
+function changeUnit(file_id, x, y, z){
+	var file_unit = $('#'+file_id+'_file_unit').val();
+	if (file_unit == 'cm') {
+		DimensionX = x/10;
+		DimensionY = y/10;
+		DimensionZ = z/10;
+	}else if (file_unit == 'in') {
+		DimensionX = x/25.4;
+		DimensionY = y/25.4;
+		DimensionZ = z/25.4;
+	}else{
+		DimensionX = x;
+		DimensionY = y;
+		DimensionZ = z;
+	}
+	var content = 
+		`<span>`
+			+DimensionX.toFixed(2)+` X `+DimensionY.toFixed(2)+` X `+DimensionZ.toFixed(2)+
+		`</span> `;
+	$('#'+file_id+'-unit-content').html(content);
+};
+
+// End Manufacture Details Page
+// ********************
+
+// ********************
+// Overview Page
 function sameAddress(){
 	if($("#same_address").is(':checked')){
 		$("#shipping-content input[type='text']").attr('readonly','readonly');
@@ -227,169 +369,76 @@ function sameAddress(){
 	}
 };
 
-function billingState(){
-	var country_code = $('#billing_country').val();
+function productCount(){
 	$.ajax({
-       	url : 'checkoutAjax.php',
-       	type : 'POST',
-       	data : {'country_code' : country_code, 'country_type' : 'billing'},
-       	processData: false, 
-       	contentType: false,
-       	success : function(data) {
-        	console.log(data);
-        	$('#billing-display-state').html(data);
-		}
-	});
-};
-
-function shippingState(){
-	var country_code = $('#country').val();
-	$.ajax({
-       	url : 'checkoutAjax.php',
-       	type : 'POST',
-       	data : {'country_code' : country_code, 'country_type' : 'shipping'},
+       	url : baseUrl+'manufacture/product_count',
+       	type : 'GET',
        	processData: false,  
        	contentType: false,
        	success : function(data) {
-        	console.log(data);
-        	$('#shipping-display-state').html(data);
+	        if(data != undefined && data != ''){
+	        	data = JSON.parse(data);
+	        	for (var i = 0; i < data.length; i++) {
+	        		var countContent = data[i].file_qty;
+	        		var amountContent = data[i].file_amount * data[i].file_qty;
+	        		amountContent = '&dollar; '+amountContent.toFixed(2);
+	        		$('#'+data[i].file_id+'-product-count-content').html(countContent);
+	        		document.getElementById(data[i].file_id+'_hidden_file_qty').value = countContent;
+	        		$('#'+data[i].file_id+'-product-amount-content').html(amountContent);
+	        		
+	        	}
+	        }	
 		}
 	});
-};
+}
 
-function checkoutValidation(){
-	var user_mobile = $('#user_mobile').val();
-	var billing_address = $('#billing_address').val();
-	var billing_address1 = $('#billing_address1').val();
-	var billing_city = $('#billing_city').val();
-	var billing_state = $('#billing_state').val();
-	var billing_country = $('#billing_country').val();
-	var billing_zipcode = $('#billing_zipcode').val();
-	// Shipping
-	var shipping_address = $('#shipping_address').val();
-	var shipping_address1 = $('#shipping_address1').val();
-	var city = $('#city').val();
-	var state = $('#state').val();
-	var country = $('#country').val();
-	var pin_code = $('#pin_code').val();
-	if (user_mobile == '' || user_mobile == 'undefined' || user_mobile == null || user_mobile.length != '10') {	
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Phone Number is Invalid!
-			</div>`
-		);
-		return false;
-	}else if (billing_address == '' || billing_address == 'undefined' || billing_address == null) {	
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Address field cannot be empty!
-			</div>`
-		);
-		return false;
-	}else if (billing_city == '' || billing_city == 'undefined' || billing_city == null) {
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Please fill city name. 
-			</div>`
-		);
-		return false;
-	}else if (billing_state == '' || billing_state == 'undefined' || billing_state == null) {
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Please fill state name. 
-			</div>`
-		);
-		return false;
-	}else if (billing_country == '' || billing_country == 'undefined' || billing_country == null) {
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Billing Country is Invalid! 
-			</div>`
-		);
-		return false;
-	}else if (billing_zipcode == '' || billing_zipcode == 'undefined' || billing_zipcode == null) {
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Postal zipcode is Invalid! 
-			</div>`
-		);
-		return false;
-	}else if (billing_zipcode.length < '5' || billing_zipcode.length > '6') {
-		$('#billing-msg').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong> Error! </strong> Postal zipcode is Invalid! 
-			</div>`
-		);
-		return false;
-	} 
-	var same_address = false;
-	if($("#same_address").is(':checked')){
-		same_address = true;
-	}
-	if (same_address == false) {
-		if (shipping_address == '' || shipping_address == 'undefined' || shipping_address == null) {	
-			$('#shipping-msg').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Address field cannot be empty!
-				</div>`
-			);
-			return false;
-		}else if (city == '' || city == 'undefined' || city == null) {
-			$('#shipping-msg').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Please fill city name. 
-				</div>`
-			);
-			return false;
-		}else if (state == '' || state == 'undefined' || state == null) {
-			$('#shipping-msg').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Please fill state name. 
-				</div>`
-			);
-			return false;
-		}else if (country == '' || country == 'undefined' || country == null) {
-			$('#shipping-msg').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Billing Country is Invalid! 
-				</div>`
-			);
-			return false;
-		}else if (pin_code == '' || pin_code == 'undefined' || pin_code == null) {
-			$('#shipping-msg').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Postal zipcode is Invalid! 
-				</div>`
-			);
-			return false;
-		}else if (pin_code.length < '5' || pin_code.length > '6') {
-			$('#shipping-msg').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Postal zipcode is Invalid! 
-				</div>`
-			);
-			return false;
-		}
+function changeCount(type, file_id){
+	var hidden_file_qty = $('#'+file_id+'_hidden_file_qty').val();
+	var operation = true;
+	if (hidden_file_qty == 1 && type == 'dec') {
+		operation = false;
+	}		
+	if(operation == true){
+		$.ajax({
+	 		url : baseUrl+'manufacture/change_count',
+	       	type : 'POST',
+	       	data : {'type': type, 'file_id' : file_id},
+	       	success : function(data) {
+	        	productCount();
+	        	productTotal();
+				payableAmount();
+			}
+		});
 	}	
-};
-// End Checkout Page
-// ********************
+}
 
-// ********************
-// Overview Page
+function productTotal(){
+	$.ajax({
+       	url : baseUrl+'manufacture/product_total',
+       	type : 'GET',
+       	processData: false,  
+       	contentType: false,
+       	success : function(data) {
+	        if(data != undefined && data != ''){
+	        	var totalAmount = 0;
+	        	data = JSON.parse(data);
+	        	for (var i = 0; i < data.length; i++) {
+	        		var amount = data[i].file_amount * data[i].file_qty;
+        			totalAmount += amount;			
+	        	}
+	        	var totalCountContent = `
+	        		<h4>Price (`+data.length+` Part)</h4>
+	        	`;
+        		var totalAmountContent = `
+        			<h4> &dollar; `+totalAmount.toFixed(2)+`</h4>
+        		`;
+        		$('#total-count-content').html(totalCountContent);
+        		$('#total-amount-content').html(totalAmountContent);
+	        }	
+		}
+	});	
+}
+
 function displayDeliveryAmount(){
 	var delivery_type = $('input[name=delivery_type]:checked').val();
 	if (delivery_type == 'Express') {
@@ -397,7 +446,37 @@ function displayDeliveryAmount(){
 	}else{
 		var delivery_amount = 10;
 	}
-	window.location.href = baseUrl+"manufacture/delivery_type/"+delivery_type+"/"+delivery_amount;
+	$.ajax({
+ 		url : baseUrl+'manufacture/delivery_type',
+       	type : 'POST',
+       	data : {'type':delivery_type, 'amount': delivery_amount},
+       	success : function(data) {
+        	data = JSON.parse(data);
+        	$('#delivery_amount_content').html('&#36; '+data.delivery_amount);
+			payableAmount();
+		}
+	});
 };
-// End Checkout Page
+
+function payableAmount(){
+	$.ajax({
+ 		url : baseUrl+'manufacture/payable_amount',
+       	type : 'GET',
+       	processData: false,  
+       	contentType: false,
+       	success : function(data) {
+        	var totalAmount = 0;
+        	data = JSON.parse(data);
+        	var payAmount = data.toFixed(2);
+        	var payableAmountContent = `
+    			&dollar; `+payAmount+`
+    		`;
+    		$('#payable_amount_content').html(payableAmountContent);
+    		$('#stripe_amount').val(payAmount*100);
+        	$('.stripe-button').attr('data-amount', payAmount*100);	
+        }
+	});	
+}
+
+// End Overview Page
 // ********************

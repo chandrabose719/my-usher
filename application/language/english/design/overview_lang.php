@@ -18,6 +18,6 @@
     $lang['confirm_btn'] = 'CONFIRM ORDER';
     
     $lang['overview_msg_one'] = 'Please proceed to confirm your order details.';
-    $lang['overview_msg_two'] = 'To confirm the order, please login to your account. If you do not have an account, you can register instead and confirm the design order.';
+    $lang['overview_msg_two'] = 'To confirm the order, please login to your account. If you do not have an account, you can register instead and confirm the order.';
 
 ?>
