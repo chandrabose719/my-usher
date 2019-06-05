@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps in Automotive Services</h4>
+                        <h4>How On-Demand Manufacturing is used in Automotive Services</h4>
                         <p>If you are searching for a new manufacturing model that will reduce production cost and boost productivity, then 3D Usher is here to help. We help our clients make the shift from traditional automotive manufacturing practices to the latest cloud manufacturing solutions using on-demand manufacturing model.</p>
                         <p>We believe that On-demand manufacturing is a revolutionary business model. It allows the vendor to support the manufacturing process for a product, right from the initial concept up to the final product delivery at customer’s end. Such a model makes use of a cloud-based platform and supports the developer by getting instant quotes, managing projects and tracking inventory from any corner of the world at any given time.</p>
                         <p>The automotive industry is to benefit significantly from our on-demand manufacturing services.</p>

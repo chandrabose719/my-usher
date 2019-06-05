@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item harry-potter">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -15,19 +15,8 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>“You’re a wizard Harry” was one of the most iconic phrases from the Potter world, all the kids who grew up watching Harry Potter or read the novels are adults with responsibilities and duties by now, they are living in this Muggle world of ours. Who hasn’t wished to receive a letter from Hogwarts on their 11th birthday?</p> 
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                                <div class="item-block-content">
-                                    <p>What if someone were to show you that you aren’t really that far from becoming a wizard. It’s time that you stopped living the life of a modern muggle and start spreading magic in your life and of those around you. You won’t even have to run through a wall to enter the magical world, you can just use your phone! Do you want a magic wand for Halloween or comic con? You can get any wand that you choose to be 3D Printed, get your elder’s wand 3D Printed and do all the spells that the harry potter movies taught you whether it be Wingardium Leviosa, Expecto Patronum, or even Avada Kedavra! With the magic of 3D Printing, you can get anything that you can imagine, materialized into reality. If you want to be known as the Dark Lord, Lord Voldemort the you-know-who, you don’t have to murder someone and do some sketchy dark magic to make your Horcruxes, you can just get them 3D Printed instead, get the ring, the book or even Nagini 3D Printed. Have you wanted your own golden snitch? You can just ask the wizards at 3D Usher to craft one especially for you, customized to your heart’s content.</p>
-                                </div>    
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                                <div class="item-block-image">
-                                    <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/modern-muggle.jpg'); ?>">
-                                </div>    
-                            </div>
-                        </div>                        
+                        <p>“You’re a wizard Harry” was one of the most iconic phrases from the Potter world, all the kids who grew up watching Harry Potter or read the novels are adults with responsibilities and duties by now, they are living in this Muggle world of ours. Who hasn’t wished to receive a letter from Hogwarts on their 11th birthday?</p>
+                        <p>What if someone were to show you that you aren’t really that far from becoming a wizard. It’s time that you stopped living the life of a modern muggle and start spreading magic in your life and of those around you. You won’t even have to run through a wall to enter the magical world, you can just use your phone! Do you want a magic wand for Halloween or comic con? You can get any wand that you choose to be 3D Printed, get your elder’s wand 3D Printed and do all the spells that the harry potter movies taught you whether it be Wingardium Leviosa, Expecto Patronum, or even Avada Kedavra! With the magic of 3D Printing, you can get anything that you can imagine, materialized into reality. If you want to be known as the Dark Lord, Lord Voldemort the you-know-who, you don’t have to murder someone and do some sketchy dark magic to make your Horcruxes, you can just get them 3D Printed instead, get the ring, the book or even Nagini 3D Printed. Have you wanted your own golden snitch? You can just ask the wizards at 3D Usher to craft one especially for you, customized to your heart’s content.</p>
                         <p>These things and artifacts can be good conversation starters, show the world your inner potter head! Every potter head like you would love to have some of these amazing and magical artifacts on your display shelves. Remember the painting of ghosts? You can actually get a glow in the dark painting for your home as well in the form of a Lithophane. These 3D Printed Lithophanes would look gloomy, mysterious, and Magical. So, what’re you waiting for? Grab your owl and wand, hop on a broomstick and enter the magical world created by 3D Printing. 3D Usher is an amazing platform to get all your ideas magically converted to reality, just describe the thing that you want to be made and it would be delivered to you quicker than an owl from Hogwarts.</p>
                     </div>    
                 </div>

@@ -29,154 +29,96 @@ var resourceFileArray = [];
 var displayResource = '';
 
 // ********************
-// Upload Page
-function displayUploadFile(){
+// File Upload Part
+// File Validation
+function fileValidation(uploadFile){
+	for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+		var fileValue = uploadFile.files[i].name;
+		// var fileValue = uploadFile.value;
+		var reg = /(.*?)\.(stl|STL|stp|STP|iges|IGES|igs|IGS|step|STEP)$/;
+       	if(!fileValue.match(reg)){
+    	   	var alert = `
+    	   		<div class="alert alert-warning alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong> Wrong file! </strong> Uploads available only for igs, iges, step, stp or stl files.
+				</div>
+    	   	`;
+    	   	$('#validation-message').html(alert);
+    	   	return false;
+       	}
+       	var fileName = uploadFile.files[i].name;
+    	for(var i in fileDataArray){
+		    if(fileDataArray[i]['name'] == fileName){
+		    	var alert = `
+	    	   		<div class="alert alert-warning alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Warning! </strong> File Already Uploaded.
+					</div>
+	    	   	`;
+	    	   	$('#validation-message').html(alert);
+	    	   	return false;    
+		    }
+		}
+    	var fileSize = uploadFile.files[i].size / 1024 / 1024;
+    	if (fileSize > 100) {
+       		var alert = `
+    	   		<div class="alert alert-warning alert-dismissible">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong> Warning! </strong> File Size More Than 100 MB.
+				</div>
+    	   	`;
+    	   	$('#validation-message').html(alert);
+    	   	return false;	
+       	}
+    }
+    return true;
+}
+
+// File Uplaod
+function cadUploadFile(){
 	var uploadFile = document.getElementById('upload');
 	if (uploadFile.files.length > 0) {
-        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
-    		var fileValue = uploadFile.value;
-    		var reg = /(.*?)\.(stl|STL|stp|iges|igs|step)$/;
-	       	if(!fileValue.match(reg)){
-	    	   	var alert = `
-	    	   		<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong> Wrong file! </strong> Uploads available only for igs, iges, step, stp or stl files.
-					</div>
-	    	   	`;
-	    	   	$('#validation-message').html(alert);
-	    	   	return false;
-	       	}
-	       	var fileName = uploadFile.files[i].name;
-        	for(var i in fileDataArray){
-			    if(fileDataArray[i]['name'] == fileName){
-			    	var alert = `
-		    	   		<div class="alert alert-danger alert-dismissible">
-							<button type="button" class="close" data-dismiss="alert">&times;</button>
-							<strong> Warning! </strong> File Already Uploaded.
-						</div>
-		    	   	`;
-		    	   	$('#validation-message').html(alert);
-		    	   	return false;    
-			    }
-			}
-        	var fileSize = uploadFile.files[i].size / 1024 / 1024;
-        	if (fileSize > 100) {
-	       		var alert = `
-	    	   		<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong> Warning! </strong> File Size More Than 100 MB.
-					</div>
-	    	   	`;
-	    	   	$('#validation-message').html(alert);
-	    	   	return false;	
-	       	}
-	    }
-        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
-        	fileDataArray.push(uploadFile.files.item(i));
-        }
-        var displayFile = displayFileFunc(fileDataArray);
-        var formGroup = `<div class="form-group">	
-	    	<input type="button" name="submit" class="form-control btn btn-primary Abtn" value="Upload" onclick="saveFile()">
-	    </div>`;
-        $('.display-file').html(displayFile);
-        $('.form-group-content').html(formGroup);
+        var checkValidation = fileValidation(uploadFile);
+	    if(checkValidation){
+	        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+	        	fileDataArray.push(uploadFile.files.item(i));
+	        }
+	        saveFile();
+	    }    
     }
 };
 
+// File Drag and Drop
 function dragUploadFile(event){
 	event.preventDefault();
 	var uploadFile = event.dataTransfer;
 	if (uploadFile.files.length > 0) {
-        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
-    		var fileValue = uploadFile.files[i].name;
-    		var reg = /(.*?)\.(stl|STL|stp|iges|igs|step)$/;
-	       	if(!fileValue.match(reg)){
-	    	   	var alert = `
-	    	   		<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong> Wrong file! </strong> Uploads available only for igs, iges, step, stp or stl files.
-					</div>
-	    	   	`;
-	    	   	$('#validation-message').html(alert);
-	    	   	return false;
-	       	}
-	       	var fileName = uploadFile.files[i].name;
-        	for(var i in fileDataArray){
-			    if(fileDataArray[i]['name'] == fileName){
-			    	var alert = `
-		    	   		<div class="alert alert-danger alert-dismissible">
-							<button type="button" class="close" data-dismiss="alert">&times;</button>
-							<strong> Warning! </strong> File Already Uploaded.
-						</div>
-		    	   	`;
-		    	   	$('#validation-message').html(alert);
-		    	   	return false;    
-			    }
-			}
-        	var fileSize = uploadFile.files[i].size / 1024 / 1024;
-        	if (fileSize > 100) {
-	       		var alert = `
-	    	   		<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong> Warning! </strong> File Size More Than 100 MB.
-					</div>
-	    	   	`;
-	    	   	$('#validation-message').html(alert);
-	    	   	return false;	
-	       	}
-	    }
-        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
-        	fileDataArray.push(uploadFile.files.item(i));
-        }
-        saveFile();
+ 		var checkValidation = fileValidation(uploadFile);
+	    if(checkValidation){       
+	        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+	        	fileDataArray.push(uploadFile.files.item(i));
+	        }
+	        saveFile();
+	    }    
     }
 }
 
-function additionalUploadFile(){
+// File Upload, Display and Delete 
+function displayUploadFile(){
 	var uploadFile = document.getElementById('upload');
 	if (uploadFile.files.length > 0) {
-        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
-    		var fileValue = uploadFile.value;
-    		var reg = /(.*?)\.(stl|STL|stp|iges|igs|step)$/;
-	       	if(!fileValue.match(reg)){
-	    	   	var alert = `
-	    	   		<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong> Wrong file! </strong> Uploads available only for igs, iges, step, stp or stl files.
-					</div>
-	    	   	`;
-	    	   	$('#validation-message').html(alert);
-	    	   	return false;
-	       	}
-	       	var fileName = uploadFile.files[i].name;
-        	for(var i in fileDataArray){
-			    if(fileDataArray[i]['name'] == fileName){
-			    	var alert = `
-		    	   		<div class="alert alert-danger alert-dismissible">
-							<button type="button" class="close" data-dismiss="alert">&times;</button>
-							<strong> Warning! </strong> File Already Uploaded.
-						</div>
-		    	   	`;
-		    	   	$('#validation-message').html(alert);
-		    	   	return false;    
-			    }
-			}
-        	var fileSize = uploadFile.files[i].size / 1024 / 1024;
-        	if (fileSize > 100) {
-	       		var alert = `
-	    	   		<div class="alert alert-danger alert-dismissible">
-						<button type="button" class="close" data-dismiss="alert">&times;</button>
-						<strong> Warning! </strong> File Size More Than 100 MB.
-					</div>
-	    	   	`;
-	    	   	$('#validation-message').html(alert);
-	    	   	return false;	
-	       	}
-	    }
-        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
-        	fileDataArray.push(uploadFile.files.item(i));
-        }
-        saveFile();
+        var checkValidation = fileValidation(uploadFile);
+	    if(checkValidation){
+	        for (var i = 0; i <= uploadFile.files.length - 1; i++) {
+	        	fileDataArray.push(uploadFile.files.item(i));
+	        }
+	        var displayFile = displayFileFunc(fileDataArray);
+	        var formGroup = `<div class="form-group">	
+		    	<input type="button" name="submit" class="form-control btn btn-primary Abtn" value="Upload" onclick="saveFile()">
+		    </div>`;
+	        $('.display-file').html(displayFile);
+	        $('.form-group-content').html(formGroup);
+	    }    
     }
 };
 
@@ -220,7 +162,9 @@ function displayFileFunc(fileDataArray){
     }
     return displayFile;
 };
+// File Upload, Display and Delete 
 
+// Save File
 function saveFile(){
 	if (fileDataArray.length > 0 ) {
 		var formdata = new FormData();
@@ -248,7 +192,7 @@ function saveFile(){
 			});
 	}else{
 		var alert = `
-	   		<div class="alert alert-danger alert-dismissible">
+	   		<div class="alert alert-warning alert-dismissible">
 				<button type="button" class="close" data-dismiss="alert">&times;</button>
 				<strong>Warning!</strong> Please Upload Atleast One File
 			</div>
@@ -257,11 +201,12 @@ function saveFile(){
 	   	return false;	
 	}	
 }
-// End Upload Page
+// End Save File
+// End File Upload Part
 // ********************
 
 // ********************
-// Cart Page
+// File Details Part
 function displayMaterial(file_id){
 	var technology_id = $('#'+file_id+'_technology_id').val();
 	if (technology_id != 0) {

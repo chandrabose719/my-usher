@@ -8,7 +8,7 @@
                                 Online 3D Design <br/>
                                 and Manufacturing
                             </h1>
-                    		<h4>Start your project in less than 3 clicks</h4>
+                    		<h4>Start your project in just 3 steps</h4>
                             <div class="row pb-4">
                                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-xs-12">    
                                     <a class="btn btn-primary Pbtn Pbtn-one m-1" href="<?= base_url('start-project'); ?>">START PROJECT&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a>
@@ -64,8 +64,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-                        <h3>GET YOUR PRODUCT 3D DESIGNED<br/>
-                            BY DESCRIBING YOUR IDEA</h3>
+                        <h3>DESCRIBE YOUR PROJECT</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -73,27 +72,27 @@
                         <div class="home-design-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step1.png'); ?>">
                             <h4>Step 1</h4>
-                            <p>Choose the industry that best describes your requirement</p>
+                            <p>Choose the industry that best describes your project</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step2.png'); ?>">
                             <h4>Step 2</h4>
-                            <p>Answer a few basic questions to explain your requirement</p>
+                            <p>Answer a few basic questions about your project</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
                         <div class="home-design-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Design-Step3.png'); ?>">
                             <h4>Step 3</h4>
-                            <p>Review your response and place the order</p>
+                            <p>Place Design Services request to create 3D design file</p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
-                        <a class="btn btn-primary Pbtn" href="<?= base_url('describe-project'); ?>">DESCRIBE PROJECT</a>
+                        <a class="btn btn-primary Pbtn" href="<?= base_url('describe-project'); ?>">Start Design Service Request</a>
                     </div>
                 </div>    
             </div>
@@ -103,8 +102,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <h3>
-                            UPLOAD YOUR 3D DESIGN &amp; GET<br/> 
-                            AN INSTANT QUOTE
+                            UPLOAD YOUR 3D DESIGN FILE &amp; <br/>PLACE MANUFACTURING ORDER
                         </h3>
                     </div>
                 </div>
@@ -120,7 +118,7 @@
                         <div class="home-manufacture-flow-content">
                             <img class="img-fluid" src="<?= base_url('assets/images/how-it-work/Manufacturing-Step2.png'); ?>">
                             <h4>Step 2</h4>
-                            <p>Answer a few basic questions about your requirement</p>
+                            <p>Answer a few basic questions about your project</p>
                         </div>
                     </div>
                     <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -133,7 +131,7 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
-                        <a class="btn btn-primary Pbtn" href="<?= base_url('manufacture'); ?>">UPLOAD FILES</a>
+                        <a class="btn btn-primary Pbtn" href="<?= base_url('manufacture-details'); ?>">Start a Manufacturing Order</a>
                     </div>
                 </div>    
             </div>

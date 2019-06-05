@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps in Medical Industry</h4>
+                        <h4>How On-Demand Manufacturing is used in Medical Industry</h4>
                         <p>To address the needs of medical professionals, we at 3D Usher have included on-demand manufacturing as our unique service. This new manufacturing concept has brought about positive changes in various industries, one being the medical industry, using 3D printing and others. We at 3D Usher are always ready to connect medical professionals with expert 3D printing and manufacturing team.</p>
                         <p>When compared to the traditional manufacturing system, on-demand manufacturing has more benefits. The software platform based on cloud helps the developers to get instant quotes. They also manage the projects efficiently while browsing the inventory when required.</p>
                     </div>    

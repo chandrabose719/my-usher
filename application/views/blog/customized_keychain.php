@@ -1,47 +1,51 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item customised-keychains">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
                     <div class="item-head-content">
-                    	<h1>Customized Keychains using 3D Printing</h1>
+                    	<h1>3D Printing personalized and customizable Keychains</h1>
                     </div>    
             	</div>
             </div>
         </div>
-    </section>
+    </section>   
     <section id="blog-item-block">
         <div class="container">
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Custom keychains bring up a great way for you to reach that aesthetic feel that you normally wouldn’t be satisfied with readymade keychains. It is a kind of personalized gifts, as you get the advantage of coming up with your own design on an item that you can carry around all day. You can get your name printed, put a really cool logo there, or design characters etc. But, with this added advantage of customization comes the disadvantage of increased cost. As normally products such as keychains that are mass manufactured and made for a general market, such as for people looking to make an over-the-counter purchase, the prices are usually lower. When you enter a niche market such as custom gifts, or more specifically custom keychains, you usually have to pay a higher price because a company is making an entire product just for you. This is where 3D printing comes in.</p>
-                        <p>Additive manufacturing, commonly referred to as 3D printing, has revolutionized the market for customized products by giving people the advantage of reaching a new level of detail in manufacturing that was previously unheard of. Due to the revolutionary technology involved, customized products using 3D printing are way cheaper, along with the quality and strength of the product being in the hands of its user. Thus, the problem of added cost in custom keychains has been solved by replacing it with a 3D printed keychain.</p>
+                        <p>Today, life is rapidly changing on both larger and smaller fronts in the world at the same time. While we talk about putting advertisements in space, we’re also talking about a hyper-personal revolution.</p>
+                        <p>Segmentation not so long ago was the holy grail of marketing is quickly falling down to the level of a mere anachronism. Customers no longer want to be anonymous, they want to be treated like individuals and are running towards brands who respect that.</p>
+                        <p>Earlier however due to lack of proper technology, there was only so much that can be personalized. However, from the early 2010’s the democratization of additive manufacturing or 3D Printing has allowed people to print their way through this problem. 3D Printers have offered a cheaper and faster solution to making products in lower quantities, allowing people to print almost anything they wish for.</p>
+                        <p>The trend has gone to the extent where people are now printing themselves personalized mobile covers, bracelets, and even KEYCHAINS!</p>
+                        <p>Keychains especially have become an area of interest for adopters around the world. Printing themselves keychains right in all shapes and sizes, perfect to the way they like it. Some may have printed their favorite comic characters, while some went with a keychain with their own name or probably a photo keychain, to capture one of your memorable moments or even just a few kind words to keep their spirits up whenever they look at their keychain.</p>
+                        <p>There must be a lot of people reading this article thinking “pfft, printing 3D Printing, that’s for nerds. It’s too complicated”. But these people couldn’t be further from the truth. Today a simple search on “How to print keychains” will show hundreds of results of companies with setup printers willing to help you make a keychain design or even do it completely for you.</p>
+                        <p>Personalized keychains are a fun way to add a little fun in mundane work. Having a simple photo or your name or anything that resonates with you has proven to boost mood.</p>
                     </div>    
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>With 3D printing technology, you can print almost anything you want just by coming up with a design for it. You can design portable stands for smartphones, card holders, whistles, miniatures and many other neat designs where the possibilities are endless. The pictures below demonstrate the kind of custom keychains designs users can print.</p>
+                        <p>From keychains to the automotive and even the aerospace industry, it’s a fun watch to see how 3D printing is taking over our regular lives and literally making them OUR LIVES by its ability to personalize and modify. It’s definitely an opening to a brighter future where everything you own will be specifically tailored to your fall in your Goldilocks zone, keychain or car, it’s a form of self-expression.</p>
                     </div>    
                 </div>
-                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12"> 
                     <div class="item-block-image">
-                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/keychain.png'); ?>">
+                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/3d-printing-personalized-and-customizable-keychains.jpg'); ?>">
                     </div>    
                 </div>
             </div>
-            <hr>
+            <hr> 
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Want to have one of your custom keychains but don’t know how? Well, our company 3D Usher provides users with enhanced 3D printing technology to custom make their products for almost any industry such as automotive, med-tech, architecture, gifting, manufacturing and many others. So, we act as a medium to allow you to design your product and get it delivered as quickly as possible just with the click of a button. Our expertise and resources in product design and on-demand services will allow you to get a 3D printed keychain made simply by visiting the website, letting us know what kind of design you have in mind, getting a quotation, and finally having it shipped to your doorstep. So, getting a 3D printed keychain made is just 3 clicks away!</p>
+                        <p>So, want to have one of your custom keychains but don’t know how? Well, our company 3D Usher provides users with enhanced 3D printing technology to custom make their products for almost any industry such as automotive, med-tech, architecture, gifting, manufacturing and many others. So, we act as a medium to allow you to design your product and get it delivered as quickly as possible just with the click of a button. Our expertise and resources in product design and on-demand services will allow you to get a 3D printed keychain made simply by visiting the website, letting us know what kind of design you have in mind, getting a quotation, and finally having it shipped to your doorstep. So, getting a 3D printed keychain made is just an order away!</p>
                     </div>    
                 </div>
-            </div>
-            <hr>
+            </div>                       
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="project-intro-content">

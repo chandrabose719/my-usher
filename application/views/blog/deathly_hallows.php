@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item deathly-hallows">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -43,7 +43,7 @@
                     <div class="item-block-content">
                         <p>There isn’t anything which would hurt Harry Potter fans more than the poor quality deathly hallow, so have you ever encountered such uncertain circumstances? If yes, then don’t worry, our company “3D Usher” is the right place for you. You just tell us about your choice and the material of which you want to get your customized deathly hallows. Rest will be handled by the team of 3D Usher.</p>
 
-                        <p>Professional and highly experienced team at 3D Usher has developed expertise in the development of personalized gifts, customized items, custom keychains, figurines and other custom products. So, let’s not drag the discussion more and let you facilitate in getting your personalized gifts of deathly hallows. If you have the CAD file of deathly hallow design, then simply upload it on our website. Our competent team will get back to you instantly with the quotation after which you will be asked to review. After review, simply submit the order and let our team handle the rest.</p> 
+                        <p>The Professional and highly experienced team at 3D Usher has developed expertise in the development of personalized gifts, customized items, custom keychains, figurines and other custom products. So, let’s not drag the discussion more and let you facilitate in getting your personalized gifts of deathly hallows. If you have the CAD file of deathly hallow design, then simply upload it on our website. Our competent team will get back to you instantly with the quotation after which you will be asked to review. After review, simply submit the order and let our team handle the rest.</p> 
                         
                         <p>In case you don’t have the CAD file, then don’t worry. 3D Usher has the solution for every personalization problems. Just lodge your order on our website and tell us about your design requirements. Our friendly team would instantly quote you the cost and the manufacturing litigations, just review it and submit the order. We hope not to let our clients disappoint because we value our customers, and this is what drives us to deliver high quality personalized items and customized gifts to our worthy customers.</p>
                     </div>    

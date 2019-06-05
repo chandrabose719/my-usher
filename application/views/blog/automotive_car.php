@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item automotive-car">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -15,20 +15,25 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>The discussion dates back to the movie named “Back to the Future”, made in 1985, which showed the cars hovering over the air, but even in 2018, we see our cars still on the ground. So, what makes the vehicles or automotive hover over the air, obviously in addition to turbo engines weight of the car parts is the most prominent factor. The weight of the car parts would not only make the anticipations made in science fiction movies real but it would also contribute to the efficient and environment-friendly vehicles. This is so because reducing the weight of the automotive or car parts would improve its efficiency as the overall weight of the vehicle is dependent upon its mass. So, here comes the 3D printing to realize this fantasy of seeing our vehicles in air, seeing our vehicles being more fuel efficient, and as we are living in the threat of global warming, 3D printing would let us make our vehicles environment-friendly by using and developing the materials that have the nature of environmentally-economical auto parts. For example, famous automotive company Volkswagen implemented 3D printing on the trial basis and found that auto parts made with 3D printing weigh about 74% less than the auto parts made with the traditional manufacturing process. This was just on the trial basis and just imagine if this would be implemented on mass-level, how effectively 3D printing could contribute to the anticipations of humans about future cars.</p>
-                        <p>Have you ever been in the situation where you couldn’t find the spare auto body parts of your vehicle in the market? and if you never have experienced this, then for sure your grandparents might definitely have experienced this shortage of auto body parts. Vintage cars are very popular amongst car enthusiasts, but as there is the cost for everything, this enthusiasm also comes with the cost and thus, they lack the reliance of aftermarket car parts. Hence, the foremost one is the non-availability of the spare parts. Ascertaining this non-availability, 3D printing is here to take care of your passion and love for vintage cars. You can manufacture any spare part of your vintage car which is rare in the auto market, through 3D printing, not only just manufacturing but this development would come up with substantial benefits such as less material cost, more customized product, more environment-friendly and less weight which would ultimately result in efficiency, as discussed above.</p>
+                        <p>The discussion dates back to the movie named “Back to the Future”, made in 1985, which showed the cars hovering over the air, but even in 2018, we see our cars still on the ground. So, what makes the vehicles or automotive hover over the air, obviously in addition to turbo engines weight of the car parts is the most prominent factor. The weight of the car parts would not only make the anticipations made in sci-fi movies real but it would also contribute to the efficient and environment-friendly vehicles. This is so because reducing the weight of the automotive or car parts would improve its efficiency as the overall weight of the vehicle is dependent upon its mass. So, here comes the 3D printing to realize this fantasy of seeing our vehicles in air, seeing our vehicles being more fuel efficient, and as we are living in the threat of global warming, 3D printing would let us make our vehicles environment friendly by using and developing the materials that have the nature of eco-environment auto parts. For example, famous automotive company Volkswagen implemented 3D printing on the trial basis and found that auto parts made with 3D printing weigh about 74% less than the auto parts made with the traditional manufacturing process. This was just on the trial basis and just imagine if this would be implemented on mass-level, how effectively 3D printing could contribute to the anticipations of humans about future cars.</p>
+                        <p>Have you ever been in the situation where you couldn’t find the spare auto body parts of your vehicle in the market, and if you have never experienced this, then your grandparents might definitely have experienced this shortage of spare auto body parts? Vintage cars are very popular amongst car enthusiasts, but as there is a cost for everything, this enthusiasm also comes with the cost and thus, they lack the reliance of aftermarket car parts. Hence, the foremost one is the non-availability of the spare parts. Ascertaining this non-availability, 3D printing is here to take care of your passion and love for vintage cars. You can manufacture any spare part of your vintage car which is rare in the auto market, through 3D printing, not only just manufacturing but this development would come up with substantial benefits such as less material cost, more customized product, more environmentally friendly and less weight which would ultimately result in efficiency, as discussed above.</p>
                     </div>    
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Obviously, as of now, 3D printing is not very much common but seeing its advantages from many perspectives such as cost, material, and environmental effects, 3D printing is for sure a future. Here are some of the statistics which would clearly tell you how huge is this market niche and how easily 3D printing can take maximum out of this market niche.</p>
+                        <p>Obviously, as of now, 3D printing is not that common but seeing its advantages from many perspectives such as cost, material, and environmental effects, 3D printing is for sure a future. Here are some of the statistics which would clearly tell you how huge is this market niche and how easily 3D printing can take maximum out of this market niche.</p>
+                    </div>    
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                    <div class="item-block-image">
+                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/3d-printing-automotive-car-parts.jpg'); ?>">
                     </div>    
                 </div>
             </div>
-            <hr>
+            <hr>            
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">

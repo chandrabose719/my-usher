@@ -2,7 +2,7 @@
         <div class="container-fluid">
             <div class="authentication-block">
                 <div class="row">
-                    <div class="col-xl-5 offset-xl-3 col-lg-5 offset-lg-3 col-md-5 offset-md-3 col-sm-12 col-xs-12">
+                    <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
                         <div class="authentication-image">
                             <a href="<?= base_url(); ?>">    
                                 <img class="img-fluid" src="<?= base_url('assets/images/3dusher-logo.png'); ?>">
@@ -11,7 +11,7 @@
                     </div>
                 </div>        
                 <div class="row">
-                    <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-12">
+                    <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
                         <form id="register" method="post">
                             <div class="authentication-content">
                                 <h3>Forgot Password</h3>
@@ -31,7 +31,7 @@
             </div>
             <div class="fixed-bottom authentication-footer">
                 <div class="row">
-                    <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-4 offset-sm-4 col-xs-12">
+                    <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 col-xs-12">
                         <div class="footer-content">
                             <p><?= $this->lang->line('footer_header'); ?></p>
                             <p>

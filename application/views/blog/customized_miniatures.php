@@ -1,10 +1,10 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item customized-miniatures">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
                     <div class="item-head-content">
-                    	<h1>Customized Miniatures and Figurines using 3D Printing OR 3D print your Figurines & Miniatures</h1>
+                    	<h1>Customized Miniatures and Figurines using 3D Printing</h1>
                     </div>    
             	</div>
             </div>
@@ -22,13 +22,18 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-content">
                         <p>Use cases of 3D printing include scanning a person and uploading the scanned image on a computer, and further printing a three-dimensional figurine. ‘3D selfies’ are a new category of 3D printing where the selfie can be rendered into a three-dimensional figurine. Other uses include personalized gifts, by coming up with your own design of the person being given the gift. Artists like Danny van Ryswk are using 3D printers to add a new level detail to their models. </p>
                     </div>    
                 </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                    <div class="item-block-image">
+                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/customized-miniatures-and-figurines-using-3d-printing.jpg'); ?>">
+                    </div>    
+                </div>
             </div>
-            <hr>
+            <hr> 
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">

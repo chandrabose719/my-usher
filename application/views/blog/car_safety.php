@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item test-dummies">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -21,10 +21,6 @@
                         <p>1.35 million families are broken every year as a result of road accidents. Making it one of the leading causes of death worldwide, thus mandating that cars need to be safer than ever.</p>
                         <p>The gold standard of car safety testing, Crash test dummies were invented in 1949 and have ever since become more sophisticated, however, remain very pricey. Car test dummies should reflect the full variety of human body types. Going beyond the initial male only dummies, the family expanded to females, children, and infants too. However elderly test dummies were a bit of a hang in the industry. (Which was important to develop, as of 2015 there were about 40 million licensed drivers aged 65 and older in the USA alone)</p>
                         <p>The traditional process used a heat treated piece of spring steel to make the ribs. The piece is then glued to the inside of the rib cage to control response to impact testing. It is then left to set but requires several trimmings to deliver optimum performance. This makes the process expensive and inconsistent. It was only a matter of time before 3D printing reformed this process too.</p>
-                        <p>After several failed attempts in 3D printing, Humanetics, the company that virtually makes all test dummies around the world turned to Adaptive Corporation for help who suggested 3D printing the test dummies with Onyx a carbon composite material reinforced with continuous Kevlar fibers. On experimentation, the ribs stood strong even after 150 attempts.</p>
-                        <p>3D printing further allows fixing any broken parts to be replaced within 24 hours thus speeding up the process unbelievably along with saving around 40-60% labor costs.</p>
-                        <p>The models now include softer internal organs that are represented in terms of regions like abdominal and thoracic. Elderly people also tend to have more flesh in the front of their bones, which affects how the person moves within a seat belt system. It also allows humanities to print organs like the liver or a spleen which allows researchers to better understand the impact of an accident.</p>
-                        <p>Vehicular safety is definitely in good hands with 3D printing. Making the industry ever more efficient and sufficient we can only imagine how will the two evolve further. Drive Carefully! </p>
                     </div>    
                 </div>
             </div>
@@ -32,13 +28,12 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-content">
-                       <p>Following are some of the samples of 3D printed jewelry, for reference. You can examine how elegant and detailed personalized jewelry is designed through additive manufacturing.</p>
-                       <p>Anticipating the market niche and ascertaining the future of personalized jewelry through 3D printing, our experienced and highly professional team at 3D Usher is committed to providing its customer with excellent and high-quality customized products. We develop high quality customized products in a variety of designs and it will be just a matter of time that you will receive the desired customized product at your doorsteps. The procedure to get the customized jewelry is very simple and there are just a couple of steps which you need to follow. If you have your own made design, then simply login and upload the file. After you will upload the file, professional team of 3D Usher would evaluate your design and instantly quote you the manufacturing cost and other details related to your custom jewelry.</p>
+                        <p>After several failed attempts in 3D printing, Humanetics, the company that virtually makes all test dummies around the world turned to Adaptive Corporation for help who suggested 3D printing the test dummies with Onyx a carbon composite material reinforced with continuous Kevlar fibers. On experimentation, the ribs stood strong even after 150 attempts.</p>
                     </div>    
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-image">
-                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/keychain.png'); ?>">
+                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/3d-printing-test-dummies-for-car-safety.jpg'); ?>">
                     </div>    
                 </div>
             </div>
@@ -46,7 +41,9 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                       <p>In case you don’t have a design, don’t worry, we will take care of this. We truly value your customization needs and have a specific Design Suite, where you would tell us about the product specifications and rest of the things will be handled by us. We would get back to you instantly with the designed product and quotation. You just review and submit the order, and the rest of the things will be managed from our side.</p>
+                        <p>3D printing further allows fixing any broken parts to be replaced within 24 hours thus speeding up the process unbelievably along with saving around 40-60% labor costs.</p>
+                        <p>The models now include softer internal organs that are represented in terms of regions like abdominal and thoracic. Elderly people also tend to have more flesh in the front of their bones, which affects how the person moves within a seat belt system. It also allows humanities to print organs like the liver or a spleen which allows researchers to better understand the impact of an accident.</p>
+                        <p>Vehicular safety is definitely in good hands with 3D printing. Making the industry ever more efficient and sufficient we can only imagine how will the two evolve further. Drive Carefully! </p>
                     </div>    
                 </div>
             </div>

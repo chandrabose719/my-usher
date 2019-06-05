@@ -5,7 +5,7 @@
 					<div class="col-xl-8 col-lg-8 col-md-7 col-sm-12 col-xs-12">
 						<?php if (!empty($usher_id)) { ?>
 							<div class="my-2 upload-btn" ondrop="dragUploadFile(event)" ondragover="return false">
-		                        <input id='upload' name="upload[]" type="file" multiple="multiple" onchange="additionalUploadFile()" class="form-control hide" />
+		                        <input id='upload' name="upload[]" type="file" multiple="multiple" onchange="cadUploadFile()" class="form-control hide" />
 		                        <label for="upload" class="form-control btn btn-large"> 
 			                    	<?php if (empty($file_data_result)) { ?>
 			                    		<h4 class="text-primary">UPLOAD 3D DESIGN FILES</h4> 
@@ -229,9 +229,18 @@
 			                <div class="col-auto my-auto">OR</div>
 			                <div class="col"><hr></div>
 			            </div>
-			            <!-- <div class="form-group">
-                            <a href="" class="form-control btn btn-primary Pbtn google-btn"><i class="fab fa-google"></i> <?= $this->lang->line('google_login'); ?></a>
-                        </div> -->
+			            <div class="row">
+			                <div class="col">
+		                        <div class="form-group">
+		                            <a href="<?= $this->google->get_login_url(); ?>"class="form-control btn btn-primary Pbtn google-btn"><i class="fab fa-google"></i> GOOGLE LOG IN</a>
+		                        </div>
+		                    </div>
+		                    <div class="col">    
+		                        <div class="form-group">
+		                            <a href="<?= $this->facebook->login_url(); ?>"class="form-control btn btn-primary Pbtn fb-btn"><i class="fab fa-facebook"></i> FACEBOOK LOGIN</a>
+		                        </div>
+		                    </div>    
+		                </div>        
 			            <div class="row">
 			                <div class="col">
 			                	<div class="text-center">

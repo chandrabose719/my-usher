@@ -13,63 +13,77 @@
 #register-part .register-image{
     width:40%;
     height:100%;
-    z-index:1000; 
     position:fixed; 
+    background-position: center;
+    background-size:cover;
+    background-image:url(../../../../assets/images/bg-register.png); 
+    padding:200px 10px; 
 }
 #register-part .register-image img{
     width:100%;
-    height:100%; 
+    max-width:300px; 
+    height:auto;
+    display:block; 
+    margin:auto; 
+}
+#register-part .register-image p{
+    color: #ffffff; 
+    text-align: center;   
+}
+#register-part .register-detail-image img{
+    max-height:100px;
 }
 #register-part .register-content{
     width:60%; 
     margin-left:40%;
 }
 #register-part .register-content .register-detail{
-    padding:40px 20px;
+    padding:0px 20px;
 }
 #register-part .register-detail .register-detail-image,
 #register-part .register-detail .register-detail-image img{
-    height:100px; 
     text-align:center;  
-}
-/*login*/
-#authentication-part{
-    width:100%;
-    height:100%;  
-    background:#ffffff; 
-}
-#authentication-part .authentication-block{
-    padding:30px 20px;  
-}
-#authentication-part .authentication-image,
-#authentication-part .authentication-image img{
-    text-align:center; 
-}
-#authentication-part .#authentication-content{
-    padding:10px 10px;
 }
 #register-part .register-footer{
     padding:5px 0px; 
 }
-#authentication-part .authentication-footer{
-    text-align:center; 
-    padding:5px 0px; 
-}
-#register-part .register-footer p,
-#authentication-part .authentication-footer .footer-content p{
+#register-part .register-footer p{
     text-align:center;
     margin:0px 0px;   
 }
 
+/*login*/
+#login-part{
+    width:100%;
+    height:100%;  
+    background:#ffffff; 
+}
+#login-part .login-block{
+    padding:30px 20px;  
+}
+#login-part .login-image,
+#login-part .login-image img{
+    text-align:center; 
+}
+#login-part .#login-content{
+    padding:10px 10px;
+}
+#login-part .login-footer{
+    text-align:center; 
+    padding:5px 0px; 
+}
+#login-part .login-footer .footer-content p{
+    text-align:center;
+    margin:0px 0px;   
+}
+
+/*Start Project Part*/
 /*Start Project Part*/
 #startproject-part{
     background:#ffffff;
 }
 #startproject-part .container{
     padding:20px 20px;  
-}
-#startproject-part .container span{
-    color:#5c98bd; 
 }
 #startproject-part .container h3{
     font-size: 24px;
@@ -81,12 +95,24 @@
     padding:20px 0px;
     text-align:center; 
 }
+#startproject-part .startproject-content img{
+    height:75px; 
+    transition: all 0.5s;
+}
 #startproject-part .startproject-content p{
+    color:#ababab;
     font-size:18px; 
     font-weight:400;
     text-align:center;
     margin:20px 0px;   
     letter-spacing:0.5px; 
+}
+#startproject-part .startproject-content h5{
+    width:250px; 
+}
+#startproject-part .start-design:hover,
+#startproject-part .start-manufacture:hover{
+    box-shadow: 1px 3px 20px #B6B5B5;
 }
 #startproject-part .vr-divider{
     top:0;
@@ -587,6 +613,173 @@
 #design-confirmation-part .design-confirmation-block p{
     margin:45px 0px;
 }
+
+/*************************/
+/*Project Part*/
+/*Project Form*/
+#project-part{
+    background:url(../../../images/bg-project.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+#project-part .container-fluid{
+    background-color: #0f2130;
+    padding:0px 0px 25px 0px; 
+}
+#project-part .container-fluid h3{
+    color: #ffffff;
+    text-align: left;
+    font-size: 34px;
+}
+#project-part .nav-pills .nav-item{
+    background-color: #ffffff;
+    padding: 0px 30px;
+    min-width: 150px;
+}
+#project-part .nav-pills .nav-link.active, 
+#project-part .nav-pills .show>.nav-link{
+    background-color: #5c89bd;
+    color: #ffffff;
+}
+#project-part .nav-pills .basic-details-link{
+    width: 33.33%;
+    clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%);
+    background-color: #5c89bd;
+}
+#project-part .nav-pills .contact-details-link,
+#project-part .nav-pills .additional-details-link{
+    width: 33.33%;
+    position: relative;
+    clip-path: polygon(0% 0%, 92% 0%, 100% 50%, 92% 100%, 0% 100%,8% 50%);
+}
+#project-part .nav-pills .additional-details-link{
+    left: -20px;
+}
+#project-part .nav-pills .contact-details-link{
+    left: -40px;
+}
+#project-part .container{
+    padding:20px 20px;  
+}
+#project-part .basic-details,
+#project-part .additional-details,
+#project-part .contact-details{
+    box-shadow: 1px 2px 20px #ccc;
+    background-color: #ffffff;
+    padding:20px 20px; 
+}
+#project-part .form-group{
+    margin:30px 0px;         
+}
+#project-part .form-control{
+    margin:10px 0px; 
+}
+#project-part h4{
+    color:#5c98bd;
+    text-align:left;
+    margin-bottom:0px;         
+}
+#project-part p{
+    text-align:left;        
+    margin-bottom:0px; 
+}
+#project-part span{
+    font-size:13px; 
+    text-align:left;        
+}
+#project-part .project-form-danger{
+    border:1px solid red;
+    box-shadow: 1px 2px 15px #c3a9a9;
+}
+#project-part .textarea-form-group{ 
+    position: relative;
+}
+#project-part .textarea-form-group textarea{
+    height:110px;       
+}
+#project-part .textarea-form-group div{
+    position:absolute;
+    bottom:0px;
+    right:10px;
+}
+#project-part .additional-details .psq-content{
+    margin:10px 0px 0px 0px; 
+}
+#project-part .additional-details .psq-content .psq-label{
+    color: #111;
+    cursor: unset;
+    margin: 0px 0px;
+    background: transparent;
+    border: 1px solid #5c98bd;
+}
+#project-part .additional-details .psq-content .psq-btn{
+    color:#ffffff;
+    cursor:move; 
+    background:#5c98bd; 
+    border:1px solid #5c98bd; 
+}
+#project-part .additional-details .upload-btn .hide{
+    display:none;
+}
+#project-part .additional-details .upload-btn .btn {
+    display: inline-block;
+    padding:11px 19px;
+    margin:10px 0px;
+    font-size: 17.5px;
+    line-height: 20px;
+    color: #333333;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid #bbbbbb;
+    border-color: #c5c5c5;
+    border-color: rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.25);
+    border-bottom-color: #a2a2a2;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+}
+#project-part .additional-details .display-file{
+    padding:5px 5px;   
+    text-align:center;
+}
+#project-part .additional-details .display-file-content{
+    margin:10px 0px;
+    box-shadow:0px 0px 5px 2px #e6e6e6; 
+}
+#project-part .additional-details .display-file-content p{
+    margin:0px;
+    padding:1px 25px;
+    text-align:left;
+}
+#project-part .additional-details .display-file-content p:nth-child(1){
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.5px;   
+}
+#project-part .additional-details .display-file-content p:nth-child(2){
+    font-size:12px;
+    letter-spacing:0.5px; 
+}
+/*Project Confirmation*/
+#confirmation-part{
+    background:#ffffff; 
+}
+#confirmation-part .container{
+    padding:20px 20px;  
+}
+#confirmation-part .confirmation-content{
+    background: #fafafa;
+    padding: 5px 10px 0px 10px;
+    border-radius: 2px;
+    margin: 10px 0px;
+}
+#confirmation-part .confirmation-block p{
+    margin:45px 0px;
+}
+/*End Project Part*/
+/*************************/
 
 /*************************/
 /*User Dashboard Part*/

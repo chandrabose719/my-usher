@@ -15,9 +15,8 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps in Manufacturing Industry</h4>
-                        <p>Additive Manufacturing or 3D printing was initially a method for rapid prototyping. But now, it has grown into a true manufacturing process and is giving manufacturing industries the ability to both prototype and manufacture end-use products. 3D printing offers significant advantages over traditional manufacturing processes, especially when it comes to prototyping.</p>
-                        <p>We, at 3D Usher believe that as the importance of 3D Printing becomes more prominent every day, 3D printing can replace a lot of traditional aspects while manufacturing a product. </p>
+                        <h4>How We Work in Traditional Manufacturing Industry</h4>
+                        <p>Additive Manufacturing (or 3D printing) was initially used for rapid prototyping. It has since grown into manufacturing process all its own and is giving manufacturing industries the ability to both prototype and manufacture end-use products. 3D printing fills in the gaps where traditional manufacturing is not the best solution.</p>
                     </div>    
                 </div>
             </div>
@@ -28,16 +27,19 @@
                     	<h4>Benefits in the Manufacturing Industry:</h4>
                         <ul class="industry-block-list">
                             <li>
-                                <p>Useful in low volume production</p>
+                                <p>Cost effective in low-volume production (up to 1,000 pieces)</p>
                             </li>
                             <li>
-                                <p>Reduces the time required</p>
+                                <p>Faster turnaround times</p>
                             </li>
                             <li>
-                                <p>Ease of printing an object</p>
+                                <p>Complicated geometries</p>
                             </li>
                             <li>
-                                <p>The benefit of cost</p>
+                                <p>Reduces waste to make the parts</p>
+                            </li>
+                            <li>
+                                <p>Reduced costs make iterations easier</p>
                             </li>
                         </ul>
                     </div>    

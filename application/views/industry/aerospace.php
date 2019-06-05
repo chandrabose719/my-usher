@@ -15,9 +15,9 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps in Aerospace Services</h4>
+                        <h4>How On-Demand Manufacturing is used in Aerospace</h4>
                         <p>At present, the cost of manufacturing quality products for critical uses has increased a lot. We, 3D Usher, are well aware of that and so are introducing on-demand manufacturing to solve those issues. This business model is of immense help in aerospace services. It has triggered some positive changes that have pushed the industry towards progress.</p>
-                        <p>We, 3D Usher team have tried to make things easy for the industry using the on-demand manufacturing processes. The engineers can use our help to design and manufacture different parts of the vehicle and tools. You can print and prototype cabin interiors, nozzles, propellers, impellers, frame overhauling, control surfaces, etc. The process is easy and quick.</p>
+                        <p>We, 3D Usher team have tried to make things easy for the industry using the on-demand manufacturing processes. The engineers can use our help to design and manufacture different parts of the vehicle and tools.The process is easy and quick.</p>
                     </div>    
                 </div>
             </div>
@@ -39,6 +39,9 @@
                             <li>
                                 <p>Reduces additional tooling</p>
                             </li>
+                            <li>
+                                <p>You can print and prototype cabin interiors, nozzles, propellers, impellers, frame overhauling, control surfaces, etc.</p>
+                            </li>
                         </ul>
                     </div>    
                 </div>
@@ -52,7 +55,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <p>To ace all the present-day challenges in this field, people are inclining towards this idea. If your aim is to manufacture superior parts with limited time and money to beat all competitions, then team up with 3D Usher and let us serve you right!</p>
+                        <p>If your aim is to manufacture superior aerospace parts with limited time and money, contact our 3D Usher sales team today.</p>
                     </div>    
                 </div>
             </div>               

@@ -5,11 +5,24 @@
 }
 /*Resource*/
 #blog{
-    width: 100%;
+    width: 100%;   
     opacity:0.7; 
-    background:url(../../../../assets/images/blog/bg-blog.png);
     background-size: cover;
     background-position: center;
+    overflow: hidden;
+}
+#blog .carousel-item{
+    height: 300px;
+}
+#blog .carousel-item img{
+    width: 100%;
+}
+#blog .carousel-caption{
+    right: 0%;
+    left: 0%;
+    bottom: 0px;
+    height: 100px;
+    background-color: rgba(7,71,111,0.8);
 }
 #blog .container{
     padding:20px 0px;
@@ -35,9 +48,8 @@
     padding:20px 20px;  
 }
 #blog-group .blog-group-content{
-    height:400px;
     margin:10px 0px; 
-    padding:10px 10px;
+    height:315px;
     text-align:center;
     border-radius:3px;
     transition:1s;
@@ -46,30 +58,115 @@
 #blog-group .blog-group-content:hover{
     box-shadow: 1px 1px 10px #B6B5B5;
 }
-#blog-group .blog-group-content:hover h4{
-    color: #17a2b8;
+/*#blog-group .blog-group-content:hover h4{
+    text-shadow: 1px 1px #5c98bd;
+}*/
+#blog-group .blog-group-content:hover img{
+    transform: scale(1.1);
+}
+#blog-group .blog-group-content .content-image{
+    position: relative;
 }
 #blog-group .blog-group-content .content-image,
 #blog-group .blog-group-content .content-image img{
-    height:125px;             
+    height:180px;
+    overflow: hidden;
+    transition: all 0.5s;
+}
+#blog-group .blog-group-content .image-header{
+    height: 180px;
+    width: 100%;
+    position: absolute;
+    top: 0px;
+    background-color: rgba(7,71,111,0.52);
+}
+#blog-group .image-header h4{
+    color:#fff;
+    text-align:left;  
+    padding:10px 20px;
 }
 #blog-group .blog-group-content .content-body{
-    height:210px;             
+    height:130px;
+    padding:10px; 
 }
-#blog-group .blog-group-content h4{
-    color:#5c98bd;
-    text-align:left; 
-    padding:5px 0px;   
-}
+
 /*Blog Item Page*/
 #blog-item-head{
     width: 100%;
     opacity:0.7;
 }
 #blog-item-head.blog-item{
-    background:url(../../../../assets/images/blog/bg-blog-item.png);
-    background-size: cover;
-    background-position: center;
+    background-size: cover !important;
+    background-position: center !important;
+}
+#blog-item-head.customised-keychains{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/personalized-and-customizable-Keychains.jpg);
+}
+#blog-item-head.personalized-jewellery{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/personalized-jewellery-like-3d-printed-rings-and-more.jpg);
+}
+#blog-item-head.dental-implants{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/teeth-and-braces-after-3d-scanning-jaw.jpg);
+}
+#blog-item-head.customized-miniatures{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/customized-miniatures-and-figurines.jpg);
+}
+#blog-item-head.deathly-hallows{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/get-your-deathly-hallows.jpg);
+}
+#blog-item-head.injection-molding{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/injection-molding-explained-easy.jpg);
+}
+#blog-item-head.personalized-gifts{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/personalised-gifts.jpg);
+}
+#blog-item-head.drones{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/drone-and-drone-parts.jpg);
+}
+#blog-item-head.prosthetic-limbs{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/prosthetic-limbs-like-a-cyborg.jpg);
+}
+#blog-item-head.automotive-car{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/automotive-car-parts.jpg);
+}
+#blog-item-head.rapid-prototyping{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/rapid-prototyping-for-architecture-models.jpg);
+}
+#blog-item-head.silicon-mold{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/silicon-mold-what-how-to-and-benefits.jpg);
+}
+#blog-item-head.test-dummies{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/test-dummies-for-car-safety.jpg);
+}
+#blog-item-head.medical-research{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/medical-models-for-hospitals-and-research.jpg);
+}
+#blog-item-head.wheels{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/light-weight-custom-wheels.jpg);
+}
+#blog-item-head.lithophane{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/selfie-or-a-photo-as-lithophane.jpg);
+}
+#blog-item-head.harry-potter{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/harry-potter-as-a-modern-muggle.jpg);
+}
+#blog-item-head.valentine-day{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/personalized-gifts-like-engraved-ring-on-valentines-day.jpg);
+}
+#blog-item-head.smartphone-cover{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/personalized-smartphone-cover.jpg);
+}
+#blog-item-head.smash-bros{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/smash-bros-action-figures-and-miniatures.jpg);
+}
+#blog-item-head.customised-awards{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/get-customized-award-or-trophies-like-oscars.jpg);
+}
+#blog-item-head.colour-jet{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/what-is-colour-jet-3d-printing.jpg);
+}
+#blog-item-head.science-fair{
+    background:linear-gradient(0deg,rgba(7,71,111,0.52),rgba(7,71,111,0.52)),url(../../../../assets/images/blog/print-simple-or-functional-science-fair-models.jpg);
 }
 #blog-item-head .container{
     padding:20px 0px;

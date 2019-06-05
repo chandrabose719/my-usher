@@ -52,7 +52,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <p>To ace all the present-day challenges in this field, people are inclining towards this idea. If your aim is to manufacture superior parts with limited time and money to beat all competitions, then team up with 3D Usher and let us serve you right!</p>
+                        <p>If your aim is to manufacture superior architecture parts with limited time and money, contact our 3D Usher sales team today.</p>
                     </div>    
                 </div>
             </div>

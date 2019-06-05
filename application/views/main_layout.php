@@ -15,8 +15,10 @@
     <link href="<?= base_url('assets/library/bootstrap-four/css/fontawesome-all.min.css'); ?>" rel="stylesheet" type="text/css">
     <link href="<?= base_url('assets/library/bootstrap-four/css/animate.min.css'); ?>" rel="stylesheet" type="text/css">
 	
-    <!-- Nice Scroll Content	 -->
+	<!-- Nice Scroll Content	 -->
 	<link href="<?= base_url('assets/library/scrollbar/css/mCustomScrollbar.min.css'); ?>" rel="stylesheet" type="text/css">
+	<!-- Datepicker Content	 -->
+	<link href="<?= base_url('assets/library/datepicker/css/datepicker.min.css'); ?>" rel="stylesheet" type="text/css">
 
 	<!-- Font Family -->
 	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -79,7 +81,13 @@
 	<!-- End Google Tag Manager (noscript) -->
 
 	<!-- Header Part -->
-	<?php $this->load->view('components/header'); ?>
+	<?php 
+		if((current_url() == base_url('project')) || (current_url() == base_url('project-confirmation'))){	
+			$this->load->view('components/project-header');
+		}else{
+			$this->load->view('components/header');		
+		}		
+	?>	
 	<!-- End Header Part -->
 
 	<!-- Wrapper -->
@@ -127,11 +135,18 @@
 	<!-- End Wrapper -->
 
 	<!-- Footer Part -->
-	<?php $this->load->view('components/footer'); ?>
+	<?php 
+		if((current_url() == base_url('project')) || (current_url() == base_url('project-confirmation'))){	
+			$this->load->view('components/project-footer');
+		}else{
+			$this->load->view('components/footer');		
+		}		
+	?>
 	<!-- End Footer Part -->
 
 	<!-- Bootstrap Core JS -->
 	<script src="<?= base_url('assets/library/bootstrap-four/js/jquery.min.js'); ?>"></script>
+	<script src="<?= base_url('assets/library/bootstrap-four/js/jquery-ui.js'); ?>"></script>
 	<script src="<?= base_url('assets/library/bootstrap-four/js/popper.min.js'); ?>"></script>
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.min.js'); ?>"></script>
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.bundle.min.js'); ?>"></script>
@@ -143,14 +158,20 @@
     <script src="<?= base_url('assets/library/scrollbar/js/mCustomScrollbar.min.js'); ?>"></script>
     <!-- Easing Scroll Content   -->
     <script src="<?= base_url('assets/library/easing/js/easing.min.js'); ?>" type="text/javascript"></script>
-	
+	<!-- Datepicker Content   -->
+    <script src="<?= base_url('assets/library/datepicker/js/datepicker.min.js'); ?>" type="text/javascript"></script>
+
 	<!-- Custom JS -->
     <script src="<?= base_url('assets/library/custom/js/usher-common.js'); ?>" type="text/javascript"></script>
     <script src="<?= base_url('assets/library/custom/js/usher-manufacture.js'); ?>" type="text/javascript"></script>
     <script src="<?= base_url('assets/library/custom/js/usher-design.js'); ?>" type="text/javascript"></script>
 
     <!-- Start of HubSpot Embed Code -->
-	 <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/4831911.js"></script> 
+	<?php 
+		if((current_url() != base_url('project')) && (current_url() != base_url('project-confirmation'))){	
+			echo "<script type='text/javascript' id='hs-script-loader' async defer src='//js.hs-scripts.com/4831911.js'></script>";
+		}
+	?>
 	<!-- End of HubSpot Embed Code -->
     
 </body>

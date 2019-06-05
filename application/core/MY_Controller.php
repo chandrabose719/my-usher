@@ -37,9 +37,28 @@ class MY_Controller extends CI_Controller {
     }
 
     function registerEmail($user_name, $user_email){
+        
+        $formID = '71ae50ef-e796-4085-9374-2e192d2bcf41';
+
+        // Hubspot Email
+        $hubspotutk      = $_COOKIE['hubspotutk']; //grab the cookie from the visitors browser.
+        $ip_addr         = $_SERVER['REMOTE_ADDR']; //IP address too.
+        $hs_context      = array(
+            'hutk' => $hubspotutk,
+            'ipAddress' => $ip_addr,
+            'pageUrl' => 'https://3dusher.com/register',
+            'pageName' => 'Register'
+        );
+        $hs_context_json = json_encode($hs_context);
+
+        $str_post = "firstname=" . urlencode($user_name) 
+            . "&email=" . urlencode($user_email) 
+            . "&hs_context=" . urlencode($hs_context_json);
+        $this->hubspot_email($str_post, $formID);    
+
         // Admin Detail
-        $admin_email = 'info@3dusher.com';
-        $admin_name = 'Team 3D Usher';
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
 
         // Subject
         $subject = 'Hello from 3D Usher Team';
@@ -71,8 +90,8 @@ class MY_Controller extends CI_Controller {
 	// Forgot Password
     function forgotPasswordEmail($user_id, $user_name, $user_email, $token){    
         // Admin Detail
-        $admin_email = 'info@3dusher.com';
-        $admin_name = 'Team 3D Usher';
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
 
         // Subject
         $subject = '3D Usher Password Reset';
@@ -119,7 +138,7 @@ class MY_Controller extends CI_Controller {
         $hs_context      = array(
             'hutk' => $hubspotutk,
             'ipAddress' => $ip_addr,
-            'pageUrl' => 'http://www.3dusher.com/contact-us',
+            'pageUrl' => 'https://3dusher.com/contact-us',
             'pageName' => 'Contact Us'
         );
         $hs_context_json = json_encode($hs_context);
@@ -132,8 +151,8 @@ class MY_Controller extends CI_Controller {
         
         // Email Sending
         // Admin Detail
-        $admin_email = 'info@3dusher.com';
-        $admin_name = 'Team 3D Usher';
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
 
         // Subject
         $subject = 'Contact Page Inquiry';
@@ -166,7 +185,7 @@ class MY_Controller extends CI_Controller {
         $hs_context      = array(
             'hutk' => $hubspotutk,
             'ipAddress' => $ip_addr,
-            'pageUrl' => 'http://www.3dusher.com',
+            'pageUrl' => 'https://3dusher.com',
             'pageName' => 'Subscription'
         );
         $hs_context_json = json_encode($hs_context);
@@ -179,8 +198,8 @@ class MY_Controller extends CI_Controller {
 
     function manufactureOrderEmail($o_id, $o_amount){
         // Admin Detail
-        $admin_email = 'info@3dusher.com';
-        $admin_name = 'Team 3D Usher';
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
 
         // Subject
         $subject = 'Your order '.$o_id.' has been successfully placed.';
@@ -212,8 +231,8 @@ class MY_Controller extends CI_Controller {
     // Design Order Confirm
     function designOrderEmail($order_id, $name){
         // Admin Detail
-        $admin_email = 'info@3dusher.com';
-        $admin_name = 'Team 3D Usher';
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
 
         // Subject
         $subject = 'Your order '.$order_id.' has been successfully placed.';
@@ -240,6 +259,114 @@ class MY_Controller extends CI_Controller {
         ';
         // Elastic Email
         $this->elastic_mail($admin_email, $admin_name, $subject, $user_email, $user_template);
+    }
+
+    // Need Help
+    function needHelpEmail($array){
+        // Admin Detail
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
+
+        // User Detail
+        $user_name = $this->session->userdata('usher_name');
+        $user_email = $this->session->userdata('usher_email');
+
+        // Subject
+        $subject = $user_name.' just submitted Need Help form';
+        
+        // User Template
+        $user_template = '
+            <br/><br/>
+                User Name - '.$user_name.'
+            <br/><br/>
+                User Email ID – '.$user_email.'
+            <br/><br/>
+                Query related to – '.$array['order_type'].'
+            <br/><br/>
+                Query – '.$array['help_message'].'
+            <br/><br/>
+        ';
+        // Elastic Email
+        $this->elastic_mail($user_email, $user_name, $subject, $admin_email, $user_template);
+    }    
+
+    // Project Order Confirm
+    function projectOrderEmail($user_name, $user_email, $project_name, $order_id){
+        // Admin Detail
+        $admin_email = $this->lang->line('admin_email');
+        $admin_name = $this->lang->line('admin_name');
+
+        // Subject
+        $subject = '3D Usher RFQ: '.$order_id;
+        
+        // User Detail
+        $user_name = $user_name;
+        $user_email = $user_email;
+        
+        // User Template
+        $user_template = '
+                Dear '.$user_name.',
+            <br/><br/>
+                Your request for quotation has been successfully submitted with 3D Usher.
+            <br/><br/>
+                Name of the Project – '.$project_name.'
+            <br/><br/>
+                Order Number – '.$order_id.'
+            <br/><br/>
+                We will connect with you within next 24 hours. If you have any questions, you can contact us at info@3dusher.com with your RFQ ID.
+            <br/><br/>
+                Let`s get innovating,
+            <br/>
+                Team 3D Usher
+        ';
+        // Elastic Email
+        $this->elastic_mail($admin_email, $admin_name, $subject, $user_email, $user_template);
+    }
+
+    // Project Order Confirm
+    function PRFQRemainderEmail($user_name, $user_email){
+        
+        // Hubspot Sending
+        $formID = '0edcf556-bbdb-474f-9654-de57766ca002';
+
+        // Hubspot Email
+        $hubspotutk      = $_COOKIE['hubspotutk'];
+        $ip_addr         = $_SERVER['REMOTE_ADDR'];
+        $hs_context      = array(
+            'hutk' => $hubspotutk,
+            'ipAddress' => $ip_addr,
+            'pageUrl' => 'https://3dusher.com/project',
+            'pageName' => 'Project'
+        );
+        $hs_context_json = json_encode($hs_context);
+
+        $str_post = "Name=" . urlencode($user_name) 
+            . "&Email=" . urlencode($user_email) 
+            . "&hs_context=" . urlencode($hs_context_json);
+        $this->hubspot_email($str_post, $formID);
+
+    	// Email Sending
+        // Admin Detail
+        $admin_email = $this->lang->line('remainder_emails');
+        $admin_name = $this->lang->line('admin_name');
+        // Subject
+        $subject = $user_name.'  just filled Project RFQ Form.';
+        
+        // User Detail
+        $user_name = $user_name;
+        $user_email = $user_email;
+        
+        // User Template
+        $user_template = '
+                Hello,
+            <br/><br/>
+                You just received a Request for Quotation through 3dusher.com/project
+            <br/><br/>
+                Login to Admin dashboard to view the requirement.
+            <br/><br/>
+        ';
+        // Elastic Email
+        $this->elastic_mail($user_email, $user_name, $subject, $admin_email, $user_template);
     }
 
 	// Elastic Mail

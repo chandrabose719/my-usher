@@ -13,6 +13,48 @@
     <div class="container">
         <hr>    
     </div>
+    <section id="contact-form">
+        <div class="container">
+            <div class="contact-form-content">    
+                <h3>We'd love to hear from you</h3>
+                <form method="post">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                            <div class="form-group">
+                                <input type="text" class="form-control custom-input" name="contact_name" id="contact_name" placeholder="Name *" onfocusin="contactFocusin(this)" onfocusout="contactNameFocusout()">
+                                <small id="contact_name_error" class="text-danger"></small>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                            <div class="form-group">
+                                <input type="email" class="form-control custom-input" name="contact_email" id="contact_email" placeholder="Email ID *" onfocusin="contactFocusin(this)" onfocusout="contactEmailFocusout()">
+                                <small id="contact_email_error" class="text-danger"></small>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                            <div class="form-group">
+                                <input type="number" class="form-control custom-input" name="contact_mobile" id="contact_mobile" placeholder="Phone Number *" onfocusin="contactFocusin(this)" onfocusout="contactPhoneFocusout()">
+                                <small id="contact_mobile_error" class="text-danger"></small>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                            <div class="form-group">
+                                <input type="text" class="form-control custom-input" name="contact_query" id="contact_query" placeholder="Query *">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 offset-xl-6 col-lg-4 offset-lg-6 col-md-4 offset-md-6 col-sm-4 offset-sm-6 col-xs-12"> 
+                            <div class="form-group">
+                                <input type="submit" class="form-control btn btn-primary Pbtn" name="contact-submit" id="contact_submit" value="SUBMIT" disabled>
+                            </div>
+                        </div>    
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <hr>    
+    </div>
     <section id="contact-address">
         <div class="container">
             <div class="row">
@@ -68,48 +110,6 @@
                         <p>Hyderabad, Telangana - 500072</p>
                     </div>    
                 </div>
-            </div>
-        </div>
-    </section>
-    <div class="container">
-        <hr>    
-    </div>
-    <section id="contact-form">
-        <div class="container">
-            <div class="contact-form-content">    
-                <h3>We'd love to hear from you</h3>
-                <form method="post">
-                    <div class="row">
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                            <div class="form-group">
-                                <input type="text" class="form-control custom-input" name="contact_name" id="contact_name" placeholder="Name *" onfocusin="contactFocusin(this)" onfocusout="contactNameFocusout()">
-                                <small id="contact_name_error" class="text-danger"></small>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                            <div class="form-group">
-                                <input type="email" class="form-control custom-input" name="contact_email" id="contact_email" placeholder="Email ID *" onfocusin="contactFocusin(this)" onfocusout="contactEmailFocusout()">
-                                <small id="contact_email_error" class="text-danger"></small>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                            <div class="form-group">
-                                <input type="number" class="form-control custom-input" name="contact_mobile" id="contact_mobile" placeholder="Phone Number *" onfocusin="contactFocusin(this)" onfocusout="contactPhoneFocusout()">
-                                <small id="contact_mobile_error" class="text-danger"></small>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                            <div class="form-group">
-                                <input type="text" class="form-control custom-input" name="contact_query" id="contact_query" placeholder="Query *">
-                            </div>
-                        </div>
-                        <div class="col-xl-4 offset-xl-6 col-lg-4 offset-lg-6 col-md-4 offset-md-6 col-sm-4 offset-sm-6 col-xs-12"> 
-                            <div class="form-group">
-                                <input type="submit" class="form-control btn btn-primary Pbtn" name="contact-submit" id="contact_submit" value="SUBMIT" disabled>
-                            </div>
-                        </div>    
-                    </div>
-                </form>
             </div>
         </div>
     </section>

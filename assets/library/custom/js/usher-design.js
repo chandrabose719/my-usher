@@ -1,7 +1,22 @@
 // ********************
 // Design Project Page
 $(document).ready(function(){
-	
+
+	// Project Form Date Picker
+	$(function(){
+		$('#award_date, #needed_by').fdatepicker({
+			initialDate: new Date(),
+			format: 'dd-mm-yyyy',
+			startDate: new Date(),
+			disableDblClickSelection: true,
+			leftArrow:'<<',
+			rightArrow:'>>',
+			closeButton: false
+		});
+	});
+
+	// Project Form Draggable
+	$('#psq').sortable();
 });
 
 
@@ -314,4 +329,317 @@ function displayResourceFunc(resourceFileArray){
     return displayResource;
 };
 // End Design Project Page
+// ********************
+
+// ********************
+// Project Page
+// Decsription
+function descriptionCount() {
+  	var letterCount = $('#project_description').val().length;
+  	$('#description_count').text(letterCount+'/5000');
+};
+
+// Instructions
+function instructionCount() {
+  	var letterCount = $('#project_instruction').val().length;
+  	$('#instruction_count').text(letterCount+'/5000');
+};
+
+// Information
+function infoCount() {
+  	var letterCount = $('#project_info').val().length;
+  	$('#info_count').text(letterCount+'/5000');
+};
+
+// Resource File
+function selectResource(){
+	var resource_type = $('#resource_type').val();
+	var content =`	
+		<div class="upload-btn">
+        	<input id='project_resource' name="project_resource[]" type="file" multiple="multiple" onchange="projectResource()" class="form-control hide" />
+        	<label for="project_resource" class="btn btn-large"> Choose File </label>
+    	</div>
+    	<div class="row" id="project-resource-content">
+        
+    	</div>
+	`;
+	if(resource_type == 'YES'){
+		var view_content =`	
+			<p>Upload your 3D Design files:</p>
+			<span>Upload multiple files up to 100 mb</span>
+		`;
+		view_content += content;	
+		$('.upload-btn-content').html(view_content);
+	}else if(resource_type == 'NO'){
+		var ref_content =`	
+			<p>Upload your reference files:</p>
+			<span>Upload multiple files up to 100 mb</span>
+		`;
+		ref_content += content;
+		$('.upload-btn-content').html(ref_content);
+	}else{
+		$('.upload-btn-content').html('');
+	}
+}
+
+var projectResourceArray = [];
+function projectResource(){
+	var resourceFile = document.getElementById('project_resource');
+	if (resourceFile.files.length > 0) {
+        for (var i = 0; i <= resourceFile.files.length - 1; i++) {
+    		var fileValue = resourceFile.value;
+    		var reg = /(.*?)\.(zip|stl|STL|stp|STP|step|STEP|igs|IGS|iges|IGES|pdf|docx|jpeg|jpg|JPEG|JPG|png|PNG)$/;
+	       	if(!fileValue.match(reg)){
+		    	var alert = `
+	    	   		<div class="alert alert-warning alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Wrong file! </strong> Please upload the file in zip, stl, stp, step, igs, PDF, docx, JPG, JPEG or PNG format.
+					</div>
+	    	   	`;
+		    	$('#validation-message').html(alert);
+	    	   	return false;
+	       	}
+	       	var fileName = resourceFile.files[i].name;
+	        if(projectResourceArray != ''){
+	        	for(var iName in projectResourceArray){
+				    if(projectResourceArray[iName]['name'] == fileName){
+				    	var alert = `
+			    	   		<div class="alert alert-danger alert-dismissible">
+								<button type="button" class="close" data-dismiss="alert">&times;</button>
+								<strong> Warning! </strong> You cannot upload two files with same name.
+							</div>
+			    	   	`;
+			    	   	$('#validation-message').html(alert);
+			    	   	return false;    
+				    }
+				}
+			}	
+        	var fileSize = resourceFile.files[i].size / 1024 / 1024;
+        	if (fileSize > 100) {
+	       		var alert = `
+	    	   		<div class="alert alert-danger alert-dismissible">
+						<button type="button" class="close" data-dismiss="alert">&times;</button>
+						<strong> Warning! </strong> File(s) you are trying to upload is more than upload limit 100MB.
+					</div>
+	    	   	`;
+	    	   	$('#validation-message').html(alert);
+	    	   	return false;	
+	       	}
+	    }
+        for (var i = 0; i <= resourceFile.files.length - 1; i++) {
+        	projectResourceArray.push(resourceFile.files.item(i));
+        }
+        var displayResource = displayProjectResource(projectResourceArray);
+        $('#project-resource-content').html(displayResource);
+    }
+};
+
+function removeProjectResource(name){
+	for(var i in projectResourceArray){
+	    if(projectResourceArray[i]['lastModified'] == name){
+	        projectResourceArray.splice(projectResourceArray[i],1);
+	        break;
+	    }
+	}
+	if(projectResourceArray.length >= 1){
+		var displayResource = displayResourceFunc(projectResourceArray);
+    	$('#project-resource-content').html(displayResource);
+    }else{
+    	window.location.reload();
+    }	
+};
+
+function displayProjectResource(projectResourceArray){
+    displayResource = '';
+    for (var i = 0; i < projectResourceArray.length; i++) {
+    	var fname = projectResourceArray[i]['name'];
+        var fsize = projectResourceArray[i]['size'];
+        var flastModified = projectResourceArray[i]['lastModified'];
+    	var fsizeMB = (fsize / (1024*1024)).toFixed(2);
+		if (projectResourceArray.length > 0) {
+    		displayResource += `
+			    	<div class="col-6 col-xs-12">
+			    		<div class="display-file-content">
+			    			<div class="media border p-2">
+								<a class="align-self-center" href="javascript:;" onclick="removeProjectResource(`+flastModified+`)">
+			    					<i class="fa fa-window-close"></i>
+			    				</a>
+								<div class="media-body">
+							   		<p>` + fname + `</p> 
+					    			<p>` + fsizeMB + ` MB </p>
+					    		</div>
+							</div> 
+			    		</div>
+			    	</div>	
+	    	`;			
+    	}
+    }
+    return displayResource;
+};
+// End Resource File
+// Store Session
+function projectSubmit(){
+	var project_name = $('#project_name').val();
+	var project_usage = $('#project_usage').val();
+	var project_description = $('#project_description').val();
+	var project_technology = $('#project_technology').val();
+	var project_finish = $('#project_finish').val();
+	var project_tolerance = $('#project_tolerance').val();
+	var project_material = $('#project_material').val();
+	var project_qty = $('#project_qty').val();
+	var project_location = $('#project_location').val();
+	var award_date = $('#award_date').val();
+	var needed_by = $('#needed_by').val();
+	var project_instruction = $('#project_instruction').val();
+	var project_info = $('#project_info').val();
+	var resource_type = $('#resource_type').val();
+	var user_name = $('#user_name').val();
+	var user_email = $('#user_email').val();
+	var user_company = $('#user_company').val();
+	var user_mobile = $('#user_mobile').val();
+	var user_address = $('#user_address').val();
+	var award_timestamp = new Date(award_date.split("-").reverse().join("-")).getTime();
+	var needed_timestamp = new Date(needed_by.split("-").reverse().join("-")).getTime();
+	var psq_arr = [];
+	var psq = $('#psq :input');
+	$(psq).each(function() {
+        var input_value = $(this).val();
+    	psq_arr.push(input_value);
+    });
+	var validation = true;
+	var basic_content = true;
+	var additional_content = true;
+	var contact_content = true;
+	if (project_name == '' || project_name == undefined || project_name == null) {	
+		$('#project_name').addClass('project-form-danger');
+		validation = false;
+		basic_content = false;
+	}
+	if (project_usage == '' || project_usage == undefined || project_usage == null) {	
+		$('#project_usage').addClass('project-form-danger');
+		validation = false;
+		basic_content = false;
+	}
+	if (project_description == '' || project_description == undefined || project_description == null) {	
+		$('#project_description').addClass('project-form-danger');
+		validation = false;
+		basic_content = false;
+	}
+	if (project_material == '' || project_material == undefined || project_material == null) {	
+		$('#project_material').addClass('project-form-danger');
+		validation = false;
+		additional_content = false;
+	}
+	if (project_qty == '' || project_qty == undefined || project_qty == null) {	
+		$('#project_qty').addClass('project-form-danger');
+		validation = false;
+		additional_content = false;
+	}
+	if(award_timestamp > needed_timestamp){
+		$('#award_date').addClass('project-form-danger');
+		$('#needed_by').addClass('project-form-danger');
+		validation = false;
+		additional_content = false;
+	}
+	if (resource_type == '' || resource_type == undefined || resource_type == null
+	 || resource_type == '0') {	
+		$('#resource_type').addClass('project-form-danger');
+		validation = false;
+		additional_content = false;
+	}
+	if (user_name == '' || user_name == undefined || user_name == null) {	
+		$('#user_name').addClass('project-form-danger');
+		validation = false;
+		contact_content = false;
+	}
+	if (user_email == '' || user_email == undefined || user_email == null) {	
+		$('#user_email').addClass('project-form-danger');
+		validation = false;
+		contact_content = false;
+	}
+	if (user_company == '' || user_company == undefined || user_company == null) {	
+		$('#user_company').addClass('project-form-danger');
+		validation = false;
+		contact_content = false;
+	}
+	if (user_address == '' || user_address == undefined || user_address == null) {	
+		$('#user_address').addClass('project-form-danger');
+		validation = false;
+		contact_content = false;
+	}
+	if(validation == true){
+		var formdata = new FormData();
+		formdata.append('project_name', project_name);
+		formdata.append('project_description', project_description);
+		formdata.append('project_usage', project_usage);
+		formdata.append('project_technology', project_technology);
+		formdata.append('project_finish', project_finish);
+		formdata.append('project_tolerance', project_tolerance);
+		formdata.append('project_material', project_material);
+		formdata.append('project_qty', project_qty);
+		formdata.append('project_location', project_location);
+		formdata.append('psq', psq_arr);
+		formdata.append('award_date', award_date);
+		formdata.append('needed_by', needed_by);
+		formdata.append('project_instruction', project_instruction);
+		formdata.append('project_info', project_info);
+		formdata.append('resource_type', resource_type);
+		formdata.append('user_name', user_name);
+		formdata.append('user_email', user_email);
+		formdata.append('user_company', user_company);
+		formdata.append('user_mobile', user_mobile);
+		formdata.append('user_address', user_address);
+		if (projectResourceArray.length > 0 ) {
+			for (var i = 0; i < projectResourceArray.length; i++) {
+			    formdata.append('project_resource[]', projectResourceArray[i]);
+			}
+		}else{
+			formdata.append('project_resource[]', '');
+		}
+		$.ajax({
+			url: baseUrl+'project-store-session',
+			type : 'POST',
+	       	data : formdata,
+	       	processData: false, 
+       		contentType: false,
+	       	beforeSend: function(){
+		        showLoading();
+		    },
+		    complete: function(){
+		        hideLoading();
+		    },
+	       	success : function(data) {
+	        	data = $.trim(data);
+	        	console.log(data);
+	        	if (data == 'success') {
+	        		window.location.href = baseUrl+"project-confirmation";	
+	        	}else{
+	        		$('#validation-message').html(
+						`<div class="alert alert-warning alert-dismissible fade show">
+							<button type="button" class="close" data-dismiss="alert">&times;</button>
+							<strong></strong> Error occured, Please try again!
+						</div>`
+					);
+					return false;
+	        	}
+	       	}
+		});
+	}else{
+		if(basic_content == false){
+			basicDetails();
+		}else if (additional_content == false) {
+			additionalDetails();
+		}else{
+			contactDetails();
+		}
+		$('#validation-message').html(
+			`<div class="alert alert-warning alert-dismissible fade show">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong></strong> Please fill all the mandatory fields
+			</div>`
+		);	
+	}
+};
+
+// End Project Page
 // ********************

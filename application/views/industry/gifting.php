@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps in Gifting Services</h4>
-                        <p>The act of gifting needs soul and heart to please the receiver. We at 3D Usher understand that and so are vouching for 3D printing techniques. This On-demand manufacturing of personalized gifts is a warm action. Customized gifts inevitably melt the hearts, and this technology eases that job. The 3D printing has brought about a positive change which is thoughtful and affordable. And the experts in 3D Usher team make sure to design and deliver gifts for all and sundry.</p>
+                        <h4>How On-Demand Manufacturing is used in Gifting Services</h4>
+                        <p>A great gift is both thoughtful and unique. At 3D Usher, you can turn your gift ideas into totally custom works of art. Custom gifts invariably strike a chord, and 3D printing has made this thoughtful act affordable. Turn gift gifting into a thoughtful act again.</p>
                     </div>    
                 </div>
             </div>
@@ -53,7 +53,7 @@
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
                         <p>Apart from gifting any individual, you can also use it for making promotional gifts for any corporation. The on-demand manufacturing technology has taken gifting to a new yet intimate level.</p>
-                        <p>If this innovative idea interests you, then contact us to get your customized gift done. 3D Usher ushers joy with gifts using on-demand manufacturing.</p>
+                        <p>This technology can be used for both individual and corporate gifts.  If this innovative approach interests you, contact us to today to get started.</p>
                     </div>    
                 </div>
             </div>

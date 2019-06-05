@@ -15,8 +15,8 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps Education & Research</h4>
-                        <p>We at 3D Usher offer on-demand manufacturing as our innovative service to support various industries. To help eager minds grasp the ideas, we have introduced the service in the field of education as well and have encountered positive results. Our experienced team at 3D Usher offers on-demand manufacturing and other methods to address different issues.  We also deliver the on-demand products ASAP for continuous progress. The advantage of embracing the on-demand manufacturing process is that the software is swift enough to get quotes and act accordingly. You can browse the inventory when required to handle the projects with ease.</p>
+                        <h4>How On-Demand Manufacturing is used in Education & Research</h4>
+                        <p>3D Usher offers on-demand manufacturing as an innovative service that supports various industries. To help eager minds grasp concepts, we have introduced our services in education with positive results. We also deliver the on-demand products quickly for students to begin learning with them. One advantage to embracing on-demand manufacturing is that the software is swift enough to get quotes, produce, & ship the parts. What project would you like us to start on first?</p>
                     </div>    
                 </div>
             </div>

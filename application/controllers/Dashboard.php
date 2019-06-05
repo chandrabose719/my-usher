@@ -139,6 +139,7 @@ class Dashboard extends MY_Controller {
         	$array['status'] = 'active';
         	$array['date'] = time();
         	if ($this->Needhelp_m->insert($array)) {
+				$this->needHelpEmail($array);
 				$this->session->set_flashdata('success','We will get in touch with you shortly.');
 				redirect(base_url('account'));
 			}else{

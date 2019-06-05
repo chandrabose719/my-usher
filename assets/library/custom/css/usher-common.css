@@ -9,6 +9,7 @@
 html{
     width: 100%;
     height: 100%;
+    scroll-behavior:smooth;
 }
 body {
     width:100%;
@@ -49,7 +50,7 @@ input[type=number]::-webkit-outer-spin-button {
 /*Header Part*/
 #header-part .navbar-custom{
     padding:0px 0px;
-    background-color:white;
+    background-color:#ffffff;
     border-bottom:2px solid #fafafa; 
 }
 #header-part .navbar-custom img{
@@ -75,6 +76,11 @@ input[type=number]::-webkit-outer-spin-button {
 }
 #header-part .navbar-custom .user-nav-link span{
 	font-size:10px;
+}
+/*Project Header*/
+#header-part.project-header .navbar-custom{
+    background-color:#0f2130;
+    border-bottom:1px solid #5c89bd; 
 }
 
 /*Footer Part*/
@@ -103,6 +109,9 @@ footer .footer-social-content{
     margin:0px 2px;
     padding:0px 0px; 
 }
+footer .footer-social-content ul{
+    margin:0px 0px;
+}
 footer .footer-social-content li{
     margin:0px 5px;
 }
@@ -114,6 +123,19 @@ footer .footer-social-content .fas{
 footer .copyright-content p{
     color:#747474;
     font-size:14px;
+    margin:0px 0px; 
+}
+/*Project Footer*/
+footer.project-footer{
+    background-color:#0f2130;
+    padding:13px 5px; 
+}
+footer.project-footer .footer-social-content .fab, 
+footer.project-footer .footer-social-content .fas{
+    color:#FFFFFF;
+}
+footer.project-footer .copyright-content p{
+    color:#FFFFFF;
 }
 
 /*Privacy*/
@@ -127,11 +149,43 @@ footer .copyright-content p{
 #privacy .container{
     padding:20px 0px;
 }
-#privacy .privacy-content{
-    padding:10px 0px;
+#privacy .privacy-sidebar{
+    position:sticky;
+    top:100px;
+    overflow-y:auto;
+    height: calc(100vh - 90px);
+    scroll-behavior: smooth;
 }
-#privacy .privacy-content h3{
+#privacy .privacy-sidebar ul{
+    list-style-type: none;
+    padding-left: 0px;
+}
+#privacy .privacy-sidebar ul a{
+    font-size: 14px;
+    color: #747474;
+}
+#privacy .privacy-sidebar ul li:hover{
+    cursor: pointer;
+    background-color: #F0EFEF;
+}
+#privacy .privacy-sidebar ul a:hover{
+    color: #5c98bd;
+}
+#privacy .privacy-active{
+    background-color:#d0d0d0;
+}
+#privacy .privacy-block{
+    padding:10px 0px;
+    margin-top: calc(-100vh + 50px);
+}
+#privacy .privacy-block h3{
     text-align:left;  
+}
+#privacy .privacy-content:target::before{
+  content: "";
+  display: block;
+  height: 90px;
+  margin: -90px 0 0;
 }
 #privacy .privacy-content h4{
     color:#5c98bd;
@@ -139,7 +193,8 @@ footer .copyright-content p{
     text-align:left;  
 }
 #privacy .privacy-content p{
-    text-align:justify;  
+    text-align:justify;
+    font-size: 14px;  
 }
 #privacy .privacy-content ul{
     padding-left: 15px;   
@@ -213,7 +268,7 @@ footer .copyright-content p{
 
 /*General CSS*/
 #wrapper{
-    padding:87px 0px 10px 0px; 
+    padding:86px 0px 10px 0px; 
 }
 h1,h2,h3,h4,h5,h6{
     text-align:center; 
@@ -308,6 +363,26 @@ table th{
     border-color:#5c98bd;
     background: transparent;
 }
+.Pbtn-rounded, .Pbtn-rounded:active, .Pbtn-rounded:focus, 
+.Pbtn-rounded:visited, .Pbtn-rounded:focus-within,
+.Pbtn-rounded:not(:disabled):not(.disabled).active, 
+.Pbtn-rounded:not(:disabled):not(.disabled):active{
+    width:100%;
+    font-size:14px;
+    font-weight:500;
+    font-style:normal;
+    padding:10px 10px;
+    border-radius:30px;
+    letter-spacing:0.4px;
+    color:#ffffff;
+    border-color:#5c98bd;
+    background-color:#5c98bd;
+}
+.Pbtn-rounded:hover{
+    color:#5c98bd;
+    border-color:#5c98bd;
+    background: transparent;
+}
 .Abtn, .Abtn:focus, .Abtn:active
 .Abtn:visited, .Abtn:focus-within,
 .Abtn:not(:disabled):not(.disabled).active, 
@@ -328,25 +403,10 @@ table th{
     background:#5c98bd;    
     border: 1px solid #5c98bd;
 }
-.google-btn{
-    color:#DB4437 !important;
-    background:transparent; !important;    
-    border: 1px solid #DB4437 !important;
-}
-.google-btn:hover{
-    color:#ffffff !important;
-    background:#DB4437 !important;    
-    border: 1px solid #DB4437 !important;
-}
-.fb-btn{
-    color:#3c5a99 !important;
-    background:transparent !important;    
-    border: 1px solid #3c5a99 !important;
-}
-.fb-btn:hover{
-    color:#ffffff !important;
-    background:#3c5a99 !important;    
-    border: 1px solid #3c5a99 !important;
+.google-btn span,
+.fb-btn span{
+    color:#111111;
+    font-size:13px; 
 }
 .vr-divider{
     top:0;

@@ -146,9 +146,9 @@ $autoload['model'] = array(
 	'Facebook_m',
 	'ChangePassword_m',
 	// Usher DB
-	'Subscription_m',
 	'Usher_m',
 	'Country_m',
+	'Subscription_m',
 	'Needhelp_m',
 	'Manufacture_m', 
 	'Order_m',
@@ -165,6 +165,10 @@ $autoload['model'] = array(
 	'Precision_m',
 	'Finishing_m',
 	'Assembly_m',
+	// Project
+	'Project/Project_m',
+	'Project/Presource_m',
+	'Project/Puser_m',
 	// Notifications
 	'Notifications/Promotion_m',
 	'Notifications/Technical_m',

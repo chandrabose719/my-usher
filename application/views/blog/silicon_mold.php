@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item silicon-mold">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -41,7 +41,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-image">
-                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/keychain.png'); ?>">
+                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/silicon-mold-how-to-and-benefits.jpg'); ?>">
                     </div>    
                 </div>
             </div>

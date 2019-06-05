@@ -36,6 +36,7 @@ class Manufacture extends MY_Controller {
 
 	// Project Detail Page
 	public function manufacture_details(){
+		$this->session->set_userdata('social_redirect', 'manufacture-details');
 		$user_id = $this->session->userdata('usher_id');
 		$file_data = $this->session->userdata('file_data');
 		$order_data = $this->session->userdata('order_data');

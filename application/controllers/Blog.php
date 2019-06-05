@@ -8,9 +8,6 @@ class Blog extends MY_Controller {
 		// Language
 		$this->lang->load('blog/index');
 		
-		// Model
-		// $this->load->model('');
-
 		$this->data["usher_id"] = $this->session->userdata('usher_id');
 		$this->data["usher_email"] = $this->session->userdata('usher_email');
 		$this->data["usher_name"] = $this->session->userdata('usher_name');
@@ -25,7 +22,6 @@ class Blog extends MY_Controller {
 		$this->load->view("main_layout",$this->data);
 	}
 
-	// Blog Detail Page
 	public function customized_keychain(){
 		$this->data['title'] = $this->lang->line('keychain_title');
 		$this->data['description'] = $this->lang->line('keychain_description');
@@ -33,15 +29,15 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/customized_keychain';
 		$this->load->view("main_layout",$this->data);
 	}
-    // Blog Detail page
-	public function personalized_jewelry(){
+    
+    public function personalized_jewelry(){
 		$this->data['title'] = $this->lang->line('jewelry_title');
 		$this->data['description'] = $this->lang->line('jewelry_description');
 		$this->data['keyword'] = $this->lang->line('jewelry_keyword');
 		$this->data['body'] = 'blog/personalized_jewelry';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function dental_implants(){
 		$this->data['title'] = $this->lang->line('implants_title');
 		$this->data['description'] = $this->lang->line('implants_description');
@@ -49,7 +45,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/dental_implants';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function customized_miniatures(){
 		$this->data['title'] = $this->lang->line('miniatures_title');
 		$this->data['description'] = $this->lang->line('miniatures_description');
@@ -57,7 +53,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/customized_miniatures';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function deathly_hallows(){
 		$this->data['title'] = $this->lang->line('hallows_title');
 		$this->data['description'] = $this->lang->line('hallows_description');
@@ -65,7 +61,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/deathly_hallows';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function injection_molding(){
 		$this->data['title'] = $this->lang->line('molding_title');
 		$this->data['description'] = $this->lang->line('molding_description');
@@ -73,15 +69,15 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/injection_molding';
 		$this->load->view("main_layout",$this->data);
 	}
-    // Blog Detail page
-	public function personalized_gifts(){
+    
+    public function personalized_gifts(){
 		$this->data['title'] = $this->lang->line('gifts_title');
 		$this->data['description'] = $this->lang->line('gifts_description');
 		$this->data['keyword'] = $this->lang->line('gifts_keyword');
 		$this->data['body'] = 'blog/personalized_gifts';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function printing_3d(){
 		$this->data['title'] = $this->lang->line('printing_title');
 		$this->data['description'] = $this->lang->line('printing_description');
@@ -89,7 +85,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/printing_3d';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function prosthetic_limbs(){
 		$this->data['title'] = $this->lang->line('limbs_title');
 		$this->data['description'] = $this->lang->line('limbs_description');
@@ -97,7 +93,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/prosthetic_limbs';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function automotive_car(){
 		$this->data['title'] = $this->lang->line('car_title');
 		$this->data['description'] = $this->lang->line('car_description');
@@ -105,7 +101,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/automotive_car';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function rapid_prototyping(){
 		$this->data['title'] = $this->lang->line('prototyping_title');
 		$this->data['description'] = $this->lang->line('prototyping_description');
@@ -113,7 +109,7 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/rapid_prototyping';
 		$this->load->view("main_layout",$this->data);
 	}
-	// Blog Detail page
+	
 	public function silicon_mold(){
 		$this->data['title'] = $this->lang->line('mold_title');
 		$this->data['description'] = $this->lang->line('mold_description');
@@ -121,22 +117,6 @@ class Blog extends MY_Controller {
 		$this->data['body'] = 'blog/silicon_mold';
 		$this->load->view("main_layout",$this->data);
 	}
-
-	public function drone_parts(){
-		$this->data['title'] = $this->lang->line('drone_title');
-		$this->data['description'] = $this->lang->line('drone_description');
-		$this->data['keyword'] = $this->lang->line('drone_keyword');
-		$this->data['body'] = 'blog/drone_parts';
-		$this->load->view("main_layout",$this->data);		
-	}
-
-	public function prosthetic_cyborg(){
-		$this->data['title'] = $this->lang->line('prosthetic_title');
-		$this->data['description'] = $this->lang->line('prosthetic_description');
-		$this->data['keyword'] = $this->lang->line('prosthetic_keyword');
-		$this->data['body'] = 'blog/prosthetic_cyborg';
-		$this->load->view("main_layout",$this->data);		
-	}	
 
 	public function car_safety(){
 		$this->data['title'] = $this->lang->line('safety_title');
@@ -199,6 +179,30 @@ class Blog extends MY_Controller {
 		$this->data['description'] = $this->lang->line('action_description');
 		$this->data['keyword'] = $this->lang->line('action_keyword');
 		$this->data['body'] = 'blog/action_figures';
+		$this->load->view("main_layout",$this->data);		
+	}
+
+	public function customised_awards(){
+		$this->data['title'] = $this->lang->line('awards_title');
+		$this->data['description'] = $this->lang->line('awards_description');
+		$this->data['keyword'] = $this->lang->line('awards_keyword');
+		$this->data['body'] = 'blog/customised_awards';
+		$this->load->view("main_layout",$this->data);		
+	}
+
+	public function colour_jet(){
+		$this->data['title'] = $this->lang->line('colour_title');
+		$this->data['description'] = $this->lang->line('colour_description');
+		$this->data['keyword'] = $this->lang->line('colour_keyword');
+		$this->data['body'] = 'blog/colour_jet';
+		$this->load->view("main_layout",$this->data);		
+	}
+
+	public function science_fair(){
+		$this->data['title'] = $this->lang->line('fair_title');
+		$this->data['description'] = $this->lang->line('fair_description');
+		$this->data['keyword'] = $this->lang->line('fair_keyword');
+		$this->data['body'] = 'blog/science_fair';
 		$this->load->view("main_layout",$this->data);		
 	}
 

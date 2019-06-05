@@ -1,12 +1,12 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item drones">
         <div class="container">
             <div class="row">
-            	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-head-content">
-                    	<h1>3D printing, an age-old obsession and flying into the future</h1>
+                        <h1>3D printing a drone and drone parts</h1>
                     </div>    
-            	</div>
+                </div>
             </div>
         </div>
     </section>
@@ -17,28 +17,12 @@
                     <div class="item-block-content">
                         <p>Ever since their earliest days, humans have always been fascinated with what lies in the infiniteness of the sky. This same fascination inspired generations of visionaries from the Wright Brothers to Elon Musk to push humanity beyond their limits of “reality”.</p>
                         <p>The latest trend satisfying our urge to go sky high is the all-powerful drones or UAV’s, and they’re as revolutionary as fun. First introduced (commercially) back in 2013 by multi-billionaire and CEO Jeff Bezos and a means to execute deliveries (called the Prime Air Drone Project), they have expanded to fields ranging from Disaster Management, City Planning, protecting endangered species, defense, and even telecom, the drones were all set to rule the skies of the future and make life ever so comfortable, the only limitation, however, was the exorbitant cost to make a drone. It was only a dream for designers to easily tweak, modify and build them.</p>
-                        <p>That’s when 3D printing came to the rescue! “Imagine being able to customize and build drones just on a whim,” it said. In simpler words with its nature of additive manufacturing and its ever-growing versatility in materials, 3D printing has democratized building drones. We can already print major components like frames, camera mounts, and protective gear. </p>
-                        <p>
-                            A wide choice of materials allows designers to make much lighter and stronger designs while also giving them geometric freedom in drone and aircraft designs. This allows drones to fly faster and for longer durations as a result of which the DRL RacerX recently set a world record at a speed of 263.1 kmph (179.6 mph).
-                        </p>
-                    </div>    
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-                    <div class="item-block-content">
-                        <p>Other companies are also pouncing on the opportunity; Blue Robotics are already using 3D printing. Blue Robotics is working on preparing their own submarine drones to explore the dark secrets of seven seas which are beyond the reach of men. </p>
+                        <p>That’s when 3D printing came to the rescue! “Imagine being able to customize and build drones just on a whim,” it said. In simpler words with its nature of additive manufacturing and its ever-growing versatility in materials, 3D printing has democratized building drones. We can already print major components like frames, camera mounts, and protective gear.</p>
+                        <p>A wide choice of materials allows designers to make much lighter and stronger designs while also giving them geometric freedom in drone and aircraft designs. This allows drones to fly faster and for longer durations as a result of which the DRL RacerX recently set a world record at a speed of 263.1 kmph (179.6 mph).</p>
+                        <p>Other companies are also pouncing on the opportunity; Blue Robotics are already using 3D printing. Blue Robotics is working on preparing their own submarine drones to explore the dark secrets of seven seas which are beyond the reach of men.</p>
                         <p>Yuki Ogasarawa along with Ryo Kumeda printed their drone designed to be handy in the earthquake-prone areas on Japan in case of disaster. It allows emergency services to see and observe real-time images to find survivors quickly and efficiently.</p>
-                    </div>    
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
-                    <div class="item-block-content">
                         <p>Thanks to 3D printing, UAVs as a whole have progressed beyond their years. Air shows have become vastly popular as people come together on airstrips to show off their drone skills and aircraft models.</p>
-                        <p>But 3D printing doesn’t plan to stop anywhere near just models. Its hit the aerospace industry and its hit it big. The aerospace industry has welcomed 3D printing since its nascent days, dating as back as 1989, and it has only increased, to the point where in 2015 16% of the $4.9 bil revenue of 3D Printing industry was generated by the aerospace industry. Techniques like SLA and material jetting to produce highly detailed aircraft models and components while maintaining weight and stability. It further allows tailoring parts to a specific aircraft thus maximizing fuel efficiency. </p>
+                        <p>But 3D printing doesn’t plan to stop anywhere near just models. Its hit the aerospace industry and it has hit it big. The aerospace industry has welcomed 3D printing since its nascent days, dating as back as 1989, and it has only increased, to the point where in 2015 16% of the $4.9 bil revenue of 3D Printing industry was generated by the aerospace industry. Techniques like SLA and material jetting to produce highly detailed aircraft models and components while maintaining weight and stability. It further allows tailoring parts to a specific aircraft thus maximizing fuel efficiency.</p>
                         <p>As 3D printing continues to grow in application to different industries, it is no surprise 3D printed drones are coming to stay and will turn things for the better. It’ll continue to revolutionize aircraft designs and UAV’s will allow humans to reach way beyond their territories leading better and safer lives.</p>
                     </div>    
                 </div>

@@ -1,10 +1,10 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item dental-implants">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
                     <div class="item-head-content">
-                    	<h1>Dental Implants and Teeth Braces using 3D Printing</h1>
+                    	<h1>3D Printing Teeth and braces after 3D scanning Jaw</h1>
                     </div>    
             	</div>
             </div>
@@ -15,30 +15,39 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Dental implant surgery and teeth braces have saved people from a great deal of pain when dealing with complications in the teeth. The tooth implant basically works to support an artificial tooth that has been manually placed. It acts as a kind of a dental bridge to sustain the position until a replacement tooth can be placed. Teeth braces are used in a similar manner whereas people whose teeth are misaligned can use braces as a form of support to keep the position of the teeth in place.</p>
-                        <p>The field of dental surgery, due to rapid advancement in technology, is changing. However, it is important to note the basic surgical complications that usually arise and how they can be tackled with modern equipment or technology. One such challenge is to accurately measure and identify the position of where the tooth implant will go respective of each specific person. Another problem faced is fabricating crowns and other dental equipment such as braces respective of the client, which were historically made by the dentists themselves; but as surgical techniques grew, accuracy in measurement and fabrication became a major issue. Another problem facing people taking a visit to the dentist is the high cost of modern braces and their related treatments that cost patients thousands of dollars a year. But, this is all changing due to 3D printing. </p>
-                        
+                        <p>Dental implants are one of the most integral parts of modern dental science. They’ve taken over the industry ever since the 1970’s when modern dental implants were introduced.</p>
+                        <p>The idea, however, has been popular since way before, even early civilizations recognized the benefits of tooth replacement. Dental implants have been tried almost since humans have been using technology. This can be observed as back as the Mayans dating back to year 600. Archaeologists have found ancient skulls with teeth replaced by materials like carved stones, jade and even fragments of seashells.</p>
+                        <p>However, despite several attempts to succeed with dental implants only a few fused with the jawbone. As centuries passed, one study led to another and in 1952, a dentist noted he couldn’t remove the titanium cylinder he had placed in a bone to study how the bone healed. This property of titanium came to be called “osseointegration” which simply translated to “bone fusion”. This would form the basis of the invention of modern dental implants.</p>
+                        <p>The concept of dental implants was initially introduced for people who had lost most of their teeth and had problems stabilizing dentures, largely because they had lost a lot of their jaw bone upon which the denture sits. The implants would allow the jaw bone to maintain shape and density, thus also support the softer tissue structures like gums and lips. So, in simple words, they have the ability to provide social, mental and physical well-being.</p>
+                        <p>Technological advancements today have made them extremely democratized and continuous innovation. A great example lies in 3D Printing, a revolutionary change to the industry.</p> 
+                        <p>The 3D Printer has the ability to take in a broad range of data via X-Rays and imaging to create perfect implants from scratch. This finished product is highly accurate and yet faster than the traditional process. </p> 
                     </div>    
                 </div>
             </div>
             <hr>
             <div class="row">
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Additive manufacturing, or 3D printing, allows users to design objects at extremely high accuracy and precision with a new level of detail. In this regard, orthodontists have been given access to an exciting new technology that can help improve the accuracy in dental implant surgery (such as with implanting dental crown and dental veneers) and deal directly with consumers with equipment such as teeth braces without being overly dependant on third-party suppliers. With 3D printing technology, the need for taking extremely precise measurements has changed, as 3D scanners are capable of taking an automatic scan of the entire jaw; and thus enabling orthodontists to accurately perform denture implant surgery, such as with a dental bridge. With regards to teeth braces, the high-cost of selective braces being made according to each patient has drastically changed has 3D printers allow the control of strength and general quality of the object, thus enabling dentists to themselves provide patients with low-cost braces with a high degree of accuracy due to the cutting edge scanner technology involved. </p>
+                        <p>Making a dental implant is a lengthy process. One of the several steps in creating a surgical guide that fits over the patients existing teeth and gums. Once the exact location of the dental implant is decided, the guide is 3D Printed, which allows the dentist to know precisely where to place the implant. The measurements are incredibly small and thus the guide is very important and must be made with great accuracy. Thus when dentists can produce their own surgical guide in the comfort of their own office or clinic, it makes the whole procedure much more efficient.</p>
+                    </div>    
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
+                    <div class="item-block-image">
+                        <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/3d-printing-teeth-and-braces-after-3d-scanning-jaw.jpg'); ?>">
                     </div>    
                 </div>
             </div>
-            <hr>
+            <hr> 
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>The four main techniques involved in 3D printing braces and during a dental implant are Digital Light Projection (DLP), Fused Deposition Modelling (FDM), Liquid Crystal Diode (LCD) and Laser Stereolithographic Apparatus (LSA). Results from these techniques vary with each carrying its own pros and cons such as speed in printing, accuracy, and resolution being decisive factors. </p>
-                        <p>In the end, one can conclude the increase in precision, convenience and reduced time in surgery and lower-costs (such as with teeth braces and dental implant cost), to be attractive features in shaping the dental industry through 3D printing in the near future. </p>
+                        <p>3D printing is also making major developments in other dental fields like that of braces.</p>
+                        <p>With its contribution to the field of dentistry, we can surely say a 3D printer can definitely put a bright smile to your face!</p>
+                        <p>With regards to teeth braces, the high-cost of selective braces being made according to each patient has drastically changed, as 3D printers allow the control of strength and general quality of the object, thus enabling dentists to provide patients with low-cost braces with a high degree of accuracy due to the cutting-edge scanner technology involved. In the end, one can conclude the increase in precision, convenience and reduced time in surgery and lower-costs (such as with teeth braces and dental implant cost), to be attractive features in shaping the dental industry through 3D printing in the near future.</p>
                     </div>    
                 </div>
-            </div>
-            <hr>
+            </div> 
+            <hr>                       
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="project-intro-content">

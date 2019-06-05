@@ -138,9 +138,18 @@
                             <div class="col-auto my-auto">OR</div>
                             <div class="col"><hr></div>
                         </div>
-                        <!-- <div class="form-group">
-                            <a href="" class="form-control btn btn-primary Pbtn google-btn"><i class="fab fa-google"></i> <?= $this->lang->line('google_login'); ?></a>
-                        </div> -->
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <a href="<?= $this->google->get_login_url(); ?>"class="form-control btn btn-primary Pbtn google-btn"><i class="fab fa-google"></i> GOOGLE LOG IN</a>
+                                </div>
+                            </div>
+                            <div class="col">    
+                                <div class="form-group">
+                                    <a href="<?= $this->facebook->login_url(); ?>"class="form-control btn btn-primary Pbtn fb-btn"><i class="fab fa-facebook"></i> FACEBOOK LOGIN</a>
+                                </div>
+                            </div>    
+                        </div>
                         <div class="row">
                             <div class="col">
                                 <div class="text-center">

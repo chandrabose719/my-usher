@@ -33,9 +33,9 @@ class Authentication extends MY_Controller {
 
 	// Login Account
 	public function login(){
+		$this->session->set_userdata('social_redirect', 'start-project');
 		$usher_id = $this->session->userdata('usher_id');
 		if (empty($usher_id)) {
-			$this->data['google_login_url']=$this->google->get_login_url();
 			$this->data['title'] = $this->lang->line('login_title');
 			$this->data['description'] = $this->lang->line('login_description');
 			$this->data['keyword'] = $this->lang->line('login_keyword');
@@ -101,24 +101,28 @@ class Authentication extends MY_Controller {
 				$user_count = $this->Usher_m->count($user_array);
 				if ($user_count == 1) {
 					$user_data = $this->Usher_m->get($user_array, TRUE);
-					if(empty($user_data->google_auth_id)){
-						if(empty($user_data->facebook_auth_id)){
-							if($user_data->user_email == $user_email && 
-								$user_data->user_password == $user_password){
-								$this->session->set_userdata('usher_id', $user_data->user_id);
-								$this->session->set_userdata('usher_name', $user_data->user_name);
-								$this->session->set_userdata('usher_email', $user_data->user_email);
-								$this->session->set_flashdata('success','Logged in Successfully!');
-								redirect(base_url($redirect_login));	
+					if($user_data->status == 'active'){	
+						if(empty($user_data->google_auth_id)){
+							if(empty($user_data->facebook_auth_id)){
+								if($user_data->user_email == $user_email && 
+									$user_data->user_password == $user_password){
+									$this->session->set_userdata('usher_id', $user_data->user_id);
+									$this->session->set_userdata('usher_name', $user_data->user_name);
+									$this->session->set_userdata('usher_email', $user_data->user_email);
+									$this->session->set_flashdata('success','Logged in Successfully!');
+									redirect(base_url($redirect_login));	
+								}else{
+									$this->session->set_flashdata('error','Wrong E-mail ID or Password, Try Again!');
+								}
 							}else{
-								$this->session->set_flashdata('error','Wrong E-mail ID or Password, Try Again!');
-							}
+								$this->session->set_flashdata('error','Email already exists, Login through facebook!');
+							}		
 						}else{
-							$this->session->set_flashdata('error','Email already exists, Login through facebook!');
-						}		
+							$this->session->set_flashdata('error','Email already exists, Login through google!');
+						}
 					}else{
-						$this->session->set_flashdata('error','Email already exists, Login through google!');
-					}	
+						$this->session->set_flashdata('error','Your account has been temporarily suspended for security reasons. Please contact us at info@3dusher.com for reactivating your account.');
+					}		
 				}else{
 					$this->session->set_flashdata('error','E-mail ID and Password does not exist, Try different!');
 				}
@@ -159,20 +163,33 @@ class Authentication extends MY_Controller {
 					if ($user_count == 1) {
 						$user_data = $this->Usher_m->get($user_array, TRUE);
 						if($user_email == $user_data->user_email){
-							$user_id = $user_data->user_id;
-		                    $user_name = $user_data->user_name;
-		                    $user_email = $user_data->user_email;
-							$change_password = md5(time());
-							$pass_data['user_id'] = $user_id;
-							$pass_data['change_password'] = $change_password;
-							$pass_data['status'] = 'active';
-							$pass_data['created_date'] = time();
-							$this->ChangePassword_m->insert($pass_data);
-							$this->forgotPasswordEmail($user_id, $user_name, $user_email, $change_password);
-		                    $this->session->set_flashdata('success','you will recieve an email with instructions about how to reset your password in a few minutes.');
+							if($user_data->status == 'active'){
+								if(!empty($user_data->user_password)){
+									$user_id = $user_data->user_id;
+				                    $user_name = $user_data->user_name;
+				                    $user_email = $user_data->user_email;
+									$change_password = md5(time());
+									$pass_data['user_id'] = $user_id;
+									$pass_data['change_password'] = $change_password;
+									$pass_data['status'] = 'active';
+									$pass_data['created_date'] = time();
+									$this->ChangePassword_m->insert($pass_data);
+									$this->forgotPasswordEmail($user_id, $user_name, $user_email, $change_password);
+				                    $this->session->set_flashdata('success','you will recieve an email with instructions about how to reset your password in a few minutes.');
+								}else{
+									if (!empty($user_data->google_auth_id)) {
+										$this->session->set_flashdata('error',"your account is linked to your google profile. Please login directly using 'Login using Google' option");	
+									}
+									if (!empty($user_data->facebook_auth_id)) {
+										$this->session->set_flashdata('error',"your account is linked to your facebook profile. Please login directly using 'Login using Facebook' option");
+									}
+								}
+							}else{
+								$this->session->set_flashdata('error','Your account has been temporarily suspended for security reasons. Please contact us at info@3dusher.com for reactivating your account.');
+							}	
 						}else{
 							$this->session->set_flashdata('error','There is no account with this e-mail. Please register a new account instead.');
-						}	
+						}		
 					}else{
 						$this->session->set_flashdata('error','There is no account with this e-mail. Please register a new account instead.');
 					}	
@@ -251,22 +268,36 @@ class Authentication extends MY_Controller {
 		$google_array['status'] = 'active';
 		$google_array['date'] = time();
 		$check_email['user_email'] = $google_data['user_email'];
-		$check_user_data = $this->Usher_m->count($check_email);
-		if($check_user_data == 0){
-			$check_email_data = $this->Google_m->count($check_email);
-			if($check_email_data == 0){
-				$this->Google_m->insert($google_array);
-				$this->Usher_m->insert($google_array);
+		$check_user_data = $this->Usher_m->get($check_email, TRUE);
+		if(empty($check_user_data->user_password)){
+			if($check_user_data->status == 'active'){	
+				$check_email_data = $this->Google_m->count($check_email);
+				if($check_email_data == 0){
+					$this->Google_m->insert($google_array);
+					$this->Usher_m->insert($google_array);
+					$user_data = $this->Usher_m->get($id_array, TRUE);
+					$this->registerEmail($user_data->user_name, $user_data->user_email);
+					$this->notifications($user_data->user_id);
+				}else{
+					$this->Google_m->update($google_array, $id_array);
+					$this->Usher_m->update($google_array, $id_array);
+				}
+				$user_data = $this->Usher_m->get($id_array, TRUE);
+				$this->session->set_userdata('usher_id', $user_data->user_id);
+				$this->session->set_userdata('usher_name', $user_data->user_name);
+				$this->session->set_userdata('usher_email', $user_data->user_email);
+				$this->session->set_flashdata('success','Loggedin Successfully!');
+				$social_redirect = $this->session->userdata('social_redirect');
+				$this->session->unset_userdata('social_redirect');
+				if(!empty($social_redirect)){	
+					redirect(base_url($social_redirect));
+				}else{
+					redirect(base_url('start-project'));
+				}
 			}else{
-				$this->Google_m->update($google_array, $id_array);
-				$this->Usher_m->update($google_array, $id_array);
-			}
-			$user_data = $this->Usher_m->get($id_array, TRUE);
-			$this->session->set_userdata('usher_id', $user_data->user_id);
-			$this->session->set_userdata('usher_name', $user_data->user_name);
-			$this->session->set_userdata('usher_email', $user_data->user_email);
-			$this->session->set_flashdata('success','Loggedin Successfully!');
-			redirect(base_url('start-project'));
+				$this->session->set_flashdata('error','Your account has been temporarily suspended for security reasons. Please contact us at info@3dusher.com for reactivating your account.');
+				redirect(base_url('log-in'));
+			}	
 		}else{
 			$this->session->set_flashdata('error','Email already exists, Use normal login instead!');
 			redirect(base_url('log-in'));
@@ -275,14 +306,55 @@ class Authentication extends MY_Controller {
 
 	// FB Authentication
 	public function fb_auth(){
-		$this->facebook->is_authenticated();
-		$user = $this->facebook->request('get', '/me?fields=id,name,email');
-		if (!isset($user['error'])){
-			print_r($user);
-		}else{
-			$this->session->set_flashdata('error','Error occured, Try again!');
-			redirect(base_url('log-in'));
+		if ($this->facebook->logged_in()){
+			$fb_data = $this->facebook->user();
+            $this->facebook->destroy_session();
+            if ($fb_data['code'] === 200){
+				$id_array['facebook_auth_id'] = $fb_data['data']['id'];
+				$fb_array['facebook_auth_id'] = $fb_data['data']['id'];
+				$fb_array['user_name'] = $fb_data['data']['name'];
+				$fb_array['user_email'] = $fb_data['data']['email'];
+				$fb_array['status'] = 'active';
+				$fb_array['date'] = time();
+				$check_email['user_email'] = $fb_data['data']['email'];
+				$check_user_data = $this->Usher_m->get($check_email, TRUE);
+				if(empty($check_user_data->user_password)){
+					if($check_user_data->status == 'active'){
+						$check_email_data = $this->Facebook_m->count($check_email);
+						if($check_email_data == 0){
+							$this->Facebook_m->insert($fb_array);
+							$this->Usher_m->insert($fb_array);
+							$user_data = $this->Usher_m->get($id_array, TRUE);
+							$this->registerEmail($user_data->user_name, $user_data->user_email);
+							$this->notifications($user_data->user_id);
+						}else{
+							$this->Facebook_m->update($fb_array, $id_array);
+							$this->Usher_m->update($fb_array, $id_array);
+						}
+						$user_data = $this->Usher_m->get($id_array, TRUE);
+						$this->session->set_userdata('usher_id', $user_data->user_id);
+						$this->session->set_userdata('usher_name', $user_data->user_name);
+						$this->session->set_userdata('usher_email', $user_data->user_email);
+						$this->session->set_flashdata('success','Loggedin Successfully!');
+						$social_redirect = $this->session->userdata('social_redirect');
+						$this->session->unset_userdata('social_redirect');
+						if(!empty($social_redirect)){	
+							redirect(base_url($social_redirect));
+						}else{
+							redirect(base_url('start-project'));
+						}
+					}else{
+						$this->session->set_flashdata('error','Your account has been temporarily suspended for security reasons. Please contact us at info@3dusher.com for reactivating your account.');
+						redirect(base_url('log-in'));
+					}	
+				}else{
+					$this->session->set_flashdata('error','Email already exists, Use normal login instead!');
+					redirect(base_url('log-in'));
+				}	
+			}
 		}
+		$this->session->set_flashdata('error','Error occured, try again!');
+		redirect(base_url('log-in'));
 	}
 
 	// FB Logout
@@ -296,6 +368,7 @@ class Authentication extends MY_Controller {
 		$this->session->unset_userdata('usher_id');
 		$this->session->unset_userdata('usher_name');
 		$this->session->unset_userdata('usher_email');
+		$this->session->unset_userdata('social_redirect');
 		$this->session->sess_destroy();
 		redirect(base_url());
 	}

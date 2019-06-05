@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item medical-research">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -17,13 +17,13 @@
                     <div class="item-block-content">
                         <p>Dance, one of the most graceful forms of art. A passion and means of sled expression to many. One such dancer was little Daria, with shimmer in her eyes and grace in her movements. “Mommy, I want to be a dancer” she would say with joy.</p>
                         <p>She loved to dance, but her dreams were crushed by her diagnosis of Ewing’s Sarcoma, a rare tumor, in her right leg. The tumor needed to be removed so she can walk and dance.</p>
-                        <p>It was very complicated to move ahead with surgery too as what a doctor sees in a printed image can’t exactly capture the complexity of the human body. Careful planning was required. The doctors had to remove the tumor and reconstruct Daria's femur, her own live fibula, and a donor's bone. </p>
+                        <p>It was very complicated to move ahead with surgery too as what a doctor sees in a printed image can’t exactly capture the complexity of the human body. Careful planning was required. The doctors had to remove the tumor and reconstruct Daria&#39;s femur, her own live fibula, and a donor&#39;s bone.</p>
                         <p>After exploring several other ideas, the doctors stumbled upon to 3D printing. After a quick CT scan, the 3D model was created. Seeing the model is a critical moment as it gives doctors a very accurate picture and often makes it obvious that the initial plans wouldn’t have succeeded.</p>
                         <p>The operation lasted ten hours with seven surgeons rubbing their heads. In the end, however, the surgery was a huge success. Daria had a long way into rehab, but had chances of an almost complete recovery!</p>
                         <p>3D printing has surely shaken the medical sector. Saving lives and dreams. Today doctors can study hyper-accurate 3D models of a patient’s musculoskeletal system. These models allow doctors to understand the situation, plan accordingly, educate patients and medical students and as medical displays.</p>
                         <p>Based in Belfast, United Kingdom, Axial 3D is reforming modern medical practices with their unique CT and MRI scans and precise 3D models of human anatomy. Their clients span both public and private hospitals in various disciplines like orthopaedics, transplants, trauma etc.</p>
-                        <p>Founder Daniel Crawford’s goal is to provide the healthcare sector with custom medical models that improve the experience of both doctors and patients.</p> 
-                        <p>In terms of education, precise models allow students to understand human anatomy in a much-detailed way. Medical schools are taking up the 3D printed nervous system models and circulatory system models. </p>
+                        <p>Founder Daniel Crawford’s goal is to provide the healthcare sector with custom medical models that improve the experience of both doctors and patients. </p>
+                        <p>In terms of education, precise models allow students to understand human anatomy in a much-detailed way. Medical schools are taking up the 3D printed nervous system models and circulatory system models.</p>
                         <p>This allows to get hands-on experience of what they are studying and thus allowing them to understand and learn from real-world problems instead of just rotting in textbooks.</p>
                         <p>The medical field is no exception to the Pan Industrial Revolution brought forth by 3D printing. In every stream of medicine, it has allowed streamlining the processes and giving a better experience to doctors, students, and patients!</p>
                         <p>3D printing is making the future is a much more hopeful and healthier place with the colossal advancements it is bringing to the medical field.</p>

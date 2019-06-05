@@ -125,6 +125,29 @@
         border: none !important;
     }
     /*End Bloge Part */
+    /*Project Part*/
+    #project-part .nav-item{
+        min-width: 0px;
+        padding: 0px;
+    }
+    #project-part .nav-link{
+        padding: .5rem 0rem;
+    }
+    #project-part .container-fluid{
+        padding: 0px;
+    }
+    #project-part .nav-pills .basic-details-link,
+    #project-part .nav-pills .additional-details-link,
+    #project-part .nav-pills .contact-details-link{
+    	position: static;
+        left: 0px;
+        clip-path: none;
+    }
+    #project-part .nav-pills .basic-details-link,
+    #project-part .nav-pills .additional-details-link{
+        border-right: 1px solid #000000;
+    }
+    /*End Project Part*/
 }
 
 /*Extra Small Part*/
@@ -156,6 +179,9 @@
     /*Privacy Part*/
     #privacy {
         padding: 0px 10px;
+    }
+    #privacy .privacy-block{
+        margin-top: 0px;
     }
     #privacy .privacy-content h4{
         padding-left: 0px;

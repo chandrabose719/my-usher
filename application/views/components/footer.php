@@ -3,7 +3,7 @@
         <div class="container">
             <hr>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 order-xl-1 order-lg-1 order-md-1 order-sm-1 order-2">
                     <h4>COMPANY</h4>
                     <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12  order-xl-2 order-lg-2 order-md-2 order-sm-2 order-3">
                      <h4>INDUSTRIES</h4>
                      <div class="row">
                         <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 order-xl-3 order-lg-3 order-md-3 order-sm-3 order-1">
                   	<div class="mt-4 footer-start-make">
                         <form method="post" action="<?= base_url('home/subscription'); ?>">
                             <input type="hidden" name="current_page" value="<?= current_url(); ?>">

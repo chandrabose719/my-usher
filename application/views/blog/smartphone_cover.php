@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item smartphone-cover">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -19,18 +19,7 @@
                         <p>“Every once in a while, a revolutionary product comes along and changes everything”
                         said Silicon Valley’s magician as he introduced “3 revolutionary products”. “A widescreen iPod, a smartphone and a revolutionary internet communication device” he continued as the audience sat captivated falling prey to his so-called “distortion field”, a place where he made the rules. </p>
                         <p>That evening, the world stood witness as Steve Jobs pulled out the first iPhone, with its 3.5-inch touchscreen and other novel concepts it created history.</p>
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                                <div class="item-block-content">
-                                    <p>Good products, solve problems. A great product changes its industry, but a revolutionary product… a revolutionary product creates industries. That’s what the iPhone did. It redefined smartphones and computing and also inspired a wave of beauty, elegance, and aesthetics in technology. And with his vision led to 2 movements, the first was that of giving attention to design as much as technology.</p>
-                                </div>    
-                            </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
-                                <div class="item-block-image">
-                                    <img class="img-fluid mt-4" src="<?= base_url('assets/images/blog/smartphone-cover.png'); ?>">
-                                </div>    
-                            </div>
-                        </div>                        
+                        <p>Good products, solve problems. A great product changes its industry, but a revolutionary product… a revolutionary product creates industries. That’s what the iPhone did. It redefined smartphones and computing and also inspired a wave of beauty, elegance, and aesthetics in technology. And with his vision led to 2 movements, the first was that of giving attention to design as much as technology.</p>                        
                         <p>With this set in place all major players set out to fix their smartphones, Samsung was one of the only companies that could survive this mayhem. Many companies like Blackberry and Motorola were simply doomed to be irrelevant.</p> 
                         <p>Now with a beautiful and shiny smartphone, the next most important thing was to protect them, you can do that with a 3D Printed phone cover. There were phone covers all around, everyone was rushing to make the most beautiful smartphone covers. Obviously, people didn’t want to just mess up the beauty of their “smartphone”, which was a matter of pride to have.</p> 
                         <p>Phone covers evolved from a way to protect your phone to a statement. People were rushing out to get phone covers themed around their favorite football team, video game or even quote. Personalization, however, couldn’t cut the mark.</p> 

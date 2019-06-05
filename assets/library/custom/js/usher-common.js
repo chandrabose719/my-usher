@@ -34,6 +34,15 @@ $(document).ready(function(){
         });
     });
 
+    // Fixed Footer
+	$(function(){
+        if ($(document).height() > $(window).height()) {
+            $('.footer').removeClass('fixed-bottom');
+        }else{
+            $('.footer').addClass('fixed-bottom');
+        }
+    });
+
     // End Page Loading Animation
     hideLoading();
 
@@ -42,12 +51,133 @@ $(document).ready(function(){
 // Base URL
 var baseUrl = 'http://localhost/tdu/ci/usher/';
 
+// Loading Animation
 function showLoading(){
 	$('#loading-part').css('display', 'block');
 }
 function hideLoading(){
 	$('#loading-part').css('display', 'none');
 }
+
+// Privacy Sidebar
+$(".privacy-sidebar ul a li").click(function(){
+    $('li').removeClass('privacy-active');
+    $(this).addClass('privacy-active');
+});
+
+// Start Project
+$('.start-design').mouseenter(function(){
+	$('.start-manufacture').css({'background-color':'rgba(243, 243, 243,0.4)'})
+	$('.start-manufacture div h5').css({'opacity':0.5,'transition': 'all 0.5'})	
+});
+
+$('.start-design').mouseleave(function(){
+	$('.start-manufacture').css({'opacity':1,'background-color':'transparent'})
+	$('.start-manufacture div h5').css({'opacity':1,'transition': 'all 0.5'})
+});
+
+$('.start-manufacture').mouseenter(function(){
+	$('.start-design').css({'background-color':'rgba(243, 243, 243,0.4)'})
+	$('.start-design div h5').css({'opacity':0.5,'transition': 'all 0.5'})	
+});
+
+$('.start-manufacture').mouseleave(function(){
+	$('.start-design').css({'opacity':1,'background-color':'transparent'})
+	$('.start-design div h5').css({'opacity':1,'transition': 'all 0.5'})
+});
+// End Start Project
+
+// Project Form
+$(function($) {
+    var $window = $(window);
+    $window.resize(function resize(){
+        if ($window.width() < 767) {
+            $('#basic-details').addClass('active').removeClass('fade');
+            $('#additional-details').addClass('active').removeClass('fade');
+            $('#contact-details').addClass('active').removeClass('fade');
+        }
+    }).trigger('resize');   
+});
+
+// function activateTab(){
+//     $('#project-details').addClass('active show d-block');
+//     $('#additional-details').addClass('active show');
+//     $('#contact-details').addClass('active show');
+// }
+
+// if($(window).width()<767){
+// 	$('#project-details-link').click(function(){
+// 		$(this).css({'background-color':'#5c89bd','color':'#ffffff'});
+// 		$('#additional-details-link').css({'background-color':'','color':''});
+// 		$('#additional-details-link a').css({'color':'#000000'});
+// 		$('#contact-details-link').css({'background-color':'','color':''});
+// 	    $('html, body').animate({
+// 	        scrollTop: $("#project-details").offset().top - 50 
+// 	    }, 100); 
+// 	    activateTab();
+// 	});
+// 	$('#additional-details-link').click(function(){
+// 		$(this).css({'background-color':'#5c89bd','color':'#ffffff'});
+// 		$('#additional-details-link a').css({'color':'#ffffff'});
+// 		$('#project-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+// 		$('#project-details-link a').css({'color':'#ffffff'});
+// 		$('#contact-details-link').css({'background-color':'','color':''});
+// 	    $('html, body').animate({
+// 	        scrollTop: $("#additional-details").offset().top - 50 
+// 	    }, 100);
+//         activateTab();     	    	
+// 	});
+// 	$('#contact-details-link').click(function(){
+// 		$(this).css({'background-color':'#5c89bd','color':'#ffffff'});
+// 		$('#project-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+// 		$('#project-details-link a').css({'color':'#ffffff'});
+// 		$('#additional-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+// 		$('#additional-details-link a').css({'color':'#ffffff'});
+// 	    $('html, body').animate({
+// 	        scrollTop: $("#contact-details").offset().top - 50 
+// 	        // scrollTop: $("#contact-details").offset().top
+// 	    }, 100);
+//         activateTab();	    	
+// 	});		 	
+
+$('.basic-details-link').click(function(){
+	$(this).css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.additional-details-link, .contact-details-link').css({'background-color':'','color':''});
+	$('.additional-details-link a, .contact-details-link a').css({'color':'#000000'});
+});
+$('.additional-details-link').click(function(){
+	$(this, '.basic-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.contact-details-link').css({'background-color':'','color':''});
+	$('.additional-details-link a, .basic-details-link a').css({'color':'#ffffff'});
+	$('.contact-details-link a').css({'color':''});
+});
+$('.contact-details-link').click(function(){
+	$(this).css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.basic-details-link, .additional-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.basic-details-link a, .additional-details-link a,  .contact-details-link a').css({'color':'#ffffff'});
+});
+
+function basicDetails(){
+	$('[href="#basic-details"]').tab('show');	
+	$('.basic-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.additional-details-link, .contact-details-link').css({'background-color':'','color':''});
+	$('.additional-details-link a, .contact-details-link a').css({'color':'#000000'});
+}
+
+function additionalDetails(){
+	$('[href="#additional-details"]').tab('show');	
+	$('.additional-details-link, .basic-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.contact-details-link').css({'background-color':'','color':''});
+	$('.additional-details-link a, .basic-details-link a').css({'color':'#ffffff'});
+	$('.contact-details-link a').css({'color':'#000000'});
+}
+
+function contactDetails(){
+	$('[href="#contact-details"]').tab('show');
+	$('.contact-details-link, .basic-details-link, .additional-details-link').css({'background-color':'#5c89bd','color':'#ffffff'});
+	$('.basic-details-link a, .additional-details-link a, .contact-details-link a').css({'color':'#ffffff'});
+}
+// End Project Form
 
 function changeStatus(type){
 	var status;

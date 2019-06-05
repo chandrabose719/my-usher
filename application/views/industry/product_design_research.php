@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="industry-block-content">
-                        <h4>How On-Demand Manufacturing helps in Product Designing</h4>
+                        <h4>How On-Demand Manufacturing is used in Product Designing</h4>
                         <p>The engineers aim to improve the designs of the product to attract more customers. To help them, we, 3D Usher came up with services of on-demand manufacturing. With this model of business, we can support and deliver the products as per our customers’ demands.</p>
                         <p>With this cloud manufacturing, we get easy quotes and track your desired projects smoothly. This model has made an effective impact is product designing as well.</p>
                     </div>    

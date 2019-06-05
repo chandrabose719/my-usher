@@ -228,19 +228,24 @@
             </div>
             <h3>We are also supported by</h3>
             <div class="row">
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-6 col-xs-12">
                     <div class="team-content">
-                        <img class="img-fluid" src="<?= base_url('assets/images/about/StartFast.jpg'); ?>">
+                        <img class="img-fluid" src="<?= base_url('assets/images/about/Start-Fast.jpg'); ?>">
                     </div>    
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div class="team-content">
+                        <img class="img-fluid" src="<?= base_url('assets/images/about/Madden.jpg'); ?>">
+                    </div>    
+                </div>
+                <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-4 offset-md-2 col-sm-6 col-xs-12">
                     <div class="team-content">
                         <img class="img-fluid" src="<?= base_url('assets/images/about/Tech-Garden.jpg'); ?>">
                     </div>    
                 </div>
-                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
                     <div class="team-content">
-                        <img class="img-fluid" src="<?= base_url('assets/images/about/Madden.jpg'); ?>">
+                        <img class="img-fluid" src="<?= base_url('assets/images/about/Arc-Ventures.jpg'); ?>">
                     </div>    
                 </div>
             </div>    

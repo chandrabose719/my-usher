@@ -54,6 +54,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['design-order-overview'] = 'design/project_overview';
 	$route['design-order-confirmation'] = 'design/project_confirm';
 
+	// Project
+	$route['project'] = 'project/index';
+	$route['project-store-session'] = 'project/store_session';
+	$route['project-confirmation'] = 'project/project_confirmation';
+
 	// Industry
 	$route['aerospace'] = 'industry/aerospace';
 	$route['architecture'] = 'industry/architecture';
@@ -75,21 +80,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	// Blog
 	$route['blog'] = 'blog';
-	$route['blog/customized-keychains-using-3D-printing'] = 'blog/customized_keychain';
-	$route['blog/personalized-jewelry-using-additive-manufacturing'] = 'blog/personalized_jewelry';
-	$route['blog/dental-implants-and-teeth-braces-using-3D-printing'] = 'blog/dental_implants';
+	$route['blog/3d-printing-personalized-and-customizable-keychains'] = 'blog/customized_keychain';
+	$route['blog/personalized-jewellery-like-3d-printed-rings-and-more'] = 'blog/personalized_jewelry';
+	$route['blog/3d-printing-teeth-and-braces-after-3d-scanning-jaw'] = 'blog/dental_implants';
 	$route['blog/customized-miniatures-and-figurines-using-3d-printing'] = 'blog/customized_miniatures';
-	$route['blog/get-your-deathly-hallows-3D-printed'] = 'blog/deathly_hallows';
+	$route['blog/get-your-deathly-hallows-3d-printed'] = 'blog/deathly_hallows';
 	$route['blog/injection-molding-explained-easy'] = 'blog/injection_molding';
-	$route['blog/personalized-gifts-with-3D-printing'] = 'blog/personalized_gifts';
-	$route['blog/3d-printing-and-Drones'] = 'blog/printing_3d';
-	$route['blog/prosthetic-limbs'] = 'blog/prosthetic_limbs';
-	$route['blog/automotive-car-parts-and-3D-printing'] = 'blog/automotive_car';
+	$route['blog/personalized-gifts-with-3d-printing'] = 'blog/personalized_gifts';
+	$route['blog/3d-printing-a-drone-and-drone-parts'] = 'blog/printing_3d';
+	$route['blog/3d-printing-prosthetic-limbs-like-a-cyborg'] = 'blog/prosthetic_limbs';
+	$route['blog/automotive-car-parts-and-3d-printing'] = 'blog/automotive_car';
 	$route['blog/rapid-prototyping-for-architecture-models'] = 'blog/rapid_prototyping';
-	$route['blog/silicon-mold'] = 'blog/silicon_mold';
-
-	$route['blog/3d-printing-a-drone-and-drone-parts'] = 'blog/drone_parts';
-	$route['blog/3d-printing-prosthetic-limbs-like-a-cyborg'] = 'blog/prosthetic_cyborg';
+	$route['blog/silicon-mold-what-how-to-and-benefits'] = 'blog/silicon_mold';
 	$route['blog/3d-printing-test-dummies-for-car-safety'] = 'blog/car_safety';
 	$route['blog/3d-printing-medical-models-for-hospitals-and-research'] = 'blog/hospitals_research';
 	$route['blog/3d-printing-light-weight-custom-wheels'] = 'blog/custom_wheels';
@@ -98,6 +100,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['blog/3d-printing-personalized-gifts-like-engraved-ring-on-valentine-day'] = 'blog/valentine_day';
 	$route['blog/3d-printing-a-personalized-smartphone-cover'] = 'blog/smartphone_cover';
 	$route['blog/3d-printed-smash-bros-action-figures'] = 'blog/action_figures';
+	$route['blog/get-customized-3d-printed-award-or-trophies-like-oscars'] = 'blog/customised_awards';
+	$route['blog/what-is-colour-jet-3d-printing'] = 'blog/colour_jet';
+	$route['blog/3d-print-simple-or-functional-science-fair-models'] = 'blog/science_fair';
 
 	// Location
 	$route['location/india'] = 'location/india';

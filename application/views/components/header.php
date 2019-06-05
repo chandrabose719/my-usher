@@ -24,8 +24,7 @@
                 				if(strlen($trunk_user_name) > 10){
 									$trunk_user_name = mb_strimwidth($usher_name, 0, 10, "...");
                 				}
-						?>
-			        		<li class="nav-item dropdown mb-2">
+						?>	<li class="nav-item dropdown mb-2">
 						    	<a class="nav-link user-nav-link dropdown-tog" href="#" id="navbardrop" data-toggle="dropdown">
 						        	<span>Hello,</span><br/>
 						        	<?= strtoupper($trunk_user_name); ?>

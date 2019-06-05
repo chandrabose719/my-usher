@@ -1,5 +1,5 @@
 <div id="blog-part" class="px-5 wrapper-body-padding">
-    <section id="blog-item-head" class="blog-item">
+    <section id="blog-item-head" class="blog-item personalized-gifts">
         <div class="container">
             <div class="row">
             	<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">	
@@ -15,7 +15,7 @@
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
-                        <p>Gift is the foremost and the most common thing which comes into mind every time when someone thinks to make someone feel special. Giving someone a gift extends the gesture of goodwill and specialty to the receiver, from the one giving gift. Now a days, customization is very popular because with customized products you can stand out from others. The main reason behind the popularity of customized product and personalized gifts is that, they are not meant for general public, instead, exclusively meant for special occasion, special person and thus, it is the ambassador of special feelings. So, why not blend the importance and vitality of the customization with the specialty and sanctity of the gift?</p>
+                        <p>A gift is a foremost thing which comes into mind every time anyone thinks about making someone feel special. Giving someone a gift extends the gesture of goodwill and specialty to the receiver, from the one giving gift. Now a days, customization is very popular because with customized products you can stand out from others. The main reason behind the popularity of customized product and personalized gifts is that, they are not meant for general public, instead, exclusively meant for special occasion, special person and thus, it is the ambassador of special feelings. So, why not blend the importance and vitality of the customization with the specialty and sanctity of the gift?</p>
                         <p>Being exclusive and different from the general gifts, you may have the misconception that custom gifts are costly and on account of being customized they might take longer time to be made. But 3D printing proves every thing wrong and with this revolutionary technology you can have your custom gifts made abruptly and affordable. 3D printing is cost effective, develop high quality designs, time efficient and promotes customization. You have plenty of options to choose for the relevant gift because choice of gift is totally dependent on the subjected person and the occasion on which gift is to awarded. Just think of the relevant gift and leave rest of the effort on us. You can give personalized gifts such as:</p>
                         <ul>
                             <li><p>Miniature for toddler.</p></li>
@@ -30,16 +30,13 @@
                     </div>    
                 </div>
             </div>
-            <hr>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
                         <p>Just pick anyone from these or let us know about any other personalized gifts you are thinking of. We at 3D Usher provides a platform for users to design any customized product of their choice. Experts in our 3D Usher team will make sure to develop the high quality and affordable 3D custom products for you.</p>
-                        <p>Here are some of the personalized gifts developed with 3D printing technology:</p>
                     </div>    
                 </div>
             </div>
-            <hr>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
                     <div class="item-block-content">
