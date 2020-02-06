@@ -77,6 +77,14 @@ input[type=number]::-webkit-outer-spin-button {
 #header-part .navbar-custom .user-nav-link span{
 	font-size:10px;
 }
+#header-part .navbar-custom .user-nav-link .test-mode-circle{
+    width: 8px;
+    height: 8px;
+    margin: 1px 0px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: #dc3545;
+}
 /*Project Header*/
 #header-part.project-header .navbar-custom{
     background-color:#0f2130;
@@ -314,6 +322,9 @@ table th{
     font-size:16px;
     font-weight:500;  
 }
+.w-70{
+    width: 70%!important;
+}
 
 /*Buttons*/
 .btn-primary:hover,.btn-primary:focus,.btn-primary:active, 
@@ -403,6 +414,44 @@ table th{
     background:#5c98bd;    
     border: 1px solid #5c98bd;
 }
+.bootbox-accept, .bootbox-accept:focus, .bootbox-accept:active
+.bootbox-accept:visited, .bootbox-accept:focus-within,
+.bootbox-accept:not(:disabled):not(.disabled).active, 
+.bootbox-accept:not(:disabled):not(.disabled):active{
+    font-size:14px;
+    font-weight:500;
+    font-style:normal;
+    padding:10px 10px;
+    border-radius:5px;
+    letter-spacing:0.4px;
+    color:#ffffff;
+    border-color:#5c98bd;
+    background-color:#5c98bd;
+}
+.bootbox-accept:hover{
+    color:#5c98bd;
+    border-color:#5c98bd;
+    background: transparent;
+}
+.bootbox-cancel, .bootbox-cancel:focus, .bootbox-cancel:active
+.bootbox-cancel:visited, .bootbox-cancel:focus-within,
+.bootbox-cancel:not(:disabled):not(.disabled).active, 
+.bootbox-cancel:not(:disabled):not(.disabled):active{
+    font-size:14px;
+    font-weight:500;
+    font-style:normal;
+    letter-spacing:0.4px;
+    padding:10px 10px;
+    border-radius:5px;
+    color:#5c98bd;
+    background:transparent;  
+    border: 1px solid #5c98bd;
+}
+.bootbox-cancel:hover{
+    color:#ffffff;
+    background:#5c98bd;    
+    border: 1px solid #5c98bd;
+}
 .google-btn span,
 .fb-btn span{
     color:#111111;
@@ -419,6 +468,10 @@ table th{
 .hr-divider{
     border: 1px solid #979797;
 }
+.danger-input-outline{
+    border:1px solid red;
+    box-shadow: 1px 2px 15px #c3a9a9;
+}
 
 /*Modal Part*/
 .modal .modal-content{
@@ -426,7 +479,9 @@ table th{
     padding:0px 10px;          
 }
 .modal .register-content,
-.modal .login-content{
+.modal .login-content,
+.modal .material-modal-content,
+.modal .address-modal-content{
     background:#fafafa; 
 }
 #registerModal{
@@ -444,30 +499,89 @@ table th{
     width:100%; 
     z-index:100;  
 }
-#loading-part .loading-content{
-    left:50%;
+#loading-part .loading-content {
     top:50%;
-    position:absolute; 
+    width: 40px;
+    height: 40px;
+    margin: 100px auto;
+    position:relative; 
+    transform:translateY(-20px); 
 }
-#loading-part .loading-content:after {
-    content:"";
-    display: block;
-    width: 66px;
-    height: 66px;
-    margin: 1px;
-    border-radius: 50%;
-    border: 5px solid #1B6EFF;
-    border-color: #1B6EFF transparent #1B6EFF transparent;
-    animation: load-ring 1.2s linear infinite;
+.loading-content .sk-cube {
+    width: 33%;
+    height: 33%;
+    background-color: #5c98bd;
+    float: left;
+    animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+    -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
 }
-@keyframes load-ring {
-  0% {
-    transform: rotate(0deg);
+.loading-content .sk-cube1 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    background-color:#5c98bd !important;
+}
+.loading-content .sk-cube2 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    background-color:#123c69 !important;
+}
+.loading-content .sk-cube3 {
+    -webkit-animation-delay: 0.4s;
+    animation-delay: 0.4s;
+    background-color:#123c69 !important;
+}
+.loading-content .sk-cube4 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s;
+    background-color:#123c69 !important;
+}
+.loading-content .sk-cube5 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    background-color:#5c98bd;
+}
+.loading-content .sk-cube6 {
+    -webkit-animation-delay: 0.3s;
+    animation-delay: 0.3s;
+    background-color:#123c69;
+}
+.loading-content .sk-cube7 {
+    -webkit-animation-delay: 0s;
+    animation-delay: 0s; 
+    background-color:#123c69;
+}
+.loading-content .sk-cube8 {
+    -webkit-animation-delay: 0.1s;
+    animation-delay: 0.1s; 
+    background-color:#123c69;
+}
+.loading-content .sk-cube9 {
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    background-color:#5c98bd;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    } 
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1); 
   }
-  100% {
-    transform: rotate(360deg);
-  }
 }
+
+@keyframes sk-cubeGridScaleDelay {
+    0%, 70%, 100% {
+        -webkit-transform: scale3D(1, 1, 1);
+        transform: scale3D(1, 1, 1);
+    } 
+    35% {
+        -webkit-transform: scale3D(0, 0, 1);
+        transform: scale3D(0, 0, 1);
+    } 
+}    
 /*End Loading Animation*/
 
 

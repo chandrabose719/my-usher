@@ -68,7 +68,15 @@
                                     <input type="submit" class="form-control btn btn-primary Abtn" name="login-submit" onclick="return loginValidation()" value="<?= $this->lang->line('login_btn'); ?>">
                                 </div>
                                 <div class="form-group">
-                                    <p class="float-right"><a class="text-info" href="<?= base_url('forgot-password'); ?>"><?= $this->lang->line('forgot_password'); ?></a></p>
+                                    <div class="d-flex justify-content-between">
+                                        <div class="form-check">
+                                            <label class="form-check-label">
+                                                <input type="checkbox" class="form-check-input" name="remember_me" value="true">
+                                                <p class="text-left text-info"><?= $this->lang->line('remember_me'); ?></p>
+                                            </label>
+                                        </div>
+                                        <p class="text-right"><a class="text-info" href="<?= base_url('forgot-password'); ?>"><?= $this->lang->line('forgot_password'); ?></a></p>
+                                    </div>
                                 </div>            
                             </div>        
                         </form>        

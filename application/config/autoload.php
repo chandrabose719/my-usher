@@ -97,7 +97,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'form');
+$autoload['helper'] = array('url', 'form', 'cookie');
 
 /*
 | -------------------------------------------------------------------
@@ -141,39 +141,52 @@ $autoload['language'] = array();
 |	$autoload['model'] = array('first_model' => 'first');
 */
 $autoload['model'] = array(
-	// Login
-	'Google_m',
-	'Facebook_m',
-	'ChangePassword_m',
+	
 	// Usher DB
-	'Usher_m',
-	'Country_m',
-	'Subscription_m',
-	'Needhelp_m',
-	'Manufacture_m', 
-	'Order_m',
-	'Material_m',
-	'Color_m',
-	'LayerHeight_m',
-	'PostProcess_m',
-	'Price_m',
-	'Design_m',
-	'DResource_m',
-	'Industry_m',
-	'DMaterial_m',
-	'Temperature_m',
-	'Precision_m',
-	'Finishing_m',
-	'Assembly_m',
+	'Usher/Usher_m',
+	'Usher/Country_m',
+	'Usher/Subscription_m',
+	'Usher/Needhelp_m',
+	'Usher/Google_m',
+	'Usher/Facebook_m',
+	'Usher/ChangePassword_m',
+
+	// Manufacture
+	'Manufacture/IQuestion_m',
+	'Manufacture/IAnswer_m',
+	'Manufacture/IConfig_m',
+	'Manufacture/ITechnology_m',
+	'Manufacture/IMaterial_m',
+	'Manufacture/IDiscount_m',
+	'Manufacture/Manufacture_m', 
+	'Manufacture/Order_m',
+
+	// Test
+	'Test/Testmanu_m', 
+	'Test/Testorder_m',
+
+	// Design
+	'Design/Design_m',
+	'Design/DResource_m',
+	'Design/Industry_m',
+	'Design/DMaterial_m',
+	'Design/Temperature_m',
+	'Design/Precision_m',
+	'Design/Finishing_m',
+	'Design/Assembly_m',
+
 	// Project
 	'Project/Project_m',
-	'Project/Presource_m',
-	'Project/Puser_m',
-	// Notifications
-	'Notifications/Promotion_m',
-	'Notifications/Technical_m',
-	'Notifications/Event_m',
-	'Notifications/Newfeature_m',
-	'Notifications/Blogupdate_m',
+	'Project/PResource_m',
+	'Project/PUser_m',
+
+	// Calculation
+	'Calc/CDetails_m',
+	'Calc/CBox_m',
+	'Calc/CCost_m',
+
+	// Tracking
+	'Tracking/Tracking_m',
+	'Tracking/TContact_m',
 
 );

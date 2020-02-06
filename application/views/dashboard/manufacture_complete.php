@@ -4,6 +4,7 @@
             <?php
                 if (!empty($order_result)) {
                     foreach ($order_result as $order_data) {
+                        if($order_data->order_status == 'PROCESSING'){
             ?>
             <div class="order-content">
                 <div class="order-header">
@@ -16,7 +17,7 @@
                         <div class="col-xl-4 offset-xl-5 col-lg-4 offset-lg-5 col-md-4 offset-md-5 col-sm-4 offset-sm-5 col-xs-12">
                             <div class="float-right float-xs-none">
                                 <div class="btn-group">    
-                                    <a class="btn btn-primary Pbtn" href="need-help/manufacture/<?= $order_data->order_id; ?>"><?= $this->lang->line('need_help');?></a>        
+                                    <a class="btn btn-primary Pbtn" href="need-help/manufacture/<?= $order_data->order_id; ?>"><?= $this->lang->line('need_help');?></a>
                                 </div>&nbsp;&nbsp;
                                 <!-- <div class="btn-group">
                                     <a class="btn btn-primary Pbtn" href="">Track</a>            
@@ -28,7 +29,11 @@
                 <?php
                     // Order Details
                     $o_array['order_id'] = $order_data->order_id;
-                    $file_result = $this->Manufacture_m->get($o_array);
+                    if($user_data->user_mode == 'test'){
+                        $file_result = $this->Testmanu_m->get($o_array);
+                    }else{
+                        $file_result = $this->Manufacture_m->get($o_array);
+                    }
                     foreach ($file_result as $file_data) {        
                         $width = 10;
                         $short_name = $file_data->file_name;
@@ -38,7 +43,7 @@
                     <div class="row">
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <h4 class="pl-2 manu-design"><?= $this->lang->line('file_details');?></h4>
-                            <p class="pl-2"> <?= $this->lang->line('file_name');?>: <?= $short_name; ?></p>    
+                            <p class="pl-2"> <?= $this->lang->line('file_name');?>: <?= $short_name; ?></p>
                             <p class="pl-2">
                                 <?= $this->lang->line('qty_price');?>: 
                                 <?= $file_data->file_qty;?> /   
@@ -57,17 +62,21 @@
                                 number_format($apidata->DimensionZ, 2).'mm'
                             ?>     
                             </p>
-                            <p> <?= $this->lang->line('volume');?>: <?= number_format($apidata->Volume); ?> mm3 </p>
+                            <p> <?= $this->lang->line('volume');?>: <?= number_format($apidata->Volume); ?> mm&sup3; </p>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <h4 class="manu-design"> <?= $this->lang->line('manufacturing');?> </h4>
                             <?php
                                 // Material ID
-                                $mat_array['material_id'] = $file_data->material_id;
-                                $mat_data = $this->Material_m->get($mat_array, TRUE);        
+                                $mat_array['material_id'] = $order_data->material_id;
+                                $mat_data = $this->IMaterial_m->get($mat_array, TRUE);
+                                $material_name = $mat_data->material_name;
+                                $tech_array['technology_id'] = $mat_data->technology_id;
+                                $tech_data = $this->ITechnology_m->get($tech_array, TRUE);      
+                                $technology_name = $tech_data->technology_name;
                             ?>
-                            <p><?= $this->lang->line('technology');?>: <?= $mat_data->technology_name; ?> </p>
-                            <p><?= $this->lang->line('material');?>: <?= $mat_data->material_name; ?> </p>
+                            <p><?= $this->lang->line('technology');?>: <?= $technology_name; ?> </p>
+                            <p><?= $this->lang->line('material');?>: <?= $material_name; ?> </p>
                         </div>
                         <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
                             <h4> <?= $this->lang->line('status');?> </h4>
@@ -98,6 +107,7 @@
                 </div>
             </div>    
             <?php
+                        }
                     }
                 }else{
                     echo '

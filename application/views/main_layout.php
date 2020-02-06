@@ -94,7 +94,17 @@
 	<div id="wrapper">
 		<!-- Loading Animation -->
 		<div id="loading-part">
-		    <div class="loading-content"></div>
+		    <div class="loading-content">
+		    	<div class="sk-cube sk-cube1"></div>
+		        <div class="sk-cube sk-cube2"></div>
+		        <div class="sk-cube sk-cube3"></div>
+		        <div class="sk-cube sk-cube4"></div>
+		        <div class="sk-cube sk-cube5"></div>
+		        <div class="sk-cube sk-cube6"></div>
+		        <div class="sk-cube sk-cube7"></div>
+		        <div class="sk-cube sk-cube8"></div>
+		        <div class="sk-cube sk-cube9"></div>
+		    </div>
 		</div>
 		<!-- End Loading Animation -->
 		<!-- Alert Content -->
@@ -152,6 +162,8 @@
     <script src="<?= base_url('assets/library/bootstrap-four/js/bootstrap.bundle.min.js'); ?>"></script>
 
 	<!-- JQuery Plugin -->
+	<!-- Multiple Tabs -->
+    <script src="<?= base_url('assets/library/duplicate-tab/js/duplicate.js'); ?>" type="text/javascript"></script>
 	<!-- WOW Content Left Right Animation	 -->
     <script src="<?= base_url('assets/library/wow/js/wow.min.js'); ?>"></script>	
     <!-- Nice Scroll Content	 -->
@@ -160,6 +172,9 @@
     <script src="<?= base_url('assets/library/easing/js/easing.min.js'); ?>" type="text/javascript"></script>
 	<!-- Datepicker Content   -->
     <script src="<?= base_url('assets/library/datepicker/js/datepicker.min.js'); ?>" type="text/javascript"></script>
+    <!-- Bootbox Popup -->
+    <script src="<?= base_url('assets/library/bootbox/js/bootbox.min.js'); ?>" type="text/javascript"></script>
+    <script src="<?= base_url('assets/library/bootbox/js/bootbox.locales.min.js'); ?>" type="text/javascript"></script>
 
 	<!-- Custom JS -->
     <script src="<?= base_url('assets/library/custom/js/usher-common.js'); ?>" type="text/javascript"></script>
@@ -167,13 +182,33 @@
     <script src="<?= base_url('assets/library/custom/js/usher-design.js'); ?>" type="text/javascript"></script>
 
     <!-- Start of HubSpot Embed Code -->
-	<?php 
-		if((current_url() != base_url('project')) && (current_url() != base_url('project-confirmation'))){	
-			echo "<script type='text/javascript' id='hs-script-loader' async defer src='//js.hs-scripts.com/4831911.js'></script>";
-		}
-	?>
+	<script type='text/javascript' id='hs-script-loader' async defer src='//js.hs-scripts.com/4831911.js'></script>
 	<!-- End of HubSpot Embed Code -->
-    
+
+	<!-- Begin WebTrax -->
+	<!-- <script type="text/javascript">
+		var wto = wto || [];
+		wto.push(['setWTID', 'wt-8fdd9ce3-c163-4cf7-8e27-f88e99e0ea5c']);
+		wto.push(['webTraxs']);
+		(function() {
+			var wt = document.createElement('script');
+			wt.src = document.location.protocol + '//www.webtraxs.com/wt.php';
+			wt.type = 'text/javascript';
+			wt.async = true;
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wt, s);
+		})();
+	</script>
+
+	<noscript>
+		<img src="https://www.webtraxs.com/webtraxs.php?id=wt-8fdd9ce3-c163-4cf7-8e27-f88e99e0ea5c&st=img
+			https://www.webtraxs.com/webtraxs.php?id=wt-8fdd9ce3-c163-4cf7-8e27-f88e99e0ea5c&st=img
+			https://www.webtraxs.com/webtraxs.php?id=wt-8fdd9ce3-c163-4cf7-8e27-f88e99e0ea5c&st=img
+			https://www.webtraxs.com/webtraxs.php?id=wt-8fdd9ce3-c163-4cf7-8e27-f88e99e0ea5c&st=img" 
+			alt="" />
+	</noscript> -->
+	<!-- End WebTrax -->
+	    
 </body>
 </html>
 

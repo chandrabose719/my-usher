@@ -127,7 +127,7 @@ class Project extends MY_Controller {
 	        $user_array['user_mobile'] = $project_data['user_mobile'];
 			$user_array['status'] = $status;
 			$user_array['user_date'] = $project_date;
-			$user_id = $this->Puser_m->insert_user_data($user_array);
+			$user_id = $this->PUser_m->insert_user_data($user_array);
 			// Project Details
 			$project_array['user_id'] = $user_id;
 			$project_array['project_name'] = $project_data['project_name'];
@@ -159,12 +159,12 @@ class Project extends MY_Controller {
                     $resource_array['resource_size'] = $project_file_data[$pkey]['resource_size'];
                     $resource_array['status'] = $status;
                     $resource_array['resource_date'] = $project_date;
-                    $this->Presource_m->insert($resource_array);
+                    $this->PResource_m->insert($resource_array);
                 }
 			}
 			$this->session->set_flashdata('success','RFQ Submitted Successfully');
 			$this->projectOrderEmail($project_data['user_name'], $project_data['user_email'], $project_data['project_name'], $order);
-			$this->PRFQRemainderEmail($project_data['user_name'], $project_data['user_email']);
+			// $this->PRFQRemainderEmail($project_data['user_name'], $project_data['user_email']);
 			$this->session->unset_userdata('project_data');
 			$this->session->unset_userdata('project_file_data');
 			$this->data['title'] = $this->lang->line('confirm_title');

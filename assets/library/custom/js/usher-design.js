@@ -2,21 +2,33 @@
 // Design Project Page
 $(document).ready(function(){
 
+	var url = window.location.pathname;
+	var array = url.split('/');
+	var segmentOne = array[array.length-1];
+	var segmentTwo = array[array.length-2];
+
 	// Project Form Date Picker
-	$(function(){
-		$('#award_date, #needed_by').fdatepicker({
-			initialDate: new Date(),
-			format: 'dd-mm-yyyy',
-			startDate: new Date(),
-			disableDblClickSelection: true,
-			leftArrow:'<<',
-			rightArrow:'>>',
-			closeButton: false
+	if(segmentOne == 'project'){
+		$(function(){
+			$('#award_date, #needed_by').fdatepicker({
+				initialDate: new Date(),
+				format: 'dd-mm-yyyy',
+				startDate: new Date(),
+				disableDblClickSelection: true,
+				leftArrow:'<<',
+				rightArrow:'>>',
+				closeButton: false
+			});
 		});
-	});
+	}	
 
 	// Project Form Draggable
-	$('#psq').sortable();
+	if(segmentOne == 'project'){	
+		$(function(){
+			$('#psq').sortable();
+		});
+	}
+	
 });
 
 
@@ -50,14 +62,21 @@ function materialCustom(){
 function temperatureCustom(){
 	var design_temperature = $('#design_temperature').val();
 	if (design_temperature == '1') {
-		$('#temperature-custom').html(
-			`<input type="text" class="form-control" name="design_temperature_custom" id="design_temperature_custom" placeholder="Please specify the temperature*">`
-		);
+		$('#temperature-custom').html(`
+			<div class="input-group">
+				<input type="text" class="form-control w-70" name="design_temperature_custom" id="design_temperature_custom" placeholder="Please specify the temperature*">
+				<select class="form-control custom-group-dropdown" id="design_temperature_type_custom" name="design_temperature_type_custom">
+                    <option>&#8451;</option>
+                    <option>&#8457;</option>
+                </select>
+			</div>
+		`);
 	}else{
 		$('#temperature-custom').html('');
 	}
 };
 function designProjectSubmit(){
+	$('#project-detail-content input, #project-detail-content select').removeClass('danger-input-outline');
 	var design_name = $('#design_name').val();
 	var design_description = $('#design_description').val();
 	var design_usage = $('#design_usage').val();
@@ -69,17 +88,14 @@ function designProjectSubmit(){
 	var design_material_custom = $('#design_material_custom').val();
 	var design_temperature = $('#design_temperature').val();
 	var design_temperature_custom = $('#design_temperature_custom').val();
+	var design_temperature_type_custom = $('#design_temperature_type_custom').val();
 	var industry_id = $('#industry_id').val();
+	var validation = true;
 
 	if (design_finishing_custom != undefined) {
 		if (design_finishing_custom == '') {
-			$('#validation-message').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong></strong> Please specify finishing needed.
-				</div>`
-			);
-			return false;	
+			$('#design_finishing_custom').addClass('danger-input-outline');
+			validation = false;
 		}
 	}else{
 		var design_finishing_custom = '';
@@ -87,13 +103,8 @@ function designProjectSubmit(){
 
 	if (design_material_custom != undefined) {
 		if (design_material_custom == '') {
-			$('#validation-message').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong></strong> Please specify material needed.
-				</div>`
-			);
-			return false;	
+			$('#design_material_custom').addClass('danger-input-outline');
+			validation = false;	
 		}
 	}else{
 		var design_material_custom = '';
@@ -101,88 +112,56 @@ function designProjectSubmit(){
 
 	if (design_temperature_custom != undefined) {
 		if (design_temperature_custom == '') {
-			$('#validation-message').html(
-				`<div class="alert alert-warning alert-dismissible fade show">
-					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong></strong> Please specify the temperature.
-				</div>`
-			);
-			return false;	
+			$('#design_temperature_custom').addClass('danger-input-outline');
+			validation = false;
+		}else{
+			design_temperature_custom_with_type = design_temperature_custom+' '+design_temperature_type_custom;  
 		}
 	}else{
-		var design_temperature_custom = '';
+		var design_temperature_custom_with_type = '';
 	}
 	
-	if (design_name == '' || design_name == undefined || design_name == null) {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Project Name is required!
-			</div>`
-		);
-		return false;
-	}else if (design_description == '' || design_description == undefined || design_description == null) {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please specify project description!
-			</div>`
-		);
-		return false;
-	}else if (design_usage == '' || design_usage == undefined || design_usage == null) {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please specify end usage of the part!
-			</div>`
-		);
-		return false;
-	}else if (design_assembly == '' || design_assembly == undefined || design_assembly == null
+	if (design_name == '' || design_name == undefined 
+		|| design_name == null || design_name.length < 3 ) {	
+		$('#design_name').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_description == '' || design_description == undefined 
+		|| design_description == null || design_description.length < 3 ) {	
+		$('#design_description').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_usage == '' || design_usage == undefined 
+		|| design_usage == null || design_usage.length < 3 ) {	
+		$('#design_usage').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_assembly == '' || design_assembly == undefined || design_assembly == null
 		|| design_assembly == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select assembly preference for your project!
-			</div>`
-		);
-		return false;
-	}else if (design_precision == '' || design_precision == undefined || design_precision == null
+		$('#design_assembly').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_precision == '' || design_precision == undefined || design_precision == null
 		|| design_precision == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select precision preference for your project!
-			</div>`
-		);
-		return false;
-	}else if (design_finishing == '' || design_finishing == undefined || design_finishing == null
+		$('#design_precision').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_finishing == '' || design_finishing == undefined || design_finishing == null
 		|| design_finishing == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select finishing preference for your project!
-			</div>`
-		);
-		return false;
-	}else if (design_material == '' || design_material == undefined || design_material == null
+		$('#design_finishing').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_material == '' || design_material == undefined || design_material == null
 		|| design_material == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select material preference for your project!
-			</div>`
-		);
-		return false;
-	}else if (design_temperature == '' || design_temperature == undefined || design_temperature == null
+		$('#design_material').addClass('danger-input-outline');
+		validation = false;
+	}
+	if (design_temperature == '' || design_temperature == undefined || design_temperature == null
 		|| design_temperature == '0') {	
-		$('#validation-message').html(
-			`<div class="alert alert-warning alert-dismissible fade show">
-				<button type="button" class="close" data-dismiss="alert">&times;</button>
-				<strong></strong> Please select environment temperature for your project!
-			</div>`
-		);
-		return false;
-	}else{
+		$('#design_temperature').addClass('danger-input-outline');
+		validation = false;
+	}
+	if(validation == true){
 		var formdata = new FormData();
 		formdata.append('design_name', design_name);
 		formdata.append('design_description', design_description);
@@ -194,7 +173,7 @@ function designProjectSubmit(){
 		formdata.append('design_material', design_material);
 		formdata.append('design_material_custom', design_material_custom);
 		formdata.append('design_temperature', design_temperature);
-		formdata.append('design_temperature_custom', design_temperature_custom);
+		formdata.append('design_temperature_custom', design_temperature_custom_with_type);
 		formdata.append('industry_id', industry_id);
 		formdata.append('type', 'design-detail');
 		if (resourceFileArray.length > 0 ) {
@@ -231,7 +210,15 @@ function designProjectSubmit(){
 					return false;
 	        	}
 	       	}
-		});
+		});	
+	}else{
+		$('#validation-message').html(
+			`<div class="alert alert-warning alert-dismissible fade show">
+				<button type="button" class="close" data-dismiss="alert">&times;</button>
+				<strong></strong> Please fill all the mandatory fields
+			</div>`
+		);
+		return false;
 	}
 };
 
@@ -510,60 +497,64 @@ function projectSubmit(){
 	var basic_content = true;
 	var additional_content = true;
 	var contact_content = true;
-	if (project_name == '' || project_name == undefined || project_name == null) {	
-		$('#project_name').addClass('project-form-danger');
+	if (project_name == '' || project_name == undefined || project_name == null
+		|| project_name.length < 3) {	
+		$('#project_name').addClass('danger-input-outline');
 		validation = false;
 		basic_content = false;
 	}
-	if (project_usage == '' || project_usage == undefined || project_usage == null) {	
-		$('#project_usage').addClass('project-form-danger');
+	if (project_usage == '' || project_usage == undefined || project_usage == null
+		|| project_usage.length < 3) {	
+		$('#project_usage').addClass('danger-input-outline');
 		validation = false;
 		basic_content = false;
 	}
-	if (project_description == '' || project_description == undefined || project_description == null) {	
-		$('#project_description').addClass('project-form-danger');
+	if (project_description == '' || project_description == undefined 
+		|| project_description == null|| project_description.length < 3) {	
+		$('#project_description').addClass('danger-input-outline');
 		validation = false;
 		basic_content = false;
 	}
 	if (project_material == '' || project_material == undefined || project_material == null) {	
-		$('#project_material').addClass('project-form-danger');
+		$('#project_material').addClass('danger-input-outline');
 		validation = false;
 		additional_content = false;
 	}
 	if (project_qty == '' || project_qty == undefined || project_qty == null) {	
-		$('#project_qty').addClass('project-form-danger');
+		$('#project_qty').addClass('danger-input-outline');
 		validation = false;
 		additional_content = false;
 	}
 	if(award_timestamp > needed_timestamp){
-		$('#award_date').addClass('project-form-danger');
-		$('#needed_by').addClass('project-form-danger');
+		$('#award_date').addClass('danger-input-outline');
+		$('#needed_by').addClass('danger-input-outline');
 		validation = false;
 		additional_content = false;
 	}
 	if (resource_type == '' || resource_type == undefined || resource_type == null
 	 || resource_type == '0') {	
-		$('#resource_type').addClass('project-form-danger');
+		$('#resource_type').addClass('danger-input-outline');
 		validation = false;
 		additional_content = false;
 	}
-	if (user_name == '' || user_name == undefined || user_name == null) {	
-		$('#user_name').addClass('project-form-danger');
+	if (user_name == '' || user_name == undefined || user_name == null
+		|| user_name.length < 3) {	
+		$('#user_name').addClass('danger-input-outline');
 		validation = false;
 		contact_content = false;
 	}
 	if (user_email == '' || user_email == undefined || user_email == null) {	
-		$('#user_email').addClass('project-form-danger');
+		$('#user_email').addClass('danger-input-outline');
 		validation = false;
 		contact_content = false;
 	}
 	if (user_company == '' || user_company == undefined || user_company == null) {	
-		$('#user_company').addClass('project-form-danger');
+		$('#user_company').addClass('danger-input-outline');
 		validation = false;
 		contact_content = false;
 	}
 	if (user_address == '' || user_address == undefined || user_address == null) {	
-		$('#user_address').addClass('project-form-danger');
+		$('#user_address').addClass('danger-input-outline');
 		validation = false;
 		contact_content = false;
 	}

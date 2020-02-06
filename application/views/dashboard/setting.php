@@ -86,69 +86,56 @@
 	        <div class="row">
 	            <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-0 col-xs-12">
 		            <div class="notification-content">
+		            	<?php
+				    		$notifi_array['user_id'] = $usher_id;
+							$notifi_data = $this->Usher_m->get($notifi_array, TRUE);
+				    		if(!empty($notifi_data)){
+				    	?>
 		            	<h3>Notifications</h3>
 		            	<h4 class="text-left">Marketing:</h4>
 		            	<ul class="list-group">
-					    	<?php
-					    		$noti_array['user_id'] = $usher_id;
-								$pro_data = $this->Promotion_m->get($noti_array, TRUE);
-					    		$pro_status = $pro_data->status;
-					    	?>
 					    	<li class="list-group-item d-flex justify-content-between">
 					      		<label>Promotions and Competition News</label>
 							    <label class="switch">
-						            <input type="checkbox" name="promotion" id="promotion" onchange="changeStatus('promotion')" <?php if($pro_status == 'active') echo 'checked' ?> >
+						            <input type="checkbox" name="promotion" id="promotion" onchange="changeStatus('promotion')" <?php if($notifi_data->promotion == 'active') echo 'checked' ?> >
 						            <span class="slider"></span>
 						        </label>
 					    	</li>
-					    	<?php
-					    		$tec_data = $this->Technical_m->get($noti_array, TRUE);
-					    		$tec_status = $tec_data->status;
-					    	?>
 					    	<li class="list-group-item d-flex justify-content-between">
 					      		<label>Project and Technical Newsletter</label>
 							    <label class="switch">
-						            <input type="checkbox" name="technical" id="technical" onchange="changeStatus('technical')" <?php if($tec_status == 'active') echo 'checked' ?> >
+						            <input type="checkbox" name="technical" id="technical" onchange="changeStatus('technical')" <?php if($notifi_data->technical == 'active') echo 'checked' ?> >
 						            <span class="slider"></span>
 						        </label>	
 					    	</li>
-					    	<?php
-								$eve_data = $this->Event_m->get($noti_array, TRUE);
-					    		$eve_status = $eve_data->status;
-					    	?>
 					    	<li class="list-group-item d-flex justify-content-between">
 					      		<label>Event Updates</label>
 							    <label class="switch">
-						            <input type="checkbox" name="event" id="event" onchange="changeStatus('event')" <?php if($eve_status == 'active') echo 'checked' ?> >
+						            <input type="checkbox" name="event" id="event" onchange="changeStatus('event')" <?php if($notifi_data->event == 'active') echo 'checked' ?> >
 						            <span class="slider"></span>
 						        </label>	
 					    	</li>
 		            	</ul>
 		            	<h4 class="text-left">Product:</h4>
 		            	<ul class="list-group">
-					    	<?php
-								$new_data = $this->Newfeature_m->get($noti_array, TRUE);
-					    		$new_status = $new_data->status;
-					    	?>
 					    	<li class="list-group-item d-flex justify-content-between">
 					      		<label>Website new features and update notifications</label>
 							    <label class="switch">
-						            <input type="checkbox" name="newfeature" id="newfeature" onchange="changeStatus('newfeature')" <?php if($new_status == 'active') echo 'checked' ?> >
+						            <input type="checkbox" name="newfeature" id="newfeature" onchange="changeStatus('newfeature')" <?php if($notifi_data->newfeature == 'active') echo 'checked' ?> >
 						            <span class="slider"></span>
 						        </label>
 					    	</li>
-					    	<?php
-								$blo_data = $this->Blogupdate_m->get($noti_array, TRUE);
-					    		$blo_status = $blo_data->status;
-					    	?>
 					    	<li class="list-group-item d-flex justify-content-between">
 					      		<label>Blog update</label>
 							    <label class="switch">
-						            <input type="checkbox" name="blogupdate" id="blogupdate" onchange="changeStatus('blogupdate')" <?php if($blo_status == 'active') echo 'checked' ?> >
+						            <input type="checkbox" name="blogupdate" id="blogupdate" onchange="changeStatus('blogupdate')" <?php if($notifi_data->blogupdate == 'active') echo 'checked' ?> >
 						            <span class="slider"></span>
 						        </label>	
 					    	</li>
 		            	</ul>
+		            	<?php
+	            			}
+	            		?>
 	            	</div>
 	            </div>
 	        </div>    

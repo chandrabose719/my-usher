@@ -62,26 +62,24 @@
             </div>
             <div class="row">
                 <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
-                    <div class="project-intro-content">
-                        <p class="text-center">Have a design or project in mind? <br>Design with 3D Usher</p>
-                        <div class="row"> 
-                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">
-                                <a href="<?= base_url('describe-project'); ?>" class="btn btn-primary Pbtn">DESCRIBE PROJECT</a>
-                            </div>   
-                        </div>      
+                    <div class="project-intro-content startproject-content">
+                        <a href="<?= base_url('describe-project'); ?>">
+                            <img src="<?= base_url('assets/images/home/start-project-design.png'); ?>" class="img-fluid">
+                            <p class="text-center">I will need 3D Design Services</p>
+                            <h5 class="btn btn-primary Abtn">Start Design Service Request</h5>
+                        </a>
                     </div>
                 </div>
                 <div class="col-xl-1 col-lg-1 col-md-1 col-sm-12 col-12">    
                     <span class="d-md-block vr-divider"></span>
                 </div>    
                 <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-4 offset-md-1 col-sm-12 offset-sm-0 col-12 offset-0">
-                    <div class="project-intro-content">
-                        <p class="text-center">Looking for manufacturing solutions?<br> Upload your 3D Design and get instant quote</p>
-                        <div class="row"> 
-                            <div class="col-xl-6 offset-xl-3 col-lg-6 offset-lg-3 col-md-6 offset-md-3">    
-                                <a href="<?= base_url('manufacture'); ?>" class="btn btn-primary Pbtn">UPLOAD FILES</a>
-                            </div>
-                        </div>               
+                    <div class="project-intro-content startproject-content">
+                        <a href="<?= base_url('manufacture-details'); ?>">
+                            <img src="<?= base_url('assets/images/home/start-project-manufacture.png'); ?>" class="img-fluid">
+                            <p class="text-center">I have a 3D Design</p>
+                            <h5 class="btn btn-primary Abtn">Start a Manufacturing Order</h5>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -103,11 +101,11 @@
             <div class="row">
                 <div class="col-xl-4 offset-xl-4 col-lg-4 offset-lg-4 col-md-4 offset-md-4 col-sm-12 offset-sm-0 col-12 offset-0">
                     <div class="project-intro-content">
-                        <a href="<?= base_url('contact-us'); ?>" class="btn btn-primary Abtn">CONTACT SALES</a>
+                        <a href="<?= base_url('contact-us'); ?>" class="btn btn-primary Pbtn">CONTACT SALES</a>
                     </div>
                 </div>
             </div>
-            <hr>
+            <!-- <hr>
             <div class="row">
                 <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="industry-block-content">
@@ -172,7 +170,7 @@
                         </a>
                     </div>
                 </div>    
-            </div>
+            </div> -->
             <?php
                 if (empty($usher_id)) {
             ?>

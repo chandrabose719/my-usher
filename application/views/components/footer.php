@@ -66,16 +66,34 @@
                     </div>
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12 order-xl-3 order-lg-3 order-md-3 order-sm-3 order-1">
-                  	<div class="mt-4 footer-start-make">
-                        <form method="post" action="<?= base_url('home/subscription'); ?>">
-                            <input type="hidden" name="current_page" value="<?= current_url(); ?>">
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control bg-transparent" name="subscription_email" placeholder="Stay Updated" required>
-                                <div class="input-group-append">
-                                    <input type="submit" class="btn btn-primary Pbtn" name="subscription-submit" value="SUBMIT">
-                                </div>
+                  	<h4>CONTACT</h4>
+                    <div class="row">
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                            <div class="footer-content">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a onclick="return false;">
+                                            <span>
+                                                <img src="<?= base_url('assets/images/flag-america.png'); ?>">&nbsp;&nbsp;+1 (646) 498 1909
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a onclick="return false;">
+                                            <span>
+                                                <img src="<?= base_url('assets/images/flag-india.png'); ?>">&nbsp;&nbsp;+91 959 179 2432
+                                            </span>
+                                        </a>    
+                                    </li>
+                                    <li>
+                                        <a onclick="return false;">
+                                            <i class="fa fa-envelope text-info"></i>&nbsp;&nbsp;
+                                            info@3dusher.com
+                                        </a>
+                                    </li>
+                                </ul>    
                             </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -105,7 +123,7 @@
                                 </a>
                             </li>  
         					<li class="list-inline-item">
-                                <a href="mailto:info@3dusher.com">
+                                <a href="mailto:contact@3dusher.com">
                                     <i class="fas fa-envelope"></i>
                                 </a>
                             </li>

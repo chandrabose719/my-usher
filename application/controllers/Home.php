@@ -86,12 +86,21 @@ class Home extends MY_Controller {
 	        $array['date'] = time();
 	        if ($this->Subscription_m->insert($array)){
 	            $this->subscriptionEmail($subscription_email);
-	        	$this->session->set_flashdata('success','Thank You');
+	        	$this->session->set_flashdata('success','Thanks for signing up!');
 				redirect($current_page);
 			}else{
 				$this->session->set_flashdata('error','Error occured, Try again!');
 			}
 	    }
+	}
+
+	// Under Construction
+	public function under_construction(){
+		$this->data['title'] = 'Under Construction';
+		$this->data['description'] = $this->lang->line('home_description');
+		$this->data['keyword'] = $this->lang->line('home_keyword');
+		$this->data['body'] = 'home/under_construction';
+		$this->load->view("main_layout", $this->data);
 	}
 
 }

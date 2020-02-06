@@ -117,7 +117,15 @@
                             <input type="password" class="form-control" id="login_user_password" name="login_user_password" placeholder="<?= $this->lang->line('password'); ?>" value="<?= set_value('login_user_password'); ?>">
                         </div>
                         <div class="row">
-                            <div class="col">    
+                            <div class="col-6">    
+                                <div class="form-check">
+                                    <label class="form-check-label">
+                                        <input type="checkbox" class="form-check-input" name="remember_me" value="true">
+                                        <p class="text-left text-primary"><?= $this->lang->line('remember_me'); ?></p>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-6">    
                                 <a href="<?= base_url('forgot-password'); ?>" target="_blank" class="text-primary float-right"><?= $this->lang->line('forgot_password'); ?></a>
                             </div>
                         </div>

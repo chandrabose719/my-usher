@@ -59,7 +59,7 @@
                         </a>
                         <div id="NDA" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>We’re open to getting into Non-Disclosure Agreements with our customers. Please connect with us through email at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></p></a>
+                                <p>We’re open to getting into Non-Disclosure Agreements with our customers. Please connect with us through email at <a href="mailto:contact@3dusher.com"><span class="text-info">contact@3dusher.com</span></p></a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                         </a>
                         <div id="Not_Safe" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>We understand your concern, please write us at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a> and one of our executives will get in touch with you to discuss this further.</p>
+                                <p>We understand your concern, please write us at <a href="mailto:contact@3dusher.com"><span class="text-info">contact@3dusher.com</span></a> and one of our executives will get in touch with you to discuss this further.</p>
                             </div>
                         </div>
                     </div>
@@ -83,7 +83,7 @@
                         </a>
                         <div id="Other_Way" class="collapse" data-parent="#confidential-accordion">
                             <div class="card-body">
-                                <p>You can email us the 3D design at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a>. We will review and send the quotation and the payment link.</p>
+                                <p>You can email us the 3D design at <a href="mailto:contact@3dusher.com"><span class="text-info">contact@3dusher.com</span></a>. We will review and send the quotation and the payment link.</p>
                             </div>
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                         </a>
                         <div id="Get_Touch" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>You can reach out to us through email <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a> or provide your contact details through contact form and we will get back to you.</p>
+                                <p>You can reach out to us through email <a href="mailto:contact@3dusher.com"><span class="text-info">contact@3dusher.com</span></a> or provide your contact details through contact form and we will get back to you.</p>
                             </div>
                         </div>
                     </div>
@@ -283,7 +283,7 @@
                         </a>
                         <div id="Upload_Problem" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>We accept files in STL, STP and IGES formats. Please open it in your local CAD software, save the file again in one of these formats and try re-uploading the files. If the same problem persists, please email your file to us at <a href="mailto:info@3dusher.com"><span class="text-info"> info@3dusher.com</span></a></p>
+                                <p>We accept files in STL, STP and IGES formats. Please open it in your local CAD software, save the file again in one of these formats and try re-uploading the files. If the same problem persists, please email your file to us at <a href="mailto:contact@3dusher.com"><span class="text-info"> contact@3dusher.com</span></a></p>
                             </div>
                         </div>
                     </div>
@@ -295,7 +295,7 @@
                         </a>
                         <div id="Payment_Issue" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>We currently accept payments through debit and credit cards. If you’re receiving any kind of errors, please take a screenshot of the same and email us at <a href="mailto:info@3dusher.com"><span class="text-info">info@3dusher.com</span></a>. We’ll resolve it soon.</p>
+                                <p>We currently accept payments through debit and credit cards. If you’re receiving any kind of errors, please take a screenshot of the same and email us at <a href="mailto:contact@3dusher.com"><span class="text-info">contact@3dusher.com</span></a>. We’ll resolve it soon.</p>
                             </div>
                         </div>
                     </div>
@@ -319,7 +319,7 @@
                         </a>
                         <div id="Order_Issue" class="collapse" data-parent="#support-accordion">
                             <div class="card-body">
-                                <p>Please email us at <a href="mailto:info@3dusher.com"><span class="text-info"> info@3dusher.com</span></a> and mention your order ID in the email and we will make sure our support executives get in touch with you at the earliest.</p>
+                                <p>Please email us at <a href="mailto:contact@3dusher.com"><span class="text-info"> contact@3dusher.com</span></a> and mention your order ID in the email and we will make sure our support executives get in touch with you at the earliest.</p>
                             </div>
                         </div>
                     </div>

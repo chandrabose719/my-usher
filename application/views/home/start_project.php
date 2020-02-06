@@ -1,4 +1,5 @@
-    <div id="startproject-part" class="mx-5 wrapper-body-margin">   
+<div id="startproject-part" class="mx-5 wrapper-body-margin">   
+    <section id="startproject">
         <div class="container">
             <div class="row">
                 <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-10 offset-sm-1 col-xs-12">
@@ -28,5 +29,60 @@
                     </div>
                 </div>
             </div>
-        </div>  
-    </div>
+        </div>
+    </section>      
+    <section id="overview-count">
+        <div class="container">
+            <div class="overview-count-block">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="overview-count-content">
+                            <div class="media">
+                                <i class="fas fa-swatchbook fa-3x align-self-center mr-2"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-0 text-left">45+</h4>
+                                    <p class="mb-0 text-left text-muted">Materials Offered</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">    
+                        <div class="overview-count-content">
+                            <div class="media">
+                                <i class="fas fa-cogs fa-3x align-self-center mr-2"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-0 text-left">15+</h4>
+                                    <p class="mb-0 text-left text-muted">Manufacturing Techniques</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="overview-count-content">
+                            <div class="media">
+                                <i class="fas fa-globe-americas fa-3x align-self-center mr-2"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-0 text-left">150+</h4>
+                                    <p class="mb-0 text-left text-muted">Global Customers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-12 col-12">
+                        <div class="overview-count-content">
+                            <div class="media">
+                                <i class="fas fa-shapes fa-3x align-self-center mr-2"></i>
+                                <div class="media-body">
+                                    <h4 class="mb-0 text-left">30,000+</h4>
+                                    <p class="mb-0 text-left text-muted">Parts Produced</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>        
+            </div>      
+        </div>
+    </section>
+</div>
+
+

@@ -3,6 +3,30 @@ $(document).ready(function(){
     // Page Loading Animation
     showLoading();
     
+    // Remove index.php in URL
+	$(function(){
+		var base_url = window.location.origin;
+    	var url = window.location.pathname;
+		var arr = url.split('/');
+	    if (arr.includes('index.php')) {
+		    for(var i = 0; i < arr.length; i++) {
+		        if(arr[i] == 'index.php') {
+		            arr.splice(i, 1);
+		            break;
+		        }
+		    }
+		    var removedUrl = arr.join('/');
+			redirectUrl = base_url + removedUrl;
+			window.location.href = redirectUrl;
+		}
+	});
+
+	// Get URL
+    var url = window.location.pathname;
+	var array = url.split('/');
+	var segmentOne = array[array.length-1];
+	var segmentTwo = array[array.length-2];
+
     // Tooltip
 	$('[data-toggle="tooltip"]').tooltip();
 
@@ -18,7 +42,7 @@ $(document).ready(function(){
             var $anchor = $(this);
             $('html, body').stop().animate({
               scrollTop: $($anchor.attr('href')).offset().top
-            }, 1500, 'easeInOutExpo');
+            }, 50, 'easeInOutExpo');
             event.preventDefault();
           });
     });
@@ -64,6 +88,15 @@ $(".privacy-sidebar ul a li").click(function(){
     $('li').removeClass('privacy-active');
     $(this).addClass('privacy-active');
 });
+
+// Home Subscription
+function subscriptionValidation(){
+	var subscription_email = $('#subscription_email').val();
+	if(subscription_email == "" || subscription_email.indexOf("@", 0) < 0 || subscription_email.indexOf(".", 0) < 0){
+		$('.subscription-email-error').html('<p class="text-warning pl-3">Please enter a valid email</p>');
+		return false;
+	}
+}
 
 // Start Project
 $('.start-design').mouseenter(function(){
@@ -336,6 +369,10 @@ function checkoutValidation(){
 	var state = $('#state').val();
 	var country = $('#country').val();
 	var pin_code = $('#pin_code').val();
+	
+	var canada_regex = /^[ABCEGHJ-NPRSTVXY]\d[ABCEGHJ-NPRSTV-Z][ -]?\d[ABCEGHJ-NPRSTV-Z]\d$/i;
+	var uk_regex = /^[A-Z]{1,2}[0-9]{1,2} ?[0-9][A-Z]{2}$/i;
+
 	if (user_mobile == '' || user_mobile == 'undefined' || user_mobile == null || user_mobile.length != '10') {	
 		$('#billing-msg').html(
 			`<div class="alert alert-warning alert-dismissible fade show">
@@ -438,31 +475,163 @@ function checkoutValidation(){
 				</div>`
 			);
 			return false;
-		}else if (pin_code.length < '5' || pin_code.length > '6') {
+		}else if ((country == 'India') && ((pin_code.split(' ').join('').split('-').join('').length != 6) || (!isNaN(pin_code)))){
 			$('#shipping-msg').html(
 				`<div class="alert alert-warning alert-dismissible fade show">
 					<button type="button" class="close" data-dismiss="alert">&times;</button>
-					<strong> Error! </strong> Postal zipcode is Invalid! 
+					<strong> Error! </strong> Please enter a valid 6 digit number! 
+				</div>`
+			);
+			return false;
+		}else if ((country == 'United States') && ((pin_code.split(' ').join('').split('-').join('').length != 5) || (!isNaN(pin_code)))){
+			$('#shipping-msg').html(
+				`<div class="alert alert-warning alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong> Error! </strong> Please enter a valid 6 digit number! 
+				</div>`
+			);
+			return false;
+		}else if ((country == 'Canada') && ((pin_code.split(' ').join('').length != 6) || (canada_regex.test(pin_code) == false))){
+			$('#shipping-msg').html(
+				`<div class="alert alert-warning alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong> Error! </strong> Please enter a valid 6 digit number! 
+				</div>`
+			);
+			return false;
+		}else if ((country == 'United Kingdom') && ((ukValidation(pin_code) == false))){
+			$('#shipping-msg').html(
+				`<div class="alert alert-warning alert-dismissible fade show">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
+					<strong> Error! </strong> Please enter a valid postal number! 
 				</div>`
 			);
 			return false;
 		}
 	}	
 };
+
+function ukValidation(pin_code){
+	var postal_code = pin_code.split(' ').join('').split('-').join('');
+	var first_digit = ["Q", "q", "V", "v","X","x"];
+	var second_digit = ["I", "i", "J", "j", "Z", "z"];
+	var third_digit = ["A", "B", "C", "D", "E", "F", "G", "H", "J", "K", "S", "T", "U", "V", "W", 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+	var alpha_regex = /^[a-zA-Z ]+$/i ;
+	var numeric_regex = /^[0-9]+$/ ;
+	
+	if(postal_code.length == 5){
+		if(first_digit.includes(postal_code[0].toUpperCase()) == false){
+			if(second_digit.includes(postal_code[1].toUpperCase()) == false){
+				if((numeric_regex.test(postal_code[2]) == true) && (alpha_regex.test(postal_code[3]) == true) && (alpha_regex.test(postal_code[4]) == true)){
+					return true;		
+				}
+			}		
+		}	
+	} 
+	
+	if(postal_code.length == 6){
+		if(first_digit.includes(postal_code[0].toUpperCase()) == false){
+			if(second_digit.includes(postal_code[1].toUpperCase()) == false){
+				if(third_digit.includes(postal_code[2].toUpperCase()) == true){
+					if((numeric_regex.test(postal_code[3]) == true) && (alpha_regex.test(postal_code[4]) == true) && (alpha_regex.test(postal_code[5]) == true)){
+						return true;		
+					}
+				}	
+			}		
+		}	
+	}
+
+	if(postal_code.length == 7){
+		if(first_digit.includes(postal_code[0].toUpperCase()) == false){
+			if(second_digit.includes(postal_code[1].toUpperCase()) == false){
+				if(third_digit.includes(postal_code[2].toUpperCase()) == true){
+					if((numeric_regex.test(postal_code[4]) == true) && (alpha_regex.test(postal_code[5]) == true) && (alpha_regex.test(postal_code[6]) == true)){
+						return true;		
+					}
+				}	
+			}		
+		}	
+	}
+
+	return false;
+}
+
 // End Overview Address Validation
 // ********************
 
 // ********************
 // Dashboard Part
 function disableProceed(){
-	if ($('#file_id').not(':checked').length == 0) {
-        $('.proceed-btn-content').html(
-        	'<a href="" class="btn btn-primary Pbtn" id="proceed-btn">PROCEED</a>'
+	var checkboxes = document.getElementsByName('file_id[]');
+	var selected = [];
+	for (var i=0; i<checkboxes.length; i++) {
+	    if (checkboxes[i].checked) {
+	        selected.push(checkboxes[i].value);
+	    }
+	}
+	if(selected != ''){
+		$('.proceed-btn-content').html(
+        	'<input type="submit" class="btn btn-primary Pbtn" id="proceed-btn" value="PROCEED" />'
         );
-    } else {
-        $('.proceed-btn-content').html('');
-    }
+	}else{
+		$('.proceed-btn-content').html('');
+	}
 }
 
 // End Dashboard Part
 // ********************
+
+
+/****************/
+/*Calculator Page*/
+
+function calculationResult(){
+	var partLength = $('#part_length').val();
+	var partBreadth = $('#part_breadth').val();
+	var partHeight = $('#part_height').val();
+	var partVolume = $('#part_volume').val();
+	var partQuantity = $('#part_quantity').val();
+	var partDensity = $('#part_density').val();
+	var countryCode = $('#country_code').val();
+	if(partLength != undefined && partLength != null && partLength != '' 
+		&& partBreadth != undefined && partBreadth != null && partBreadth != '' 
+		&& partHeight != undefined && partHeight != null && partHeight != '' 
+		&& partVolume != undefined && partVolume != null && partVolume != '' 
+		&& partQuantity != undefined && partQuantity != null && partQuantity != '' 
+		&& partDensity != undefined && partDensity != null && partDensity != ''){
+		
+		var calcdata = new FormData();
+		calcdata.append('partLength', partLength);
+		calcdata.append('partBreadth', partBreadth);
+		calcdata.append('partHeight', partHeight);
+		calcdata.append('partVolume', partVolume);
+		calcdata.append('partQuantity', partQuantity);
+		calcdata.append('partDensity', partDensity);
+		calcdata.append('countryCode', countryCode);
+		$.ajax({
+			url: baseUrl+'usc-calculation',
+			type : 'POST',
+	       	data : calcdata,
+	       	processData: false, 
+       		contentType: false,
+	       	beforeSend: function(){
+		        showLoading();
+		    },
+		    complete: function(){
+		        hideLoading();
+		    },
+	       	success : function(data) {
+	        	data = $.trim(data);
+	        	// console.log(data);
+	        	$('.usc-output-content').html(data);	        	
+	       	}
+		});
+	}
+
+};
+
+/*End Calculator Page*/
+/****************/
+
+
+

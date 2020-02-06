@@ -117,7 +117,10 @@ class Design extends MY_Controller {
 
 	// Overview Page
 	public function project_overview(){
-		$this->session->set_userdata('social_redirect', 'design-order-overview');
+		$user_id = $this->session->userdata('usher_id');
+		if(empty($user_id)){
+			$this->session->set_userdata('social_redirect', 'design-order-overview');
+		}
 		$design_data = $this->session->userdata('design_data');
 		if(!empty($design_data)){
 			$this->data['title'] = $this->lang->line('overview_title');

@@ -5,7 +5,18 @@ class MY_Controller extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 
+        // Check Cookies
+        $usher_id_cookie = $this->input->cookie('usher_id', TRUE);
+        $usher_name_cookie = $this->input->cookie('usher_name', TRUE);
+        $usher_email_cookie = $this->input->cookie('usher_email', TRUE);
+        if(!empty($usher_id_cookie) && !empty($usher_name_cookie) && !empty($usher_email_cookie)){
+            $this->session->set_userdata('usher_id', $usher_id_cookie);
+            $this->session->set_userdata('usher_name', $usher_name_cookie);
+            $this->session->set_userdata('usher_email', $usher_email_cookie);
+        }
+
 		$this->lang->load('static');
+
 	}
 
     // Pagination
@@ -42,6 +53,9 @@ class MY_Controller extends CI_Controller {
 
         // Hubspot Email
         $hubspotutk      = $_COOKIE['hubspotutk']; //grab the cookie from the visitors browser.
+        if(empty($hubspotutk)){
+            $hubspotutk = '';
+        }
         $ip_addr         = $_SERVER['REMOTE_ADDR']; //IP address too.
         $hs_context      = array(
             'hutk' => $hubspotutk,
@@ -219,6 +233,37 @@ class MY_Controller extends CI_Controller {
                 Order Grand Total - $'.$o_amount.'
             <br/><br/>
                 Your order is now being processed, you will receive a confirmation Email once we start manufacturing.
+            <br/><br/>
+                Let`s get innovating,
+            <br/>
+                Team 3D Usher
+        ';
+        // Elastic Email
+        $this->elastic_mail($admin_email, $admin_name, $subject, $user_email, $user_template);
+    }
+
+    // Manual Quote Email
+    function manufactureRequestEmail($o_id){
+        // Admin Detail
+        $admin_email = 'info@3dusher.com';
+        $admin_name = 'Team 3D Usher';
+
+        // Subject
+        $subject = '3D Usher RFQ '.$o_id;
+        
+        // User Detail
+        $user_name = $this->session->userdata('usher_name');
+        $user_email = $this->session->userdata('usher_email');
+        
+        // User Template
+        $user_template = '
+                Dear '.$user_name.',
+            <br/><br/>
+                We have received your file requesting for manual review.
+            <br/><br/>
+                Our engineers will be reviewing your file and connect with you in next 24 hours.
+            <br/><br/>
+                If you have any questions, please reply back to this email or you could call us on +91 9591792432 / +1 646 269 9625.
             <br/><br/>
                 Let`s get innovating,
             <br/>

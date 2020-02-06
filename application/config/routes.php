@@ -17,6 +17,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['privacy-policy'] = 'privacy/privacy_policy';
 	$route['terms-of-use'] = 'privacy/terms_of_use';
 
+	// USC Calculator
+	$route['usc'] = 'usc/index';
+	$route['usc-calculation'] = 'usc/usc_calculation';
+
 	// Authentication
 	$route['register'] = 'authentication/register';
 	$route['log-in'] = 'authentication/login';
@@ -33,7 +37,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	// Dashboard
 	$route['account'] = 'dashboard/account';
 	$route['manufacturing-orders'] = 'dashboard/manufacture_complete';
+	$route['quote-history'] = 'dashboard/quote_history';
+	$route['rfq-download/(:num)'] = 'dashboard/rfq_download';
+	$route['rfq-payment/(:num)'] = 'dashboard/rfq_payment';
+	$route['rfq-payment-submit'] = 'dashboard/rfq_payment_submit';
 	$route['manufacturing-incomplete-orders'] = 'dashboard/manufacture_incomplete';
+	$route['manufacturing-incomplete-store-session'] = 'dashboard/incomplete_in_store_session';
 	$route['designing-orders'] = 'dashboard/design_complete';
 	$route['account-settings'] = 'dashboard/setting';
 	$route['need-help/(:any)/(:num)'] = 'dashboard/need_help';
@@ -42,10 +51,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['manufacture'] = 'manufacture/index';
 	$route['manufacture-store-session'] = 'manufacture/store_session';
 	$route['manufacture-details'] = 'manufacture/manufacture_details';
+	$route['manufacture-all-delete'] = 'manufacture/manufacture_all_delete';
 	$route['manufacture-delete/(:num)'] = 'manufacture/manufacture_delete';
+	$route['manufacture-address'] = 'manufacture/manufacture_address';
 	$route['manufacture-overview'] = 'manufacture/manufacture_overview';
+	$route['manufacture-overview-delete/(:num)'] = 'manufacture/manufacture_overview_delete';
+	$route['manufacture-discount'] = 'manufacture/add_discount';
+	$route['manufacture-remove-discount'] = 'manufacture/remove_discount';
 	$route['manufacture-payment'] = 'manufacture/manufacture_payment';
+	$route['manufacture-request'] = 'manufacture/manufacture_request';
 	$route['manufacture-confirmation'] = 'manufacture/manufacture_confirm';
+	$route['rfq-confirmation'] = 'manufacture/rfq_confirm';
 
 	// Design
 	$route['describe-project'] = 'design/describe_project';
@@ -58,6 +74,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	$route['project'] = 'project/index';
 	$route['project-store-session'] = 'project/store_session';
 	$route['project-confirmation'] = 'project/project_confirmation';
+
+	// Tracking
+	$route['order-tracking'] = 'tracking/order_tracking';
+	$route['tracking-submit'] = 'tracking/tracking_submit';
 
 	// Industry
 	$route['aerospace'] = 'industry/aerospace';
@@ -107,3 +127,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	// Location
 	$route['location/india'] = 'location/india';
 	// $route['name/(:any)/(:any)'] = '';
+
+	// Under Construction
+	// $route['manufacture-details'] = 'home/under_construction';
+

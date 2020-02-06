@@ -52,7 +52,7 @@
             </div>
         </div>
     </section>
-    <div class="container">
+    <!--<div class="container">
         <hr>    
     </div>
     <section id="contact-address">
@@ -60,7 +60,7 @@
             <div class="row">
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
                     <div class="contact-address-content">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.740326500073!2d-76.08801618509307!3d43.04689479944254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3a0574f7ad1%3A0x67f8faabb45e782e!2s3D+Usher!5e0!3m2!1sen!2sin!4v1528302736828" width="100%" height="350px" frameborder="0"></iframe>    
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.740326500073!2d-76.08801618509307!3d43.04689479944254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d9f3a0574f7ad1%3A0x67f8faabb45e782e!2s3D+Usher!5e0!3m2!1sen!2sin!4v1528302736828" width="100%" height="350px" frameborder="0"></iframe>   
                     </div>    
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-xs-12"> 
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>-->
     <div class="container">
         <hr>    
     </div>
@@ -88,9 +88,9 @@
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             info@3dusher.com
                         </p>
-                        <p>Mitchell Hall Room 102,</p>
+                        <!--<p>Mitchell Hall Room 102,</p>
                         <p>1421 Salt Springs Rd,</p>
-                        <p>Syracuse, NY 13214</p>
+                        <p>Syracuse, NY 13214</p>-->
                     </div>    
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12"> 
@@ -98,16 +98,53 @@
                         <h4>INDIA</h4>
                         <p>
                             <i class="fa fa-phone" aria-hidden="true"></i>
-                            +91 95356 75956
+                            +91 959-179-2432
                         </p>
                         <p class="text-primary">
                             <i class="fa fa-envelope" aria-hidden="true"></i>
                             info@3dusher.com
                         </p>
-                        <p>Plot no 23,24, 2nd Floor,</p>
+                        <!--<p>Plot no 23,24, 2nd Floor,</p>
                         <p>Shaktipuram Industrial Estate,</p>
                         <p>Prashantinagar, Kukatpally,</p>
-                        <p>Hyderabad, Telangana - 500072</p>
+                        <p>Hyderabad, Telangana - 500072</p>-->
+                    </div>    
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="contact-address">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-xs-12"> 
+                    <div class="contact-address-content">
+                        <h3>Office Locations</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-4 offset-xl-2 col-lg-4 offset-lg-2 col-md-6 col-sm-12 col-xs-12 col-12">
+                    <div class="contact-address-content">
+                        <h4>BUFFALO (HQ)</h4>
+                        <!--<p>50 Fountain Plaza, Suite 1400,<br>Buffalo, New York 14202</p>-->
+                        <p>50 Fountain Plaza,</p>
+                        <p>Suite 1400, Buffalo,</p>
+                        <p>New York 14202</p>
+                    </div>    
+                </div>
+                <!--<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12"> -->
+                <!--    <div class="contact-address-content">-->
+                <!--        <h4>SYRACUSE</h4>-->
+                <!--        <p>235, Harrison St, Syracuse, <br>New York 13202.</p>-->
+                <!--    </div>    -->
+                <!--</div>-->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 col-12"> 
+                    <div class="contact-address-content">
+                        <h4>INDIA</h4>
+                        <!--<p>#23 &amp; 24, Prashanti Nagar, Kukatpally, Hyderabad, Telangana 500072</p>-->
+                        <p>#23 &amp; 24, Prashanti Nagar,</p>
+                        <p>Kukatpally, Hyderabad,</p>
+                        <p>Telangana 500072</p>
                     </div>    
                 </div>
             </div>

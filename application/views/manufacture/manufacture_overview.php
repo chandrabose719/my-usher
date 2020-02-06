@@ -15,31 +15,15 @@
 						$total_product_count = 0;
 						$total_file_amount = 0;
 						foreach ($file_data_result as $cadkey => $cadvalue) {
-							// Material ID
-							$material_query['material_id'] = $cadvalue['material_id'];
-							$material_data = $this->Material_m->get($material_query, TRUE);
+							// Material Name
+							$material_query['material_id'] = $order_data_result['material_id'];
+							$material_data = $this->IMaterial_m->get($material_query, TRUE);
 							$material_name = $material_data->material_name;
-							$technology_name = $material_data->technology_name;
-							// Layer Height ID
-							$layer_height_query['layer_height_id'] = $cadvalue['layer_height_id'];
-							$layer_height_data = $this->LayerHeight_m->get($layer_height_query, TRUE);
-							$layer_height_name = $layer_height_data->layer_height_name;
-							// Color ID
-							if(!empty($cadvalue['color_id'])){
-								$color_query['color_id'] = $cadvalue['color_id'];
-								$color_data = $this->Color_m->get($color_query, TRUE);
-								$color_name = $color_data->color_name;
-							}else{
-								$color_name = $cadvalue['color_id'];
-							}
-							// Post Process
-							if(!empty($cadvalue['post_process_id'])){
-								$post_process_query['post_process_id'] = $cadvalue['post_process_id'];
-								$post_process_data = $this->PostProcess_m->get($post_process_query, TRUE);
-								$post_process_name = $post_process_data['post_process_name'];
-							}else{
-								$post_process_name = $cadvalue['post_process_id'];
-							}	
+							// Technology Name
+							$tech_query['technology_id'] = $order_data_result['technology_id'];
+							$tech_data = $this->ITechnology_m->get($tech_query, TRUE);
+							$technology_name = $tech_data->technology_name;
+						
 					?>
 					<div class="summary-content summary-body">
 						<div class="row">
@@ -48,42 +32,23 @@
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
 								<p>Technology: <?= $technology_name; ?></p>
-								<p>Layer Height: <?= $layer_height_name; ?></p>	
-								<!-- <p>Color: <?= $color_name; ?></p> -->
-								<!-- <p>Post Process: <?= $post_process_name; ?></p> -->
-							</div>
-							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
 								<p>Material: <?= $material_name; ?></p>
 							</div>
-							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
 								<div class="cad-quantity">
-									<ul class="pagination pagination-sm">
-							    		<li class="page-item">
-							    			<a class="page-link rounded-circle" id="dec-btn" href="javascript:;" onclick="changeCount('dec',<?= $cadvalue['file_id']; ?>)">
-							      				<i class="fas fa-minus"></i>
-							      			</a>
-							    		</li>
-							    		<li class="page-item disabled">
-							    			<input type="hidden" id="<?= $cadvalue['file_id']; ?>_hidden_file_qty">
-							    			<a class="page-link page-link-none" href="javascript:;">
-							    				<span id="<?= $cadvalue['file_id'] ?>-product-count-content">
-							    					<?= $cadvalue['file_qty']; ?>
-							    				</span>
-							    			</a>
-							    		</li>
-							    		<li class="page-item">
-							    			<a class="page-link rounded-circle" href="javascript:;" onclick="changeCount('inc',<?= $cadvalue['file_id']; ?>)">
-							    				<i class="fas fa-plus"></i>
-							    			</a>
-							    		</li>
-							  		</ul>
-							  	</div>	
+									<input type="number" class="form-control p-2 h-25 w-50" name="<?= $cadvalue['file_id']; ?>_hidden_file_qty" id="<?= $cadvalue['file_id']; ?>_hidden_file_qty" onfocusout="changeCount(<?= $cadvalue['file_id']; ?>)" value="<?= $cadvalue['file_qty']; ?>">
+								</div>
+							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
 								<h4 id="<?= $cadvalue['file_id'] ?>-product-amount-content">
 									&dollar; <?= number_format($cadvalue['file_qty'] * $cadvalue['file_amount'], 2); ?>
 								</h4>	
 							</div>
+							<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col-xs-12">
+								<a class="btn btn-outline-light rounded-circle" href="javascript:;" onclick="return deleteManufactureOverview('<?= $cadvalue['file_id']; ?>', '<?= $cadvalue['file_name']; ?>')" data-toggle="tooltip" title="Remove <?= $cadvalue['file_name']; ?>"><i class="far fa-trash-alt text-danger"></i></a>
+							</div>	
 						</div>	
 					</div>
 					<?php
@@ -143,6 +108,37 @@
 					<?php
 						}
 					?>
+					<!-- Mode of Communication -->
+					<div class="summary-content summary-header">
+						<div class="row">
+							<div class="col-xl-8 col-lg-8 col-md-8 col-sm-6 col-xs-12">
+								<h4>Mode of Communication</h4>
+							</div>
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-4 col-xs-12">	
+								
+							</div>
+						</div>
+					</div>
+					<div class="summary-content summary-body">
+						<div class="row">
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="form-radio py-3">
+									<label class="radio-label m-0">Email
+								  		<input type="radio" class="radio-input" name="communication_mode" id="communication_mode" onclick="changeCommunicationMode()" value="email" <?php if($order_data_result['communication_mode'] == 'email'){echo "checked";}?>>
+								  		<span class="radio-round"></span>
+									</label>
+								</div>
+							</div>
+							<div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 col-xs-12">
+								<div class="form-radio py-3">
+									<label class="radio-label m-0">Phone
+								  		<input type="radio" class="radio-input" name="communication_mode" id="communication_mode" onclick="changeCommunicationMode()" value="phone" <?php if($order_data_result['communication_mode'] == 'phone'){echo "checked";}?>>
+								  		<span class="radio-round"></span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>		
 				<div class="col-xl-4 col-lg-4 col-md-5 col-sm-12 col-xs-12">
 					<div class="sticky-top sticky-offset">	
@@ -151,15 +147,14 @@
 								<h4>Price Details</h4>
 							</div>
 							<?php
-								$total_file_count = 0;
+								$total_file_count = count($file_data_result);
 								$total_file_amount = 0;
-								foreach ($file_data_result as $ckey => $cvalue) {
-									$file_amount = $cvalue['file_amount'] * $cvalue['file_qty'];
-									$total_file_amount += $file_amount;
-									$total_file_count += 1;
+								foreach ($file_data_result as $file_data_value) {
+									$total_file_amount += $file_data_value['file_amount'] * $file_data_value['file_qty'];
 								}
 								$delivery_type = $order_data_result['delivery_type'];
 								$delivery_amount = $order_data_result['delivery_amount'];
+								$discount_amount = $order_data_result['discount_amount'];
 							?>
 							<div class="price-body">
 								<div class="row">
@@ -185,7 +180,7 @@
 										</h4>
 									</div>
 								</div>
-								<div class="row">
+								<!-- <div class="row">
 									<div class="col-5 offset-1">
 										<label class="radio-inline">	
 					    					<input type="radio" name="delivery_type" id="delivery_type" value="Normal" onclick="displayDeliveryAmount()" <?php if($delivery_type == 'Normal'){echo "checked";}?> >
@@ -198,14 +193,49 @@
 									    	Express
 									    </label>
 									</div>
-								</div><hr>
+								</div> -->
+								<?php if(empty($discount_amount)){ ?>		
+								<hr>
+								<div class="row">
+									<div class="col-sm-12">
+										<form method="post" action="<?= base_url('manufacture-discount'); ?>">
+											<div class="input-group">
+												<input type="text" class="form-control" name="discount_code" id="discount_code" placeholder="Coupon Code">
+												<div class="input-group-append w-50">
+											    	<input type="submit" class="btn btn-primary Pbtn" name="discount-submit" value="APPLY">
+											  	</div>
+											</div>
+										</form>	
+									</div>
+								</div>
+								<?php }else{ ?>
+									<div class="row">
+										<div class="col-sm-7">
+											<h4>Discount Amount</h4>
+										</div>
+										<div class="col-sm-5">
+											<h4 id="delivery_amount_content">
+												&#36; 
+												<?= number_format($discount_amount, 2); ?>
+												<a class="text-danger" href="javascript:;" onclick="deleteDiscount()" data-toggle="tooltip" title="Remove Discount">
+													<i class="fas fa-times-circle"></i>	
+												</a>
+											</h4>
+										</div>
+									</div>
+								<?php } ?>
+								<hr>
 								<div class="row">
 									<div class="col-sm-7">
 										<h4>Payable Amount</h4>
 									</div>
 									<div class="col-sm-5">
 										<?php
-											$payable_amount = $total_file_amount + $delivery_amount;
+											if(!empty($discount_amount)){
+												$payable_amount = ($total_file_amount - $discount_amount) + $delivery_amount;
+											}else{
+												$payable_amount = $total_file_amount + $delivery_amount;	
+											}
 										?>
 										<h4 id="payable_amount_content">
 											&dollar; <?= number_format($payable_amount, 2); ?>
@@ -215,7 +245,6 @@
 								<div class="row">
 									<?php
 										$total_stripe_amount = $payable_amount;
-										$total_stripe_amount = number_format($total_stripe_amount, 2);
 										$total_stripe_amount = $total_stripe_amount * 100;
 										if (empty($user_data->shipping_address) || empty($user_data->city) || empty($user_data->billing_address) || empty($user_data->billing_city)) {	
 									?>
@@ -224,29 +253,43 @@
 									</div>	
 									<?php
 										}else{
-											$total_stripe_amount = $payable_amount;
-											$total_stripe_amount = number_format($total_stripe_amount, 2);
-											$total_stripe_amount = $total_stripe_amount * 100;
+											// Stripe Publish Key
+											$publishableKey = $this->config->item('publishableKey');
 									?>
 									<div class="col-sm-12">
-										<form method="POST" action="<?= base_url('manufacture-payment'); ?>">
-											<input type="hidden" id="stripe_amount" name="stripe_amount" value="<?= $total_stripe_amount; ?>">
-											<script
-										    	src="https://checkout.stripe.com/checkout.js" 
-										    	class="stripe-button"
-										    	data-key="<?= $this->config->item('publishableKey'); ?>"
-										    	data-name="<?= 'Welcome '.$user_data->user_name; ?>"
-										    	data-description=""
-										    	data-image="https://3dusher.com/assets/images/favicon.png"
-										    	data-locale="auto">
-										  	</script>
-										</form>
-									</div>
-									<div class="col-4 offset-4 my-2">
-										<div class="stripe-logo">
-											<img class="img-fluid" src="<?= base_url('assets/images/stripe-logo.png'); ?>">	
+										<div class="checkout-btn-content">
+											<?php 
+												$calc_defualt = $this->CDetails_m->get()[0];
+												$max_shipping_data = $this->CCost_m->get_last_row();
+												$max_shipping_doller = number_format(($max_shipping_data->total_doller/$calc_defualt->dollar_conversion), 2);
+												if($delivery_amount < $max_shipping_doller){ 
+											?>
+											<div class="checkout-payment-btn">
+												<form method="POST" action="<?= base_url('manufacture-payment'); ?>">
+													<input type="hidden" id="stripe_amount" name="stripe_amount" value="<?= $total_stripe_amount; ?>">
+													<script
+												    	src="https://checkout.stripe.com/checkout.js" 
+												    	class="stripe-button"
+												    	data-key="<?= $publishableKey; ?>"
+												    	data-name="<?= 'Welcome '.$user_data->user_name; ?>"
+												    	data-description=""
+												    	data-image="https://3dusher.com/assets/images/favicon.png"
+												    	data-locale="auto">
+												  	</script>
+												</form>
+											</div>
+											<div class="col-4 offset-4 my-2">
+												<div class="stripe-logo">
+													<img class="img-fluid" src="<?= base_url('assets/images/stripe-logo.png'); ?>">	
+												</div>
+											</div>
+											<?php }else{ ?>
+											<div class="checkout-manual-quote-btn">
+												<a class="form-control btn btn-primary Abtn" href="<?= base_url('manufacture-request'); ?>">REQUEST FOR MANUAL QUOTE</a>
+											</div>
+											<?php } ?>
 										</div>
-									</div>	
+									</div>		
 									<?php
 										}
 									?>	
@@ -254,7 +297,11 @@
 							</div>
 						</div>
 						<small class="form-text text-muted font-italic">
-				    		Order confirmation will be sent to <?= $user_data->user_email; ?>
+				    		<?php if($delivery_amount < $max_shipping_doller){ ?>
+				    			Order confirmation will be sent to <?= $user_data->user_email; ?>
+				    		<?php }else{ ?>
+				    			Final quote will be sent for approval within 1 business day
+				    		<?php } ?>
 				    	</small>
 				    </div>
 				</div>	
@@ -263,7 +310,7 @@
 			<div class="modal fade" id="addressModal">
 			    <div class="modal-dialog modal-lg modal-dialog-centered">
 			      	<div class="modal-content">
-				      	<form method="post">
+				      	<form method="post" action="<?= base_url('manufacture-address'); ?>">
 							<div class="modal-header">
 					        	<h3 class="modal-title"></h3>
 					        	<input type="button" class="btn btn-outline-secondary" data-dismiss="modal" value="X">
@@ -383,6 +430,7 @@
 										</div>
 										<div class="col-xl-5 offset-xl-6 col-lg-5 offset-lg-6 col-md-5 offset-md-6 col-sm-5 offset-sm-6 col-xs-12">				
 											<div class="form-group">
+												<input type="hidden" id="redirect_address" name="redirect_address" value="manufacture-overview">
 												<input type="submit" class="form-control btn btn-primary Abtn" name="checkout-submit" onclick="return checkoutValidation()" value="Submit">
 											</div>
 										</div>

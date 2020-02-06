@@ -19,31 +19,44 @@
 		            		<a class="nav-link" href="<?= base_url('resources'); ?>">RESOURCES</a>
 			        	</li>
 			        	<?php 
-			        		if(!empty($usher_name)){ 
+			        		if(!empty($usher_name) && !empty($usher_id)){ 
+			        			$user_arr['user_id'] = $usher_id;
+			        			$user_data = $this->Usher_m->get($user_arr, TRUE);
+
 			        			$trunk_user_name = $usher_name;
                 				if(strlen($trunk_user_name) > 10){
 									$trunk_user_name = mb_strimwidth($usher_name, 0, 10, "...");
                 				}
-						?>	<li class="nav-item dropdown mb-2">
-						    	<a class="nav-link user-nav-link dropdown-tog" href="#" id="navbardrop" data-toggle="dropdown">
-						        	<span>Hello,</span><br/>
-						        	<?= strtoupper($trunk_user_name); ?>
-						      		<i class="fa fa-caret-down"></i>
-						      	</a>
-						      	<div class="dropdown-menu dropdown-menu-right mt-4">
-						        	<a class="nav-link" href="<?= base_url('account'); ?>">MY ACCOUNT</a>
-						        	<a class="nav-link" href="<?= base_url('signout'); ?>">SIGNOUT</a>
-						      	</div>
-						    </li>
-			        	<?php } else { ?>
-							<li class="nav-item">
-	                            <?php if(current_url('design-order-overview') == base_url('design-order-overview')){ ?>		
-	                            	<a class="nav-link" href="#" data-toggle="modal" data-backdrop="static" data-target="#loginModal">SIGN IN</a>
-	                        	<?php }else{ ?>
-	                        		<a class="nav-link" href="<?= base_url('log-in'); ?>">SIGN IN</a>
-	                        	<?php } ?>
-	                        </li>
-						<?php } ?>                    
+						?>	
+						<li class="nav-item dropdown mb-2">
+					    	<a class="nav-link user-nav-link dropdown-tog <?php if($user_data->user_mode == 'test') echo 'text-danger'; ?>" href="#" id="navbardrop" data-toggle="dropdown">
+					        	<span>Hello,</span><br/>
+					        	<?php 
+					        		if($user_data->user_mode == 'test'){
+					        			echo '<span class="test-mode-circle" data-toggle="tooltip" title="Test Mode Activated"></span>';
+					        		}	
+					        	?>
+					        	<?= strtoupper($trunk_user_name); ?>
+					      		<i class="fa fa-caret-down"></i>
+					      	</a>
+					      	<div class="dropdown-menu dropdown-menu-right mt-4">
+					        	<a class="nav-link" href="<?= base_url('account'); ?>">MY ACCOUNT</a>
+					        	<a class="nav-link" href="<?= base_url('signout'); ?>">SIGNOUT</a>
+					      	</div>
+					    </li>
+			        	<?php 
+			        		} else { 
+			        	?>
+						<li class="nav-item">
+                            <?php if(current_url('design-order-overview') == base_url('design-order-overview')){ ?>		
+                            	<a class="nav-link" href="#" data-toggle="modal" data-backdrop="static" data-target="#loginModal">SIGN IN</a>
+                        	<?php }else{ ?>
+                        		<a class="nav-link" href="<?= base_url('log-in'); ?>">SIGN IN</a>
+                        	<?php } ?>
+                        </li>
+						<?php 
+							} 
+						?>                    
                     	<li class="nav-item">
                        		<a class="btn btn-primary Pbtn" href="<?= base_url('start-project'); ?>">START PROJECT&nbsp;&nbsp;<i class="fas fa-external-link-alt"></i></a>
                     	</li>
